@@ -118,7 +118,7 @@ namespace PC_Hardware_Datenbank
             }
             else
             {
-                MessageBox.Show("Die Datenbank giebt es schon!");
+                MessageBox.Show("Die Datenbank gibt es schon!");
             }
         }
 
@@ -131,7 +131,7 @@ namespace PC_Hardware_Datenbank
             }
             else
             {
-                MessageBox.Show("Die Datenbank giebt es schon!");
+                MessageBox.Show("Die Datenbank gibt es schon!");
             }
         }
 
@@ -144,7 +144,7 @@ namespace PC_Hardware_Datenbank
             }
             else
             {
-                MessageBox.Show("Die Datenbank giebt es schon!");
+                MessageBox.Show("Die Datenbank gibt es schon!");
             }
         }
 
@@ -157,7 +157,7 @@ namespace PC_Hardware_Datenbank
             }
             else
             {
-                MessageBox.Show("Die Datenbank giebt es schon!");
+                MessageBox.Show("Die Datenbank gibt es schon!");
             }
         }
 
@@ -170,7 +170,7 @@ namespace PC_Hardware_Datenbank
             }
             else
             {
-                MessageBox.Show("Die Datenbank giebt es schon!");
+                MessageBox.Show("Die Datenbank gibt es schon!");
             }
         }
 
@@ -183,7 +183,7 @@ namespace PC_Hardware_Datenbank
             }
             else
             {
-                MessageBox.Show("Die Datenbank giebt es schon!");
+                MessageBox.Show("Die Datenbank gibt es schon!");
             }
         }
 
@@ -196,7 +196,7 @@ namespace PC_Hardware_Datenbank
             }
             else
             {
-                MessageBox.Show("Die Datenbank giebt es schon!");
+                MessageBox.Show("Die Datenbank gibt es schon!");
             }
         }
 
@@ -209,7 +209,7 @@ namespace PC_Hardware_Datenbank
             }
             else
             {
-                MessageBox.Show("Die Datenbank giebt es schon!");
+                MessageBox.Show("Die Datenbank gibt es schon!");
             }
         }
 
@@ -222,7 +222,7 @@ namespace PC_Hardware_Datenbank
             }
             else
             {
-                MessageBox.Show("Die Datenbank giebt es schon!");
+                MessageBox.Show("Die Datenbank gibt es schon!");
             }
         }
 
@@ -235,7 +235,7 @@ namespace PC_Hardware_Datenbank
             }
             else
             {
-                MessageBox.Show("Die Datenbank giebt es schon!");
+                MessageBox.Show("Die Datenbank gibt es schon!");
             }
         }
 
@@ -248,7 +248,7 @@ namespace PC_Hardware_Datenbank
             }
             else
             {
-                MessageBox.Show("Die Datenbank giebt es schon!");
+                MessageBox.Show("Die Datenbank gibt es schon!");
             }
         }
 
@@ -261,7 +261,7 @@ namespace PC_Hardware_Datenbank
             }
             else
             {
-                MessageBox.Show("Die Datenbank giebt es schon!");
+                MessageBox.Show("Die Datenbank gibt es schon!");
             }
         }
 
@@ -274,7 +274,7 @@ namespace PC_Hardware_Datenbank
             }
             else
             {
-                MessageBox.Show("Die Datenbank giebt es schon!");
+                MessageBox.Show("Die Datenbank gibt es schon!");
             }
         }
 
@@ -287,7 +287,7 @@ namespace PC_Hardware_Datenbank
             }
             else
             {
-                MessageBox.Show("Die Datenbank giebt es schon!");
+                MessageBox.Show("Die Datenbank gibt es schon!");
             }
         }
 
@@ -300,7 +300,7 @@ namespace PC_Hardware_Datenbank
             }
             else
             {
-                MessageBox.Show("Die Datenbank giebt es schon!");
+                MessageBox.Show("Die Datenbank gibt es schon!");
             }
         }
 
@@ -313,7 +313,7 @@ namespace PC_Hardware_Datenbank
             }
             else
             {
-                MessageBox.Show("Die Datenbank giebt es schon!");
+                MessageBox.Show("Die Datenbank gibt es schon!");
             }
         }
 
@@ -326,7 +326,7 @@ namespace PC_Hardware_Datenbank
             }
             else
             {
-                MessageBox.Show("Die Datenbank giebt es schon!");
+                MessageBox.Show("Die Datenbank gibt es schon!");
             }
         }
 
@@ -339,7 +339,7 @@ namespace PC_Hardware_Datenbank
             }
             else
             {
-                MessageBox.Show("Die Datenbank giebt es schon!");
+                MessageBox.Show("Die Datenbank gibt es schon!");
             }
         }
 
@@ -352,7 +352,7 @@ namespace PC_Hardware_Datenbank
             }
             else
             {
-                MessageBox.Show("Die Datenbank giebt es schon!");
+                MessageBox.Show("Die Datenbank gibt es schon!");
             }
         }
 
@@ -365,7 +365,7 @@ namespace PC_Hardware_Datenbank
             }
             else
             {
-                MessageBox.Show("Die Datenbank giebt es schon!");
+                MessageBox.Show("Die Datenbank gibt es schon!");
             }
         }
 
@@ -378,7 +378,7 @@ namespace PC_Hardware_Datenbank
             }
             else
             {
-                MessageBox.Show("Die Datenbank giebt es schon!");
+                MessageBox.Show("Die Datenbank gibt es schon!");
             }
         }
             #endregion
