@@ -1,2 +1,2 @@
 # PC-Hardware-Datenbank
-Mein Projet für die PC Gruppe, das ist in C# geschrieben und soll eine Datenbak für Hardware Kompunente sein.
+Mein Projekt für die PC Gruppe, in C# geschrieben und soll eine Datenbankanwendung für Hardware-Komponenten sein.
