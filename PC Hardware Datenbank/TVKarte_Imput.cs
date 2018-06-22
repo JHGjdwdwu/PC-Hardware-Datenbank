@@ -65,7 +65,7 @@ namespace PC_Hardware_Datenbank
                 }
                 else
                 {
-                    MessageBox.Show("Bitte alle Roten Pflicht eintragungen ausfüllen!");
+                    MessageBox.Show("Bitte alle roten Pflichtfelder ausfüllen!");
                 }
             }
             else
@@ -316,7 +316,7 @@ namespace PC_Hardware_Datenbank
             }
             else
             {
-                MessageBox.Show("zuerst muss ein Datensatz gespeichert werden!");
+                MessageBox.Show("Zuerst muss ein Datensatz gespeichert werden!");
             }
         }
 

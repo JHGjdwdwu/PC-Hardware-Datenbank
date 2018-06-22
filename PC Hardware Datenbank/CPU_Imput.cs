@@ -15,7 +15,7 @@ namespace PC_Hardware_Datenbank
 {
     public partial class CPU_Imput : Form
     {
-        private string Datensatz = "";//Datensatz der dan in die Datenbank geschoben wird
+        private string Datensatz = "";//Datensatz, der dann in die Datenbank geschoben wird
         private char LF = (char)10;
         private string Sockel;
         private string QR = "";//QR Code
@@ -25,12 +25,12 @@ namespace PC_Hardware_Datenbank
             InitializeComponent();
         }
 
-        private void cmdBeenden_Click(object sender, EventArgs e)//Fenster Schlissen
+        private void cmdBeenden_Click(object sender, EventArgs e)//Fenster schliessen
         {
             Close();
         }
 
-        private void LoschenFunktion()//Lösch Funktion
+        private void LoschenFunktion()//Löschfunktion
         {
             wtxtHersteller.Text = txtTyp.Text = wtxtSockelAMD.Text = wtxtSockelINTEL.Text = mtxtTaktrate.Text = nudCach1.Text = nudCach2.Text = nudCach3.Text = nudCach4.Text = null;
             nudKerne.Value = 1;
@@ -64,7 +64,7 @@ namespace PC_Hardware_Datenbank
                 }
                 else
                 {
-                    MessageBox.Show("Bitte alle Roten Pflicht eintragungen ausfüllen!");
+                    MessageBox.Show("Bitte alle roten Pflichtfelder ausfüllen!");
                 }
             }
             else
@@ -106,7 +106,7 @@ namespace PC_Hardware_Datenbank
             }
             else
             {
-                MessageBox.Show("zuerst muss ein Datensatz gespeichert werden!");
+                MessageBox.Show("Zuerst muss ein Datensatz gespeichert werden!");
             }
         }
 

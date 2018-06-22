@@ -51,7 +51,7 @@ namespace PC_Hardware_Datenbank
             }
             if(Logingwert != 1)
             {
-                MessageBox.Show("Falsche Loging Daten!");
+                MessageBox.Show("Ungültiger Log-In!");
                 txtName.Text = txtPassword.Text = null;
                 txtName.Focus();
             }
