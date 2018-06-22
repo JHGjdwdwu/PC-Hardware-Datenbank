@@ -64,7 +64,7 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(245, 262);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(133, 20);
+            this.label10.Size = new System.Drawing.Size(166, 25);
             this.label10.TabIndex = 140;
             this.label10.Text = "USB Anschlüsse:";
             // 
@@ -73,7 +73,7 @@
             this.wtxtWatt.FormattingEnabled = true;
             this.wtxtWatt.Location = new System.Drawing.Point(34, 135);
             this.wtxtWatt.Name = "wtxtWatt";
-            this.wtxtWatt.Size = new System.Drawing.Size(146, 28);
+            this.wtxtWatt.Size = new System.Drawing.Size(146, 33);
             this.wtxtWatt.TabIndex = 2;
             // 
             // label6
@@ -81,7 +81,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(33, 112);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(76, 20);
+            this.label6.Size = new System.Drawing.Size(98, 25);
             this.label6.TabIndex = 139;
             this.label6.Text = "Watt (W):";
             // 
@@ -90,7 +90,7 @@
             this.cbtCOM.AutoSize = true;
             this.cbtCOM.Location = new System.Drawing.Point(34, 354);
             this.cbtCOM.Name = "cbtCOM";
-            this.cbtCOM.Size = new System.Drawing.Size(64, 24);
+            this.cbtCOM.Size = new System.Drawing.Size(82, 29);
             this.cbtCOM.TabIndex = 8;
             this.cbtCOM.Text = "COM";
             this.cbtCOM.UseVisualStyleBackColor = true;
@@ -104,7 +104,7 @@
             "Netzinteraktife USV"});
             this.wtxtArbeitsweise.Location = new System.Drawing.Point(34, 209);
             this.wtxtArbeitsweise.Name = "wtxtArbeitsweise";
-            this.wtxtArbeitsweise.Size = new System.Drawing.Size(146, 28);
+            this.wtxtArbeitsweise.Size = new System.Drawing.Size(146, 33);
             this.wtxtArbeitsweise.TabIndex = 4;
             // 
             // label9
@@ -112,7 +112,7 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(33, 186);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(103, 20);
+            this.label9.Size = new System.Drawing.Size(129, 25);
             this.label9.TabIndex = 138;
             this.label9.Text = "Arbeitsweise:";
             // 
@@ -121,7 +121,7 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(33, 262);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(87, 20);
+            this.label8.Size = new System.Drawing.Size(110, 25);
             this.label8.TabIndex = 137;
             this.label8.Text = "Akkanzahl:";
             // 
@@ -134,7 +134,7 @@
             "PCIe x16"});
             this.wtxtAkkutyp.Location = new System.Drawing.Point(249, 209);
             this.wtxtAkkutyp.Name = "wtxtAkkutyp";
-            this.wtxtAkkutyp.Size = new System.Drawing.Size(146, 28);
+            this.wtxtAkkutyp.Size = new System.Drawing.Size(146, 33);
             this.wtxtAkkutyp.TabIndex = 5;
             // 
             // label7
@@ -142,7 +142,7 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(245, 186);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(70, 20);
+            this.label7.Size = new System.Drawing.Size(89, 25);
             this.label7.TabIndex = 136;
             this.label7.Text = "Akkutyp:";
             // 
@@ -156,7 +156,7 @@
             0,
             0});
             this.nudUSB.Name = "nudUSB";
-            this.nudUSB.Size = new System.Drawing.Size(146, 26);
+            this.nudUSB.Size = new System.Drawing.Size(146, 30);
             this.nudUSB.TabIndex = 7;
             // 
             // nudAkkanzahl
@@ -169,7 +169,7 @@
             0,
             0});
             this.nudAkkanzahl.Name = "nudAkkanzahl";
-            this.nudAkkanzahl.Size = new System.Drawing.Size(146, 26);
+            this.nudAkkanzahl.Size = new System.Drawing.Size(146, 30);
             this.nudAkkanzahl.TabIndex = 6;
             this.nudAkkanzahl.Value = new decimal(new int[] {
             1,
@@ -182,7 +182,7 @@
             this.wtxtModell.FormattingEnabled = true;
             this.wtxtModell.Location = new System.Drawing.Point(249, 61);
             this.wtxtModell.Name = "wtxtModell";
-            this.wtxtModell.Size = new System.Drawing.Size(146, 28);
+            this.wtxtModell.Size = new System.Drawing.Size(146, 33);
             this.wtxtModell.TabIndex = 1;
             // 
             // pictureBox1
@@ -262,7 +262,7 @@
             this.wtxtVA.FormattingEnabled = true;
             this.wtxtVA.Location = new System.Drawing.Point(249, 135);
             this.wtxtVA.Name = "wtxtVA";
-            this.wtxtVA.Size = new System.Drawing.Size(146, 28);
+            this.wtxtVA.Size = new System.Drawing.Size(146, 33);
             this.wtxtVA.TabIndex = 3;
             // 
             // pcmdMainbord
@@ -282,7 +282,7 @@
             this.label5.ForeColor = System.Drawing.Color.Red;
             this.label5.Location = new System.Drawing.Point(245, 38);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(59, 20);
+            this.label5.Size = new System.Drawing.Size(76, 25);
             this.label5.TabIndex = 133;
             this.label5.Text = "Modell:";
             // 
@@ -291,16 +291,16 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(245, 112);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(125, 20);
+            this.label3.Size = new System.Drawing.Size(175, 25);
             this.label3.TabIndex = 132;
-            this.label3.Text = "Volt-Apere (VA):";
+            this.label3.Text = "Volt-Ampere (VA):";
             // 
             // wtxtHersteller
             // 
             this.wtxtHersteller.FormattingEnabled = true;
             this.wtxtHersteller.Location = new System.Drawing.Point(34, 61);
             this.wtxtHersteller.Name = "wtxtHersteller";
-            this.wtxtHersteller.Size = new System.Drawing.Size(146, 28);
+            this.wtxtHersteller.Size = new System.Drawing.Size(146, 33);
             this.wtxtHersteller.TabIndex = 0;
             // 
             // label1
@@ -309,13 +309,13 @@
             this.label1.ForeColor = System.Drawing.Color.Red;
             this.label1.Location = new System.Drawing.Point(30, 38);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 20);
+            this.label1.Size = new System.Drawing.Size(100, 25);
             this.label1.TabIndex = 130;
             this.label1.Text = "Hersteller:";
             // 
             // USV_Imput
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1126, 620);
             this.Controls.Add(this.label10);

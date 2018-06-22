@@ -96,7 +96,7 @@ namespace PC_Hardware_Datenbank
                 }
                 else
                 {
-                    MessageBox.Show("Bitte alle Roten Pflicht eintragungen ausfüllen!");
+                    MessageBox.Show("Bitte alle roten Pflichtfelder ausfüllen!");
                 }
             }
             else

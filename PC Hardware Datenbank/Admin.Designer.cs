@@ -947,7 +947,7 @@
             this.cmdBetrachten.Name = "cmdBetrachten";
             this.cmdBetrachten.Size = new System.Drawing.Size(150, 45);
             this.cmdBetrachten.TabIndex = 2;
-            this.cmdBetrachten.Text = "Daten Betrachten";
+            this.cmdBetrachten.Text = "Daten betrachten";
             this.cmdBetrachten.UseVisualStyleBackColor = true;
             // 
             // cmdLogout
@@ -966,13 +966,13 @@
             this.cmdEingabe.Name = "cmdEingabe";
             this.cmdEingabe.Size = new System.Drawing.Size(150, 45);
             this.cmdEingabe.TabIndex = 1;
-            this.cmdEingabe.Text = "Daten Eingabe";
+            this.cmdEingabe.Text = "Dateneingabe";
             this.cmdEingabe.UseVisualStyleBackColor = true;
             this.cmdEingabe.Click += new System.EventHandler(this.cmdEingabe_Click);
             // 
             // Admin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1112, 620);
             this.Controls.Add(this.pictureBox1);

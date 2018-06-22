@@ -63,7 +63,7 @@ namespace PC_Hardware_Datenbank
                     #endregion
 
                     #region QR Code
-                    QR = "Hersteller:" + wtxtHersteller.Text + LF + "Modell:" + wtxtModell.Text + LF + "Watt (W):" + wtxtWatt.Text + LF + "Volt-Apere (VA):" + wtxtVA.Text + LF + "Arbeitsweise:" + wtxtArbeitsweise.Text + LF + "Akkutyp:" + wtxtAkkutyp.Text + LF + "Akkanzahl:" + nudAkkanzahl.Value + LF + "USB Anschlüsse:" + nudUSB.Value + LF + "COM:" + COM;
+                    QR = "Hersteller:" + wtxtHersteller.Text + LF + "Modell:" + wtxtModell.Text + LF + "Watt (W):" + wtxtWatt.Text + LF + "Volt-Ampere (VA):" + wtxtVA.Text + LF + "Arbeitsweise:" + wtxtArbeitsweise.Text + LF + "Akkutyp:" + wtxtAkkutyp.Text + LF + "Akkanzahl:" + nudAkkanzahl.Value + LF + "USB Anschlüsse:" + nudUSB.Value + LF + "COM:" + COM;
                     #endregion
 
                     File.WriteAllText(@"./USV_Datenbank.csv", Datensatz);//Datensatz in GPU_Datenbank.csv schreiben
@@ -71,7 +71,7 @@ namespace PC_Hardware_Datenbank
                 }
                 else
                 {
-                    MessageBox.Show("Bitte alle Roten Pflicht eintragungen ausfüllen!");
+                    MessageBox.Show("Bitte alle roten Pflichtfelder ausfüllen!");
                 }
             }
             else
@@ -97,7 +97,7 @@ namespace PC_Hardware_Datenbank
             }
             else
             {
-                MessageBox.Show("zuerst muss ein Datensatz gespeichert werden!");
+                MessageBox.Show("Zuerst muss ein Datensatz gespeichert werden!");
             }
         }
 
