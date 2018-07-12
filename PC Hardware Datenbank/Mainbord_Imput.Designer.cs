@@ -104,6 +104,9 @@
             this.nudAGP = new System.Windows.Forms.NumericUpDown();
             this.cmdQR = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.printDialog1 = new System.Windows.Forms.PrintDialog();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pcmdMainbord)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -988,6 +991,20 @@
             this.pictureBox1.TabIndex = 39;
             this.pictureBox1.TabStop = false;
             // 
+            // printDialog1
+            // 
+            this.printDialog1.UseEXDialog = true;
+            // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
+            // 
             // Mainbord_Imput
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -1131,5 +1148,8 @@
         private System.Windows.Forms.CheckBox cbtPS2;
         private System.Windows.Forms.Button cmdQR;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PrintDialog printDialog1;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
     }
 }
