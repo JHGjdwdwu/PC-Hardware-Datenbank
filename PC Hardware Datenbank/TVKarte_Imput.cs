@@ -31,7 +31,7 @@ namespace PC_Hardware_Datenbank
 
         private void LoschFunktion()//Löschen Funktion
         {
-            wtxtKartenhersteller.Text = wtxtModell.Text = wtxtAnschluss.Text = null;
+            wtxtKartenhersteller.Text = wtxtModell.Text = wtxtAnschluss.Text = wtxtZustand.Text = null;
             nudAnalog.Value = nudDVB_C.Value = nudDVB_T.Value = nudDVB_S.Value = nudKlinke.Value = nudODT.Value = nudHDMI.Value = nudScart.Value = nudSVideo.Value = nudCinch.Value = 0;
             cbtAnalog.Checked = cbtDVB_C.Checked = cbtDVB_T.Checked = cbtDVB_S.Checked = cbtKlinke.Checked = cbtODT.Checked = cbtHDMI.Checked = cbtScart.Checked = cbtSVideo.Checked = cbtCinch.Checked;
             wtxtKartenhersteller.Focus();
@@ -46,18 +46,44 @@ namespace PC_Hardware_Datenbank
         {
             if (File.Exists(@"./TVKarte_Datenbank.csv") == true)//Prüffen ob eine .csv Datei bereits erstellt wurde
             {
-                if (wtxtKartenhersteller.Text != "" && wtxtModell.Text != "")//Prüfft die Pflichtangaben
+                if (wtxtKartenhersteller.Text != "" && wtxtModell.Text != "" && wtxtZustand.Text != "")//Prüfft die Pflichtangaben
                 {
                     Datensatz = File.ReadAllText(@"./TVKarte_Datenbank.csv");//Datenbanck einlessen und in Datensatz speichern
 
                     #region Datensatz bilden
-                    Datensatz += LF + wtxtKartenhersteller.Text + ";" + wtxtModell.Text + ";" + wtxtAnschluss.Text + ";";
-                    Datensatz += nudAnalog.Value + ";" + nudDVB_C.Value + ";" + nudDVB_T.Value + ";" + nudDVB_S.Value + ";" + nudKlinke.Value + ";";
-                    Datensatz += nudODT.Value + ";" + nudHDMI.Value + ";" + nudScart.Value + ";" + nudSVideo.Value + ";" + nudCinch.Value;
+                    Datensatz += LF +
+                        wtxtKartenhersteller.Text + ";" +
+                        wtxtModell.Text + ";" +
+                        wtxtZustand.Text + ";" +
+                        wtxtAnschluss.Text + ";" +
+                        nudAnalog.Value + ";" +
+                        nudDVB_C.Value + ";" +
+                        nudDVB_T.Value + ";" +
+                        nudDVB_S.Value + ";" +
+                        nudKlinke.Value + ";" +
+                        nudODT.Value + ";" +
+                        nudHDMI.Value + ";" +
+                        nudScart.Value + ";" +
+                        nudSVideo.Value + ";" +
+                        nudCinch.Value;
                     #endregion
 
                     #region QR Code
-                    QR = "Kartenhersteller:" + wtxtKartenhersteller.Text + LF + "Modell:" + wtxtModell.Text + LF + "Anschlussart:" + wtxtAnschluss.Text + LF + "Analog:" + nudAnalog.Value + LF + "DVB-C:" + nudDVB_C.Value + LF + "DVB-T:" + nudDVB_T.Value + LF + "DVB-S:" + nudDVB_S.Value + LF + "Klinke:" + nudKlinke.Value + LF + "ODT:" + nudODT.Value + LF + "HDMI:" + nudHDMI.Value + LF + "Scart:" + nudScart.Value + LF + "S-Video:" + nudSVideo.Value + LF + "Cinch:" + nudCinch.Value;
+                    QR =
+                        "Kartenhersteller: " + wtxtKartenhersteller.Text + LF +
+                        "Modell: " + wtxtModell.Text + LF +
+                        "Zustand: " + wtxtZustand.Text + LF +
+                        "Anschlussart: " + wtxtAnschluss.Text + LF +
+                        "Analog: " + nudAnalog.Value + LF +
+                        "DVB-C: " + nudDVB_C.Value + LF +
+                        "DVB-T: " + nudDVB_T.Value + LF +
+                        "DVB-S: " + nudDVB_S.Value + LF +
+                        "Klinke: " + nudKlinke.Value + LF +
+                        "ODT: " + nudODT.Value + LF +
+                        "HDMI: " + nudHDMI.Value + LF +
+                        "Scart: " + nudScart.Value + LF +
+                        "S-Video: " + nudSVideo.Value + LF +
+                        "Cinch: " + nudCinch.Value;
                     #endregion
 
                     File.WriteAllText(@"./TVKarte_Datenbank.csv", Datensatz);//Datensatz in GPU_Datenbank.csv schreiben

@@ -31,7 +31,7 @@ namespace PC_Hardware_Datenbank
 
         private void LoschFunktion()//Löschen Funktion
         {
-            wtxtVon.Text = wtxtAuf.Text = null;
+            wtxtZustand.Text = wtxtVon.Text = wtxtAuf.Text = null;
             wtxtVon.Focus();
         }
 
@@ -44,16 +44,22 @@ namespace PC_Hardware_Datenbank
         {
             if (File.Exists(@"./Adapter_Datenbank.csv") == true)//Prüffen ob eine .csv Datei bereits erstellt wurde
             {
-                if (wtxtVon.Text != "" && wtxtAuf.Text != "")//Prüfft die Pflichtangaben
+                if (wtxtVon.Text != "" && wtxtAuf.Text != "" && wtxtZustand.Text != "")//Prüfft die Pflichtangaben
                 {
                     Datensatz = File.ReadAllText(@"./Adapter_Datenbank.csv");//Datenbanck lessen und in Datensatz speichern
 
                     #region Datensatz bilden
-                    Datensatz += LF + wtxtVon.Text + ";" + wtxtAuf.Text;
+                    Datensatz += LF +
+                        wtxtZustand.Text + ";" +
+                        wtxtVon.Text + ";" +
+                        wtxtAuf.Text;
                     #endregion
 
                     #region QR Code
-                    QR = "Von:" + wtxtVon.Text + LF + "Auf" + wtxtAuf.Text;
+                    QR =
+                        "Zustand: " + wtxtZustand.Text + LF +
+                        "Von: " + wtxtVon.Text + LF +
+                        "Auf: " + wtxtAuf.Text;
                     #endregion
 
                     File.WriteAllText(@"./Adapter_Datenbank.csv", Datensatz);//Datensatz in GPU_Datenbank.csv schreiben

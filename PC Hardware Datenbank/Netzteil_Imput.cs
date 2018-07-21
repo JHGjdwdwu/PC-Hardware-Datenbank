@@ -31,8 +31,8 @@ namespace PC_Hardware_Datenbank
 
         private void LoschFunktion()//Löschen Funktion
         {
-            wtxtHersteller.Text = wtxtTyp.Text = wtxtFormat.Text = wtxtLeistung.Text = null;
-            nudLuster.Value = nud12V.Value = nud5V.Value = 0;
+            wtxtHersteller.Text = wtxtTyp.Text = wtxtFormat.Text = wtxtLeistung.Text = wtxtZustand.Text = null;
+            nudLuster.Value = nud12V.Value = nud5V.Value = nud3V.Value = nud12W.Value = nud5W.Value = nud3W.Value = 0;
             cbtxStromAusganag.Checked = cbtxSchaltera.Checked = cbtx110vSchalter.Checked = cbtx110vBetrieb.Checked = false;
             cbtMolex8981.Checked = cbtSATA.Checked = cbtAT.Checked = cbtATX.Checked = cbtBTX.Checked = cbtATXlarge.Checked = cbtCFX.Checked = false;
             cbtSFX.Checked = cbtTFX.Checked = cbtLFX.Checked = cbt2x2.Checked = cbt2x3.Checked = cbt2x4.Checked = cbtBerg.Checked = false;
@@ -50,7 +50,7 @@ namespace PC_Hardware_Datenbank
         {
             if (File.Exists(@"./Netzteil_Datenbank.csv") == true)//Prüffen ob eine .csv Datei bereits erstellt wurde
             {
-                if (wtxtHersteller.Text != "" && wtxtTyp.Text != "")//Prüfft die Pflichtangaben
+                if (wtxtHersteller.Text != "" && wtxtTyp.Text != "" && wtxtZustand.Text != "")//Prüfft die Pflichtangaben
                 {
                     Datensatz = File.ReadAllText(@"./Netzteil_Datenbank.csv");//Alte Daten einlessen und in Datensatz speichern
 
@@ -78,17 +78,71 @@ namespace PC_Hardware_Datenbank
                     #endregion
 
                     #region Datensatz bilden
-                    Datensatz += LF + wtxtHersteller.Text + ";" + wtxtTyp.Text + ";" + nudLuster.Value + ";" + wtxtFormat.Text + ";";
-                    Datensatz += wtxtLeistung.Text + ";" + nud12V.Value + ";" + nud5V.Value + ";" + StromAusgang + ";" + Netzschalter;
-                    Datensatz += ";" + Schalter110V + ";" + Betrieb110Vmöglich + ";";
-
-                    Datensatz += nudMolex8981.Value + ";" + nudSATA.Value + ";" + nudAT.Value + ";" + nudATX.Value + ";" + nudBTX.Value + ";";
-                    Datensatz += nudATXlarge.Value + ";" + nudCFX.Value + ";" + nudSFX.Value + ";" + nudTFX.Value + ";";
-                    Datensatz += nudLFX.Value + ";" + nud2x2.Value + ";" + nud2x3.Value + ";" + nud2x4.Value + ";" + nudBerg.Value;
+                    Datensatz += LF + 
+                        wtxtHersteller.Text + ";" +
+                        wtxtTyp.Text + ";" +
+                        wtxtZustand.Text + ";" +
+                        nudLuster.Value + ";" +
+                        wtxtFormat.Text + ";" +
+                        wtxtLeistung.Text + ";" +
+                        nud3V.Value + ";" +
+                        nud3W.Value + ";" +
+                        nud5V.Value + ";" +
+                        nud5W.Value + ";" +
+                        nud12V.Value + ";" +
+                        nud12W.Value + ";" +
+                        StromAusgang + ";" +
+                        Netzschalter + ";" +
+                        Schalter110V + ";" +
+                        Betrieb110Vmöglich + ";" +
+                        nudMolex8981.Value + ";" +
+                        nudSATA.Value + ";" +
+                        nudAT.Value + ";" +
+                        nudATX.Value + ";" +
+                        nudBTX.Value + ";" +
+                        nudATXlarge.Value + ";" +
+                        nudCFX.Value + ";" +
+                        nudSFX.Value + ";" +
+                        nudTFX.Value + ";" +
+                        nudLFX.Value + ";" +
+                        nud2x2.Value + ";" +
+                        nud2x3.Value + ";" +
+                        nud2x4.Value + ";" +
+                        nudBerg.Value;
                     #endregion
 
                     #region QR Code
-                    QR = "Hersteller:" + wtxtHersteller.Text + LF + "Typ:" + wtxtTyp.Text + LF + "Anzahl Lüfter:" + nudLuster.Value + LF + "Breite-Tiefe-Höhe:" + wtxtFormat.Text + LF + "Leistung:" + wtxtLeistung.Text + LF + "max Ampere 12V:" + nud12V.Value + LF + "max Ampere 5V:" + nud5V.Value + LF + "Stromausgang:" + StromAusgang + LF + "Netzschalter:" + Netzschalter + LF + "110V Schalter:" + Schalter110V + LF + "110V Betrieb möglich:" + Betrieb110Vmöglich + LF + "Molex-8981:" + nudMolex8981.Value + LF + "SATA:" + nudSATA.Value + LF + "AT:" + nudAT.Value + LF + "ATX:" + nudATX.Value + LF + "BTX:" + nudBTX.Value + LF + "ATX large:" + nudATXlarge.Value + LF + "CFX:" + nudCFX.Value + LF + "SFX:" + nudSFX.Value + LF + "TFX:" + nudTFX.Value + LF + "LFX:" + nudLFX.Value + LF + "2x2-12V:" + nud2x2.Value + LF + "2x3-12V:" + nud2x3.Value + LF + "2x4-12V:" + nud2x4.Value + LF + "BERG:" + nudBerg.Value;
+                    QR = 
+                        "Hersteller: " + wtxtHersteller.Text + LF + 
+                        "Typ: " + wtxtTyp.Text + LF +
+                        "Zustand: " + wtxtZustand.Text + LF +
+                        "Anzahl Lüfter: " + nudLuster.Value + LF + 
+                        "Breite-Tiefe-Höhe: " + wtxtFormat.Text + LF + 
+                        "Leistung: " + wtxtLeistung.Text + LF +
+                        "max Ampere 3V: " + nud3V.Value + LF +
+                        "Leistung 3V: " + nud3W.Value + LF +
+                        "max Ampere 5V: " + nud5V.Value + LF +
+                        "Leistung 5V: " + nud5W.Value + LF +
+                        "max Ampere 12V: " + nud12V.Value + LF +
+                        "Leistung 12V: " + nud12W.Value + LF +
+                        "Stromausgang: " + StromAusgang + LF + 
+                        "Netzschalter: " + Netzschalter + LF + 
+                        "110V Schalter: " + Schalter110V + LF + 
+                        "110V Betrieb möglich: " + Betrieb110Vmöglich + LF + 
+                        "Molex-8981: " + nudMolex8981.Value + LF + 
+                        "SATA: " + nudSATA.Value + LF + 
+                        "AT: " + nudAT.Value + LF + 
+                        "ATX: " + nudATX.Value + LF + 
+                        "BTX: " + nudBTX.Value + LF + 
+                        "ATX large: " + nudATXlarge.Value + LF + 
+                        "CFX: " + nudCFX.Value + LF + 
+                        "SFX: " + nudSFX.Value + LF + 
+                        "TFX: " + nudTFX.Value + LF + 
+                        "LFX: " + nudLFX.Value + LF + 
+                        "2x2-12V: " + nud2x2.Value + LF + 
+                        "2x3-12V: " + nud2x3.Value + LF + 
+                        "2x4-12V: " + nud2x4.Value + LF + 
+                        "BERG: " + nudBerg.Value;
                     #endregion
 
                     File.WriteAllText(@"./Netzteil_Datenbank.csv", Datensatz);//Datensatz in GPU_Datenbank.csv schreiben

@@ -30,16 +30,20 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrontErweiterung_Imput));
             this.cbtExternFireWire = new System.Windows.Forms.CheckBox();
-            this.cbtExternAudio = new System.Windows.Forms.CheckBox();
+            this.cbtExternMikrofon = new System.Windows.Forms.CheckBox();
             this.cbtExternUSB3_1 = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbtExternLineIn = new System.Windows.Forms.CheckBox();
+            this.nudExternLineIn = new System.Windows.Forms.NumericUpDown();
+            this.cbtExternLineOut = new System.Windows.Forms.CheckBox();
+            this.nudExternLineOut = new System.Windows.Forms.NumericUpDown();
             this.cbtExternThunderbolt = new System.Windows.Forms.CheckBox();
             this.nudExternThunderbolt = new System.Windows.Forms.NumericUpDown();
             this.cbtExternUSB3 = new System.Windows.Forms.CheckBox();
             this.cbtExternUSB2 = new System.Windows.Forms.CheckBox();
             this.cbtExternCardreader = new System.Windows.Forms.CheckBox();
             this.nudExternFireWire = new System.Windows.Forms.NumericUpDown();
-            this.nudExternAudio = new System.Windows.Forms.NumericUpDown();
+            this.nudExternMikrofon = new System.Windows.Forms.NumericUpDown();
             this.nudExternUSB3_1 = new System.Windows.Forms.NumericUpDown();
             this.nudExternUSB3 = new System.Windows.Forms.NumericUpDown();
             this.nudExternUSB2 = new System.Windows.Forms.NumericUpDown();
@@ -68,10 +72,14 @@
             this.nudInternUSB3_1 = new System.Windows.Forms.NumericUpDown();
             this.nudInternUSB3 = new System.Windows.Forms.NumericUpDown();
             this.nudInternUSB2 = new System.Windows.Forms.NumericUpDown();
+            this.wtxtZustand = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudExternLineIn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudExternLineOut)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudExternThunderbolt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudExternFireWire)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudExternAudio)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudExternMikrofon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudExternUSB3_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudExternUSB3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudExternUSB2)).BeginInit();
@@ -91,7 +99,7 @@
             // 
             this.cbtExternFireWire.AutoSize = true;
             this.cbtExternFireWire.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbtExternFireWire.Location = new System.Drawing.Point(17, 195);
+            this.cbtExternFireWire.Location = new System.Drawing.Point(17, 260);
             this.cbtExternFireWire.Name = "cbtExternFireWire";
             this.cbtExternFireWire.Size = new System.Drawing.Size(87, 24);
             this.cbtExternFireWire.TabIndex = 31;
@@ -100,24 +108,24 @@
             this.cbtExternFireWire.UseVisualStyleBackColor = true;
             this.cbtExternFireWire.CheckedChanged += new System.EventHandler(this.cbtExternFireWire_CheckedChanged);
             // 
-            // cbtExternAudio
+            // cbtExternMikrofon
             // 
-            this.cbtExternAudio.AutoSize = true;
-            this.cbtExternAudio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbtExternAudio.Location = new System.Drawing.Point(17, 163);
-            this.cbtExternAudio.Name = "cbtExternAudio";
-            this.cbtExternAudio.Size = new System.Drawing.Size(69, 24);
-            this.cbtExternAudio.TabIndex = 30;
-            this.cbtExternAudio.TabStop = false;
-            this.cbtExternAudio.Text = "Audio";
-            this.cbtExternAudio.UseVisualStyleBackColor = true;
-            this.cbtExternAudio.CheckedChanged += new System.EventHandler(this.cbtExternAudio_CheckedChanged);
+            this.cbtExternMikrofon.AutoSize = true;
+            this.cbtExternMikrofon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbtExternMikrofon.Location = new System.Drawing.Point(17, 196);
+            this.cbtExternMikrofon.Name = "cbtExternMikrofon";
+            this.cbtExternMikrofon.Size = new System.Drawing.Size(89, 24);
+            this.cbtExternMikrofon.TabIndex = 30;
+            this.cbtExternMikrofon.TabStop = false;
+            this.cbtExternMikrofon.Text = "Mikrofon";
+            this.cbtExternMikrofon.UseVisualStyleBackColor = true;
+            this.cbtExternMikrofon.CheckedChanged += new System.EventHandler(this.cbtExternAudio_CheckedChanged);
             // 
             // cbtExternUSB3_1
             // 
             this.cbtExternUSB3_1.AutoSize = true;
             this.cbtExternUSB3_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbtExternUSB3_1.Location = new System.Drawing.Point(17, 131);
+            this.cbtExternUSB3_1.Location = new System.Drawing.Point(17, 132);
             this.cbtExternUSB3_1.Name = "cbtExternUSB3_1";
             this.cbtExternUSB3_1.Size = new System.Drawing.Size(84, 24);
             this.cbtExternUSB3_1.TabIndex = 29;
@@ -128,16 +136,20 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbtExternLineIn);
+            this.groupBox1.Controls.Add(this.nudExternLineIn);
+            this.groupBox1.Controls.Add(this.cbtExternLineOut);
+            this.groupBox1.Controls.Add(this.nudExternLineOut);
             this.groupBox1.Controls.Add(this.cbtExternThunderbolt);
             this.groupBox1.Controls.Add(this.nudExternThunderbolt);
             this.groupBox1.Controls.Add(this.cbtExternFireWire);
-            this.groupBox1.Controls.Add(this.cbtExternAudio);
+            this.groupBox1.Controls.Add(this.cbtExternMikrofon);
             this.groupBox1.Controls.Add(this.cbtExternUSB3_1);
             this.groupBox1.Controls.Add(this.cbtExternUSB3);
             this.groupBox1.Controls.Add(this.cbtExternUSB2);
             this.groupBox1.Controls.Add(this.cbtExternCardreader);
             this.groupBox1.Controls.Add(this.nudExternFireWire);
-            this.groupBox1.Controls.Add(this.nudExternAudio);
+            this.groupBox1.Controls.Add(this.nudExternMikrofon);
             this.groupBox1.Controls.Add(this.nudExternUSB3_1);
             this.groupBox1.Controls.Add(this.nudExternUSB3);
             this.groupBox1.Controls.Add(this.nudExternUSB2);
@@ -145,16 +157,60 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(34, 123);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(213, 273);
-            this.groupBox1.TabIndex = 2;
+            this.groupBox1.Size = new System.Drawing.Size(256, 341);
+            this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Externe Schnittstellen";
+            // 
+            // cbtExternLineIn
+            // 
+            this.cbtExternLineIn.AutoSize = true;
+            this.cbtExternLineIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbtExternLineIn.Location = new System.Drawing.Point(17, 228);
+            this.cbtExternLineIn.Name = "cbtExternLineIn";
+            this.cbtExternLineIn.Size = new System.Drawing.Size(77, 24);
+            this.cbtExternLineIn.TabIndex = 82;
+            this.cbtExternLineIn.TabStop = false;
+            this.cbtExternLineIn.Text = "Line-In";
+            this.cbtExternLineIn.UseVisualStyleBackColor = true;
+            this.cbtExternLineIn.CheckedChanged += new System.EventHandler(this.cbtExternLineIn_CheckedChanged);
+            // 
+            // nudExternLineIn
+            // 
+            this.nudExternLineIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudExternLineIn.Location = new System.Drawing.Point(154, 227);
+            this.nudExternLineIn.Name = "nudExternLineIn";
+            this.nudExternLineIn.Size = new System.Drawing.Size(57, 26);
+            this.nudExternLineIn.TabIndex = 81;
+            this.nudExternLineIn.ValueChanged += new System.EventHandler(this.nudExternLineIn_ValueChanged);
+            // 
+            // cbtExternLineOut
+            // 
+            this.cbtExternLineOut.AutoSize = true;
+            this.cbtExternLineOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbtExternLineOut.Location = new System.Drawing.Point(17, 164);
+            this.cbtExternLineOut.Name = "cbtExternLineOut";
+            this.cbtExternLineOut.Size = new System.Drawing.Size(89, 24);
+            this.cbtExternLineOut.TabIndex = 80;
+            this.cbtExternLineOut.TabStop = false;
+            this.cbtExternLineOut.Text = "Line-Out";
+            this.cbtExternLineOut.UseVisualStyleBackColor = true;
+            this.cbtExternLineOut.CheckedChanged += new System.EventHandler(this.cbtExternLineOut_CheckedChanged);
+            // 
+            // nudExternLineOut
+            // 
+            this.nudExternLineOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudExternLineOut.Location = new System.Drawing.Point(154, 163);
+            this.nudExternLineOut.Name = "nudExternLineOut";
+            this.nudExternLineOut.Size = new System.Drawing.Size(57, 26);
+            this.nudExternLineOut.TabIndex = 79;
+            this.nudExternLineOut.ValueChanged += new System.EventHandler(this.nudExternLineOut_ValueChanged);
             // 
             // cbtExternThunderbolt
             // 
             this.cbtExternThunderbolt.AutoSize = true;
             this.cbtExternThunderbolt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbtExternThunderbolt.Location = new System.Drawing.Point(17, 227);
+            this.cbtExternThunderbolt.Location = new System.Drawing.Point(17, 292);
             this.cbtExternThunderbolt.Name = "cbtExternThunderbolt";
             this.cbtExternThunderbolt.Size = new System.Drawing.Size(113, 24);
             this.cbtExternThunderbolt.TabIndex = 78;
@@ -166,7 +222,7 @@
             // nudExternThunderbolt
             // 
             this.nudExternThunderbolt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudExternThunderbolt.Location = new System.Drawing.Point(130, 226);
+            this.nudExternThunderbolt.Location = new System.Drawing.Point(154, 291);
             this.nudExternThunderbolt.Name = "nudExternThunderbolt";
             this.nudExternThunderbolt.Size = new System.Drawing.Size(57, 26);
             this.nudExternThunderbolt.TabIndex = 6;
@@ -176,7 +232,7 @@
             // 
             this.cbtExternUSB3.AutoSize = true;
             this.cbtExternUSB3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbtExternUSB3.Location = new System.Drawing.Point(17, 99);
+            this.cbtExternUSB3.Location = new System.Drawing.Point(17, 100);
             this.cbtExternUSB3.Name = "cbtExternUSB3";
             this.cbtExternUSB3.Size = new System.Drawing.Size(84, 24);
             this.cbtExternUSB3.TabIndex = 26;
@@ -189,7 +245,7 @@
             // 
             this.cbtExternUSB2.AutoSize = true;
             this.cbtExternUSB2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbtExternUSB2.Location = new System.Drawing.Point(17, 67);
+            this.cbtExternUSB2.Location = new System.Drawing.Point(17, 68);
             this.cbtExternUSB2.Name = "cbtExternUSB2";
             this.cbtExternUSB2.Size = new System.Drawing.Size(84, 24);
             this.cbtExternUSB2.TabIndex = 25;
@@ -202,7 +258,7 @@
             // 
             this.cbtExternCardreader.AutoSize = true;
             this.cbtExternCardreader.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbtExternCardreader.Location = new System.Drawing.Point(17, 35);
+            this.cbtExternCardreader.Location = new System.Drawing.Point(17, 36);
             this.cbtExternCardreader.Name = "cbtExternCardreader";
             this.cbtExternCardreader.Size = new System.Drawing.Size(108, 24);
             this.cbtExternCardreader.TabIndex = 66;
@@ -214,25 +270,25 @@
             // nudExternFireWire
             // 
             this.nudExternFireWire.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudExternFireWire.Location = new System.Drawing.Point(130, 194);
+            this.nudExternFireWire.Location = new System.Drawing.Point(154, 259);
             this.nudExternFireWire.Name = "nudExternFireWire";
             this.nudExternFireWire.Size = new System.Drawing.Size(57, 26);
             this.nudExternFireWire.TabIndex = 5;
             this.nudExternFireWire.ValueChanged += new System.EventHandler(this.nudExternFireWire_ValueChanged);
             // 
-            // nudExternAudio
+            // nudExternMikrofon
             // 
-            this.nudExternAudio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudExternAudio.Location = new System.Drawing.Point(130, 162);
-            this.nudExternAudio.Name = "nudExternAudio";
-            this.nudExternAudio.Size = new System.Drawing.Size(57, 26);
-            this.nudExternAudio.TabIndex = 4;
-            this.nudExternAudio.ValueChanged += new System.EventHandler(this.nudExternAudio_ValueChanged);
+            this.nudExternMikrofon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudExternMikrofon.Location = new System.Drawing.Point(154, 195);
+            this.nudExternMikrofon.Name = "nudExternMikrofon";
+            this.nudExternMikrofon.Size = new System.Drawing.Size(57, 26);
+            this.nudExternMikrofon.TabIndex = 4;
+            this.nudExternMikrofon.ValueChanged += new System.EventHandler(this.nudExternAudio_ValueChanged);
             // 
             // nudExternUSB3_1
             // 
             this.nudExternUSB3_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudExternUSB3_1.Location = new System.Drawing.Point(130, 130);
+            this.nudExternUSB3_1.Location = new System.Drawing.Point(154, 131);
             this.nudExternUSB3_1.Name = "nudExternUSB3_1";
             this.nudExternUSB3_1.Size = new System.Drawing.Size(57, 26);
             this.nudExternUSB3_1.TabIndex = 3;
@@ -241,7 +297,7 @@
             // nudExternUSB3
             // 
             this.nudExternUSB3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudExternUSB3.Location = new System.Drawing.Point(130, 98);
+            this.nudExternUSB3.Location = new System.Drawing.Point(154, 99);
             this.nudExternUSB3.Name = "nudExternUSB3";
             this.nudExternUSB3.Size = new System.Drawing.Size(57, 26);
             this.nudExternUSB3.TabIndex = 2;
@@ -250,7 +306,7 @@
             // nudExternUSB2
             // 
             this.nudExternUSB2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudExternUSB2.Location = new System.Drawing.Point(130, 66);
+            this.nudExternUSB2.Location = new System.Drawing.Point(154, 67);
             this.nudExternUSB2.Name = "nudExternUSB2";
             this.nudExternUSB2.Size = new System.Drawing.Size(57, 26);
             this.nudExternUSB2.TabIndex = 1;
@@ -259,7 +315,7 @@
             // nudExternCardreader
             // 
             this.nudExternCardreader.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudExternCardreader.Location = new System.Drawing.Point(130, 34);
+            this.nudExternCardreader.Location = new System.Drawing.Point(154, 35);
             this.nudExternCardreader.Name = "nudExternCardreader";
             this.nudExternCardreader.Size = new System.Drawing.Size(57, 26);
             this.nudExternCardreader.TabIndex = 0;
@@ -268,10 +324,10 @@
             // wtxtModell
             // 
             this.wtxtModell.FormattingEnabled = true;
-            this.wtxtModell.Location = new System.Drawing.Point(287, 61);
+            this.wtxtModell.Location = new System.Drawing.Point(393, 61);
             this.wtxtModell.Name = "wtxtModell";
             this.wtxtModell.Size = new System.Drawing.Size(146, 28);
-            this.wtxtModell.TabIndex = 1;
+            this.wtxtModell.TabIndex = 2;
             // 
             // pictureBox1
             // 
@@ -290,9 +346,10 @@
             this.cmdQR.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdQR.Name = "cmdQR";
             this.cmdQR.Size = new System.Drawing.Size(171, 35);
-            this.cmdQR.TabIndex = 7;
+            this.cmdQR.TabIndex = 8;
             this.cmdQR.Text = "QR-Code Drucken";
             this.cmdQR.UseVisualStyleBackColor = false;
+            this.cmdQR.Click += new System.EventHandler(this.cmdQR_Click);
             // 
             // cmdBildEinfugen
             // 
@@ -302,7 +359,7 @@
             this.cmdBildEinfugen.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdBildEinfugen.Name = "cmdBildEinfugen";
             this.cmdBildEinfugen.Size = new System.Drawing.Size(150, 35);
-            this.cmdBildEinfugen.TabIndex = 4;
+            this.cmdBildEinfugen.TabIndex = 5;
             this.cmdBildEinfugen.Text = "Bild einfügen";
             this.cmdBildEinfugen.UseVisualStyleBackColor = false;
             // 
@@ -314,7 +371,7 @@
             this.cmdClear.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdClear.Name = "cmdClear";
             this.cmdClear.Size = new System.Drawing.Size(150, 35);
-            this.cmdClear.TabIndex = 6;
+            this.cmdClear.TabIndex = 7;
             this.cmdClear.Text = "Zurücksetzen";
             this.cmdClear.UseVisualStyleBackColor = false;
             this.cmdClear.Click += new System.EventHandler(this.cmdClear_Click);
@@ -327,7 +384,7 @@
             this.cmdSpeichern.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdSpeichern.Name = "cmdSpeichern";
             this.cmdSpeichern.Size = new System.Drawing.Size(150, 35);
-            this.cmdSpeichern.TabIndex = 5;
+            this.cmdSpeichern.TabIndex = 6;
             this.cmdSpeichern.Text = "Speichern";
             this.cmdSpeichern.UseVisualStyleBackColor = false;
             this.cmdSpeichern.Click += new System.EventHandler(this.cmdSpeichern_Click);
@@ -340,7 +397,7 @@
             this.cmdBeenden.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdBeenden.Name = "cmdBeenden";
             this.cmdBeenden.Size = new System.Drawing.Size(150, 35);
-            this.cmdBeenden.TabIndex = 8;
+            this.cmdBeenden.TabIndex = 9;
             this.cmdBeenden.Text = "Schließen";
             this.cmdBeenden.UseVisualStyleBackColor = false;
             this.cmdBeenden.Click += new System.EventHandler(this.cmdBeenden_Click);
@@ -360,7 +417,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(283, 38);
+            this.label5.Location = new System.Drawing.Point(389, 38);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(59, 20);
             this.label5.TabIndex = 132;
@@ -369,16 +426,16 @@
             // wtxtKartenhersteller
             // 
             this.wtxtKartenhersteller.FormattingEnabled = true;
-            this.wtxtKartenhersteller.Location = new System.Drawing.Point(34, 61);
+            this.wtxtKartenhersteller.Location = new System.Drawing.Point(213, 61);
             this.wtxtKartenhersteller.Name = "wtxtKartenhersteller";
             this.wtxtKartenhersteller.Size = new System.Drawing.Size(146, 28);
-            this.wtxtKartenhersteller.TabIndex = 0;
+            this.wtxtKartenhersteller.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(30, 38);
+            this.label1.Location = new System.Drawing.Point(209, 38);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(81, 20);
             this.label1.TabIndex = 129;
@@ -399,10 +456,10 @@
             this.groupBox2.Controls.Add(this.nudInternUSB3);
             this.groupBox2.Controls.Add(this.nudInternUSB2);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(287, 123);
+            this.groupBox2.Location = new System.Drawing.Point(329, 123);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(213, 273);
-            this.groupBox2.TabIndex = 3;
+            this.groupBox2.Size = new System.Drawing.Size(213, 341);
+            this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Interne-Schnittstelle";
             // 
@@ -538,11 +595,34 @@
             this.nudInternUSB2.TabIndex = 0;
             this.nudInternUSB2.ValueChanged += new System.EventHandler(this.nudInternUSB2_ValueChanged);
             // 
+            // wtxtZustand
+            // 
+            this.wtxtZustand.FormattingEnabled = true;
+            this.wtxtZustand.Items.AddRange(new object[] {
+            "verbaut",
+            "auf Lager"});
+            this.wtxtZustand.Location = new System.Drawing.Point(34, 61);
+            this.wtxtZustand.Name = "wtxtZustand";
+            this.wtxtZustand.Size = new System.Drawing.Size(146, 28);
+            this.wtxtZustand.TabIndex = 0;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.Red;
+            this.label4.Location = new System.Drawing.Point(30, 38);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(72, 20);
+            this.label4.TabIndex = 136;
+            this.label4.Text = "Zustand:";
+            // 
             // FrontErweiterung_Imput
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1126, 620);
+            this.Controls.Add(this.wtxtZustand);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.wtxtModell);
@@ -563,9 +643,11 @@
             this.Text = "FrontErweiterung_Imput";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudExternLineIn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudExternLineOut)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudExternThunderbolt)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudExternFireWire)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudExternAudio)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudExternMikrofon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudExternUSB3_1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudExternUSB3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudExternUSB2)).EndInit();
@@ -588,7 +670,7 @@
         #endregion
 
         private System.Windows.Forms.CheckBox cbtExternFireWire;
-        private System.Windows.Forms.CheckBox cbtExternAudio;
+        private System.Windows.Forms.CheckBox cbtExternMikrofon;
         private System.Windows.Forms.CheckBox cbtExternUSB3_1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.CheckBox cbtExternThunderbolt;
@@ -597,7 +679,6 @@
         private System.Windows.Forms.CheckBox cbtExternUSB2;
         private System.Windows.Forms.CheckBox cbtExternCardreader;
         private System.Windows.Forms.NumericUpDown nudExternFireWire;
-        private System.Windows.Forms.NumericUpDown nudExternAudio;
         private System.Windows.Forms.NumericUpDown nudExternUSB3_1;
         private System.Windows.Forms.NumericUpDown nudExternUSB3;
         private System.Windows.Forms.NumericUpDown nudExternUSB2;
@@ -626,5 +707,12 @@
         private System.Windows.Forms.NumericUpDown nudInternUSB3_1;
         private System.Windows.Forms.NumericUpDown nudInternUSB3;
         private System.Windows.Forms.NumericUpDown nudInternUSB2;
+        private System.Windows.Forms.ComboBox wtxtZustand;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.CheckBox cbtExternLineIn;
+        private System.Windows.Forms.NumericUpDown nudExternLineIn;
+        private System.Windows.Forms.CheckBox cbtExternLineOut;
+        private System.Windows.Forms.NumericUpDown nudExternLineOut;
+        private System.Windows.Forms.NumericUpDown nudExternMikrofon;
     }
 }

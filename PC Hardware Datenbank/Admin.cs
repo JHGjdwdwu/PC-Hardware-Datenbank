@@ -86,8 +86,22 @@ namespace PC_Hardware_Datenbank
             {
                 faUSV.BackColor = Color.Green;
             }
-
-
+            if (File.Exists(@"./Kabel_Datenbank.csv") == true)
+            {
+                faKabel.BackColor = Color.Green;
+            }
+            if (File.Exists(@"./Adapter_Datenbank.csv") == true)
+            {
+                faAdapter.BackColor = Color.Green;
+            }
+            if (File.Exists(@"./I_O_Datenbank.csv") == true)
+            {
+                faI_O.BackColor = Color.Green;
+            }
+            if (File.Exists(@"./Sonstiges_Datenbank.csv") == true)
+            {
+                faSonstiges.BackColor = Color.Green;
+            }
             #endregion
         }
 
@@ -113,7 +127,7 @@ namespace PC_Hardware_Datenbank
         {
             if (File.Exists(@"./Mainbord_Datenbank.csv") == false)
             {
-                File.WriteAllText(@"./Mainbord_Datenbank.csv", "Hersteller;Typ;Sockel;RAM;Bauform;Sonstiges;AGP;PCI;PCIe x1;PCIe x4;PCIe x8;PCIe x16;PCIe x64;IDE;SATA;ISA;PS2;USB2;USB3;RJ45;Klinke;VGA;DVI;HDMI;DisplayPort;MidiPort;FireWire;Thunderbolt;RS232;Bluetooth;WLan;LPT1;eSATA;Infrarot");
+                File.WriteAllText(@"./Mainbord_Datenbank.csv", "Hersteller;Typ;Zustand;Sockel;RAM;Bauform;Sonstiges;AGP;PCI;PCIe x1;PCIe x4;PCIe x8;PCIe x16;PCIe x64;IDE;SATA;ISA;PS2;USB2;USB3;RJ45;Klinke;VGA;DVI;HDMI;DisplayPort;MidiPort;FireWire;Thunderbolt;RS232;Bluetooth;WLan;LPT1;eSATA;Infrarot");
                 faMainbord.BackColor = Color.Green;
             }
             else
@@ -126,7 +140,7 @@ namespace PC_Hardware_Datenbank
         {
             if (File.Exists(@"./CPU_Datenbank.csv") == false)
             {
-                File.WriteAllText(@"./CPU_Datenbank.csv", "Hersteller;Typ;Sockel;Taktrate;Anzahl-Kerne;Level1-Cache;Level2-Cache;Level3-Cache;Level4-Cache");
+                File.WriteAllText(@"./CPU_Datenbank.csv", "Hersteller;Typ;Zustand;Sockel;Taktrate;Anzahl-Kerne;Level1-Cache;Level2-Cache;Level3-Cache;Level4-Cache");
                 faCPU.BackColor = Color.Green;
             }
             else
@@ -139,7 +153,7 @@ namespace PC_Hardware_Datenbank
         {
             if (File.Exists(@"./RAM_Datenbank.csv") == false)
             {
-                File.WriteAllText(@"./RAM_Datenbank.csv", "Slot;Größe;Hersteller;Typ;Taktrate;Latenz;SO-DIMM;ECC;Registered;Unbuffered");
+                File.WriteAllText(@"./RAM_Datenbank.csv", "Slot;Größe;Zustand;Hersteller;Typ;Taktrate;Latenz;Chiphersteller;SO-DIMM;ECC;Registered;Unbuffered");
                 faRAM.BackColor = Color.Green;
             }
             else
@@ -152,7 +166,7 @@ namespace PC_Hardware_Datenbank
         {
             if (File.Exists(@"./GPU_Datenbank.csv") == false)
             {
-                File.WriteAllText(@"./GPU_Datenbank.csv", "Kartenhersteller;Modell;Speichergröße;Speichertyp;Kühlertyp;Stromversorgung;Anschlussart;Stromverbrauch;Taktrate;Multi-Grafikkarten-Betrieb;VGA;DVI;HDMI;Displaport;S-Video;Cinch");
+                File.WriteAllText(@"./GPU_Datenbank.csv", "Kartenhersteller;Modell;Zustand;Speichergröße;Speichertyp;Kühlertyp;Stromversorgung;Anschlussart;Stromverbrauch;Taktrate;Multi-Grafikkarten-Betrieb;VGA;DVI;HDMI;Displaport;S-Video;Cinch");
                 faGPU.BackColor = Color.Green;
             }
             else
@@ -165,7 +179,7 @@ namespace PC_Hardware_Datenbank
         {
             if (File.Exists(@"./HDD_Datenbank.csv") == false)
             {
-                File.WriteAllText(@"./HDD_Datenbank.csv", "Hersteller;Typ;Speichergröße;Anschlüsse;Stromverbrauch;Stromversorgung;Baugröße;SSD;SSHD");
+                File.WriteAllText(@"./HDD_Datenbank.csv", "Hersteller;Typ;Zustand;Speichergröße;Anschlüsse;Stromverbrauch;Stromversorgung;Baugröße;SSD;SSHD");
                 faHDD.BackColor = Color.Green;
             }
             else
@@ -178,7 +192,7 @@ namespace PC_Hardware_Datenbank
         {
             if (File.Exists(@"./Netzteil_Datenbank.csv") == false)
             {
-                File.WriteAllText(@"./Netzteil_Datenbank.csv", "Hersteller;Typ;Anzahl-Lüfter;Breite-Tiefe-Höhe;Leistung;max-Ampere-12V;max-Ampere-5V;Stromausgang;Netzschalter;110V-Schalter;110V-Betrieb-möglich;Molex-8981;SATA;AT;ATX;BTX;ATX-large;CFX;SFX;TFX;LFX;2x2-12V;2x3-12V;2x4-12V;BERG");
+                File.WriteAllText(@"./Netzteil_Datenbank.csv", "Hersteller;Typ;Zustand;Anzahl-Lüfter;Breite-Tiefe-Höhe;Leistung;max-Ampere-3V;Leistung 3V;max-Ampere-5V;Leistung 5V;max-Ampere-12V;Leistung 12V;Stromausgang;Netzschalter;110V-Schalter;110V-Betrieb-möglich;Molex-8981;SATA;AT;ATX;BTX;ATX-large;CFX;SFX;TFX;LFX;2x2-12V;2x3-12V;2x4-12V;BERG");
                 faNetzteil.BackColor = Color.Green;
             }
             else
@@ -191,7 +205,7 @@ namespace PC_Hardware_Datenbank
         {
             if (File.Exists(@"./Gehause_Datenbank.csv") == false)
             {
-                File.WriteAllText(@"./Gehause_Datenbank.csv", "Breite-Höhe-Tiefe;Hersteller;Typ;Netzteil-Position;Einschub-5,25-Zoll;Einschub-3,5-Zoll;Einschub-3,5-HDD;Einschub-2,5-HDD;Front-USB;Front-Klinke;Formfaktor;Kabelsystem;Beleuchtung;Plexiglas-Fenster");
+                File.WriteAllText(@"./Gehause_Datenbank.csv", "Breite-Höhe-Tiefe;Hersteller;Zustand;Typ;Netzteil-Position;Einschub-5,25-Zoll;Einschub-3,5-Zoll;Einschub-3,5-HDD;Einschub-2,5-HDD;Front-USB;Front-Klinke;Formfaktor;Kabelsystem;Beleuchtung;Plexiglas-Fenster");
                 faGehause.BackColor = Color.Green;
             }
             else
@@ -204,7 +218,7 @@ namespace PC_Hardware_Datenbank
         {
             if (File.Exists(@"./Soundkarte_Datenbank.csv") == false)
             {
-                File.WriteAllText(@"./Soundkarte_Datenbank.csv", "Ausgabestandard;Anschlussschnittstelle;Bit-Aufloesung;Hersteller;ADAT;AES/EBU;Chinchbuchse;Klinkenbuchse;MADI;S/PDIF;TDIF;Breakout Box;DSP;Gameport;MIDI;Mikrofoneingang;Wavetable");
+                File.WriteAllText(@"./Soundkarte_Datenbank.csv", "Ausgabestandard;Anschlussschnittstelle;Zustand;Bit-Aufloesung;Hersteller;ADAT;AES/EBU;Chinchbuchse;Klinkenbuchse;MADI;S/PDIF;TDIF;Breakout Box;DSP;Gameport;MIDI;Mikrofoneingang;Wavetable");
                 faSoundkarte.BackColor = Color.Green;
             }
             else
@@ -217,7 +231,7 @@ namespace PC_Hardware_Datenbank
         {
             if (File.Exists(@"./Netzwerkkarte_Datenbank.csv") == false)
             {
-                File.WriteAllText(@"./Netzwerkkarte_Datenbank.csv", "Hersteller;Schnittstelle;Geschwindigkeit;Typ;RJ-45;Coax;LWL;WLAN");
+                File.WriteAllText(@"./Netzwerkkarte_Datenbank.csv", "Hersteller;Schnittstelle;Zustand;Geschwindigkeit;Typ;RJ-45;Coax;LWL;WLAN");
                 faNetzwerkkarte.BackColor = Color.Green;
             }
             else
@@ -230,7 +244,7 @@ namespace PC_Hardware_Datenbank
         {
             if (File.Exists(@"./Schnittstellenkarte_Datenbank.csv") == false)
             {
-                File.WriteAllText(@"./Schnittstellenkarte_Datenbank.csv", "Hersteller;Modell;Anschlussart;Bemerkungen");
+                File.WriteAllText(@"./Schnittstellenkarte_Datenbank.csv", "Hersteller;Modell;Zustand;Anschlussart;Bemerkungen");
                 faSchnittstellenkarte.BackColor = Color.Green;
             }
             else
@@ -243,7 +257,7 @@ namespace PC_Hardware_Datenbank
         {
             if (File.Exists(@"./TVKarte_Datenbank.csv") == false)
             {
-                File.WriteAllText(@"./TVKarte_Datenbank.csv", "Hersteller;Modell;Anschlussart;Analog;DVB-C;DVB-T;DVB-S;Klinge;ODT;HDMI;Scart;S-Video;Cinch");
+                File.WriteAllText(@"./TVKarte_Datenbank.csv", "Hersteller;Modell;Zustand;Anschlussart;Analog;DVB-C;DVB-T;DVB-S;Klinge;ODT;HDMI;Scart;S-Video;Cinch");
                 faTVKarte.BackColor = Color.Green;
             }
             else
@@ -256,7 +270,7 @@ namespace PC_Hardware_Datenbank
         {
             if (File.Exists(@"./Raiserkarte_Datenbank.csv") == false)
             {
-                File.WriteAllText(@"./Raiserkarte_Datenbank.csv", "Steckverbindung;Steckverbindung Anzahl;Schnittstelle;Anzahl;Ausrichtung");
+                File.WriteAllText(@"./Raiserkarte_Datenbank.csv", "Steckverbindung;Steckverbindung Anzahl;Schnittstelle;Schnittstelle Anzahl;Ausrichtung;Zustand");
                 faRaiserkarte.BackColor = Color.Green;
             }
             else
@@ -269,7 +283,7 @@ namespace PC_Hardware_Datenbank
         {
             if (File.Exists(@"./Laufwerke_Datenbank.csv") == false)
             {
-                File.WriteAllText(@"./Laufwerke_Datenbank.csv", "Hersteller;Schnittstelle;Typ;Bauart;Brenner");
+                File.WriteAllText(@"./Laufwerke_Datenbank.csv", "Hersteller;Schnittstelle;Typ;Bauart;Zustand;Brenner");
                 faLaufwerk.BackColor = Color.Green;
             }
             else
@@ -282,7 +296,7 @@ namespace PC_Hardware_Datenbank
         {
             if (File.Exists(@"./FrontErweiterung_Datenbank.csv") == false)
             {
-                File.WriteAllText(@"./FrontErweiterung_Datenbank.csv", "Hersteller;Modell;Cardreader;USB2.0-extern;USB3.0-extern;USB3.1-extern;Audio-extern;FireWire-extern;Thunderbolt-extern;USB2.0;USB3.0;USB3.1;Audio;Firewire;Thunderbolt");
+                File.WriteAllText(@"./FrontErweiterung_Datenbank.csv", "Zustand;Hersteller;Modell;Cardreader;USB2.0-extern;USB3.0-extern;USB3.1-extern;Line-Out-extern;Mikrofon-extern;Line-In-extern;FireWire-extern;Thunderbolt-extern;USB2.0;USB3.0;USB3.1;Audio;Firewire;Thunderbolt");
                 faFrontErweiterung.BackColor = Color.Green;
             }
             else
@@ -295,7 +309,7 @@ namespace PC_Hardware_Datenbank
         {
             if (File.Exists(@"./Lufter_Datenbank.csv") == false)
             {
-                File.WriteAllText(@"./Lufter_Datenbank.csv", "Hersteller;Modell;Maximaldrehzahl;Pinheader;Durchmesser;Dicke;Art;Spannung;Strom");
+                File.WriteAllText(@"./Lufter_Datenbank.csv", "Zustand;Dicke;Durchmesser;Spannung (V);Art;Modell;Hersteller;Pinheader;Maximaldrehzahl;Strom (A)");
                 faLufter.BackColor = Color.Green;
             }
             else
@@ -308,7 +322,7 @@ namespace PC_Hardware_Datenbank
         {
             if (File.Exists(@"./Monitor_Datenbank.csv") == false)
             {
-                File.WriteAllText(@"./Monitor_Datenbank.csv", "Hersteller;Modell;Technik;Max Aufloesung;Lautsprecher; Hoehenverstellbar;VESA Halterung;VGA;DVI;HDMI;Displayport;RGB;Audio;USB;Audio-Ausgang;USB-Ausgang");
+                File.WriteAllText(@"./Monitor_Datenbank.csv", "Hersteller;Modell;Zustand;Technik;Max Aufloesung;Lautsprecher; Hoehenverstellbar;VESA Halterung;VGA;DVI;HDMI;Displayport;RGB;Audio;USB;Audio-Ausgang;USB-Ausgang");
                 faMonitor.BackColor = Color.Green;
             }
             else
@@ -321,7 +335,7 @@ namespace PC_Hardware_Datenbank
         {
             if (File.Exists(@"./USV_Datenbank.csv") == false)
             {
-                File.WriteAllText(@"./USV_Datenbank.csv", "Hersteller;Modell;Watt;Volt-Ampere;Arbeitsweise;Akkutyp;Akkuanzahl;USB-Anschluesse;COM");
+                File.WriteAllText(@"./USV_Datenbank.csv", "Hersteller;Modell;Zustand;Watt;Volt-Ampere;Arbeitsweise;Akkutyp;Akkuanzahl;USB-Anschluesse;COM");
                 faUSV.BackColor = Color.Green;
             }
             else
@@ -334,7 +348,7 @@ namespace PC_Hardware_Datenbank
         {
             if (File.Exists(@"./Kabel_Datenbank.csv") == false)
             {
-                File.WriteAllText(@"./Kabel_Datenbank.csv", "Kabelende;Länge;Kabelende;Schaltbar");
+                File.WriteAllText(@"./Kabel_Datenbank.csv", "Zustand;Kabelende;Länge;Kabelende;Schaltbar");
                 faKabel.BackColor = Color.Green;
             }
             else
@@ -347,7 +361,7 @@ namespace PC_Hardware_Datenbank
         {
             if (File.Exists(@"./Adapter_Datenbank.csv") == false)
             {
-                File.WriteAllText(@"./Adapter_Datenbank.csv", "Von;Auf");
+                File.WriteAllText(@"./Adapter_Datenbank.csv", "Zustand;Von;Auf");
                 faAdapter.BackColor = Color.Green;
             }
             else

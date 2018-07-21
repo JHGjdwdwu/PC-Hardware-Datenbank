@@ -31,7 +31,7 @@ namespace PC_Hardware_Datenbank
 
         private void LoschenFunktin()//Löschen Funktion
         {
-            wtxtSlot.Text = wtxtGrosse.Text = wtxtHersteller.Text = txtTyp.Text = wtxtTacktrate.Text = null;
+            wtxtSlot.Text = wtxtGrosse.Text = wtxtHersteller.Text = txtTyp.Text = wtxtTacktrate.Text = wtxtChiphersteller.Text = wtxtZustand.Text = null;
             cbtSO_DIMM.Checked = cbtECC.Checked = cbtRegistered.Checked = cbtUnbuffered.Checked = false;
         }
 
@@ -44,7 +44,7 @@ namespace PC_Hardware_Datenbank
         {
             if (File.Exists(@"./RAM_Datenbank.csv") == true)//Prüffen ob eine .csv Datei bereits erstellt wurde
             {
-                if (wtxtSlot.Text != "" && wtxtGrosse.Text != "")//Prüfft die Pflichtangaben
+                if (wtxtSlot.Text != "" && wtxtGrosse.Text != "" && wtxtZustand.Text != "")//Prüfft die Pflichtangaben
                 {
                     Datensatz = File.ReadAllText(@"./RAM_Datenbank.csv");//Datenbanck einlessen und in Datensatz schreiben
 
@@ -75,11 +75,35 @@ namespace PC_Hardware_Datenbank
                     #endregion
 
                     #region Datensatz bilden
-                    Datensatz += LF + wtxtSlot.Text + ";" + wtxtGrosse.Text + ";" + wtxtHersteller.Text + ";" + txtTyp.Text + ";" + wtxtTacktrate.Text + ";" + txtLatenz.Text + ";" + SO_DIMM + ";" + ECC + ";" + Registered + ";" + Unbuffered;
+                    Datensatz += LF +
+                        wtxtSlot.Text + ";" +
+                        wtxtGrosse.Text + ";" +
+                        wtxtZustand.Text + ";" +
+                        wtxtHersteller.Text + ";" +
+                        txtTyp.Text + ";" +
+                        wtxtTacktrate.Text + ";" +
+                        txtLatenz.Text + ";" +
+                        wtxtChiphersteller.Text + ";" +
+                        SO_DIMM + ";" +
+                        ECC + ";" +
+                        Registered + ";" +
+                        Unbuffered;
                     #endregion
 
                     #region QR Code
-                    QR = "Slot" + wtxtSlot.Text + LF + "Größe" + wtxtGrosse.Text + LF + "Hersteller" + wtxtHersteller.Text + LF + "Typ" + txtTyp.Text + LF + "Taktrate" + wtxtTacktrate.Text + LF + "Latenz" + txtLatenz.Text + LF + "SO-DIMM" + SO_DIMM + LF + "ECC" + ECC + LF + "Registered" + Registered + LF + "Unbuffered" + Unbuffered;
+                    QR =
+                        "Slot: " + wtxtSlot.Text + LF +
+                        "Größe: " + wtxtGrosse.Text + LF +
+                        "Zustand: " + wtxtZustand.Text + LF +
+                        "Hersteller: " + wtxtHersteller.Text + LF +
+                        "Typ: " + txtTyp.Text + LF +
+                        "Taktrate: " + wtxtTacktrate.Text + LF +
+                        "Latenz: " + txtLatenz.Text + LF +
+                        "Chiphersteller: " + wtxtChiphersteller.Text + LF +
+                        "SO-DIMM: " + SO_DIMM + LF +
+                        "ECC: " + ECC + LF +
+                        "Registered: " + Registered + LF +
+                        "Unbuffered: " + Unbuffered;
                     #endregion
                     File.WriteAllText(@"./RAM_Datenbank.csv", Datensatz);//Datensatz in RAM_Datenbank.csv schreiben
                     MessageBox.Show("Datensatz geschrieben!");//Bestätigung das der Datensatz geschrieben wurd

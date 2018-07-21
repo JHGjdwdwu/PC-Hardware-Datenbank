@@ -32,7 +32,7 @@ namespace PC_Hardware_Datenbank
 
         private void LoschenFunktion()//Lösch Funktion
         {
-            wtxtHersteller.Text = wtxtSchnittstelle.Text = wtxtTyp.Text = wtxtBauart.Text = null;
+            wtxtHersteller.Text = wtxtSchnittstelle.Text = wtxtTyp.Text = wtxtBauart.Text = wtxtZustand.Text = null;
             cbtBrenner.Checked = false;
             wtxtHersteller.Focus();
         }
@@ -46,11 +46,11 @@ namespace PC_Hardware_Datenbank
         {
             if (File.Exists(@"./Laufwerke_Datenbank.csv") == true)//Prüffen ob eine .csv Datei bereits erstellt wurde
             {
-                if (wtxtHersteller.Text != "" && wtxtSchnittstelle.Text != "" && wtxtTyp.Text != "" && wtxtBauart.Text != "")//Prüfft die Pflichtangaben
+                if (wtxtHersteller.Text != "" && wtxtSchnittstelle.Text != "" && wtxtTyp.Text != "" && wtxtBauart.Text != "" && wtxtZustand.Text != "")//Prüfft die Pflichtangaben
                 {
                     Datensatz = File.ReadAllText(@"./Laufwerke_Datenbank.csv");//Datenbanck lessen und in Datensatz speichern
 
-                    #region
+                    #region CheckBoxen
                     string Brenner = "NEIN";
                     if (cbtBrenner.Checked == true)
                     {
@@ -59,11 +59,23 @@ namespace PC_Hardware_Datenbank
                     #endregion
 
                     #region Datensatz erstellen
-                    Datensatz += LF + wtxtHersteller.Text + ";" + wtxtSchnittstelle.Text + ";" + wtxtTyp + ";" + wtxtBauart.Text + ";" + Brenner;
+                    Datensatz += LF +
+                        wtxtHersteller.Text + ";" +
+                        wtxtSchnittstelle.Text + ";" +
+                        wtxtTyp + ";" +
+                        wtxtBauart.Text + ";" +
+                        wtxtZustand.Text + ";" +
+                        Brenner;
                     #endregion
 
                     #region QR Code
-                    QR = "Hersteller:" + wtxtHersteller.Text + LF + "Schnittstelle:" + wtxtSchnittstelle.Text + LF + "Mediumtyp:" + wtxtTyp.Text + LF + "Typ:" + wtxtBauart.Text + LF + "Brenner:" + Brenner;
+                    QR =
+                        "Hersteller: " + wtxtHersteller.Text + LF +
+                        "Schnittstelle: " + wtxtSchnittstelle.Text + LF +
+                        "Mediumtyp: " + wtxtTyp.Text + LF +
+                        "Typ: " + wtxtBauart.Text + LF +
+                        "Zustand: " + wtxtZustand.Text + LF +
+                        "Brenner: " + Brenner;
                     #endregion
 
                     File.WriteAllText(@"./Laufwerke_Datenbank.csv", Datensatz);//Datensatz in Datenbank schreiben

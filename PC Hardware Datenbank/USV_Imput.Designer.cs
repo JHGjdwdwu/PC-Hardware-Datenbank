@@ -53,6 +53,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.wtxtHersteller = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.wtxtZustand = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudUSB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAkkanzahl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -64,34 +66,34 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(245, 262);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(166, 25);
+            this.label10.Size = new System.Drawing.Size(133, 20);
             this.label10.TabIndex = 140;
             this.label10.Text = "USB Anschlüsse:";
             // 
             // wtxtWatt
             // 
             this.wtxtWatt.FormattingEnabled = true;
-            this.wtxtWatt.Location = new System.Drawing.Point(34, 135);
+            this.wtxtWatt.Location = new System.Drawing.Point(34, 209);
             this.wtxtWatt.Name = "wtxtWatt";
-            this.wtxtWatt.Size = new System.Drawing.Size(146, 33);
-            this.wtxtWatt.TabIndex = 2;
+            this.wtxtWatt.Size = new System.Drawing.Size(146, 28);
+            this.wtxtWatt.TabIndex = 4;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(33, 112);
+            this.label6.Location = new System.Drawing.Point(33, 186);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(98, 25);
+            this.label6.Size = new System.Drawing.Size(76, 20);
             this.label6.TabIndex = 139;
             this.label6.Text = "Watt (W):";
             // 
             // cbtCOM
             // 
             this.cbtCOM.AutoSize = true;
-            this.cbtCOM.Location = new System.Drawing.Point(34, 354);
+            this.cbtCOM.Location = new System.Drawing.Point(34, 428);
             this.cbtCOM.Name = "cbtCOM";
-            this.cbtCOM.Size = new System.Drawing.Size(82, 29);
-            this.cbtCOM.TabIndex = 8;
+            this.cbtCOM.Size = new System.Drawing.Size(64, 24);
+            this.cbtCOM.TabIndex = 9;
             this.cbtCOM.Text = "COM";
             this.cbtCOM.UseVisualStyleBackColor = true;
             // 
@@ -102,26 +104,26 @@
             "Offline USV",
             "Online USV",
             "Netzinteraktife USV"});
-            this.wtxtArbeitsweise.Location = new System.Drawing.Point(34, 209);
+            this.wtxtArbeitsweise.Location = new System.Drawing.Point(34, 283);
             this.wtxtArbeitsweise.Name = "wtxtArbeitsweise";
-            this.wtxtArbeitsweise.Size = new System.Drawing.Size(146, 33);
-            this.wtxtArbeitsweise.TabIndex = 4;
+            this.wtxtArbeitsweise.Size = new System.Drawing.Size(146, 28);
+            this.wtxtArbeitsweise.TabIndex = 6;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(33, 186);
+            this.label9.Location = new System.Drawing.Point(33, 260);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(129, 25);
+            this.label9.Size = new System.Drawing.Size(103, 20);
             this.label9.TabIndex = 138;
             this.label9.Text = "Arbeitsweise:";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(33, 262);
+            this.label8.Location = new System.Drawing.Point(33, 336);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(110, 25);
+            this.label8.Size = new System.Drawing.Size(87, 20);
             this.label8.TabIndex = 137;
             this.label8.Text = "Akkanzahl:";
             // 
@@ -134,7 +136,7 @@
             "PCIe x16"});
             this.wtxtAkkutyp.Location = new System.Drawing.Point(249, 209);
             this.wtxtAkkutyp.Name = "wtxtAkkutyp";
-            this.wtxtAkkutyp.Size = new System.Drawing.Size(146, 33);
+            this.wtxtAkkutyp.Size = new System.Drawing.Size(146, 28);
             this.wtxtAkkutyp.TabIndex = 5;
             // 
             // label7
@@ -142,7 +144,7 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(245, 186);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(89, 25);
+            this.label7.Size = new System.Drawing.Size(70, 20);
             this.label7.TabIndex = 136;
             this.label7.Text = "Akkutyp:";
             // 
@@ -156,21 +158,21 @@
             0,
             0});
             this.nudUSB.Name = "nudUSB";
-            this.nudUSB.Size = new System.Drawing.Size(146, 30);
+            this.nudUSB.Size = new System.Drawing.Size(146, 26);
             this.nudUSB.TabIndex = 7;
             // 
             // nudAkkanzahl
             // 
             this.nudAkkanzahl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudAkkanzahl.Location = new System.Drawing.Point(34, 285);
+            this.nudAkkanzahl.Location = new System.Drawing.Point(34, 359);
             this.nudAkkanzahl.Maximum = new decimal(new int[] {
             10,
             0,
             0,
             0});
             this.nudAkkanzahl.Name = "nudAkkanzahl";
-            this.nudAkkanzahl.Size = new System.Drawing.Size(146, 30);
-            this.nudAkkanzahl.TabIndex = 6;
+            this.nudAkkanzahl.Size = new System.Drawing.Size(146, 26);
+            this.nudAkkanzahl.TabIndex = 8;
             this.nudAkkanzahl.Value = new decimal(new int[] {
             1,
             0,
@@ -182,7 +184,7 @@
             this.wtxtModell.FormattingEnabled = true;
             this.wtxtModell.Location = new System.Drawing.Point(249, 61);
             this.wtxtModell.Name = "wtxtModell";
-            this.wtxtModell.Size = new System.Drawing.Size(146, 33);
+            this.wtxtModell.Size = new System.Drawing.Size(146, 28);
             this.wtxtModell.TabIndex = 1;
             // 
             // pictureBox1
@@ -202,9 +204,10 @@
             this.cmdQR.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdQR.Name = "cmdQR";
             this.cmdQR.Size = new System.Drawing.Size(171, 35);
-            this.cmdQR.TabIndex = 12;
+            this.cmdQR.TabIndex = 13;
             this.cmdQR.Text = "QR-Code Drucken";
             this.cmdQR.UseVisualStyleBackColor = false;
+            this.cmdQR.Click += new System.EventHandler(this.cmdQR_Click);
             // 
             // cmdBildEinfugen
             // 
@@ -214,7 +217,7 @@
             this.cmdBildEinfugen.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdBildEinfugen.Name = "cmdBildEinfugen";
             this.cmdBildEinfugen.Size = new System.Drawing.Size(150, 35);
-            this.cmdBildEinfugen.TabIndex = 9;
+            this.cmdBildEinfugen.TabIndex = 10;
             this.cmdBildEinfugen.Text = "Bild einfügen";
             this.cmdBildEinfugen.UseVisualStyleBackColor = false;
             // 
@@ -226,7 +229,7 @@
             this.cmdClear.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdClear.Name = "cmdClear";
             this.cmdClear.Size = new System.Drawing.Size(150, 35);
-            this.cmdClear.TabIndex = 11;
+            this.cmdClear.TabIndex = 12;
             this.cmdClear.Text = "Zurücksetzen";
             this.cmdClear.UseVisualStyleBackColor = false;
             this.cmdClear.Click += new System.EventHandler(this.cmdClear_Click);
@@ -239,7 +242,7 @@
             this.cmdSpeichern.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdSpeichern.Name = "cmdSpeichern";
             this.cmdSpeichern.Size = new System.Drawing.Size(150, 35);
-            this.cmdSpeichern.TabIndex = 10;
+            this.cmdSpeichern.TabIndex = 11;
             this.cmdSpeichern.Text = "Speichern";
             this.cmdSpeichern.UseVisualStyleBackColor = false;
             this.cmdSpeichern.Click += new System.EventHandler(this.cmdSpeichern_Click);
@@ -252,7 +255,7 @@
             this.cmdBeenden.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdBeenden.Name = "cmdBeenden";
             this.cmdBeenden.Size = new System.Drawing.Size(150, 35);
-            this.cmdBeenden.TabIndex = 13;
+            this.cmdBeenden.TabIndex = 14;
             this.cmdBeenden.Text = "Schließen";
             this.cmdBeenden.UseVisualStyleBackColor = false;
             this.cmdBeenden.Click += new System.EventHandler(this.cmdBeenden_Click);
@@ -262,7 +265,7 @@
             this.wtxtVA.FormattingEnabled = true;
             this.wtxtVA.Location = new System.Drawing.Point(249, 135);
             this.wtxtVA.Name = "wtxtVA";
-            this.wtxtVA.Size = new System.Drawing.Size(146, 33);
+            this.wtxtVA.Size = new System.Drawing.Size(146, 28);
             this.wtxtVA.TabIndex = 3;
             // 
             // pcmdMainbord
@@ -282,7 +285,7 @@
             this.label5.ForeColor = System.Drawing.Color.Red;
             this.label5.Location = new System.Drawing.Point(245, 38);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(76, 25);
+            this.label5.Size = new System.Drawing.Size(59, 20);
             this.label5.TabIndex = 133;
             this.label5.Text = "Modell:";
             // 
@@ -291,7 +294,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(245, 112);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(175, 25);
+            this.label3.Size = new System.Drawing.Size(138, 20);
             this.label3.TabIndex = 132;
             this.label3.Text = "Volt-Ampere (VA):";
             // 
@@ -300,7 +303,7 @@
             this.wtxtHersteller.FormattingEnabled = true;
             this.wtxtHersteller.Location = new System.Drawing.Point(34, 61);
             this.wtxtHersteller.Name = "wtxtHersteller";
-            this.wtxtHersteller.Size = new System.Drawing.Size(146, 33);
+            this.wtxtHersteller.Size = new System.Drawing.Size(146, 28);
             this.wtxtHersteller.TabIndex = 0;
             // 
             // label1
@@ -309,15 +312,38 @@
             this.label1.ForeColor = System.Drawing.Color.Red;
             this.label1.Location = new System.Drawing.Point(30, 38);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 25);
+            this.label1.Size = new System.Drawing.Size(81, 20);
             this.label1.TabIndex = 130;
             this.label1.Text = "Hersteller:";
             // 
+            // wtxtZustand
+            // 
+            this.wtxtZustand.FormattingEnabled = true;
+            this.wtxtZustand.Items.AddRange(new object[] {
+            "verbaut",
+            "auf Lager"});
+            this.wtxtZustand.Location = new System.Drawing.Point(34, 135);
+            this.wtxtZustand.Name = "wtxtZustand";
+            this.wtxtZustand.Size = new System.Drawing.Size(146, 28);
+            this.wtxtZustand.TabIndex = 2;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.Red;
+            this.label4.Location = new System.Drawing.Point(30, 112);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(72, 20);
+            this.label4.TabIndex = 142;
+            this.label4.Text = "Zustand:";
+            // 
             // USV_Imput
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1126, 620);
+            this.Controls.Add(this.wtxtZustand);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.wtxtWatt);
             this.Controls.Add(this.label6);
@@ -381,5 +407,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox wtxtHersteller;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox wtxtZustand;
+        private System.Windows.Forms.Label label4;
     }
 }

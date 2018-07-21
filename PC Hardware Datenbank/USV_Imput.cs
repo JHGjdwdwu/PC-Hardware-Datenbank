@@ -31,7 +31,7 @@ namespace PC_Hardware_Datenbank
 
         private void LoschFunktion()//Löschen Funktion
         {
-            wtxtHersteller.Text = wtxtModell.Text = wtxtWatt.Text = wtxtVA.Text = wtxtArbeitsweise.Text = wtxtAkkutyp.Text = null;
+            wtxtHersteller.Text = wtxtModell.Text = wtxtWatt.Text = wtxtZustand.Text = wtxtVA.Text = wtxtArbeitsweise.Text = wtxtAkkutyp.Text = null;
             nudAkkanzahl.Value = nudUSB.Value = 0;
             cbtCOM.Checked = false;
             wtxtHersteller.Focus();
@@ -46,7 +46,7 @@ namespace PC_Hardware_Datenbank
         {
             if (File.Exists(@"./USV_Datenbank.csv") == true)//Prüffen ob eine .csv Datei bereits erstellt wurde
             {
-                if (wtxtHersteller.Text != "" && wtxtModell.Text != "")//Prüfft die Pflichtangaben
+                if (wtxtHersteller.Text != "" && wtxtModell.Text != "" && wtxtZustand.Text != "")//Prüfft die Pflichtangaben
                 {
                     Datensatz = File.ReadAllText(@"./USV_Datenbank.csv");//Datenbanck lessen und in Datensatz speichern
 
@@ -59,11 +59,31 @@ namespace PC_Hardware_Datenbank
                     #endregion
 
                     #region Datensatz bilden
-                    Datensatz += LF + wtxtHersteller.Text + ";" + wtxtModell.Text + ";" + wtxtWatt.Text + ";" + wtxtVA.Text + ";" + wtxtArbeitsweise.Text + ";" + wtxtAkkutyp.Text + ";" + nudAkkanzahl.Value + ";" + nudUSB.Value + ";" + COM;
+                    Datensatz += LF +
+                        wtxtHersteller.Text + ";" +
+                        wtxtModell.Text + ";" +
+                        wtxtZustand.Text + ";" +
+                        wtxtWatt.Text + ";" +
+                        wtxtVA.Text + ";" +
+                        wtxtArbeitsweise.Text + ";" +
+                        wtxtAkkutyp.Text + ";" +
+                        nudAkkanzahl.Value + ";" +
+                        nudUSB.Value + ";" +
+                        COM;
                     #endregion
 
                     #region QR Code
-                    QR = "Hersteller:" + wtxtHersteller.Text + LF + "Modell:" + wtxtModell.Text + LF + "Watt (W):" + wtxtWatt.Text + LF + "Volt-Ampere (VA):" + wtxtVA.Text + LF + "Arbeitsweise:" + wtxtArbeitsweise.Text + LF + "Akkutyp:" + wtxtAkkutyp.Text + LF + "Akkanzahl:" + nudAkkanzahl.Value + LF + "USB Anschlüsse:" + nudUSB.Value + LF + "COM:" + COM;
+                    QR =
+                        "Hersteller: " + wtxtHersteller.Text + LF +
+                        "Modell: " + wtxtModell.Text + LF +
+                        "Zustand: " + wtxtZustand.Text + LF +
+                        "Watt (W): " + wtxtWatt.Text + LF +
+                        "Volt-Ampere (VA): " + wtxtVA.Text + LF +
+                        "Arbeitsweise: " + wtxtArbeitsweise.Text + LF +
+                        "Akkutyp: " + wtxtAkkutyp.Text + LF +
+                        "Akkanzahl: " + nudAkkanzahl.Value + LF +
+                        "USB Anschlüsse: " + nudUSB.Value + LF +
+                        "COM: " + COM;
                     #endregion
 
                     File.WriteAllText(@"./USV_Datenbank.csv", Datensatz);//Datensatz in GPU_Datenbank.csv schreiben

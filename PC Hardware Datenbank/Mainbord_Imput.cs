@@ -31,14 +31,14 @@ namespace PC_Hardware_Datenbank
 
         private void LoschFunktion()//Löschen Funktion
         {
-            txtHersteller.Text = txtTyp.Text = txtSockel.Text = txtRAM.Text = txtBauform.Text = txtSonstiges.Text = null;
+            wtxtHersteller.Text = wtxtTyp.Text = wtxtSockel.Text = wtxtRAM.Text = wtxtBauform.Text = txtSonstiges.Text = wtxtZustand.Text = null;
             cbtAGP.Checked = cbtPCI.Checked = cbtPCIe1.Checked = cbtPCIe4.Checked = cbtPCIe8.Checked = cbtPCIe16.Checked = cbtPCIe64.Checked = cbtIDE.Checked = cbtSATA.Checked = cbtISA.Checked = false;
             cbtPS2.Checked = cbtUSB2.Checked = cbtUSB3.Checked = cbtRJ45.Checked = cbtKlinke.Checked = cbtVGA.Checked = cbtDVI.Checked = cbtHDMI.Checked = cbtDisplayPort.Checked = false;
             cbtMidiPort.Checked = cbtFireWire.Checked = cbtThunderbolt.Checked = cbtRS232.Checked = cbtBluetooth.Checked = cbtWLan.Checked = cbtLPT1.Checked = cbtESATA.Checked = cbtInfrarot.Checked = false;
             nudAGP.Value = nudPCI.Value = nudPCIe1.Value = nudPCIe4.Value = nudPCIe8.Value = nudPCIe16.Value = nudPCIe64.Value = nudIDE.Value = nudSATA.Value = nudISA.Value = 0;
             nudPS2.Value = nudUSB2.Value = nudUSB3.Value = nudRJ45.Value = nudKlinke.Value = nudVGA.Value = nudDVI.Value = nudHDMI.Value = 0;
             nudDisplayPort.Value = nudMidiPort.Value = nudFireWire.Value = nudThunderbolt.Value = nudRS232.Value = nudLPT1.Value = nudESATA.Value = 0;
-            txtHersteller.Focus();
+            wtxtHersteller.Focus();
         }
 
         private void cmdClear_Click(object sender, EventArgs e)//Löschen Button
@@ -50,7 +50,7 @@ namespace PC_Hardware_Datenbank
         {
             if (File.Exists(@"./Mainbord_Datenbank.csv") == true)//Prüffen ob eine .csv Datei bereits erstellt wurde
             {
-                if (txtHersteller.Text != "" && txtTyp.Text != "")//Prüfft die Pflichtangaben
+                if (wtxtHersteller.Text != "" && wtxtTyp.Text != "" && wtxtZustand.Text != "")//Prüfft die Pflichtangaben
                 {
                     Datensatz = File.ReadAllText(@"./Mainbord_Datenbank.csv");//Datenbanck lessen und in Datensatz speichern
 
@@ -83,24 +83,81 @@ namespace PC_Hardware_Datenbank
                     #endregion
 
                     #region Datensatz bilden
-                    Datensatz += LF + txtHersteller.Text + ";" + txtTyp.Text + ";" + txtSockel.Text + ";" + txtRAM.Text + ";";
-                    Datensatz += txtBauform.Text + ";" + txtSonstiges.Text + ";";
-
-                    Datensatz += nudAGP.Value + ";" + nudPCI.Value + ";" + nudPCIe1.Value + ";" + nudPCIe4.Value + ";";
-                    Datensatz += nudPCIe8.Value + ";" + nudPCIe16.Value + ";" + nudPCIe64.Value + ";" + nudIDE.Value + ";";
-                    Datensatz += nudSATA.Value + ";" + nudISA.Value + ";";
-
-                    Datensatz += nudPS2.Value + ";" + nudUSB2.Value + ";" + nudUSB3.Value + ";" + nudRJ45.Value + ";";
-                    Datensatz += nudKlinke.Value + ";" + nudVGA.Value + ";" + nudDVI.Value + ";" + nudHDMI.Value + ";";
-                    Datensatz += nudDisplayPort.Value + ";" + nudMidiPort.Value + ";" + nudFireWire.Value + ";";
-                    Datensatz += nudThunderbolt.Value + ";" + nudRS232.Value + ";" + Bluetooth + ";" + WLan + ";";
-                    Datensatz += nudLPT1.Value + ";" + nudESATA.Value + ";" + Infrarot;
+                    Datensatz += LF +
+                        wtxtHersteller.Text + ";" +
+                        wtxtTyp.Text + ";" +
+                        wtxtZustand.Text + ";" +
+                        wtxtSockel.Text + ";" +
+                        wtxtRAM.Text + ";" +
+                        wtxtBauform.Text + ";" +
+                        txtSonstiges.Text + ";" +
+                        nudAGP.Value + ";" +
+                        nudPCI.Value + ";" +
+                        nudPCIe1.Value + ";" +
+                        nudPCIe4.Value + ";" +
+                        nudPCIe8.Value + ";" +
+                        nudPCIe16.Value + ";" +
+                        nudPCIe64.Value + ";" +
+                        nudIDE.Value + ";" +
+                        nudSATA.Value + ";" +
+                        nudISA.Value + ";" +
+                        nudPS2.Value + ";" +
+                        nudUSB2.Value + ";" +
+                        nudUSB3.Value + ";" +
+                        nudRJ45.Value + ";" +
+                        nudKlinke.Value + ";" +
+                        nudVGA.Value + ";" +
+                        nudDVI.Value + ";" +
+                        nudHDMI.Value + ";" +
+                        nudDisplayPort.Value + ";" +
+                        nudMidiPort.Value + ";" +
+                        nudFireWire.Value + ";" +
+                        nudThunderbolt.Value + ";" +
+                        nudRS232.Value + ";" +
+                        Bluetooth + ";" +
+                        WLan + ";" +
+                        nudLPT1.Value + ";" +
+                        nudESATA.Value + ";" +
+                        Infrarot;
                     #endregion
 
                     #region QR Code
-                    QR = "Hersteller:" + txtHersteller.Text + LF + "Typ:" + txtTyp.Text + LF + "Sockel:" + txtSockel.Text + LF + "RAM:" + txtRAM.Text + LF + "Bauform:" + txtBauform.Text + LF + "Sonstiges:" + txtSonstiges.Text + LF + "AGP:" + nudAGP.Value + LF + "PCI:" + nudPCI.Value + LF + "PCIe1:" + nudPCIe1.Value + LF + "PCIe4:" + nudPCIe4.Value + LF + "PCIe8:" + nudPCIe8.Value + LF + "PCIe16:" + nudPCIe16.Value + LF + "PCIe64:" + nudPCIe64.Value + LF + "IDE:" + nudIDE.Value + LF + "SATA:" + nudSATA.Value + LF + "ISA:" + nudISA.Value + LF;
-
-                    QR += "PS2:" + nudPS2.Value + LF + "USB2:" + nudUSB2.Value + LF + "USB3:" + nudUSB3.Value + LF + "RJ45:" + nudRJ45.Value + LF + "Klinke:" + nudKlinke.Value + LF + "VGA:" + nudVGA.Value + LF + "DVI:" + nudDVI.Value + LF + "HDMI:" + nudHDMI.Value + LF + "DisplayPort:" + nudDisplayPort.Value + LF + "MidiPort:" + nudMidiPort.Value + LF + "FireWire:" + nudFireWire.Value + LF + "Thunderbolt:" + nudThunderbolt.Value + LF + "RS232:" + nudRS232.Value + LF + "Bluetooth:" + Bluetooth + LF + "WLan:" + WLan + LF + "LPT1:" + nudLPT1.Value + LF + "ESATA:" + nudESATA.Value + LF + "Infrarot:" + Infrarot;
+                    QR =
+                        "Hersteller: " + wtxtHersteller.Text + LF +
+                        "Typ: " + wtxtTyp.Text + LF +
+                        "Zustand: " + wtxtZustand.Text + LF +
+                        "Sockel: " + wtxtSockel.Text + LF +
+                        "RAM: " + wtxtRAM.Text + LF +
+                        "Bauform: " + wtxtBauform.Text + LF +
+                        "Sonstiges: " + txtSonstiges.Text + LF +
+                        "AGP: " + nudAGP.Value + LF +
+                        "PCI: " + nudPCI.Value + LF +
+                        "PCIe1: " + nudPCIe1.Value + LF +
+                        "PCIe4: " + nudPCIe4.Value + LF +
+                        "PCIe8: " + nudPCIe8.Value + LF +
+                        "PCIe16: " + nudPCIe16.Value + LF +
+                        "PCIe64: " + nudPCIe64.Value + LF +
+                        "IDE: " + nudIDE.Value + LF +
+                        "SATA: " + nudSATA.Value + LF +
+                        "ISA: " + nudISA.Value + LF +
+                        "PS2: " + nudPS2.Value + LF +
+                        "USB2: " + nudUSB2.Value + LF +
+                        "USB3: " + nudUSB3.Value + LF +
+                        "RJ45: " + nudRJ45.Value + LF +
+                        "Klinke: " + nudKlinke.Value + LF +
+                        "VGA: " + nudVGA.Value + LF +
+                        "DVI: " + nudDVI.Value + LF +
+                        "HDMI: " + nudHDMI.Value + LF +
+                        "DisplayPort: " + nudDisplayPort.Value + LF +
+                        "MidiPort: " + nudMidiPort.Value + LF +
+                        "FireWire: " + nudFireWire.Value + LF +
+                        "Thunderbolt: " + nudThunderbolt.Value + LF +
+                        "RS232: " + nudRS232.Value + LF +
+                        "Bluetooth: " + Bluetooth + LF +
+                        "WLan: " + WLan + LF +
+                        "LPT1: " + nudLPT1.Value + LF +
+                        "ESATA: " + nudESATA.Value + LF +
+                        "Infrarot: " + Infrarot;
                     #endregion
 
                     File.WriteAllText(@"./Mainbord_Datenbank.csv", Datensatz);//Datensatz in Mainbord_Datenbank.csv schreiben

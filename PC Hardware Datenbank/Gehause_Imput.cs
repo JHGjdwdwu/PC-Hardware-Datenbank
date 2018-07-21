@@ -31,7 +31,7 @@ namespace PC_Hardware_Datenbank
 
         private void LoschFuncktion()//Lösch Funktion
         {
-            mtxtBreiteHocheTiefe.Text = wtxtHersteller.Text = wtxtTyp.Text = wtxtNetzteilPosition.Text = wtxtFormfaktor.Text = null;
+            mtxtBreiteHocheTiefe.Text = wtxtHersteller.Text = wtxtTyp.Text = wtxtNetzteilPosition.Text = wtxtFormfaktor.Text = wtxtZustand.Text = null;
             nudEinschub5.Value = nudEinschub3.Value = nudHDD3.Value = nudHDD2.Value = nudFrontUSB.Value = nudFrontKlinke.Value = 0;
             cbtKabelsystem.Checked = cbtBelechtung.Checked = cbtFenster.Checked = false;
         }
@@ -45,7 +45,7 @@ namespace PC_Hardware_Datenbank
         {
             if (File.Exists(@"./Gehause_Datenbank.csv") == true)//Prüffen ob eine .csv Datei bereits erstellt wurde
             {
-                if (mtxtBreiteHocheTiefe.Text != "" && wtxtHersteller.Text != "")//Prüfft die Pflichtangaben
+                if (mtxtBreiteHocheTiefe.Text != "" && wtxtZustand.Text != "")//Prüfft die Pflichtangaben
                 {
                     Datensatz = File.ReadAllText(@"./Gehause_Datenbank.csv");//Datenbanck lessen und in Datensatz speichern
 
@@ -66,16 +66,41 @@ namespace PC_Hardware_Datenbank
                     #endregion
 
                     #region Datensatz bilden
-                    Datensatz += LF + mtxtBreiteHocheTiefe.Text + ";" + wtxtHersteller.Text + ";" + wtxtTyp.Text + ";" + wtxtNetzteilPosition.Text;
-
-                    Datensatz += ";" + nudEinschub5.Value + ";" + nudEinschub3.Value + ";" + nudHDD3.Value + ";";
-                    Datensatz += nudHDD2.Value + ";" + nudFrontUSB.Value + ";" + nudFrontKlinke.Value + ";";
-
-                    Datensatz += Kabelsystem + ";" + Beleuchtung + ";" + PlexiglassFenster + ";" + wtxtFormfaktor.Text;
+                    Datensatz += LF +
+                        mtxtBreiteHocheTiefe.Text + ";" +
+                        wtxtZustand.Text + ";" +
+                        wtxtHersteller.Text + ";" +
+                        wtxtTyp.Text + ";" +
+                        wtxtNetzteilPosition.Text + ";" +
+                        nudEinschub5.Value + ";" +
+                        nudEinschub3.Value + ";" +
+                        nudHDD3.Value + ";" +
+                        nudHDD2.Value + ";" +
+                        nudFrontUSB.Value + ";" +
+                        nudFrontKlinke.Value + ";" +
+                        wtxtFormfaktor.Text + ";" +
+                        Kabelsystem + ";" +
+                        Beleuchtung + ";" +
+                        PlexiglassFenster;
                     #endregion
 
                     #region QR Code
-                    QR = "Breite-Höhe-Tiefe:" + mtxtBreiteHocheTiefe.Text + LF + "Hersteller:" + wtxtHersteller.Text + LF + "Typ:" + wtxtTyp.Text + LF + "Netzteil Position:" + wtxtNetzteilPosition.Text + LF + "Einschub 5,25 Zoll:" + nudEinschub5.Value + LF + "Einschub 3,5 Zoll:" + nudEinschub3.Value + LF + "Einschub 3,5 HDD:" + nudHDD3.Value + LF + "Einschub 2,5 HDD:" + nudHDD2.Value + LF + "Front USB:" + nudFrontUSB.Value + LF + "Front Klinke:" + nudFrontKlinke.Value + LF + "Formfaktor:" + wtxtFormfaktor.Text + LF + "Kabelsystem:" + Kabelsystem + LF + "Beleuchtung:" + Beleuchtung + LF + "Plexiglas Fenster:" + PlexiglassFenster;
+                    QR = 
+                        "Breite-Höhe-Tiefe: " + mtxtBreiteHocheTiefe.Text + LF +
+                        "Zustand: " + wtxtZustand.Text + LF +
+                        "Hersteller: " + wtxtHersteller.Text + LF + 
+                        "Typ: " + wtxtTyp.Text + LF + 
+                        "Netzteil Position: " + wtxtNetzteilPosition.Text + LF + 
+                        "Einschub 5,25 Zoll: " + nudEinschub5.Value + LF + 
+                        "Einschub 3,5 Zoll: " + nudEinschub3.Value + LF + 
+                        "Einschub 3,5 HDD: " + nudHDD3.Value + LF + 
+                        "Einschub 2,5 HDD: " + nudHDD2.Value + LF + 
+                        "Front USB: " + nudFrontUSB.Value + LF + 
+                        "Front Klinke: " + nudFrontKlinke.Value + LF + 
+                        "Formfaktor: " + wtxtFormfaktor.Text + LF +
+                        "Kabelsystem: " + Kabelsystem + LF + 
+                        "Beleuchtung: " + Beleuchtung + LF + 
+                        "Plexiglas Fenster: " + PlexiglassFenster;
                     #endregion
 
                     File.WriteAllText(@"./Gehause_Datenbank.csv", Datensatz);//Datensatz in Mainbord_Datenbank.csv schreiben

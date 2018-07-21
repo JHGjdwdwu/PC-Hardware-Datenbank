@@ -31,7 +31,7 @@ namespace PC_Hardware_Datenbank
 
         private void LoschFunktion()//Löschen Funktion
         {
-            wtxtKabelendeA.Text = wtxtKabelendeB.Text = null;
+            wtxtZustand.Text = wtxtKabelendeA.Text = wtxtKabelendeB.Text = null;
             nudLange.Value = 0;
             cbtSchaltbar.Checked = false;
             wtxtKabelendeA.Focus();
@@ -46,7 +46,7 @@ namespace PC_Hardware_Datenbank
         {
             if (File.Exists(@"./Kabel_Datenbank.csv") == true)//Prüffen ob eine .csv Datei bereits erstellt wurde
             {
-                if (wtxtKabelendeA.Text != "" && wtxtKabelendeB.Text != "" && nudLange.Value != 0)//Prüfft die Pflichtangaben
+                if (wtxtKabelendeA.Text != "" && wtxtKabelendeB.Text != "" && wtxtZustand.Text != "" && nudLange.Value != 0)//Prüfft die Pflichtangaben
                 {
                     Datensatz = File.ReadAllText(@"./Kabel_Datenbank.csv");//Datenbanck lessen und in Datensatz speichern
 
@@ -59,11 +59,21 @@ namespace PC_Hardware_Datenbank
                     #endregion
 
                     #region Datensatz bilden
-                    Datensatz += LF + wtxtKabelendeA.Text + ";" + nudLange.Value + ";" + wtxtKabelendeB.Text + ";" + Schaltbar;
+                    Datensatz += LF +
+                        wtxtZustand.Text + ";" +
+                        wtxtKabelendeA.Text + ";" +
+                        nudLange.Value + ";" +
+                        wtxtKabelendeB.Text + ";" +
+                        Schaltbar;
                     #endregion
 
                     #region QR Code
-                    QR = "Kabelende:" + wtxtKabelendeA.Text + LF + "Länge (m):" + nudLange.Value + LF + "Kabelende:" + wtxtKabelendeB.Text + LF + "Schaltbar:" + Schaltbar;
+                    QR =
+                        "Zustand: " + wtxtZustand.Text + LF +
+                        "Kabelende: " + wtxtKabelendeA.Text + LF +
+                        "Länge (m): " + nudLange.Value + LF +
+                        "Kabelende: " + wtxtKabelendeB.Text + LF +
+                        "Schaltbar: " + Schaltbar;
                     #endregion
 
                     File.WriteAllText(@"./Kabel_Datenbank.csv", Datensatz);//Datensatz in GPU_Datenbank.csv schreiben

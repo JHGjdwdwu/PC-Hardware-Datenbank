@@ -31,7 +31,7 @@ namespace PC_Hardware_Datenbank
 
         private void LoschFunktion()//Löschen Funktion
         {
-            wtxtKartenhersteller.Text = wtxtModell.Text = wtxtAnschluss.Text = txtBemerkungen.Text = null;
+            wtxtKartenhersteller.Text = wtxtModell.Text = wtxtAnschluss.Text = txtBemerkungen.Text = wtxtZustand.Text = null;
             wtxtKartenhersteller.Focus();
         }
 
@@ -44,16 +44,26 @@ namespace PC_Hardware_Datenbank
         {
             if (File.Exists(@"./Schnittstellenkarte_Datenbank.csv") == true)//Prüffen ob eine .csv Datei bereits erstellt wurde
             {
-                if (wtxtKartenhersteller.Text != "" && wtxtModell.Text != "")//Prüfft die Pflichtangaben
+                if (wtxtKartenhersteller.Text != "" && wtxtModell.Text != "" && wtxtZustand.Text != "")//Prüfft die Pflichtangaben
                 {
                     Datensatz = File.ReadAllText(@"./Schnittstellenkarte_Datenbank.csv");//Datenbanck einlessen und in Datensatz speichern
 
                     #region Datensatz bilden
-                    Datensatz += LF + wtxtKartenhersteller.Text + ";" + wtxtModell.Text + ";" + wtxtAnschluss.Text + ";" + txtBemerkungen.Text;
+                    Datensatz += LF +
+                        wtxtKartenhersteller.Text + ";" +
+                        wtxtModell.Text + ";" +
+                        wtxtZustand.Text + ";" +
+                        wtxtAnschluss.Text + ";" +
+                        txtBemerkungen.Text;
                     #endregion
 
                     #region QR Code
-                    QR += "Kartenhersteller:" + wtxtKartenhersteller.Text + LF + "Modell:" + wtxtModell.Text + LF + "Anschlussart:" + wtxtAnschluss.Text + LF + "Bemerkungen:" + txtBemerkungen.Text;
+                    QR +=
+                        "Kartenhersteller: " + wtxtKartenhersteller.Text + LF +
+                        "Modell: " + wtxtModell.Text + LF +
+                        "Zustand: " + wtxtZustand.Text + LF +
+                        "Anschlussart: " + wtxtAnschluss.Text + LF +
+                        "Bemerkungen: " + txtBemerkungen.Text;
                     #endregion
 
                     File.WriteAllText(@"./Schnittstellenkarte_Datenbank.csv", Datensatz);//Datensatz in GPU_Datenbank.csv schreiben

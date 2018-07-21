@@ -31,7 +31,7 @@ namespace PC_Hardware_Datenbank
 
         private void LoschFunktion()//Löschen Funktion
         {
-            wtxtHersteller.Text = wtxtGerat.Text = wtxtAnschluss.Text = txtBemerkung.Text = null;
+            wtxtHersteller.Text = wtxtGerat.Text = wtxtZustand.Text = wtxtAnschluss.Text = txtBemerkung.Text = null;
             wtxtHersteller.Focus();
         }
 
@@ -44,16 +44,26 @@ namespace PC_Hardware_Datenbank
         {
             if (File.Exists(@"./I_O_Datenbank.csv") == true)//Prüffen ob eine .csv Datei bereits erstellt wurde
             {
-                if (wtxtHersteller.Text != "" && wtxtGerat.Text != "")//Prüfft die Pflichtangaben
+                if (wtxtHersteller.Text != "" && wtxtGerat.Text != "" && wtxtZustand.Text != "")//Prüfft die Pflichtangaben
                 {
                     Datensatz = File.ReadAllText(@"./I_O_Datenbank.csv");//Datenbanck lessen und in Datensatz speichern
 
                     #region Datensatz bilden
-                    Datensatz += LF + wtxtHersteller.Text + ";" + wtxtGerat.Text + ";" + wtxtAnschluss.Text + ";" + txtBemerkung.Text;
+                    Datensatz += LF +
+                        wtxtHersteller.Text + ";" +
+                        wtxtGerat.Text + ";" +
+                        wtxtZustand.Text + ";" +
+                        wtxtAnschluss.Text + ";" +
+                        txtBemerkung.Text;
                     #endregion
 
                     #region QR Code
-                    QR = "Hersteller:" + wtxtHersteller.Text + LF + "Gerät:" + wtxtGerat.Text + LF + "Anschluss:" + wtxtAnschluss.Text + LF + "Bemerkung:" + txtBemerkung.Text;
+                    QR =
+                        "Hersteller:" + wtxtHersteller.Text + LF +
+                        "Gerät:" + wtxtGerat.Text + LF +
+                        "Zustand:" + wtxtZustand.Text + LF +
+                        "Anschluss:" + wtxtAnschluss.Text + LF +
+                        "Bemerkung:" + txtBemerkung.Text;
                     #endregion
 
                     File.WriteAllText(@"./I_O_Datenbank.csv", Datensatz);//Datensatz in I_O_Datenbank.csv schreiben

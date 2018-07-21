@@ -31,7 +31,7 @@ namespace PC_Hardware_Datenbank
 
         private void LoschFunktion()//Löschen Funktion
         {
-            wtxtHersteller.Text = wtxtTyp.Text = txtGrosse.Text = wtxtAnschluss.Text = wtxtStromverbrauch.Text = wtxtStromversorgung.Text = wtxtBaugrose.Text = null;
+            wtxtHersteller.Text = wtxtTyp.Text = wtxtGrosse.Text = wtxtAnschluss.Text = wtxtStromverbrauch.Text = wtxtStromversorgung.Text = wtxtBaugrose.Text = wtxtZustand.Text = null;
             cbtxSSD.Checked = cbtSSHD.Checked = false;
         }
 
@@ -44,7 +44,7 @@ namespace PC_Hardware_Datenbank
         {
             if (File.Exists(@"./HDD_Datenbank.csv") == true)//Prüffen ob eine .csv Datei bereits erstellt wurde
             {
-                if (wtxtHersteller.Text != "" && wtxtTyp.Text != "")//Prüfft die Pflichtangaben
+                if (wtxtHersteller.Text != "" && wtxtTyp.Text != "" && wtxtZustand.Text != "")//Prüfft die Pflichtangaben
                 {
                     Datensatz = File.ReadAllText(@"./HDD_Datenbank.csv");//Datenbanck lessen und in Datensatz speichern
 
@@ -63,11 +63,31 @@ namespace PC_Hardware_Datenbank
                     #endregion
 
                     #region Datensatz bilden
-                    Datensatz += LF + wtxtHersteller.Text + ";" + wtxtTyp.Text + ";" + txtGrosse.Text + ";" + wtxtAnschluss.Text + ";" + wtxtStromverbrauch.Text + ";" + wtxtStromversorgung.Text + ";" + wtxtBaugrose.Text + ";" + SSD + ";" + SSHD;
+                    Datensatz += LF +
+                        wtxtHersteller.Text + ";" +
+                        wtxtTyp.Text + ";" +
+                        wtxtZustand.Text + ";" +
+                        wtxtGrosse.Text + ";" +
+                        wtxtAnschluss.Text + ";" +
+                        wtxtStromverbrauch.Text + ";" +
+                        wtxtStromversorgung.Text + ";" +
+                        wtxtBaugrose.Text + ";" +
+                        SSD + ";" +
+                        SSHD;
                     #endregion
 
                     #region QR Code
-                    QR = "Hersteller:" + wtxtHersteller.Text + LF + "Typ:" + wtxtTyp.Text + LF + "Speichergröße:" + txtGrosse.Text + LF + "Anschlüsse:" + wtxtAnschluss.Text + LF + "Stromverbrauch:" + wtxtStromverbrauch.Text + LF + "Stromversorgung:" + wtxtStromversorgung.Text + LF + "Baugröße:" + wtxtBaugrose.Text + LF + "SSH:" + SSD + LF + "SSHD:" + SSHD;
+                    QR =
+                        "Hersteller: " + wtxtHersteller.Text + LF +
+                        "Typ: " + wtxtTyp.Text + LF +
+                        "Zustand: " + wtxtZustand.Text + LF +
+                        "Speichergröße: " + wtxtGrosse.Text + LF +
+                        "Anschlüsse: " + wtxtAnschluss.Text + LF +
+                        "Stromverbrauch: " + wtxtStromverbrauch.Text + LF +
+                        "Stromversorgung: " + wtxtStromversorgung.Text + LF +
+                        "Baugröße: " + wtxtBaugrose.Text + LF +
+                        "SSH: " + SSD + LF +
+                        "SSHD: " + SSHD;
                     #endregion
 
                     File.WriteAllText(@"./HDD_Datenbank.csv", Datensatz);//Datensatz in HDD_Datenbank.csv schreiben

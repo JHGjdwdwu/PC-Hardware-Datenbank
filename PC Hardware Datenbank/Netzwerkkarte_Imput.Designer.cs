@@ -53,6 +53,8 @@
             this.nudRJ45 = new System.Windows.Forms.NumericUpDown();
             this.wtxtTyp = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.wtxtZustand = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcmdMainbord)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -66,17 +68,75 @@
             // 
             this.wtxtGeschwindigkeit.FormattingEnabled = true;
             this.wtxtGeschwindigkeit.Items.AddRange(new object[] {
-            "10 Mbit",
-            "100 Mbit",
-            "1 Gbit"});
+            "10Base-T (10Mb/s)",
+            "100Base-T (100Mb/s)",
+            "1000Base-T (1Gb/s)",
+            "2.5GBase-T (2.5Gb/s)",
+            "5GBase-T (5Gb/s)",
+            "10GBase-T (10Gb/s)"});
             this.wtxtGeschwindigkeit.Location = new System.Drawing.Point(34, 135);
             this.wtxtGeschwindigkeit.Name = "wtxtGeschwindigkeit";
             this.wtxtGeschwindigkeit.Size = new System.Drawing.Size(146, 28);
-            this.wtxtGeschwindigkeit.TabIndex = 2;
+            this.wtxtGeschwindigkeit.TabIndex = 3;
             // 
             // wtxtHersteller
             // 
             this.wtxtHersteller.FormattingEnabled = true;
+            this.wtxtHersteller.Items.AddRange(new object[] {
+            "Allied Telesis",
+            "Allnet",
+            "Apple",
+            "ASUS",
+            "Asus",
+            "ATTO",
+            "Belkin",
+            "Broadcom",
+            "Cisco",
+            "D-Link",
+            "Dell",
+            "DeLOCK",
+            "Digitus",
+            "Dynamode",
+            "Edimax",
+            "Eminent",
+            "Exsys",
+            "Fantec",
+            "Fujitsu",
+            "Gembird",
+            "Hama",
+            "HP",
+            "i-tec",
+            "InLine",
+            "Intel",
+            "Intellinet",
+            "j5create",
+            "Kensington",
+            "Lenovo",
+            "Level One",
+            "Lindy",
+            "Linksys",
+            "LMP",
+            "LogiLink",
+            "Longshine",
+            "Manhattan",
+            "Mellanox",
+            "Moshi",
+            "netis",
+            "Planet",
+            "Promise",
+            "QLogic",
+            "QNAP",
+            "Sharkoon",
+            "Sitecom",
+            "Sonnet",
+            "StarTech",
+            "Supermicro",
+            "Synology",
+            "Thecus",
+            "TP-Link",
+            "TRENDnet",
+            "Ultron",
+            "V7"});
             this.wtxtHersteller.Location = new System.Drawing.Point(34, 61);
             this.wtxtHersteller.Name = "wtxtHersteller";
             this.wtxtHersteller.Size = new System.Drawing.Size(146, 28);
@@ -96,8 +156,42 @@
             // 
             this.wtxtSchnittstelle.FormattingEnabled = true;
             this.wtxtSchnittstelle.Items.AddRange(new object[] {
+            "CardBus",
+            "PCIe 1.0 x1",
+            "PCIe 1.0 x4",
+            "PCIe 1.0 x8",
+            "PCIe 2.0 x1",
+            "PCIe 2.0 x4",
+            "PCIe 2.0 x8",
+            "PCIe 2.1 x1",
+            "PCIe 2.1 x4",
+            "PCIe 2.1 x8",
+            "PCIe 3.0 x4",
+            "PCIe 3.0 x8",
+            "PCIe 3.0 x16",
+            "PCI-X",
+            "PCI 2.1",
+            "PCI 2.2",
+            "PCI 2.3",
+            "USB-A 2.0",
+            "USB-A 3.0",
+            "Thunderbolt 1",
+            "Thunderbolt 2",
+            "Thunderbolt 3",
+            "SFP",
+            "SFP+",
             "PCI",
-            "PCIe x1"});
+            "PCIe",
+            "PCIe 1.0",
+            "PCIe 2.0",
+            "PCIe 2.1",
+            "PCIe 3.0",
+            "Thunderbolt",
+            "USB 2.0",
+            "USB 3.0",
+            "USB-A",
+            "USB Micro-B",
+            "USB-C"});
             this.wtxtSchnittstelle.Location = new System.Drawing.Point(249, 61);
             this.wtxtSchnittstelle.Name = "wtxtSchnittstelle";
             this.wtxtSchnittstelle.Size = new System.Drawing.Size(146, 28);
@@ -120,9 +214,10 @@
             this.cmdQR.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdQR.Name = "cmdQR";
             this.cmdQR.Size = new System.Drawing.Size(171, 35);
-            this.cmdQR.TabIndex = 8;
+            this.cmdQR.TabIndex = 9;
             this.cmdQR.Text = "QR-Code Drucken";
             this.cmdQR.UseVisualStyleBackColor = false;
+            this.cmdQR.Click += new System.EventHandler(this.cmdQR_Click);
             // 
             // cmdBildEinfugen
             // 
@@ -132,7 +227,7 @@
             this.cmdBildEinfugen.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdBildEinfugen.Name = "cmdBildEinfugen";
             this.cmdBildEinfugen.Size = new System.Drawing.Size(150, 35);
-            this.cmdBildEinfugen.TabIndex = 5;
+            this.cmdBildEinfugen.TabIndex = 6;
             this.cmdBildEinfugen.Text = "Bild einfügen";
             this.cmdBildEinfugen.UseVisualStyleBackColor = false;
             // 
@@ -144,7 +239,7 @@
             this.cmdClear.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdClear.Name = "cmdClear";
             this.cmdClear.Size = new System.Drawing.Size(150, 35);
-            this.cmdClear.TabIndex = 7;
+            this.cmdClear.TabIndex = 8;
             this.cmdClear.Text = "Zurücksetzen";
             this.cmdClear.UseVisualStyleBackColor = false;
             this.cmdClear.Click += new System.EventHandler(this.cmdClear_Click);
@@ -157,7 +252,7 @@
             this.cmdSpeichern.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdSpeichern.Name = "cmdSpeichern";
             this.cmdSpeichern.Size = new System.Drawing.Size(150, 35);
-            this.cmdSpeichern.TabIndex = 6;
+            this.cmdSpeichern.TabIndex = 7;
             this.cmdSpeichern.Text = "Speichern";
             this.cmdSpeichern.UseVisualStyleBackColor = false;
             this.cmdSpeichern.Click += new System.EventHandler(this.cmdSpeichern_Click);
@@ -170,7 +265,7 @@
             this.cmdBeenden.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdBeenden.Name = "cmdBeenden";
             this.cmdBeenden.Size = new System.Drawing.Size(150, 35);
-            this.cmdBeenden.TabIndex = 9;
+            this.cmdBeenden.TabIndex = 10;
             this.cmdBeenden.Text = "Schließen";
             this.cmdBeenden.UseVisualStyleBackColor = false;
             this.cmdBeenden.Click += new System.EventHandler(this.cmdBeenden_Click);
@@ -219,7 +314,7 @@
             this.groupBox1.Location = new System.Drawing.Point(132, 217);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(213, 181);
-            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Externe Schnittstellen";
             // 
@@ -317,7 +412,7 @@
             this.wtxtTyp.Location = new System.Drawing.Point(249, 135);
             this.wtxtTyp.Name = "wtxtTyp";
             this.wtxtTyp.Size = new System.Drawing.Size(146, 28);
-            this.wtxtTyp.TabIndex = 3;
+            this.wtxtTyp.TabIndex = 4;
             // 
             // label3
             // 
@@ -328,11 +423,34 @@
             this.label3.TabIndex = 156;
             this.label3.Text = "Typ:";
             // 
+            // wtxtZustand
+            // 
+            this.wtxtZustand.FormattingEnabled = true;
+            this.wtxtZustand.Items.AddRange(new object[] {
+            "verbaut",
+            "auf Lager"});
+            this.wtxtZustand.Location = new System.Drawing.Point(464, 61);
+            this.wtxtZustand.Name = "wtxtZustand";
+            this.wtxtZustand.Size = new System.Drawing.Size(146, 28);
+            this.wtxtZustand.TabIndex = 2;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.Red;
+            this.label4.Location = new System.Drawing.Point(460, 38);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(72, 20);
+            this.label4.TabIndex = 158;
+            this.label4.Text = "Zustand:";
+            // 
             // Netzwerkkarte_Imput
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1126, 620);
+            this.Controls.Add(this.wtxtZustand);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.wtxtTyp);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.groupBox1);
@@ -392,5 +510,7 @@
         private System.Windows.Forms.NumericUpDown nudRJ45;
         private System.Windows.Forms.ComboBox wtxtTyp;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox wtxtZustand;
+        private System.Windows.Forms.Label label4;
     }
 }

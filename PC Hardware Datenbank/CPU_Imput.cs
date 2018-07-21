@@ -32,7 +32,7 @@ namespace PC_Hardware_Datenbank
 
         private void LoschenFunktion()//Löschfunktion
         {
-            wtxtHersteller.Text = txtTyp.Text = wtxtSockelAMD.Text = wtxtSockelINTEL.Text = mtxtTaktrate.Text = nudCach1.Text = nudCach2.Text = nudCach3.Text = nudCach4.Text = null;
+            wtxtHersteller.Text = txtTyp.Text = wtxtSockelAMD.Text = wtxtSockelINTEL.Text = mtxtTaktrate.Text = nudCach1.Text = nudCach2.Text = nudCach3.Text = nudCach4.Text = wtxtZustand.Text = null;
             nudKerne.Value = 1;
             wtxtHersteller.Focus();
         }
@@ -46,16 +46,36 @@ namespace PC_Hardware_Datenbank
         {
             if (File.Exists(@"./CPU_Datenbank.csv") == true)//Prüffen ob eine .csv Datei bereits erstellt wurde
             {
-                if (wtxtHersteller.Text != "" && txtTyp.Text != "")//Prüfft die Pflichtangaben
+                if (wtxtHersteller.Text != "" && txtTyp.Text != "" && wtxtZustand.Text != "")//Prüfft die Pflichtangaben
                 {
                     Datensatz = File.ReadAllText(@"./CPU_Datenbank.csv");//Datenbanck lessen und in Datensatz speichern
 
                     #region Datensatz erstellen
-                    Datensatz += LF + wtxtHersteller.Text + ";" + txtTyp.Text + ";" + Sockel + ";" + mtxtTaktrate.Text + ";" + nudKerne.Value + ";" + nudCach1.Text + ";" + nudCach2.Text + ";" + nudCach3.Text + ";" + nudCach4.Text;
+                    Datensatz += LF +
+                        wtxtHersteller.Text + ";" +
+                        txtTyp.Text + ";" +
+                        wtxtZustand.Text +
+                        Sockel + ";" +
+                        mtxtTaktrate.Text + ";" +
+                        nudKerne.Value + ";" +
+                        nudCach1.Text + ";" +
+                        nudCach2.Text + ";" +
+                        nudCach3.Text + ";" +
+                        nudCach4.Text + ";";
                     #endregion
 
                     #region QR Code
-                    QR += "Hersteller:" + wtxtHersteller.Text + LF + "Typ:" + txtTyp.Text + LF + "Sockel:" + Sockel + LF + "Taktrate:" + mtxtTaktrate.Text + LF + "Anzahl Kerne" + nudKerne + LF + "Level1 Cache" + nudCach1.Value + LF + "Level2 Cache" + nudCach2.Value + LF + "Level3 Cache" + nudCach3.Value + LF + "Level4 Cache" + nudCach3.Value;
+                    QR +=
+                        "Hersteller: " + wtxtHersteller.Text + LF +
+                        "Typ: " + txtTyp.Text + LF +
+                        "Zustand: " + wtxtZustand.Text + LF +
+                        "Sockel: " + Sockel + LF +
+                        "Taktrate: " + mtxtTaktrate.Text + LF +
+                        "Anzahl Kerne: " + nudKerne.Value + LF +
+                        "Level1 Cache: " + nudCach1.Value + LF +
+                        "Level2 Cache: " + nudCach2.Value + LF +
+                        "Level3 Cache: " + nudCach3.Value + LF +
+                        "Level4 Cache: " + nudCach3.Value + LF;
                     #endregion
 
                     //Datensatz in Datenbank schreiben

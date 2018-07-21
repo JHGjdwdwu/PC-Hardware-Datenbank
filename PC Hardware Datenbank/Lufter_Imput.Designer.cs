@@ -54,6 +54,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.wtxtSpannung = new System.Windows.Forms.ComboBox();
             this.nudStrom = new System.Windows.Forms.NumericUpDown();
+            this.wtxtZustand = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcmdMainbord)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudStrom)).BeginInit();
@@ -62,7 +64,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(30, 334);
+            this.label10.Location = new System.Drawing.Point(31, 410);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(81, 20);
             this.label10.TabIndex = 140;
@@ -75,15 +77,15 @@
             "2-Pin",
             "3-Pin",
             "4-Pin"});
-            this.wtxtPinheader.Location = new System.Drawing.Point(246, 135);
+            this.wtxtPinheader.Location = new System.Drawing.Point(245, 283);
             this.wtxtPinheader.Name = "wtxtPinheader";
             this.wtxtPinheader.Size = new System.Drawing.Size(146, 28);
-            this.wtxtPinheader.TabIndex = 3;
+            this.wtxtPinheader.TabIndex = 7;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(245, 112);
+            this.label6.Location = new System.Drawing.Point(244, 260);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(85, 20);
             this.label6.TabIndex = 139;
@@ -92,16 +94,16 @@
             // wtxtDicke
             // 
             this.wtxtDicke.FormattingEnabled = true;
-            this.wtxtDicke.Location = new System.Drawing.Point(246, 209);
+            this.wtxtDicke.Location = new System.Drawing.Point(248, 61);
             this.wtxtDicke.Name = "wtxtDicke";
             this.wtxtDicke.Size = new System.Drawing.Size(146, 28);
-            this.wtxtDicke.TabIndex = 5;
+            this.wtxtDicke.TabIndex = 1;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.ForeColor = System.Drawing.Color.Red;
-            this.label9.Location = new System.Drawing.Point(245, 186);
+            this.label9.Location = new System.Drawing.Point(247, 38);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(53, 20);
             this.label9.TabIndex = 138;
@@ -111,7 +113,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.Color.Red;
-            this.label8.Location = new System.Drawing.Point(245, 262);
+            this.label8.Location = new System.Drawing.Point(247, 114);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(112, 20);
             this.label8.TabIndex = 137;
@@ -125,16 +127,16 @@
             "CPU-Lüfter",
             "Speicherkühler",
             "Grafikkartenkühler"});
-            this.wtxtArt.Location = new System.Drawing.Point(34, 283);
+            this.wtxtArt.Location = new System.Drawing.Point(35, 209);
             this.wtxtArt.Name = "wtxtArt";
             this.wtxtArt.Size = new System.Drawing.Size(146, 28);
-            this.wtxtArt.TabIndex = 6;
+            this.wtxtArt.TabIndex = 4;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.Color.Red;
-            this.label7.Location = new System.Drawing.Point(30, 260);
+            this.label7.Location = new System.Drawing.Point(31, 186);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(34, 20);
             this.label7.TabIndex = 136;
@@ -143,10 +145,10 @@
             // wtxtModell
             // 
             this.wtxtModell.FormattingEnabled = true;
-            this.wtxtModell.Location = new System.Drawing.Point(249, 61);
+            this.wtxtModell.Location = new System.Drawing.Point(248, 209);
             this.wtxtModell.Name = "wtxtModell";
             this.wtxtModell.Size = new System.Drawing.Size(146, 28);
-            this.wtxtModell.TabIndex = 1;
+            this.wtxtModell.TabIndex = 5;
             // 
             // pictureBox1
             // 
@@ -165,9 +167,10 @@
             this.cmdQR.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdQR.Name = "cmdQR";
             this.cmdQR.Size = new System.Drawing.Size(171, 35);
-            this.cmdQR.TabIndex = 12;
+            this.cmdQR.TabIndex = 13;
             this.cmdQR.Text = "QR-Code Drucken";
             this.cmdQR.UseVisualStyleBackColor = false;
+            this.cmdQR.Click += new System.EventHandler(this.cmdQR_Click);
             // 
             // cmdBildEinfugen
             // 
@@ -177,7 +180,7 @@
             this.cmdBildEinfugen.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdBildEinfugen.Name = "cmdBildEinfugen";
             this.cmdBildEinfugen.Size = new System.Drawing.Size(150, 35);
-            this.cmdBildEinfugen.TabIndex = 9;
+            this.cmdBildEinfugen.TabIndex = 10;
             this.cmdBildEinfugen.Text = "Bild einfügen";
             this.cmdBildEinfugen.UseVisualStyleBackColor = false;
             // 
@@ -189,7 +192,7 @@
             this.cmdClear.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdClear.Name = "cmdClear";
             this.cmdClear.Size = new System.Drawing.Size(150, 35);
-            this.cmdClear.TabIndex = 11;
+            this.cmdClear.TabIndex = 12;
             this.cmdClear.Text = "Zurücksetzen";
             this.cmdClear.UseVisualStyleBackColor = false;
             this.cmdClear.Click += new System.EventHandler(this.cmdClear_Click);
@@ -202,7 +205,7 @@
             this.cmdSpeichern.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdSpeichern.Name = "cmdSpeichern";
             this.cmdSpeichern.Size = new System.Drawing.Size(150, 35);
-            this.cmdSpeichern.TabIndex = 10;
+            this.cmdSpeichern.TabIndex = 11;
             this.cmdSpeichern.Text = "Speichern";
             this.cmdSpeichern.UseVisualStyleBackColor = false;
             this.cmdSpeichern.Click += new System.EventHandler(this.cmdSpeichern_Click);
@@ -215,7 +218,7 @@
             this.cmdBeenden.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdBeenden.Name = "cmdBeenden";
             this.cmdBeenden.Size = new System.Drawing.Size(150, 35);
-            this.cmdBeenden.TabIndex = 13;
+            this.cmdBeenden.TabIndex = 14;
             this.cmdBeenden.Text = "Schließen";
             this.cmdBeenden.UseVisualStyleBackColor = false;
             this.cmdBeenden.Click += new System.EventHandler(this.cmdBeenden_Click);
@@ -223,10 +226,10 @@
             // wtxtDurchmesser
             // 
             this.wtxtDurchmesser.FormattingEnabled = true;
-            this.wtxtDurchmesser.Location = new System.Drawing.Point(34, 209);
+            this.wtxtDurchmesser.Location = new System.Drawing.Point(35, 135);
             this.wtxtDurchmesser.Name = "wtxtDurchmesser";
             this.wtxtDurchmesser.Size = new System.Drawing.Size(146, 28);
-            this.wtxtDurchmesser.TabIndex = 4;
+            this.wtxtDurchmesser.TabIndex = 2;
             // 
             // pcmdMainbord
             // 
@@ -243,7 +246,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(245, 38);
+            this.label5.Location = new System.Drawing.Point(244, 186);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(59, 20);
             this.label5.TabIndex = 133;
@@ -253,7 +256,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(30, 186);
+            this.label3.Location = new System.Drawing.Point(31, 112);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(108, 20);
             this.label3.TabIndex = 132;
@@ -262,15 +265,15 @@
             // wtxtMaximaldrehzahl
             // 
             this.wtxtMaximaldrehzahl.FormattingEnabled = true;
-            this.wtxtMaximaldrehzahl.Location = new System.Drawing.Point(34, 135);
+            this.wtxtMaximaldrehzahl.Location = new System.Drawing.Point(35, 357);
             this.wtxtMaximaldrehzahl.Name = "wtxtMaximaldrehzahl";
             this.wtxtMaximaldrehzahl.Size = new System.Drawing.Size(146, 28);
-            this.wtxtMaximaldrehzahl.TabIndex = 2;
+            this.wtxtMaximaldrehzahl.TabIndex = 8;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(30, 112);
+            this.label2.Location = new System.Drawing.Point(31, 334);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(131, 20);
             this.label2.TabIndex = 131;
@@ -279,16 +282,131 @@
             // wtxtHersteller
             // 
             this.wtxtHersteller.FormattingEnabled = true;
-            this.wtxtHersteller.Location = new System.Drawing.Point(34, 61);
+            this.wtxtHersteller.Items.AddRange(new object[] {
+            "2PCOM",
+            "3R System",
+            "Aerocool",
+            "Akasa",
+            "Alpha",
+            "Alphacool",
+            "Alseye",
+            "AMD",
+            "Antazone",
+            "Antec",
+            "Aqua Extreme",
+            "Arctic",
+            "Asetek",
+            "Asus",
+            "Auras",
+            "AVC",
+            "Be Quiet!",
+            "BitFenix",
+            "Blacknoise",
+            "Caseking",
+            "Cogage",
+            "Cool Cases",
+            "Coolage",
+            "Cooler Master",
+            "Coolermate",
+            "Coolink",
+            "CoolIT Systems",
+            "Cooltek",
+            "Corsair",
+            "Cougar",
+            "Cryorig",
+            "Danamics",
+            "Danger Den",
+            "Data Cooler",
+            "DeepCool",
+            "Dynatron Corporation",
+            "Easy Nova",
+            "ebm-Papst",
+            "EK Water Blocks",
+            "EKL",
+            "Elan Vital",
+            "Enermax",
+            "EnzoTech",
+            "Evercool",
+            "Foxconn",
+            "Fractal Design",
+            "Frozen Silicon",
+            "GELID Solutions",
+            "GigaByte",
+            "Glacialtech",
+            "Global Win",
+            "Hiper",
+            "Intel",
+            "Inter-Tech",
+            "IT-Direkt GmbH",
+            "Jersey",
+            "Jou Jye",
+            "Kanie",
+            "Koolance",
+            "Larkooler",
+            "LC-Power",
+            "LEPA",
+            "Levicom",
+            "Lian Li",
+            "MACS Technology",
+            "Maxcube",
+            "MR Computertechnik",
+            "Nanoxia",
+            "Nesteq",
+            "Nexus",
+            "Noctua",
+            "Nofan",
+            "Noiseblocker",
+            "NorthQ",
+            "NZXT",
+            "OCZ",
+            "PC World",
+            "Phanteks",
+            "Phobya ",
+            "Prolimatech",
+            "PT-Modding",
+            "Raijintek",
+            "Rasurbo",
+            "Reeven",
+            "Revoltec",
+            "Sapphire",
+            "Scythe",
+            "Sharkoon",
+            "SilentiumPC",
+            "Silentmaxx",
+            "SilenX",
+            "SilverStone Technology",
+            "Smartcooler",
+            "Spire",
+            "Sunbeamtech",
+            "Thermalright",
+            "Thermalright / Papst",
+            "Thermaltake",
+            "Thermolab",
+            "TIGER electronics",
+            "Titan - Computer",
+            "Tuniq",
+            "Ultron",
+            "Verax",
+            "Vizo",
+            "Watercool",
+            "Xen Core",
+            "Xigmatek",
+            "Xilence",
+            "XThermal",
+            "Yate Loon Electronics",
+            "YS Tech",
+            "Zalman",
+            "Zaward"});
+            this.wtxtHersteller.Location = new System.Drawing.Point(35, 283);
             this.wtxtHersteller.Name = "wtxtHersteller";
             this.wtxtHersteller.Size = new System.Drawing.Size(146, 28);
-            this.wtxtHersteller.TabIndex = 0;
+            this.wtxtHersteller.TabIndex = 6;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(30, 38);
+            this.label1.Location = new System.Drawing.Point(31, 260);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(81, 20);
             this.label1.TabIndex = 130;
@@ -302,15 +420,15 @@
             "5V",
             "12V",
             "24V"});
-            this.wtxtSpannung.Location = new System.Drawing.Point(246, 285);
+            this.wtxtSpannung.Location = new System.Drawing.Point(248, 137);
             this.wtxtSpannung.Name = "wtxtSpannung";
             this.wtxtSpannung.Size = new System.Drawing.Size(146, 28);
-            this.wtxtSpannung.TabIndex = 7;
+            this.wtxtSpannung.TabIndex = 3;
             // 
             // nudStrom
             // 
             this.nudStrom.DecimalPlaces = 2;
-            this.nudStrom.Location = new System.Drawing.Point(34, 357);
+            this.nudStrom.Location = new System.Drawing.Point(35, 433);
             this.nudStrom.Maximum = new decimal(new int[] {
             5,
             0,
@@ -318,13 +436,36 @@
             0});
             this.nudStrom.Name = "nudStrom";
             this.nudStrom.Size = new System.Drawing.Size(146, 26);
-            this.nudStrom.TabIndex = 8;
+            this.nudStrom.TabIndex = 9;
+            // 
+            // wtxtZustand
+            // 
+            this.wtxtZustand.FormattingEnabled = true;
+            this.wtxtZustand.Items.AddRange(new object[] {
+            "verbaut",
+            "auf Lager"});
+            this.wtxtZustand.Location = new System.Drawing.Point(35, 61);
+            this.wtxtZustand.Name = "wtxtZustand";
+            this.wtxtZustand.Size = new System.Drawing.Size(146, 28);
+            this.wtxtZustand.TabIndex = 0;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.Red;
+            this.label4.Location = new System.Drawing.Point(31, 38);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(72, 20);
+            this.label4.TabIndex = 142;
+            this.label4.Text = "Zustand:";
             // 
             // Lufter_Imput
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1126, 620);
+            this.Controls.Add(this.wtxtZustand);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.nudStrom);
             this.Controls.Add(this.wtxtSpannung);
             this.Controls.Add(this.label10);
@@ -389,5 +530,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox wtxtSpannung;
         private System.Windows.Forms.NumericUpDown nudStrom;
+        private System.Windows.Forms.ComboBox wtxtZustand;
+        private System.Windows.Forms.Label label4;
     }
 }

@@ -31,7 +31,7 @@ namespace PC_Hardware_Datenbank
 
         private void LoschFunktion()//Löschen Funktion
         {
-            wtxtHersteller.Text = wtxtSchnittstelle.Text = wtxtGeschwindigkeit.Text = wtxtTyp.Text = null;
+            wtxtHersteller.Text = wtxtSchnittstelle.Text = wtxtGeschwindigkeit.Text = wtxtTyp.Text = wtxtZustand.Text = null;
             cbtRJ45.Checked = cbtCoax.Checked = cbtLWL.Checked = cbtWLan.Checked = false;
             nudRJ45.Value = nudCoax.Value = nudLWL.Value = nudWLan.Value = 0;
             wtxtHersteller.Focus();
@@ -46,17 +46,34 @@ namespace PC_Hardware_Datenbank
         {
             if (File.Exists(@"./Netzwerkkarte_Datenbank.csv") == true)//Prüffen ob eine .csv Datei bereits erstellt wurde
             {
-                if (wtxtHersteller.Text != "" && wtxtSchnittstelle.Text != "")//Prüfft die Pflichtangaben
+                if (wtxtHersteller.Text != "" && wtxtSchnittstelle.Text != "" && wtxtZustand.Text != "")//Prüfft die Pflichtangaben
                 {
                     Datensatz = File.ReadAllText(@"./Netzwerkkarte_Datenbank.csv");//Datenbanck lessen und in Datensatz speichern
 
                     #region Datensatz bilden
-                    Datensatz += LF + wtxtHersteller.Text + ";" + wtxtSchnittstelle.Text + ";" + wtxtGeschwindigkeit.Text + ";" + wtxtTyp.Text + ";";
-                    Datensatz += nudRJ45.Value + ";" + nudCoax.Value + ";" + nudLWL.Value + ";" + nudWLan.Value;
+                    Datensatz += LF +
+                        wtxtHersteller.Text + ";" +
+                        wtxtSchnittstelle.Text + ";" +
+                        wtxtZustand.Text + ";" +
+                        wtxtGeschwindigkeit.Text + ";" +
+                        wtxtTyp.Text + ";" +
+                        nudRJ45.Value + ";" +
+                        nudCoax.Value + ";" +
+                        nudLWL.Value + ";" +
+                        nudWLan.Value;
                     #endregion
 
                     #region QR Code
-                    QR = "Hersteller:" + wtxtHersteller.Text + LF + "Schnittstelle:" + wtxtSchnittstelle.Text + LF + "Geschwindigkeit:" + wtxtGeschwindigkeit.Text + LF + "Typ:" + wtxtTyp.Text + LF + "RJ-45:" + nudRJ45.Value + LF + "Coax:" + nudCoax.Value + LF + "LWL:" + nudLWL + LF + "W-Lan:" + nudWLan.Value;
+                    QR =
+                        "Hersteller: " + wtxtHersteller.Text + LF +
+                        "Schnittstelle: " + wtxtSchnittstelle.Text + LF +
+                        "Zustand: " + wtxtZustand.Text + LF +
+                        "Geschwindigkeit: " + wtxtGeschwindigkeit.Text + LF +
+                        "Typ: " + wtxtTyp.Text + LF +
+                        "RJ-45: " + nudRJ45.Value + LF +
+                        "Coax: " + nudCoax.Value + LF +
+                        "LWL: " + nudLWL + LF +
+                        "W-Lan: " + nudWLan.Value;
                     #endregion
 
                     File.WriteAllText(@"./Netzwerkkarte_Datenbank.csv", Datensatz);//Datensatz in Mainbord_Datenbank.csv schreiben

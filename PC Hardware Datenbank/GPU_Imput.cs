@@ -31,7 +31,7 @@ namespace PC_Hardware_Datenbank
 
         private void LoschFunktion()//Löschen Funktion
         {
-            wtxtKartenhersteller.Text = wtxtModell.Text = wtxtSpeichergrosse.Text = wtxtSpeicherTyp.Text = wtxtKuhlertyp.Text = wtxtAnschluss.Text = wtxtStromversorgung.Text = wtxtStromverbrauch.Text = txtTaktrate.Text = null;
+            wtxtKartenhersteller.Text = wtxtModell.Text = wtxtSpeichergrosse.Text = wtxtSpeicherTyp.Text = wtxtKuhlertyp.Text = wtxtAnschluss.Text = wtxtStromversorgung.Text = wtxtStromverbrauch.Text = txtTaktrate.Text = wtxtZustand.Text = null;
             cbtMultiGPU.Checked = cbtVGA.Checked = cbtDVI.Checked = cbtHDMI.Checked = cbtDisplaport.Checked = cbtSVideo.Checked = cbtCinch.Checked = false;
             nudVGA.Value = nudDVI.Value = nudHDMI.Value = nudDisplaport.Value = nudSVideo.Value = nudCinch.Value = 0;
             wtxtKartenhersteller.Focus();
@@ -59,15 +59,45 @@ namespace PC_Hardware_Datenbank
                     #endregion
 
                     #region Datensatz bilden
-                    Datensatz += LF + wtxtKartenhersteller.Text + ";" + wtxtModell.Text + ";" + wtxtSpeichergrosse.Text + ";";
-                    Datensatz += wtxtSpeicherTyp.Text + ";" + wtxtKuhlertyp.Text + ";" + wtxtAnschluss.Text + ";";
-                    Datensatz += wtxtStromversorgung.Text + ";" + wtxtStromverbrauch.Text + ";" + txtTaktrate.Text + ";";
-                    Datensatz += MultiGPU + ";" + nudVGA.Value + ";" + nudDVI.Value + ";" + nudHDMI.Value + ";";
-                    Datensatz += nudDisplaport.Value + ";" + nudSVideo.Value + ";" + nudCinch.Value;
+                    Datensatz += LF +
+                        wtxtKartenhersteller.Text + ";" +
+                        wtxtModell.Text + ";" +
+                        wtxtZustand.Text + ";" +
+                        wtxtSpeichergrosse.Text + ";" +
+                        wtxtSpeicherTyp.Text + ";" +
+                        wtxtKuhlertyp.Text + ";" +
+                        wtxtAnschluss.Text + ";" +
+                        wtxtStromversorgung.Text + ";" +
+                        wtxtStromverbrauch.Text + ";" +
+                        txtTaktrate.Text + ";" +
+                        MultiGPU + ";" +
+                        nudVGA.Value + ";" +
+                        nudDVI.Value + ";" +
+                        nudHDMI.Value + ";" +
+                        nudDisplaport.Value + ";" +
+                        nudSVideo.Value + ";" +
+                        nudCinch.Value;
                     #endregion
 
                     #region QR Code
-                    QR = "Kartenhersteller" + wtxtKartenhersteller.Text + LF + "Modell" + wtxtModell.Text + LF + "Speichergröße" + wtxtSpeichergrosse.Text + LF + "Speichertyp" + wtxtSpeicherTyp.Text + LF + "Kühlertyp" + wtxtKuhlertyp.Text + LF + "Stromversorgung" + wtxtStromversorgung.Text + LF + "Anschlussart" + wtxtAnschluss.Text + LF + "Stromverbrauch" + wtxtStromverbrauch.Text + LF + "Taktrate" + txtTaktrate.Text + LF + "Multi-Grafikkarten-Betrieb" + MultiGPU + LF + "VGA" + nudVGA.Value + LF + "DVI" + nudDVI.Value + LF + "HDMI" + nudHDMI.Value + LF + "Displayport" + nudDisplaport.Value + LF + "S-Video" + nudSVideo.Value + LF + "Cinch" + nudCinch.Value;
+                    QR =
+                        "Kartenhersteller: " + wtxtKartenhersteller.Text + LF +
+                        "Modell: " + wtxtModell.Text + LF +
+                        "Zustand: " + wtxtZustand.Text + LF +
+                        "Speichergröße: " + wtxtSpeichergrosse.Text + LF +
+                        "Speichertyp: " + wtxtSpeicherTyp.Text + LF +
+                        "Kühlertyp: " + wtxtKuhlertyp.Text + LF +
+                        "Stromversorgung: " + wtxtStromversorgung.Text + LF +
+                        "Anschlussart: " + wtxtAnschluss.Text + LF +
+                        "Stromverbrauch: " + wtxtStromverbrauch.Text + LF +
+                        "Taktrate: " + txtTaktrate.Text + LF +
+                        "Multi-Grafikkarten-Betrieb: " + MultiGPU + LF +
+                        "VGA: " + nudVGA.Value + LF +
+                        "DVI: " + nudDVI.Value + LF +
+                        "HDMI: " + nudHDMI.Value + LF +
+                        "Displayport: " + nudDisplaport.Value + LF +
+                        "S-Video: " + nudSVideo.Value + LF +
+                        "Cinch: " + nudCinch.Value;
                     #endregion
 
                     File.WriteAllText(@"./GPU_Datenbank.csv", Datensatz);//Datensatz in GPU_Datenbank.csv schreiben

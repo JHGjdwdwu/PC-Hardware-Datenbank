@@ -31,7 +31,7 @@ namespace PC_Hardware_Datenbank
 
         private void LoschenFunktin() //Löschen Funktion
         {
-            wtxtBitaufloesung.Text = wtxtAusgabestandard.Text = wtxtAnschlusssSchnittstelle.Text = wtxtHersteller.Text = null;
+            wtxtBitaufloesung.Text = wtxtAusgabestandard.Text = wtxtAnschlusssSchnittstelle.Text = wtxtHersteller.Text = wtxtZustand.Text = null;
             foreach (Control ctr in grpAudioSchnittstellen.Controls)//Alle Chekboxen zurücksetzen in der Gruppe AudioSchnittstellen
             {
                 ((CheckBox)ctr).Checked = false;
@@ -51,7 +51,7 @@ namespace PC_Hardware_Datenbank
         {
             if (File.Exists(@"./Soundkarte_Datenbank.csv") == true)//Prüffen ob eine .csv Datei bereits erstellt wurde
             {
-                if (wtxtAnschlusssSchnittstelle.Text != "" && wtxtAusgabestandard.Text != "")//Prüfft die Pflichtangaben
+                if (wtxtAnschlusssSchnittstelle.Text != "" && wtxtAusgabestandard.Text != "" && wtxtZustand.Text != "")//Prüfft die Pflichtangaben
                 {
                     Datensatz = File.ReadAllText(@"./Soundkarte_Datenbank.csv");//Datenbanck einlessen und in Datensatz schreiben
 
@@ -112,11 +112,47 @@ namespace PC_Hardware_Datenbank
                     #endregion
 
                     #region Datensatzbilden
-                    Datensatz += LF + wtxtAusgabestandard.Text + ";" + wtxtAnschlusssSchnittstelle.Text + ";" + wtxtBitaufloesung.Text + ";" + wtxtHersteller.Text + ";" + ADAT+";"+ AES_EBU + ";" + Chinchbuchse + ";" + Klinkenbuchse + ";" + MADI + ";" + SPDIF + ";" + TDIF + ";" + BreakoutBox + ";" + "DSP" + Gameport + ";" + MIDI + ";" + Mikrofoneingang + ";" + Wavetable;
+                    Datensatz += LF +
+                        wtxtAusgabestandard.Text + ";" +
+                        wtxtAnschlusssSchnittstelle.Text + ";" +
+                        wtxtZustand.Text + ";" +
+                        wtxtBitaufloesung.Text + ";" +
+                        wtxtHersteller.Text + ";" +
+                        ADAT+";"+
+                        AES_EBU + ";" +
+                        Chinchbuchse + ";" +
+                        Klinkenbuchse + ";" +
+                        MADI + ";" +
+                        SPDIF + ";" +
+                        TDIF + ";" +
+                        BreakoutBox + ";" +
+                        DSP + ";" +
+                        Gameport + ";" +
+                        MIDI + ";" +
+                        Mikrofoneingang + ";" +
+                        Wavetable;
                     #endregion
 
                     #region QR Code
-                    QR = "Ausgabestandard:" + wtxtAusgabestandard.Text + LF + "Anschlussschnittstelle:" + wtxtAnschlusssSchnittstelle.Text + LF + "Bit-Auflösung:" + wtxtBitaufloesung.Text + LF + "Hersteller:" + wtxtHersteller.Text + LF + "ADAT:" + ADAT + LF + "AES/EBU:" + AES_EBU + LF + "Chinchbuchse:" + Chinchbuchse + LF + "Klinkenbuchse:" + Klinkenbuchse + LF + "MADI:" + MADI + LF + "S/PDIF:" + SPDIF + LF + "TDIF:" + TDIF + LF + "Breakout Box:" + BreakoutBox + LF + "DSP:" + DSP + LF + "Gameport:" + Gameport + LF + "MIDI:" + MIDI + LF + "Mikrofoneingang:" + Mikrofoneingang + LF + "Wavetable:" + Wavetable;
+                    QR =
+                        "Ausgabestandard: " + wtxtAusgabestandard.Text + LF +
+                        "Anschlussschnittstelle: " + wtxtAnschlusssSchnittstelle.Text + LF +
+                        "Zustand: " + wtxtZustand.Text + LF +
+                        "Bit-Auflösung: " + wtxtBitaufloesung.Text + LF +
+                        "Hersteller: " + wtxtHersteller.Text + LF +
+                        "ADAT: " + ADAT + LF +
+                        "AES/EBU: " + AES_EBU + LF +
+                        "Chinchbuchse: " + Chinchbuchse + LF +
+                        "Klinkenbuchse: " + Klinkenbuchse + LF +
+                        "MADI: " + MADI + LF +
+                        "S/PDIF: " + SPDIF + LF +
+                        "TDIF: " + TDIF + LF +
+                        "Breakout Box: " + BreakoutBox + LF +
+                        "DSP: " + DSP + LF +
+                        "Gameport: " + Gameport + LF +
+                        "MIDI: " + MIDI + LF +
+                        "Mikrofoneingang: " + Mikrofoneingang + LF +
+                        "Wavetable: " + Wavetable;
                     #endregion
 
                     File.WriteAllText(@"./Soundkarte_Datenbank.csv", Datensatz); //Datensatz in Soundkarte_Datenbank.csv schreiben

@@ -61,6 +61,8 @@
             this.cbtFenster = new System.Windows.Forms.CheckBox();
             this.wtxtFormfaktor = new System.Windows.Forms.ComboBox();
             this.fo = new System.Windows.Forms.Label();
+            this.wtxtZustand = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcmdMainbord)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudEinschub5)).BeginInit();
@@ -74,15 +76,25 @@
             // wtxtTyp
             // 
             this.wtxtTyp.FormattingEnabled = true;
-            this.wtxtTyp.Location = new System.Drawing.Point(34, 135);
+            this.wtxtTyp.Items.AddRange(new object[] {
+            "Ultra-kompakt (NUC)",
+            "ITX/DTX",
+            "Mini-Tower",
+            "Midi-Tower",
+            "Big-Tower",
+            "Server-Tower",
+            "Desktop",
+            "Benchtable",
+            "Sonderform"});
+            this.wtxtTyp.Location = new System.Drawing.Point(249, 135);
             this.wtxtTyp.Name = "wtxtTyp";
             this.wtxtTyp.Size = new System.Drawing.Size(146, 28);
-            this.wtxtTyp.TabIndex = 2;
+            this.wtxtTyp.TabIndex = 3;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(30, 112);
+            this.label6.Location = new System.Drawing.Point(245, 112);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(38, 20);
             this.label6.TabIndex = 135;
@@ -91,7 +103,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(245, 186);
+            this.label9.Location = new System.Drawing.Point(30, 258);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(134, 20);
             this.label9.TabIndex = 133;
@@ -100,7 +112,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(245, 262);
+            this.label8.Location = new System.Drawing.Point(30, 334);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(145, 20);
             this.label8.TabIndex = 132;
@@ -109,7 +121,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(30, 260);
+            this.label7.Location = new System.Drawing.Point(245, 260);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(145, 20);
             this.label7.TabIndex = 131;
@@ -132,9 +144,10 @@
             this.cmdQR.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdQR.Name = "cmdQR";
             this.cmdQR.Size = new System.Drawing.Size(171, 35);
-            this.cmdQR.TabIndex = 17;
+            this.cmdQR.TabIndex = 18;
             this.cmdQR.Text = "QR-Code Drucken";
             this.cmdQR.UseVisualStyleBackColor = false;
+            this.cmdQR.Click += new System.EventHandler(this.cmdQR_Click);
             // 
             // cmdBildEinfugen
             // 
@@ -144,7 +157,7 @@
             this.cmdBildEinfugen.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdBildEinfugen.Name = "cmdBildEinfugen";
             this.cmdBildEinfugen.Size = new System.Drawing.Size(150, 35);
-            this.cmdBildEinfugen.TabIndex = 14;
+            this.cmdBildEinfugen.TabIndex = 15;
             this.cmdBildEinfugen.Text = "Bild einfügen";
             this.cmdBildEinfugen.UseVisualStyleBackColor = false;
             // 
@@ -156,7 +169,7 @@
             this.cmdClear.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdClear.Name = "cmdClear";
             this.cmdClear.Size = new System.Drawing.Size(150, 35);
-            this.cmdClear.TabIndex = 16;
+            this.cmdClear.TabIndex = 17;
             this.cmdClear.Text = "Zurücksetzen";
             this.cmdClear.UseVisualStyleBackColor = false;
             this.cmdClear.Click += new System.EventHandler(this.cmdClear_Click);
@@ -169,7 +182,7 @@
             this.cmdSpeichern.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdSpeichern.Name = "cmdSpeichern";
             this.cmdSpeichern.Size = new System.Drawing.Size(150, 35);
-            this.cmdSpeichern.TabIndex = 15;
+            this.cmdSpeichern.TabIndex = 16;
             this.cmdSpeichern.Text = "Speichern";
             this.cmdSpeichern.UseVisualStyleBackColor = false;
             this.cmdSpeichern.Click += new System.EventHandler(this.cmdSpeichern_Click);
@@ -182,7 +195,7 @@
             this.cmdBeenden.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdBeenden.Name = "cmdBeenden";
             this.cmdBeenden.Size = new System.Drawing.Size(150, 35);
-            this.cmdBeenden.TabIndex = 18;
+            this.cmdBeenden.TabIndex = 19;
             this.cmdBeenden.Text = "Schließen";
             this.cmdBeenden.UseVisualStyleBackColor = false;
             this.cmdBeenden.Click += new System.EventHandler(this.cmdBeenden_Click);
@@ -201,7 +214,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(30, 186);
+            this.label3.Location = new System.Drawing.Point(245, 186);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(143, 20);
             this.label3.TabIndex = 126;
@@ -220,15 +233,116 @@
             // wtxtHersteller
             // 
             this.wtxtHersteller.FormattingEnabled = true;
-            this.wtxtHersteller.Location = new System.Drawing.Point(249, 61);
+            this.wtxtHersteller.Items.AddRange(new object[] {
+            "A Power",
+            "ADATA",
+            "AeroCool",
+            "Akasa",
+            "Amacrox",
+            "Andyson",
+            "Antec",
+            "ARLT",
+            "ASPower",
+            "ASUS",
+            "AXP",
+            "be quiet!",
+            "BitFenix",
+            "Chieftec",
+            "Cisco",
+            "CiT",
+            "Club 3D",
+            "Codegen",
+            "CompuCase",
+            "Cooler Master",
+            "Cooltek",
+            "Corsair",
+            "DeepCool",
+            "Dell",
+            "Enermax",
+            "EVGA",
+            "Fantec",
+            "Fractal Design",
+            "FSP",
+            "Fujitsu",
+            "Gigabyte",
+            "GlacialPower",
+            "High Power",
+            "HP",
+            "Huntkey",
+            "In Win",
+            "Intel",
+            "Inter-Tech",
+            "JCP",
+            "Jersey",
+            "Jou Jye",
+            "Kingwin",
+            "Kiss Quiet",
+            "Kolink",
+            "LC-Power",
+            "Lenovo",
+            "LEPA",
+            "Levicom",
+            "Lian Li",
+            "Lindy",
+            "Linkworld",
+            "LogiLink",
+            "Logisys ",
+            "Mini-Box",
+            "Modecom",
+            "MS-Tech",
+            "NesteQ",
+            "Nofan",
+            "Nox",
+            "NZXT",
+            "OCZ",
+            "PC Power&Cooling",
+            "PowerColor",
+            "QNAP",
+            "RaidSonic",
+            "Rasurbo",
+            "Rhombutech",
+            "Riotoro",
+            "Rosewill",
+            "Sapphire",
+            "Scythe",
+            "Seasonic",
+            "SevenTeam",
+            "Sharkoon",
+            "Shuttle",
+            "SilentiumPC",
+            "Silver Power",
+            "Silverstone",
+            "Sparkle",
+            "Speedlink",
+            "Spire",
+            "Streacom",
+            "Super Flower",
+            "Supermicro",
+            "Sure Star",
+            "Tacens",
+            "Tagan",
+            "Techsolo",
+            "Thermaltake",
+            "Thortech",
+            "Tronje",
+            "Trust",
+            "Ultra",
+            "Ultron",
+            "XFX",
+            "Xigmatek",
+            "Xilence",
+            "XION",
+            "Zalman",
+            "Zippy"});
+            this.wtxtHersteller.Location = new System.Drawing.Point(34, 135);
             this.wtxtHersteller.Name = "wtxtHersteller";
             this.wtxtHersteller.Size = new System.Drawing.Size(146, 28);
-            this.wtxtHersteller.TabIndex = 1;
+            this.wtxtHersteller.TabIndex = 2;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(248, 38);
+            this.label4.Location = new System.Drawing.Point(33, 112);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(81, 20);
             this.label4.TabIndex = 137;
@@ -241,15 +355,15 @@
             "Oben",
             "Nunten",
             "Extern"});
-            this.wtxtNetzteilPosition.Location = new System.Drawing.Point(249, 135);
+            this.wtxtNetzteilPosition.Location = new System.Drawing.Point(34, 207);
             this.wtxtNetzteilPosition.Name = "wtxtNetzteilPosition";
             this.wtxtNetzteilPosition.Size = new System.Drawing.Size(146, 28);
-            this.wtxtNetzteilPosition.TabIndex = 3;
+            this.wtxtNetzteilPosition.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(248, 112);
+            this.label2.Location = new System.Drawing.Point(33, 184);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(126, 20);
             this.label2.TabIndex = 139;
@@ -264,31 +378,31 @@
             // 
             // nudEinschub5
             // 
-            this.nudEinschub5.Location = new System.Drawing.Point(34, 209);
+            this.nudEinschub5.Location = new System.Drawing.Point(249, 209);
             this.nudEinschub5.Name = "nudEinschub5";
             this.nudEinschub5.Size = new System.Drawing.Size(146, 26);
-            this.nudEinschub5.TabIndex = 4;
+            this.nudEinschub5.TabIndex = 5;
             // 
             // nudEinschub3
             // 
-            this.nudEinschub3.Location = new System.Drawing.Point(249, 209);
+            this.nudEinschub3.Location = new System.Drawing.Point(34, 281);
             this.nudEinschub3.Name = "nudEinschub3";
             this.nudEinschub3.Size = new System.Drawing.Size(143, 26);
-            this.nudEinschub3.TabIndex = 5;
+            this.nudEinschub3.TabIndex = 6;
             // 
             // nudHDD3
             // 
-            this.nudHDD3.Location = new System.Drawing.Point(34, 283);
+            this.nudHDD3.Location = new System.Drawing.Point(249, 283);
             this.nudHDD3.Name = "nudHDD3";
             this.nudHDD3.Size = new System.Drawing.Size(146, 26);
-            this.nudHDD3.TabIndex = 6;
+            this.nudHDD3.TabIndex = 7;
             // 
             // nudHDD2
             // 
-            this.nudHDD2.Location = new System.Drawing.Point(249, 285);
+            this.nudHDD2.Location = new System.Drawing.Point(34, 357);
             this.nudHDD2.Name = "nudHDD2";
             this.nudHDD2.Size = new System.Drawing.Size(143, 26);
-            this.nudHDD2.TabIndex = 7;
+            this.nudHDD2.TabIndex = 8;
             // 
             // cbtKabelsystem
             // 
@@ -296,21 +410,21 @@
             this.cbtKabelsystem.Location = new System.Drawing.Point(462, 63);
             this.cbtKabelsystem.Name = "cbtKabelsystem";
             this.cbtKabelsystem.Size = new System.Drawing.Size(118, 24);
-            this.cbtKabelsystem.TabIndex = 11;
+            this.cbtKabelsystem.TabIndex = 12;
             this.cbtKabelsystem.Text = "Kabelsystem";
             this.cbtKabelsystem.UseVisualStyleBackColor = true;
             // 
             // nudFrontUSB
             // 
-            this.nudFrontUSB.Location = new System.Drawing.Point(34, 355);
+            this.nudFrontUSB.Location = new System.Drawing.Point(249, 355);
             this.nudFrontUSB.Name = "nudFrontUSB";
             this.nudFrontUSB.Size = new System.Drawing.Size(145, 26);
-            this.nudFrontUSB.TabIndex = 8;
+            this.nudFrontUSB.TabIndex = 9;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(30, 332);
+            this.label5.Location = new System.Drawing.Point(245, 332);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(89, 20);
             this.label5.TabIndex = 145;
@@ -318,15 +432,15 @@
             // 
             // nudFrontKlinke
             // 
-            this.nudFrontKlinke.Location = new System.Drawing.Point(249, 355);
+            this.nudFrontKlinke.Location = new System.Drawing.Point(34, 427);
             this.nudFrontKlinke.Name = "nudFrontKlinke";
             this.nudFrontKlinke.Size = new System.Drawing.Size(145, 26);
-            this.nudFrontKlinke.TabIndex = 9;
+            this.nudFrontKlinke.TabIndex = 10;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(245, 332);
+            this.label10.Location = new System.Drawing.Point(30, 404);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(97, 20);
             this.label10.TabIndex = 147;
@@ -338,7 +452,7 @@
             this.cbtBelechtung.Location = new System.Drawing.Point(462, 137);
             this.cbtBelechtung.Name = "cbtBelechtung";
             this.cbtBelechtung.Size = new System.Drawing.Size(118, 24);
-            this.cbtBelechtung.TabIndex = 12;
+            this.cbtBelechtung.TabIndex = 13;
             this.cbtBelechtung.Text = "Beleuchtung";
             this.cbtBelechtung.UseVisualStyleBackColor = true;
             // 
@@ -348,7 +462,7 @@
             this.cbtFenster.Location = new System.Drawing.Point(462, 210);
             this.cbtFenster.Name = "cbtFenster";
             this.cbtFenster.Size = new System.Drawing.Size(148, 24);
-            this.cbtFenster.TabIndex = 13;
+            this.cbtFenster.TabIndex = 14;
             this.cbtFenster.Text = "Plexiglas Fenster";
             this.cbtFenster.UseVisualStyleBackColor = true;
             // 
@@ -364,25 +478,48 @@
             "Mini-DTX",
             "Mini-STX",
             "SSI-CEB"});
-            this.wtxtFormfaktor.Location = new System.Drawing.Point(31, 427);
+            this.wtxtFormfaktor.Location = new System.Drawing.Point(246, 427);
             this.wtxtFormfaktor.Name = "wtxtFormfaktor";
             this.wtxtFormfaktor.Size = new System.Drawing.Size(146, 28);
-            this.wtxtFormfaktor.TabIndex = 10;
+            this.wtxtFormfaktor.TabIndex = 11;
             // 
             // fo
             // 
             this.fo.AutoSize = true;
-            this.fo.Location = new System.Drawing.Point(30, 404);
+            this.fo.Location = new System.Drawing.Point(245, 404);
             this.fo.Name = "fo";
             this.fo.Size = new System.Drawing.Size(91, 20);
             this.fo.TabIndex = 149;
             this.fo.Text = "Formfaktor:";
+            // 
+            // wtxtZustand
+            // 
+            this.wtxtZustand.FormattingEnabled = true;
+            this.wtxtZustand.Items.AddRange(new object[] {
+            "verbaut",
+            "auf Lager"});
+            this.wtxtZustand.Location = new System.Drawing.Point(249, 61);
+            this.wtxtZustand.Name = "wtxtZustand";
+            this.wtxtZustand.Size = new System.Drawing.Size(146, 28);
+            this.wtxtZustand.TabIndex = 1;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.ForeColor = System.Drawing.Color.Red;
+            this.label11.Location = new System.Drawing.Point(248, 38);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(72, 20);
+            this.label11.TabIndex = 151;
+            this.label11.Text = "Zustand:";
             // 
             // Gehause_Imput
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1126, 620);
+            this.Controls.Add(this.wtxtZustand);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.wtxtFormfaktor);
             this.Controls.Add(this.fo);
             this.Controls.Add(this.cbtFenster);
@@ -467,5 +604,7 @@
         private System.Windows.Forms.CheckBox cbtFenster;
         private System.Windows.Forms.ComboBox wtxtFormfaktor;
         private System.Windows.Forms.Label fo;
+        private System.Windows.Forms.ComboBox wtxtZustand;
+        private System.Windows.Forms.Label label11;
     }
 }

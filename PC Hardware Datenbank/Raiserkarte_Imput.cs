@@ -31,7 +31,7 @@ namespace PC_Hardware_Datenbank
 
         private void LoschFunktion()//Löschen Funktion
         {
-            wtxtSteckverbindung.Text = wtxtSchnittstelle.Text = wtxtAusrichtung.Text = null;
+            wtxtSteckverbindung.Text = wtxtSchnittstelle.Text = wtxtAusrichtung.Text = wtxtZustand.Text = null;
             nudSteckverbindung.Value = nudSchnittstelle.Value = 1;
             wtxtSteckverbindung.Focus();
         }
@@ -45,16 +45,28 @@ namespace PC_Hardware_Datenbank
         {
             if (File.Exists(@"./Raiserkarte_Datenbank.csv") == true)//Prüffen ob eine .csv Datei bereits erstellt wurde
             {
-                if (wtxtSteckverbindung.Text != "" && wtxtSchnittstelle.Text != "" && wtxtAusrichtung.Text != "")//Prüfft die Pflichtangaben
+                if (wtxtSteckverbindung.Text != "" && wtxtSchnittstelle.Text != "" && wtxtAusrichtung.Text != "" && wtxtZustand.Text != "")//Prüfft die Pflichtangaben
                 {
                     Datensatz = File.ReadAllText(@"./Raiserkarte_Datenbank.csv");//Datenbanck lessen und in Datensatz speichern
 
                     #region Datensatz bilden
-                    Datensatz += LF + wtxtSteckverbindung.Text + ";" + nudSteckverbindung.Value + ";" + wtxtSchnittstelle.Text + ";" + nudSchnittstelle.Value + ";" + wtxtAusrichtung.Text;
+                    Datensatz += LF +
+                        wtxtSteckverbindung.Text + ";" +
+                        nudSteckverbindung.Value + ";" +
+                        wtxtSchnittstelle.Text + ";" +
+                        nudSchnittstelle.Value + ";" +
+                        wtxtAusrichtung.Text + ";" +
+                        wtxtZustand.Text;
                     #endregion
 
                     #region QR Code
-                    QR = "Steckverbindung:" + wtxtSteckverbindung.Text + " Anzahl:" + nudSteckverbindung.Value + LF + "Schnittstelle:" + wtxtSchnittstelle.Text + " Anzahl:" + nudSchnittstelle.Value + LF + "Ausrichtung:" + wtxtAusrichtung.Text;
+                    QR =
+                        "Steckverbindung: " + wtxtSteckverbindung.Text + LF +
+                        "Anzahl: " + nudSteckverbindung.Value + LF +
+                        "Schnittstelle: " + wtxtSchnittstelle.Text + LF +
+                        "Anzahl: " + nudSchnittstelle.Value + LF +
+                        "Ausrichtung: " + wtxtAusrichtung.Text + LF +
+                        "Zustand: " + wtxtZustand.Text;
                     #endregion
 
                     File.WriteAllText(@"./Raiserkarte_Datenbank.csv", Datensatz);//Datensatz in GPU_Datenbank.csv schreiben

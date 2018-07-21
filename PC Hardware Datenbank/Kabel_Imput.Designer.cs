@@ -43,6 +43,8 @@
             this.cmdClear = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.cbtSchaltbar = new System.Windows.Forms.CheckBox();
+            this.wtxtZustand = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudLange)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcmdMainbord)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -55,7 +57,7 @@
             this.nudLange.Location = new System.Drawing.Point(251, 155);
             this.nudLange.Name = "nudLange";
             this.nudLange.Size = new System.Drawing.Size(109, 26);
-            this.nudLange.TabIndex = 0;
+            this.nudLange.TabIndex = 2;
             // 
             // label5
             // 
@@ -75,7 +77,7 @@
             this.cmdBeenden.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdBeenden.Name = "cmdBeenden";
             this.cmdBeenden.Size = new System.Drawing.Size(150, 35);
-            this.cmdBeenden.TabIndex = 179;
+            this.cmdBeenden.TabIndex = 9;
             this.cmdBeenden.Text = "Schließen";
             this.cmdBeenden.UseVisualStyleBackColor = false;
             this.cmdBeenden.Click += new System.EventHandler(this.cmdBeenden_Click);
@@ -139,7 +141,7 @@
             this.wtxtKabelendeA.Location = new System.Drawing.Point(40, 154);
             this.wtxtKabelendeA.Name = "wtxtKabelendeA";
             this.wtxtKabelendeA.Size = new System.Drawing.Size(205, 28);
-            this.wtxtKabelendeA.TabIndex = 163;
+            this.wtxtKabelendeA.TabIndex = 1;
             // 
             // label1
             // 
@@ -159,7 +161,7 @@
             this.cmdSpeichern.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdSpeichern.Name = "cmdSpeichern";
             this.cmdSpeichern.Size = new System.Drawing.Size(150, 35);
-            this.cmdSpeichern.TabIndex = 176;
+            this.cmdSpeichern.TabIndex = 6;
             this.cmdSpeichern.Text = "Speichern";
             this.cmdSpeichern.UseVisualStyleBackColor = false;
             this.cmdSpeichern.Click += new System.EventHandler(this.cmdSpeichern_Click);
@@ -181,9 +183,10 @@
             this.cmdQR.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdQR.Name = "cmdQR";
             this.cmdQR.Size = new System.Drawing.Size(171, 35);
-            this.cmdQR.TabIndex = 178;
+            this.cmdQR.TabIndex = 8;
             this.cmdQR.Text = "QR-Code Drucken";
             this.cmdQR.UseVisualStyleBackColor = false;
+            this.cmdQR.Click += new System.EventHandler(this.cmdQR_Click);
             // 
             // wtxtKabelendeB
             // 
@@ -233,7 +236,7 @@
             this.wtxtKabelendeB.Location = new System.Drawing.Point(366, 153);
             this.wtxtKabelendeB.Name = "wtxtKabelendeB";
             this.wtxtKabelendeB.Size = new System.Drawing.Size(205, 28);
-            this.wtxtKabelendeB.TabIndex = 164;
+            this.wtxtKabelendeB.TabIndex = 3;
             // 
             // cmdBildEinfugen
             // 
@@ -243,7 +246,7 @@
             this.cmdBildEinfugen.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdBildEinfugen.Name = "cmdBildEinfugen";
             this.cmdBildEinfugen.Size = new System.Drawing.Size(150, 35);
-            this.cmdBildEinfugen.TabIndex = 175;
+            this.cmdBildEinfugen.TabIndex = 5;
             this.cmdBildEinfugen.Text = "Bild einfügen";
             this.cmdBildEinfugen.UseVisualStyleBackColor = false;
             // 
@@ -255,7 +258,7 @@
             this.cmdClear.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdClear.Name = "cmdClear";
             this.cmdClear.Size = new System.Drawing.Size(150, 35);
-            this.cmdClear.TabIndex = 177;
+            this.cmdClear.TabIndex = 7;
             this.cmdClear.Text = "Zurücksetzen";
             this.cmdClear.UseVisualStyleBackColor = false;
             this.cmdClear.Click += new System.EventHandler(this.cmdClear_Click);
@@ -276,15 +279,38 @@
             this.cbtSchaltbar.Location = new System.Drawing.Point(251, 208);
             this.cbtSchaltbar.Name = "cbtSchaltbar";
             this.cbtSchaltbar.Size = new System.Drawing.Size(96, 24);
-            this.cbtSchaltbar.TabIndex = 185;
+            this.cbtSchaltbar.TabIndex = 4;
             this.cbtSchaltbar.Text = "Schaltbar";
             this.cbtSchaltbar.UseVisualStyleBackColor = true;
+            // 
+            // wtxtZustand
+            // 
+            this.wtxtZustand.FormattingEnabled = true;
+            this.wtxtZustand.Items.AddRange(new object[] {
+            "verbaut",
+            "auf Lager"});
+            this.wtxtZustand.Location = new System.Drawing.Point(40, 81);
+            this.wtxtZustand.Name = "wtxtZustand";
+            this.wtxtZustand.Size = new System.Drawing.Size(146, 28);
+            this.wtxtZustand.TabIndex = 0;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.Red;
+            this.label4.Location = new System.Drawing.Point(36, 58);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(72, 20);
+            this.label4.TabIndex = 187;
+            this.label4.Text = "Zustand:";
             // 
             // Kabel_Imput
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1126, 620);
+            this.Controls.Add(this.wtxtZustand);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.cbtSchaltbar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label5);
@@ -327,5 +353,7 @@
         private System.Windows.Forms.Button cmdClear;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckBox cbtSchaltbar;
+        private System.Windows.Forms.ComboBox wtxtZustand;
+        private System.Windows.Forms.Label label4;
     }
 }

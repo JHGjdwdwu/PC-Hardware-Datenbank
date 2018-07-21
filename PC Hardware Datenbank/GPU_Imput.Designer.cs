@@ -68,6 +68,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtTaktrate = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.wtxtZustand = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcmdMainbord)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -104,9 +106,10 @@
             this.cmdQR.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdQR.Name = "cmdQR";
             this.cmdQR.Size = new System.Drawing.Size(171, 35);
-            this.cmdQR.TabIndex = 14;
+            this.cmdQR.TabIndex = 15;
             this.cmdQR.Text = "QR-Code Drucken";
             this.cmdQR.UseVisualStyleBackColor = false;
+            this.cmdQR.Click += new System.EventHandler(this.cmdQR_Click);
             // 
             // cmdBildEinfugen
             // 
@@ -116,7 +119,7 @@
             this.cmdBildEinfugen.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdBildEinfugen.Name = "cmdBildEinfugen";
             this.cmdBildEinfugen.Size = new System.Drawing.Size(150, 35);
-            this.cmdBildEinfugen.TabIndex = 11;
+            this.cmdBildEinfugen.TabIndex = 12;
             this.cmdBildEinfugen.Text = "Bild einfügen";
             this.cmdBildEinfugen.UseVisualStyleBackColor = false;
             // 
@@ -128,7 +131,7 @@
             this.cmdClear.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdClear.Name = "cmdClear";
             this.cmdClear.Size = new System.Drawing.Size(150, 35);
-            this.cmdClear.TabIndex = 13;
+            this.cmdClear.TabIndex = 14;
             this.cmdClear.Text = "Zurücksetzen";
             this.cmdClear.UseVisualStyleBackColor = false;
             this.cmdClear.Click += new System.EventHandler(this.cmdClear_Click);
@@ -141,7 +144,7 @@
             this.cmdSpeichern.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdSpeichern.Name = "cmdSpeichern";
             this.cmdSpeichern.Size = new System.Drawing.Size(150, 35);
-            this.cmdSpeichern.TabIndex = 12;
+            this.cmdSpeichern.TabIndex = 13;
             this.cmdSpeichern.Text = "Speichern";
             this.cmdSpeichern.UseVisualStyleBackColor = false;
             this.cmdSpeichern.Click += new System.EventHandler(this.cmdSpeichern_Click);
@@ -154,7 +157,7 @@
             this.cmdBeenden.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdBeenden.Name = "cmdBeenden";
             this.cmdBeenden.Size = new System.Drawing.Size(150, 35);
-            this.cmdBeenden.TabIndex = 15;
+            this.cmdBeenden.TabIndex = 16;
             this.cmdBeenden.Text = "Schließen";
             this.cmdBeenden.UseVisualStyleBackColor = false;
             this.cmdBeenden.Click += new System.EventHandler(this.cmdBeenden_Click);
@@ -183,7 +186,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(30, 186);
+            this.label3.Location = new System.Drawing.Point(245, 186);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(79, 20);
             this.label3.TabIndex = 87;
@@ -192,15 +195,15 @@
             // wtxtSpeichergrosse
             // 
             this.wtxtSpeichergrosse.FormattingEnabled = true;
-            this.wtxtSpeichergrosse.Location = new System.Drawing.Point(34, 135);
+            this.wtxtSpeichergrosse.Location = new System.Drawing.Point(249, 135);
             this.wtxtSpeichergrosse.Name = "wtxtSpeichergrosse";
             this.wtxtSpeichergrosse.Size = new System.Drawing.Size(146, 28);
-            this.wtxtSpeichergrosse.TabIndex = 2;
+            this.wtxtSpeichergrosse.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(30, 112);
+            this.label2.Location = new System.Drawing.Point(245, 112);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(118, 20);
             this.label2.TabIndex = 86;
@@ -233,10 +236,10 @@
             this.wtxtKuhlertyp.Items.AddRange(new object[] {
             "Aktiv Kühlung",
             "Passive Kühlung"});
-            this.wtxtKuhlertyp.Location = new System.Drawing.Point(34, 209);
+            this.wtxtKuhlertyp.Location = new System.Drawing.Point(249, 209);
             this.wtxtKuhlertyp.Name = "wtxtKuhlertyp";
             this.wtxtKuhlertyp.Size = new System.Drawing.Size(146, 28);
-            this.wtxtKuhlertyp.TabIndex = 4;
+            this.wtxtKuhlertyp.TabIndex = 5;
             // 
             // groupBox1
             // 
@@ -256,7 +259,7 @@
             this.groupBox1.Location = new System.Drawing.Point(419, 38);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(213, 239);
-            this.groupBox1.TabIndex = 10;
+            this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Externe Schnittstellen";
             // 
@@ -399,15 +402,15 @@
             "AGP",
             "PCI",
             "PCIe x16"});
-            this.wtxtAnschluss.Location = new System.Drawing.Point(34, 283);
+            this.wtxtAnschluss.Location = new System.Drawing.Point(249, 283);
             this.wtxtAnschluss.Name = "wtxtAnschluss";
             this.wtxtAnschluss.Size = new System.Drawing.Size(146, 28);
-            this.wtxtAnschluss.TabIndex = 6;
+            this.wtxtAnschluss.TabIndex = 7;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(30, 260);
+            this.label7.Location = new System.Drawing.Point(245, 260);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(105, 20);
             this.label7.TabIndex = 103;
@@ -416,7 +419,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(245, 262);
+            this.label8.Location = new System.Drawing.Point(33, 334);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(126, 20);
             this.label8.TabIndex = 105;
@@ -424,10 +427,10 @@
             // 
             // wtxtStromverbrauch
             // 
-            this.wtxtStromverbrauch.Location = new System.Drawing.Point(246, 285);
+            this.wtxtStromverbrauch.Location = new System.Drawing.Point(34, 357);
             this.wtxtStromverbrauch.Name = "wtxtStromverbrauch";
             this.wtxtStromverbrauch.Size = new System.Drawing.Size(146, 26);
-            this.wtxtStromverbrauch.TabIndex = 7;
+            this.wtxtStromverbrauch.TabIndex = 8;
             // 
             // wtxtStromversorgung
             // 
@@ -436,15 +439,15 @@
             "2x3-poligen 12V",
             "2x4-poligen 12V",
             "Molex-8981"});
-            this.wtxtStromversorgung.Location = new System.Drawing.Point(246, 209);
+            this.wtxtStromversorgung.Location = new System.Drawing.Point(34, 283);
             this.wtxtStromversorgung.Name = "wtxtStromversorgung";
             this.wtxtStromversorgung.Size = new System.Drawing.Size(146, 28);
-            this.wtxtStromversorgung.TabIndex = 5;
+            this.wtxtStromversorgung.TabIndex = 6;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(245, 186);
+            this.label9.Location = new System.Drawing.Point(33, 260);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(135, 20);
             this.label9.TabIndex = 107;
@@ -453,10 +456,10 @@
             // cbtMultiGPU
             // 
             this.cbtMultiGPU.AutoSize = true;
-            this.cbtMultiGPU.Location = new System.Drawing.Point(246, 359);
+            this.cbtMultiGPU.Location = new System.Drawing.Point(34, 406);
             this.cbtMultiGPU.Name = "cbtMultiGPU";
             this.cbtMultiGPU.Size = new System.Drawing.Size(210, 24);
-            this.cbtMultiGPU.TabIndex = 9;
+            this.cbtMultiGPU.TabIndex = 10;
             this.cbtMultiGPU.Text = "Multi-Grafikkarten-Betrieb";
             this.cbtMultiGPU.UseVisualStyleBackColor = true;
             // 
@@ -469,15 +472,15 @@
             "GDDR4",
             "GDDR5",
             "GDDR6"});
-            this.wtxtSpeicherTyp.Location = new System.Drawing.Point(246, 135);
+            this.wtxtSpeicherTyp.Location = new System.Drawing.Point(34, 209);
             this.wtxtSpeicherTyp.Name = "wtxtSpeicherTyp";
             this.wtxtSpeicherTyp.Size = new System.Drawing.Size(146, 28);
-            this.wtxtSpeicherTyp.TabIndex = 3;
+            this.wtxtSpeicherTyp.TabIndex = 4;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(245, 112);
+            this.label6.Location = new System.Drawing.Point(33, 186);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(97, 20);
             this.label6.TabIndex = 110;
@@ -485,25 +488,48 @@
             // 
             // txtTaktrate
             // 
-            this.txtTaktrate.Location = new System.Drawing.Point(34, 357);
+            this.txtTaktrate.Location = new System.Drawing.Point(249, 357);
             this.txtTaktrate.Name = "txtTaktrate";
             this.txtTaktrate.Size = new System.Drawing.Size(146, 26);
-            this.txtTaktrate.TabIndex = 8;
+            this.txtTaktrate.TabIndex = 9;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(30, 334);
+            this.label10.Location = new System.Drawing.Point(245, 334);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(72, 20);
             this.label10.TabIndex = 113;
             this.label10.Text = "Taktrate:";
+            // 
+            // wtxtZustand
+            // 
+            this.wtxtZustand.FormattingEnabled = true;
+            this.wtxtZustand.Items.AddRange(new object[] {
+            "verbaut",
+            "auf Lager"});
+            this.wtxtZustand.Location = new System.Drawing.Point(34, 135);
+            this.wtxtZustand.Name = "wtxtZustand";
+            this.wtxtZustand.Size = new System.Drawing.Size(146, 28);
+            this.wtxtZustand.TabIndex = 2;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.Red;
+            this.label4.Location = new System.Drawing.Point(30, 112);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(72, 20);
+            this.label4.TabIndex = 115;
+            this.label4.Text = "Zustand:";
             // 
             // GPU_Imput
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1126, 620);
+            this.Controls.Add(this.wtxtZustand);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.txtTaktrate);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.wtxtSpeicherTyp);
@@ -592,5 +618,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtTaktrate;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox wtxtZustand;
+        private System.Windows.Forms.Label label4;
     }
 }

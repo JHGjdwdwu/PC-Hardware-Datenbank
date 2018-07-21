@@ -64,6 +64,8 @@
             this.nudHDMI = new System.Windows.Forms.NumericUpDown();
             this.nudODT = new System.Windows.Forms.NumericUpDown();
             this.nudKlinke = new System.Windows.Forms.NumericUpDown();
+            this.wtxtZustand = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcmdMainbord)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -84,15 +86,43 @@
             // 
             this.wtxtAnschluss.FormattingEnabled = true;
             this.wtxtAnschluss.Items.AddRange(new object[] {
-            "AGP",
+            "CardBus",
+            "PCIe 1.0 x1",
+            "PCIe 1.0 x4",
+            "PCIe 1.0 x8",
+            "PCIe 2.0 x1",
+            "PCIe 2.0 x4",
+            "PCIe 2.0 x8",
+            "PCIe 2.1 x1",
+            "PCIe 2.1 x4",
+            "PCIe 2.1 x8",
+            "PCIe 3.0 x4",
+            "PCIe 3.0 x8",
+            "PCIe 3.0 x16",
+            "PCI-X",
+            "PCI 2.1",
+            "PCI 2.2",
+            "PCI 2.3",
+            "USB-A 2.0",
+            "USB-A 3.0",
+            "Thunderbolt 1",
+            "Thunderbolt 2",
+            "Thunderbolt 3",
+            "SFP",
+            "SFP+",
             "PCI",
-            "PCIe x1",
-            "PCIe x2",
-            "PCIe x4",
-            "PCIe x8",
-            "PCIe x16",
-            "PCIe x32"});
-            this.wtxtAnschluss.Location = new System.Drawing.Point(34, 135);
+            "PCIe",
+            "PCIe 1.0",
+            "PCIe 2.0",
+            "PCIe 2.1",
+            "PCIe 3.0",
+            "Thunderbolt",
+            "USB 2.0",
+            "USB 3.0",
+            "USB-A",
+            "USB Micro-B",
+            "USB-C"});
+            this.wtxtAnschluss.Location = new System.Drawing.Point(249, 135);
             this.wtxtAnschluss.Name = "wtxtAnschluss";
             this.wtxtAnschluss.Size = new System.Drawing.Size(146, 28);
             this.wtxtAnschluss.TabIndex = 2;
@@ -100,7 +130,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(30, 112);
+            this.label7.Location = new System.Drawing.Point(245, 112);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(105, 20);
             this.label7.TabIndex = 151;
@@ -134,6 +164,7 @@
             this.cmdQR.TabIndex = 8;
             this.cmdQR.Text = "QR-Code Drucken";
             this.cmdQR.UseVisualStyleBackColor = false;
+            this.cmdQR.Click += new System.EventHandler(this.cmdQR_Click);
             // 
             // cmdBildEinfugen
             // 
@@ -210,6 +241,96 @@
             // wtxtKartenhersteller
             // 
             this.wtxtKartenhersteller.FormattingEnabled = true;
+            this.wtxtKartenhersteller.Items.AddRange(new object[] {
+            "Adaptec",
+            "ADS Tech",
+            "AJA",
+            "AMD / ATI",
+            "Anubis",
+            "Artec",
+            "Askey",
+            "Asus",
+            "Atelco Computer",
+            "AVerMedia",
+            "Avid",
+            "Brainwave",
+            "Canopus",
+            "Compro",
+            "Datavideo",
+            "Dazzle",
+            "Dexatek",
+            "Digital Devices",
+            "Digital Everywhere",
+            "Digital Rise",
+            "Digitus",
+            "DNT",
+            "Electronic Design",
+            "Elgato",
+            "Elta",
+            "Ewent",
+            "F&V",
+            "Fast Multimedia",
+            "Formac",
+            "FreenetTV",
+            "Fujitsu",
+            "Fujitsu-Siemens",
+            "Gainward",
+            "Gefen",
+            "Geniatech",
+            "Genius Europe",
+            "Hauppauge",
+            "Hercules",
+            "HMP",
+            "ICY BOX",
+            "Kjaerulff1",
+            "KNC One",
+            "Kworld",
+            "Leadtek",
+            "Lenco",
+            "LifeView",
+            "LogiLink",
+            "Lorenzen",
+            "Manhattan",
+            "Matrox",
+            "Maxfield",
+            "MCFTec",
+            "Media 100",
+            "Miro",
+            "MSI",
+            "Nvidia",
+            "PCTV",
+            "Pearl",
+            "Pinnacle Systems",
+            "Pixelview",
+            "Plextor",
+            "Point of View",
+            "Prolink",
+            "Roxio",
+            "Sapphire",
+            "Satelco",
+            "Siemens",
+            "Skymaster",
+            "Startech",
+            "Technaxx",
+            "TechniSat",
+            "Techno Trend",
+            "Telestar",
+            "TerraTec",
+            "Toshiba",
+            "Transcend",
+            "Trust",
+            "Twinhan",
+            "Typhoon",
+            "Ultron",
+            "Videologic",
+            "Videomate",
+            "VisionPlus",
+            "Vobis",
+            "Vstream",
+            "X3M Digital",
+            "Yakumo",
+            "Yamada",
+            "Yuan"});
             this.wtxtKartenhersteller.Location = new System.Drawing.Point(34, 61);
             this.wtxtKartenhersteller.Name = "wtxtKartenhersteller";
             this.wtxtKartenhersteller.Size = new System.Drawing.Size(146, 28);
@@ -485,11 +606,34 @@
             this.nudKlinke.TabIndex = 0;
             this.nudKlinke.ValueChanged += new System.EventHandler(this.nudKlinke_ValueChanged);
             // 
+            // wtxtZustand
+            // 
+            this.wtxtZustand.FormattingEnabled = true;
+            this.wtxtZustand.Items.AddRange(new object[] {
+            "verbaut",
+            "auf Lager"});
+            this.wtxtZustand.Location = new System.Drawing.Point(34, 135);
+            this.wtxtZustand.Name = "wtxtZustand";
+            this.wtxtZustand.Size = new System.Drawing.Size(146, 28);
+            this.wtxtZustand.TabIndex = 152;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.Red;
+            this.label4.Location = new System.Drawing.Point(30, 112);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(72, 20);
+            this.label4.TabIndex = 153;
+            this.label4.Text = "Zustand:";
+            // 
             // TVKarte_Imput
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1126, 620);
+            this.Controls.Add(this.wtxtZustand);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.wtxtAnschluss);
@@ -567,5 +711,7 @@
         private System.Windows.Forms.NumericUpDown nudHDMI;
         private System.Windows.Forms.NumericUpDown nudODT;
         private System.Windows.Forms.NumericUpDown nudKlinke;
+        private System.Windows.Forms.ComboBox wtxtZustand;
+        private System.Windows.Forms.Label label4;
     }
 }

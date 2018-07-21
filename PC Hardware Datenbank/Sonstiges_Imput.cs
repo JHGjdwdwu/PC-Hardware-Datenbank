@@ -31,7 +31,7 @@ namespace PC_Hardware_Datenbank
 
         private void LoschFunktion()//Löschen Funktion
         {
-            wtxtHersteller.Text = wtxtGerat.Text = wtxtAnschluss.Text = txtBemerkung.Text = null;
+            wtxtZustand.Text = wtxtHersteller.Text = wtxtGerat.Text = wtxtAnschluss.Text = txtBemerkung.Text = null;
             wtxtHersteller.Focus();
         }
 
@@ -44,16 +44,26 @@ namespace PC_Hardware_Datenbank
         {
             if (File.Exists(@"./Sonstiges_Datenbank.csv") == true)//Prüffen ob eine .csv Datei bereits erstellt wurde
             {
-                if (txtBemerkung.Text != "")//Prüfft die Pflichtangaben
+                if (txtBemerkung.Text != "" && wtxtZustand.Text != "")//Prüfft die Pflichtangaben
                 {
                     Datensatz = File.ReadAllText(@"./Sonstiges_Datenbank.csv");//Datenbanck lessen und in Datensatz speichern
 
                     #region Datensatz bilden
-                    Datensatz += LF + wtxtHersteller.Text + ";" + wtxtGerat.Text + ";" + wtxtAnschluss.Text + ";" + txtBemerkung.Text;
+                    Datensatz += LF +
+                        wtxtZustand.Text + ";" +
+                        wtxtHersteller.Text + ";" +
+                        wtxtGerat.Text + ";" +
+                        wtxtAnschluss.Text + ";" +
+                        txtBemerkung.Text;
                     #endregion
 
                     #region QR Code
-                    QR = "Hersteller:" + wtxtHersteller.Text + LF + "Was ist das?" + wtxtGerat.Text + LF + "Anschluss:" + wtxtAnschluss.Text + LF + "Bemerkung:" + txtBemerkung.Text;
+                    QR =
+                        "Zustand: " + wtxtZustand.Text + LF +
+                        "Hersteller: " + wtxtHersteller.Text + LF +
+                        "Was ist das? " + wtxtGerat.Text + LF +
+                        "Anschluss: " + wtxtAnschluss.Text + LF +
+                        "Bemerkung: " + txtBemerkung.Text;
                     #endregion
 
                     File.WriteAllText(@"./Sonstiges_Datenbank.csv", Datensatz);//Datensatz in Sonstiges_Datenbank.csv schreiben

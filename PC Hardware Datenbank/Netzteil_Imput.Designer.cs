@@ -83,6 +83,16 @@
             this.nud12V = new System.Windows.Forms.NumericUpDown();
             this.nud5V = new System.Windows.Forms.NumericUpDown();
             this.wtxtFormat = new System.Windows.Forms.ComboBox();
+            this.nud3V = new System.Windows.Forms.NumericUpDown();
+            this.label6 = new System.Windows.Forms.Label();
+            this.nud3W = new System.Windows.Forms.NumericUpDown();
+            this.label8 = new System.Windows.Forms.Label();
+            this.nud5W = new System.Windows.Forms.NumericUpDown();
+            this.nud12W = new System.Windows.Forms.NumericUpDown();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.wtxtZustand = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcmdMainbord)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudLuster)).BeginInit();
@@ -103,15 +113,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudMolex8981)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud12V)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud5V)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud3V)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud3W)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud5W)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud12W)).BeginInit();
             this.SuspendLayout();
             // 
             // cbtxStromAusganag
             // 
             this.cbtxStromAusganag.AutoSize = true;
-            this.cbtxStromAusganag.Location = new System.Drawing.Point(34, 335);
+            this.cbtxStromAusganag.Location = new System.Drawing.Point(34, 470);
             this.cbtxStromAusganag.Name = "cbtxStromAusganag";
             this.cbtxStromAusganag.Size = new System.Drawing.Size(133, 24);
-            this.cbtxStromAusganag.TabIndex = 7;
+            this.cbtxStromAusganag.TabIndex = 12;
             this.cbtxStromAusganag.Text = "Stromausgang";
             this.cbtxStromAusganag.UseVisualStyleBackColor = true;
             // 
@@ -121,15 +135,15 @@
             this.wtxtLeistung.Items.AddRange(new object[] {
             "Molex-8981",
             "SATA"});
-            this.wtxtLeistung.Location = new System.Drawing.Point(34, 201);
+            this.wtxtLeistung.Location = new System.Drawing.Point(229, 201);
             this.wtxtLeistung.Name = "wtxtLeistung";
             this.wtxtLeistung.Size = new System.Drawing.Size(146, 28);
-            this.wtxtLeistung.TabIndex = 4;
+            this.wtxtLeistung.TabIndex = 5;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(30, 178);
+            this.label9.Location = new System.Drawing.Point(225, 178);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(74, 20);
             this.label9.TabIndex = 150;
@@ -138,7 +152,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(30, 112);
+            this.label7.Location = new System.Drawing.Point(225, 112);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(108, 20);
             this.label7.TabIndex = 148;
@@ -147,6 +161,73 @@
             // wtxtHersteller
             // 
             this.wtxtHersteller.FormattingEnabled = true;
+            this.wtxtHersteller.Items.AddRange(new object[] {
+            "A Power",
+            "ADATA",
+            "Amacrox",
+            "Andyson",
+            "Antec",
+            "ARLT",
+            "AXP",
+            "be quiet",
+            "Chieftec ",
+            "Club 3D",
+            "Codegen",
+            "CompuCase",
+            "Cooler Master",
+            "Corsair",
+            "Enermax",
+            "EVGA",
+            "Fractal Design",
+            "FSP",
+            "Gigabyte",
+            "GlacialPower",
+            "High Power",
+            "Huntkey",
+            "In Win",
+            "InterTech",
+            "JCP",
+            "Jersey",
+            "Jou Jye",
+            "Kingwin",
+            "Kiss Quiet",
+            "LC Power",
+            "LEPA",
+            "Levicom",
+            "Lian Li",
+            "Linkworld",
+            "Logisys ",
+            "Modecom",
+            "MS-Tech",
+            "NesteQ",
+            "NZXT",
+            "PC Power&Cooling",
+            "PowerColor",
+            "Rasurbo",
+            "Rhombutech",
+            "Rosewill",
+            "Sapphire",
+            "Scythe",
+            "Seasonic",
+            "SevenTeam",
+            "Sharkoon",
+            "Silver Power",
+            "Silverstone",
+            "Sparkle",
+            "Spire",
+            "SuperFlower",
+            "Tagan",
+            "Techsolo",
+            "Thermaltake",
+            "Thortech",
+            "Tronje",
+            "Trust",
+            "Ultra",
+            "XFX",
+            "Xigmatek",
+            "Xilence",
+            "XION",
+            "Zalman"});
             this.wtxtHersteller.Location = new System.Drawing.Point(34, 61);
             this.wtxtHersteller.Name = "wtxtHersteller";
             this.wtxtHersteller.Size = new System.Drawing.Size(146, 28);
@@ -187,9 +268,10 @@
             this.cmdQR.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdQR.Name = "cmdQR";
             this.cmdQR.Size = new System.Drawing.Size(171, 35);
-            this.cmdQR.TabIndex = 15;
+            this.cmdQR.TabIndex = 20;
             this.cmdQR.Text = "QR-Code Drucken";
             this.cmdQR.UseVisualStyleBackColor = false;
+            this.cmdQR.Click += new System.EventHandler(this.cmdQR_Click);
             // 
             // cmdBildEinfugen
             // 
@@ -199,7 +281,7 @@
             this.cmdBildEinfugen.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdBildEinfugen.Name = "cmdBildEinfugen";
             this.cmdBildEinfugen.Size = new System.Drawing.Size(150, 35);
-            this.cmdBildEinfugen.TabIndex = 12;
+            this.cmdBildEinfugen.TabIndex = 17;
             this.cmdBildEinfugen.Text = "Bild einfügen";
             this.cmdBildEinfugen.UseVisualStyleBackColor = false;
             // 
@@ -211,7 +293,7 @@
             this.cmdClear.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdClear.Name = "cmdClear";
             this.cmdClear.Size = new System.Drawing.Size(150, 35);
-            this.cmdClear.TabIndex = 14;
+            this.cmdClear.TabIndex = 19;
             this.cmdClear.Text = "Zurücksetzen";
             this.cmdClear.UseVisualStyleBackColor = false;
             this.cmdClear.Click += new System.EventHandler(this.cmdClear_Click);
@@ -224,7 +306,7 @@
             this.cmdSpeichern.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdSpeichern.Name = "cmdSpeichern";
             this.cmdSpeichern.Size = new System.Drawing.Size(150, 35);
-            this.cmdSpeichern.TabIndex = 13;
+            this.cmdSpeichern.TabIndex = 18;
             this.cmdSpeichern.Text = "Speichern";
             this.cmdSpeichern.UseVisualStyleBackColor = false;
             this.cmdSpeichern.Click += new System.EventHandler(this.cmdSpeichern_Click);
@@ -237,7 +319,7 @@
             this.cmdBeenden.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdBeenden.Name = "cmdBeenden";
             this.cmdBeenden.Size = new System.Drawing.Size(150, 35);
-            this.cmdBeenden.TabIndex = 16;
+            this.cmdBeenden.TabIndex = 21;
             this.cmdBeenden.Text = "Schließen";
             this.cmdBeenden.UseVisualStyleBackColor = false;
             this.cmdBeenden.Click += new System.EventHandler(this.cmdBeenden_Click);
@@ -266,24 +348,24 @@
             // cbtxSchaltera
             // 
             this.cbtxSchaltera.AutoSize = true;
-            this.cbtxSchaltera.Location = new System.Drawing.Point(229, 335);
+            this.cbtxSchaltera.Location = new System.Drawing.Point(229, 470);
             this.cbtxSchaltera.Name = "cbtxSchaltera";
             this.cbtxSchaltera.Size = new System.Drawing.Size(117, 24);
-            this.cbtxSchaltera.TabIndex = 8;
+            this.cbtxSchaltera.TabIndex = 13;
             this.cbtxSchaltera.Text = "Netzschalter";
             this.cbtxSchaltera.UseVisualStyleBackColor = true;
             // 
             // nudLuster
             // 
-            this.nudLuster.Location = new System.Drawing.Point(34, 135);
+            this.nudLuster.Location = new System.Drawing.Point(229, 135);
             this.nudLuster.Name = "nudLuster";
             this.nudLuster.Size = new System.Drawing.Size(146, 26);
-            this.nudLuster.TabIndex = 2;
+            this.nudLuster.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(225, 111);
+            this.label2.Location = new System.Drawing.Point(30, 178);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(139, 20);
             this.label2.TabIndex = 156;
@@ -292,10 +374,10 @@
             // cbtx110vSchalter
             // 
             this.cbtx110vSchalter.AutoSize = true;
-            this.cbtx110vSchalter.Location = new System.Drawing.Point(34, 385);
+            this.cbtx110vSchalter.Location = new System.Drawing.Point(34, 509);
             this.cbtx110vSchalter.Name = "cbtx110vSchalter";
             this.cbtx110vSchalter.Size = new System.Drawing.Size(129, 24);
-            this.cbtx110vSchalter.TabIndex = 9;
+            this.cbtx110vSchalter.TabIndex = 14;
             this.cbtx110vSchalter.Text = "110V Schalter";
             this.cbtx110vSchalter.UseVisualStyleBackColor = true;
             this.cbtx110vSchalter.CheckedChanged += new System.EventHandler(this.cbtx110vSchalter_CheckedChanged);
@@ -303,17 +385,17 @@
             // cbtx110vBetrieb
             // 
             this.cbtx110vBetrieb.AutoSize = true;
-            this.cbtx110vBetrieb.Location = new System.Drawing.Point(229, 385);
+            this.cbtx110vBetrieb.Location = new System.Drawing.Point(229, 509);
             this.cbtx110vBetrieb.Name = "cbtx110vBetrieb";
             this.cbtx110vBetrieb.Size = new System.Drawing.Size(179, 24);
-            this.cbtx110vBetrieb.TabIndex = 10;
+            this.cbtx110vBetrieb.TabIndex = 15;
             this.cbtx110vBetrieb.Text = "110V Betrieb möglich";
             this.cbtx110vBetrieb.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(30, 260);
+            this.label3.Location = new System.Drawing.Point(32, 404);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(135, 20);
             this.label3.TabIndex = 160;
@@ -322,7 +404,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(225, 260);
+            this.label4.Location = new System.Drawing.Point(30, 332);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(126, 20);
             this.label4.TabIndex = 162;
@@ -362,7 +444,7 @@
             this.groupBox1.Location = new System.Drawing.Point(420, 38);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(213, 495);
-            this.groupBox1.TabIndex = 11;
+            this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Schnittstellen";
             // 
@@ -676,31 +758,126 @@
             // 
             // nud12V
             // 
-            this.nud12V.Location = new System.Drawing.Point(34, 283);
+            this.nud12V.Location = new System.Drawing.Point(36, 427);
             this.nud12V.Name = "nud12V";
             this.nud12V.Size = new System.Drawing.Size(146, 26);
-            this.nud12V.TabIndex = 5;
+            this.nud12V.TabIndex = 10;
             // 
             // nud5V
             // 
-            this.nud5V.Location = new System.Drawing.Point(229, 283);
+            this.nud5V.Location = new System.Drawing.Point(34, 355);
             this.nud5V.Name = "nud5V";
             this.nud5V.Size = new System.Drawing.Size(146, 26);
-            this.nud5V.TabIndex = 6;
+            this.nud5V.TabIndex = 8;
             // 
             // wtxtFormat
             // 
             this.wtxtFormat.FormattingEnabled = true;
-            this.wtxtFormat.Location = new System.Drawing.Point(229, 134);
+            this.wtxtFormat.Location = new System.Drawing.Point(34, 201);
             this.wtxtFormat.Name = "wtxtFormat";
             this.wtxtFormat.Size = new System.Drawing.Size(146, 28);
-            this.wtxtFormat.TabIndex = 3;
+            this.wtxtFormat.TabIndex = 4;
+            // 
+            // nud3V
+            // 
+            this.nud3V.Location = new System.Drawing.Point(34, 283);
+            this.nud3V.Name = "nud3V";
+            this.nud3V.Size = new System.Drawing.Size(146, 26);
+            this.nud3V.TabIndex = 6;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(30, 260);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(126, 20);
+            this.label6.TabIndex = 164;
+            this.label6.Text = "max Ampere 3V:";
+            // 
+            // nud3W
+            // 
+            this.nud3W.Location = new System.Drawing.Point(229, 283);
+            this.nud3W.Name = "nud3W";
+            this.nud3W.Size = new System.Drawing.Size(146, 26);
+            this.nud3W.TabIndex = 7;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(225, 260);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(98, 20);
+            this.label8.TabIndex = 170;
+            this.label8.Text = "Leistung 3V:";
+            // 
+            // nud5W
+            // 
+            this.nud5W.Location = new System.Drawing.Point(229, 355);
+            this.nud5W.Name = "nud5W";
+            this.nud5W.Size = new System.Drawing.Size(146, 26);
+            this.nud5W.TabIndex = 9;
+            // 
+            // nud12W
+            // 
+            this.nud12W.Location = new System.Drawing.Point(231, 427);
+            this.nud12W.Name = "nud12W";
+            this.nud12W.Size = new System.Drawing.Size(146, 26);
+            this.nud12W.TabIndex = 11;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(225, 332);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(98, 20);
+            this.label10.TabIndex = 168;
+            this.label10.Text = "Leistung 5V:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(227, 404);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(107, 20);
+            this.label11.TabIndex = 167;
+            this.label11.Text = "Leistung 12V:";
+            // 
+            // wtxtZustand
+            // 
+            this.wtxtZustand.FormattingEnabled = true;
+            this.wtxtZustand.Items.AddRange(new object[] {
+            "verbaut",
+            "auf Lager"});
+            this.wtxtZustand.Location = new System.Drawing.Point(34, 134);
+            this.wtxtZustand.Name = "wtxtZustand";
+            this.wtxtZustand.Size = new System.Drawing.Size(146, 28);
+            this.wtxtZustand.TabIndex = 2;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.ForeColor = System.Drawing.Color.Red;
+            this.label12.Location = new System.Drawing.Point(30, 111);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(72, 20);
+            this.label12.TabIndex = 172;
+            this.label12.Text = "Zustand:";
             // 
             // Netzteil_Imput
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1126, 620);
+            this.Controls.Add(this.wtxtZustand);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.nud3W);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.nud5W);
+            this.Controls.Add(this.nud12W);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.nud3V);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.wtxtFormat);
             this.Controls.Add(this.nud5V);
             this.Controls.Add(this.nud12V);
@@ -753,6 +930,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudMolex8981)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud12V)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud5V)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud3V)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud3W)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud5W)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud12W)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -814,5 +995,15 @@
         private System.Windows.Forms.NumericUpDown nud12V;
         private System.Windows.Forms.NumericUpDown nud5V;
         private System.Windows.Forms.ComboBox wtxtFormat;
+        private System.Windows.Forms.NumericUpDown nud3V;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.NumericUpDown nud3W;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.NumericUpDown nud5W;
+        private System.Windows.Forms.NumericUpDown nud12W;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ComboBox wtxtZustand;
+        private System.Windows.Forms.Label label12;
     }
 }

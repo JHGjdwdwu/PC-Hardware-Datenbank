@@ -32,7 +32,7 @@ namespace PC_Hardware_Datenbank
 
         private void LoschFunktion()//Löschen Funktion
         {
-            wtxtHersteller.Text = wtxtModell.Text = wtxtMaximaldrehzahl.Text = wtxtPinheader.Text = wtxtDurchmesser.Text = wtxtDicke.Text = wtxtArt.Text = wtxtSpannung.Text = null;
+            wtxtZustand.Text = wtxtHersteller.Text = wtxtModell.Text = wtxtMaximaldrehzahl.Text = wtxtPinheader.Text = wtxtDurchmesser.Text = wtxtDicke.Text = wtxtArt.Text = wtxtSpannung.Text = null;
             nudStrom.Value = 0;
             wtxtHersteller.Focus();
         }
@@ -46,17 +46,36 @@ namespace PC_Hardware_Datenbank
         {
             if (File.Exists(@"./Lufter_Datenbank.csv") == true)//Prüffen ob eine .csv Datei bereits erstellt wurde
             {
-                if (wtxtDurchmesser.Text != "" && wtxtDicke.Text != "" && wtxtArt.Text != "" && wtxtSpannung.Text != "")//Prüfft die Pflichtangaben
+                if (wtxtDurchmesser.Text != "" && wtxtDicke.Text != "" && wtxtArt.Text != "" && wtxtSpannung.Text != "" && wtxtZustand.Text != "")//Prüfft die Pflichtangaben
                 {
                     Datensatz = File.ReadAllText(@"./Lufter_Datenbank.csv");//Datenbanck lessen und in Datensatz speichern
 
                     #region Datensatz bilden
-                    Datensatz += LF + wtxtHersteller.Text + ";" + wtxtModell.Text + ";" + wtxtMaximaldrehzahl.Text + ";" + wtxtPinheader.Text + ";";
-                    Datensatz += wtxtDurchmesser.Text + ";" + wtxtDicke.Text + ";" + wtxtArt.Text + ";" + wtxtSpannung.Text + ";" + nudStrom.Value;
+                    Datensatz += LF +
+                        wtxtZustand.Text + ";" +
+                        wtxtDicke.Text + ";" +
+                        wtxtDurchmesser.Text + ";" +
+                        wtxtSpannung.Text + ";" +
+                        wtxtArt.Text + ";" +
+                        wtxtModell.Text + ";" +
+                        wtxtHersteller.Text + ";" +
+                        wtxtPinheader.Text + ";" +
+                        wtxtMaximaldrehzahl.Text + ";" +
+                        nudStrom.Value;
                     #endregion
 
                     #region QR Code
-                    QR = "Hersteller:" + wtxtHersteller.Text + LF + "Modell:" + wtxtModell.Text + LF + "Maximaldrehzahl:" + wtxtMaximaldrehzahl.Text + LF + "Pinheader:" + wtxtPinheader.Text + LF + "Durchmesser:" + wtxtDurchmesser.Text + LF + "Dicke:" + wtxtDicke.Text + LF + "Art:" + wtxtArt.Text + LF + "Spannung (V):" + wtxtSpannung + LF + "Strom (A):" + nudStrom.Value;
+                    QR =
+                        "Zustand: " + wtxtZustand.Text + LF +
+                        "Dicke: " + wtxtDicke.Text + LF +
+                        "Durchmesser: " + wtxtDurchmesser.Text + LF +
+                        "Spannung (V): " + wtxtSpannung + LF +
+                        "Art: " + wtxtArt.Text + LF +
+                        "Modell: " + wtxtModell.Text + LF +
+                        "Hersteller: " + wtxtHersteller.Text + LF +
+                        "Pinheader: " + wtxtPinheader.Text + LF +
+                        "Maximaldrehzahl: " + wtxtMaximaldrehzahl.Text + LF +
+                        "Strom (A): " + nudStrom.Value;
                     #endregion
 
                     File.WriteAllText(@"./Lufter_Datenbank.csv", Datensatz);//Datensatz in GPU_Datenbank.csv schreiben

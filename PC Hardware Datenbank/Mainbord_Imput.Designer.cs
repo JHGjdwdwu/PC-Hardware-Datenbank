@@ -33,12 +33,8 @@
             this.pcmdMainbord = new System.Windows.Forms.PictureBox();
             this.cmdBeenden = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtHersteller = new System.Windows.Forms.TextBox();
-            this.txtTyp = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtSockel = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtRAM = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cbtInfrarot = new System.Windows.Forms.CheckBox();
@@ -77,7 +73,6 @@
             this.cmdSpeichern = new System.Windows.Forms.Button();
             this.cmdClear = new System.Windows.Forms.Button();
             this.cmdBildEinfugen = new System.Windows.Forms.Button();
-            this.txtBauform = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtSonstiges = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -104,9 +99,13 @@
             this.nudAGP = new System.Windows.Forms.NumericUpDown();
             this.cmdQR = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.printDialog1 = new System.Windows.Forms.PrintDialog();
-            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
-            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.wtxtHersteller = new System.Windows.Forms.ComboBox();
+            this.wtxtTyp = new System.Windows.Forms.ComboBox();
+            this.wtxtSockel = new System.Windows.Forms.ComboBox();
+            this.wtxtRAM = new System.Windows.Forms.ComboBox();
+            this.wtxtBauform = new System.Windows.Forms.ComboBox();
+            this.wtxtZustand = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
             button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pcmdMainbord)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -145,9 +144,9 @@
             button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             button1.CausesValidation = false;
             button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button1.Location = new System.Drawing.Point(199, 25);
+            button1.Location = new System.Drawing.Point(199, 27);
             button1.Name = "button1";
-            button1.Size = new System.Drawing.Size(1, 377);
+            button1.Size = new System.Drawing.Size(1, 312);
             button1.TabIndex = 99;
             button1.TabStop = false;
             button1.UseVisualStyleBackColor = false;
@@ -171,7 +170,7 @@
             this.cmdBeenden.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdBeenden.Name = "cmdBeenden";
             this.cmdBeenden.Size = new System.Drawing.Size(150, 35);
-            this.cmdBeenden.TabIndex = 12;
+            this.cmdBeenden.TabIndex = 13;
             this.cmdBeenden.Text = "Schließen";
             this.cmdBeenden.UseVisualStyleBackColor = false;
             this.cmdBeenden.Click += new System.EventHandler(this.cmdBeenden_Click);
@@ -186,20 +185,6 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Hersteller:";
             // 
-            // txtHersteller
-            // 
-            this.txtHersteller.Location = new System.Drawing.Point(120, 31);
-            this.txtHersteller.Name = "txtHersteller";
-            this.txtHersteller.Size = new System.Drawing.Size(159, 26);
-            this.txtHersteller.TabIndex = 0;
-            // 
-            // txtTyp
-            // 
-            this.txtTyp.Location = new System.Drawing.Point(458, 28);
-            this.txtTyp.Name = "txtTyp";
-            this.txtTyp.Size = new System.Drawing.Size(159, 26);
-            this.txtTyp.TabIndex = 1;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -210,33 +195,19 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "Typ Bezeichnung:";
             // 
-            // txtSockel
-            // 
-            this.txtSockel.Location = new System.Drawing.Point(120, 63);
-            this.txtSockel.Name = "txtSockel";
-            this.txtSockel.Size = new System.Drawing.Size(159, 26);
-            this.txtSockel.TabIndex = 2;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(53, 66);
+            this.label3.Location = new System.Drawing.Point(391, 65);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 20);
             this.label3.TabIndex = 10;
             this.label3.Text = "Sockel:";
             // 
-            // txtRAM
-            // 
-            this.txtRAM.Location = new System.Drawing.Point(458, 60);
-            this.txtRAM.Name = "txtRAM";
-            this.txtRAM.Size = new System.Drawing.Size(159, 26);
-            this.txtRAM.TabIndex = 3;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(374, 63);
+            this.label4.Location = new System.Drawing.Point(36, 99);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(78, 20);
             this.label4.TabIndex = 12;
@@ -279,10 +250,10 @@
             this.groupBox2.Controls.Add(this.nudUSB2);
             this.groupBox2.Controls.Add(this.nudPS2);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(254, 137);
+            this.groupBox2.Location = new System.Drawing.Point(254, 191);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(394, 417);
-            this.groupBox2.TabIndex = 7;
+            this.groupBox2.Size = new System.Drawing.Size(394, 363);
+            this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Externen Schnittstellen";
             // 
@@ -290,10 +261,10 @@
             // 
             this.cbtInfrarot.AutoSize = true;
             this.cbtInfrarot.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbtInfrarot.Location = new System.Drawing.Point(214, 234);
+            this.cbtInfrarot.Location = new System.Drawing.Point(214, 295);
             this.cbtInfrarot.Name = "cbtInfrarot";
             this.cbtInfrarot.Size = new System.Drawing.Size(80, 24);
-            this.cbtInfrarot.TabIndex = 33;
+            this.cbtInfrarot.TabIndex = 17;
             this.cbtInfrarot.Text = "Infrarot";
             this.cbtInfrarot.UseVisualStyleBackColor = true;
             // 
@@ -301,7 +272,7 @@
             // 
             this.cbtESATA.AutoSize = true;
             this.cbtESATA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbtESATA.Location = new System.Drawing.Point(214, 203);
+            this.cbtESATA.Location = new System.Drawing.Point(214, 264);
             this.cbtESATA.Name = "cbtESATA";
             this.cbtESATA.Size = new System.Drawing.Size(79, 24);
             this.cbtESATA.TabIndex = 125;
@@ -314,7 +285,7 @@
             // 
             this.cbtRS232.AutoSize = true;
             this.cbtRS232.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbtRS232.Location = new System.Drawing.Point(214, 73);
+            this.cbtRS232.Location = new System.Drawing.Point(214, 134);
             this.cbtRS232.Name = "cbtRS232";
             this.cbtRS232.Size = new System.Drawing.Size(82, 24);
             this.cbtRS232.TabIndex = 124;
@@ -327,7 +298,7 @@
             // 
             this.cbtLPT1.AutoSize = true;
             this.cbtLPT1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbtLPT1.Location = new System.Drawing.Point(214, 167);
+            this.cbtLPT1.Location = new System.Drawing.Point(214, 228);
             this.cbtLPT1.Name = "cbtLPT1";
             this.cbtLPT1.Size = new System.Drawing.Size(65, 24);
             this.cbtLPT1.TabIndex = 123;
@@ -340,10 +311,10 @@
             // 
             this.cbtWLan.AutoSize = true;
             this.cbtWLan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbtWLan.Location = new System.Drawing.Point(214, 135);
+            this.cbtWLan.Location = new System.Drawing.Point(214, 196);
             this.cbtWLan.Name = "cbtWLan";
             this.cbtWLan.Size = new System.Drawing.Size(70, 24);
-            this.cbtWLan.TabIndex = 30;
+            this.cbtWLan.TabIndex = 14;
             this.cbtWLan.Text = "WLan";
             this.cbtWLan.UseVisualStyleBackColor = true;
             // 
@@ -351,10 +322,10 @@
             // 
             this.cbtBluetooth.AutoSize = true;
             this.cbtBluetooth.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbtBluetooth.Location = new System.Drawing.Point(214, 104);
+            this.cbtBluetooth.Location = new System.Drawing.Point(214, 165);
             this.cbtBluetooth.Name = "cbtBluetooth";
             this.cbtBluetooth.Size = new System.Drawing.Size(97, 24);
-            this.cbtBluetooth.TabIndex = 29;
+            this.cbtBluetooth.TabIndex = 13;
             this.cbtBluetooth.Text = "Bluetooth";
             this.cbtBluetooth.UseVisualStyleBackColor = true;
             // 
@@ -362,7 +333,7 @@
             // 
             this.cbtThunderbolt.AutoSize = true;
             this.cbtThunderbolt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbtThunderbolt.Location = new System.Drawing.Point(214, 41);
+            this.cbtThunderbolt.Location = new System.Drawing.Point(214, 102);
             this.cbtThunderbolt.Name = "cbtThunderbolt";
             this.cbtThunderbolt.Size = new System.Drawing.Size(113, 24);
             this.cbtThunderbolt.TabIndex = 120;
@@ -375,7 +346,7 @@
             // 
             this.cbtFireWire.AutoSize = true;
             this.cbtFireWire.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbtFireWire.Location = new System.Drawing.Point(19, 359);
+            this.cbtFireWire.Location = new System.Drawing.Point(214, 71);
             this.cbtFireWire.Name = "cbtFireWire";
             this.cbtFireWire.Size = new System.Drawing.Size(87, 24);
             this.cbtFireWire.TabIndex = 119;
@@ -388,7 +359,7 @@
             // 
             this.cbtMidiPort.AutoSize = true;
             this.cbtMidiPort.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbtMidiPort.Location = new System.Drawing.Point(19, 327);
+            this.cbtMidiPort.Location = new System.Drawing.Point(214, 37);
             this.cbtMidiPort.Name = "cbtMidiPort";
             this.cbtMidiPort.Size = new System.Drawing.Size(90, 24);
             this.cbtMidiPort.TabIndex = 118;
@@ -517,25 +488,25 @@
             // nudESATA
             // 
             this.nudESATA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudESATA.Location = new System.Drawing.Point(327, 201);
+            this.nudESATA.Location = new System.Drawing.Point(327, 262);
             this.nudESATA.Name = "nudESATA";
             this.nudESATA.Size = new System.Drawing.Size(57, 26);
-            this.nudESATA.TabIndex = 14;
+            this.nudESATA.TabIndex = 16;
             this.nudESATA.ValueChanged += new System.EventHandler(this.nudESATA_ValueChanged);
             // 
             // nudLPT1
             // 
             this.nudLPT1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudLPT1.Location = new System.Drawing.Point(327, 167);
+            this.nudLPT1.Location = new System.Drawing.Point(327, 228);
             this.nudLPT1.Name = "nudLPT1";
             this.nudLPT1.Size = new System.Drawing.Size(57, 26);
-            this.nudLPT1.TabIndex = 13;
+            this.nudLPT1.TabIndex = 15;
             this.nudLPT1.ValueChanged += new System.EventHandler(this.nudLPT1_ValueChanged);
             // 
             // nudRS232
             // 
             this.nudRS232.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudRS232.Location = new System.Drawing.Point(327, 71);
+            this.nudRS232.Location = new System.Drawing.Point(327, 132);
             this.nudRS232.Name = "nudRS232";
             this.nudRS232.Size = new System.Drawing.Size(57, 26);
             this.nudRS232.TabIndex = 12;
@@ -544,7 +515,7 @@
             // nudThunderbolt
             // 
             this.nudThunderbolt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudThunderbolt.Location = new System.Drawing.Point(327, 39);
+            this.nudThunderbolt.Location = new System.Drawing.Point(327, 100);
             this.nudThunderbolt.Name = "nudThunderbolt";
             this.nudThunderbolt.Size = new System.Drawing.Size(57, 26);
             this.nudThunderbolt.TabIndex = 11;
@@ -553,7 +524,7 @@
             // nudFireWire
             // 
             this.nudFireWire.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudFireWire.Location = new System.Drawing.Point(128, 357);
+            this.nudFireWire.Location = new System.Drawing.Point(327, 69);
             this.nudFireWire.Name = "nudFireWire";
             this.nudFireWire.Size = new System.Drawing.Size(57, 26);
             this.nudFireWire.TabIndex = 10;
@@ -562,7 +533,7 @@
             // nudMidiPort
             // 
             this.nudMidiPort.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudMidiPort.Location = new System.Drawing.Point(128, 325);
+            this.nudMidiPort.Location = new System.Drawing.Point(327, 36);
             this.nudMidiPort.Name = "nudMidiPort";
             this.nudMidiPort.Size = new System.Drawing.Size(57, 26);
             this.nudMidiPort.TabIndex = 9;
@@ -657,7 +628,7 @@
             this.cmdSpeichern.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdSpeichern.Name = "cmdSpeichern";
             this.cmdSpeichern.Size = new System.Drawing.Size(150, 35);
-            this.cmdSpeichern.TabIndex = 9;
+            this.cmdSpeichern.TabIndex = 10;
             this.cmdSpeichern.Text = "Speichern";
             this.cmdSpeichern.UseVisualStyleBackColor = false;
             this.cmdSpeichern.Click += new System.EventHandler(this.cmdSpeichern_Click);
@@ -670,7 +641,7 @@
             this.cmdClear.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdClear.Name = "cmdClear";
             this.cmdClear.Size = new System.Drawing.Size(150, 35);
-            this.cmdClear.TabIndex = 10;
+            this.cmdClear.TabIndex = 11;
             this.cmdClear.Text = "Zurücksetzen";
             this.cmdClear.UseVisualStyleBackColor = false;
             this.cmdClear.Click += new System.EventHandler(this.cmdClear_Click);
@@ -683,21 +654,14 @@
             this.cmdBildEinfugen.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdBildEinfugen.Name = "cmdBildEinfugen";
             this.cmdBildEinfugen.Size = new System.Drawing.Size(150, 35);
-            this.cmdBildEinfugen.TabIndex = 8;
+            this.cmdBildEinfugen.TabIndex = 9;
             this.cmdBildEinfugen.Text = "Bild einfügen";
             this.cmdBildEinfugen.UseVisualStyleBackColor = false;
-            // 
-            // txtBauform
-            // 
-            this.txtBauform.Location = new System.Drawing.Point(120, 95);
-            this.txtBauform.Name = "txtBauform";
-            this.txtBauform.Size = new System.Drawing.Size(159, 26);
-            this.txtBauform.TabIndex = 4;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(40, 98);
+            this.label5.Location = new System.Drawing.Point(378, 97);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(74, 20);
             this.label5.TabIndex = 20;
@@ -705,15 +669,15 @@
             // 
             // txtSonstiges
             // 
-            this.txtSonstiges.Location = new System.Drawing.Point(458, 95);
+            this.txtSonstiges.Location = new System.Drawing.Point(120, 133);
             this.txtSonstiges.Name = "txtSonstiges";
             this.txtSonstiges.Size = new System.Drawing.Size(159, 26);
-            this.txtSonstiges.TabIndex = 5;
+            this.txtSonstiges.TabIndex = 6;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(368, 98);
+            this.label6.Location = new System.Drawing.Point(30, 136);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(84, 20);
             this.label6.TabIndex = 22;
@@ -742,10 +706,10 @@
             this.groupBox1.Controls.Add(this.nudPCI);
             this.groupBox1.Controls.Add(this.nudAGP);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(23, 137);
+            this.groupBox1.Location = new System.Drawing.Point(23, 191);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(213, 417);
-            this.groupBox1.TabIndex = 6;
+            this.groupBox1.Size = new System.Drawing.Size(213, 363);
+            this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Internen Schnittstellen";
             // 
@@ -976,7 +940,7 @@
             this.cmdQR.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdQR.Name = "cmdQR";
             this.cmdQR.Size = new System.Drawing.Size(171, 35);
-            this.cmdQR.TabIndex = 11;
+            this.cmdQR.TabIndex = 12;
             this.cmdQR.Text = "QR-Code Drucken";
             this.cmdQR.UseVisualStyleBackColor = false;
             this.cmdQR.Click += new System.EventHandler(this.cmdQR_Click);
@@ -991,43 +955,180 @@
             this.pictureBox1.TabIndex = 39;
             this.pictureBox1.TabStop = false;
             // 
-            // printDialog1
+            // wtxtHersteller
             // 
-            this.printDialog1.UseEXDialog = true;
+            this.wtxtHersteller.FormattingEnabled = true;
+            this.wtxtHersteller.Items.AddRange(new object[] {
+            "Abit",
+            "Albatron",
+            "Aopen",
+            "Asrock",
+            "Asus",
+            "Biostar",
+            "Chaintech",
+            "DFI",
+            "Elitegroup",
+            "Enmic",
+            "Epox",
+            "FIC",
+            "Foxcon",
+            "FSC",
+            "Gigabyte",
+            "Intel",
+            "Jetway",
+            "Leadtek",
+            "MSI",
+            "PC-Chips",
+            "QDI",
+            "Sapphire",
+            "Shuttle",
+            "Soltek",
+            "Soyo",
+            "Supermicro",
+            "Tyan",
+            "Via"});
+            this.wtxtHersteller.Location = new System.Drawing.Point(120, 31);
+            this.wtxtHersteller.Name = "wtxtHersteller";
+            this.wtxtHersteller.Size = new System.Drawing.Size(159, 28);
+            this.wtxtHersteller.TabIndex = 0;
             // 
-            // printPreviewDialog1
+            // wtxtTyp
             // 
-            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
-            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
-            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
-            this.printPreviewDialog1.Enabled = true;
-            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
-            this.printPreviewDialog1.Name = "printPreviewDialog1";
-            this.printPreviewDialog1.Visible = false;
+            this.wtxtTyp.FormattingEnabled = true;
+            this.wtxtTyp.Location = new System.Drawing.Point(458, 28);
+            this.wtxtTyp.Name = "wtxtTyp";
+            this.wtxtTyp.Size = new System.Drawing.Size(159, 28);
+            this.wtxtTyp.TabIndex = 1;
+            // 
+            // wtxtSockel
+            // 
+            this.wtxtSockel.FormattingEnabled = true;
+            this.wtxtSockel.Items.AddRange(new object[] {
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "463/NextGen",
+            "8",
+            "Slot 1",
+            "479",
+            "M",
+            "P",
+            "370",
+            "µPGA2",
+            "Slot 2",
+            "495",
+            "603",
+            "604",
+            "771/J",
+            "1356/B2",
+            "441",
+            "423",
+            "478",
+            "1150",
+            "1151",
+            "1155",
+            "1156",
+            "1567",
+            "2011",
+            "2011-3",
+            "3647/P3",
+            "775/T",
+            "989/G1",
+            "1366",
+            "7",
+            "Slot A",
+            "A/462",
+            "563",
+            "754",
+            "939",
+            "940",
+            "F/1207",
+            "S1",
+            "AM2",
+            "AM2+",
+            "AM3",
+            "AM3+",
+            "AM4",
+            "FM1",
+            "FM2",
+            "FM2+",
+            "TR4"});
+            this.wtxtSockel.Location = new System.Drawing.Point(458, 62);
+            this.wtxtSockel.Name = "wtxtSockel";
+            this.wtxtSockel.Size = new System.Drawing.Size(159, 28);
+            this.wtxtSockel.TabIndex = 3;
+            // 
+            // wtxtRAM
+            // 
+            this.wtxtRAM.FormattingEnabled = true;
+            this.wtxtRAM.Items.AddRange(new object[] {
+            "SDRAM",
+            "DDR",
+            "DDR2",
+            "DDR3",
+            "DDR4",
+            "DDR5"});
+            this.wtxtRAM.Location = new System.Drawing.Point(120, 99);
+            this.wtxtRAM.Name = "wtxtRAM";
+            this.wtxtRAM.Size = new System.Drawing.Size(159, 28);
+            this.wtxtRAM.TabIndex = 4;
+            // 
+            // wtxtBauform
+            // 
+            this.wtxtBauform.FormattingEnabled = true;
+            this.wtxtBauform.Location = new System.Drawing.Point(458, 96);
+            this.wtxtBauform.Name = "wtxtBauform";
+            this.wtxtBauform.Size = new System.Drawing.Size(159, 28);
+            this.wtxtBauform.TabIndex = 5;
+            // 
+            // wtxtZustand
+            // 
+            this.wtxtZustand.FormattingEnabled = true;
+            this.wtxtZustand.Items.AddRange(new object[] {
+            "verbaut",
+            "auf Lager"});
+            this.wtxtZustand.Location = new System.Drawing.Point(120, 65);
+            this.wtxtZustand.Name = "wtxtZustand";
+            this.wtxtZustand.Size = new System.Drawing.Size(159, 28);
+            this.wtxtZustand.TabIndex = 2;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.Red;
+            this.label7.Location = new System.Drawing.Point(40, 66);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(72, 20);
+            this.label7.TabIndex = 45;
+            this.label7.Text = "Zustand:";
             // 
             // Mainbord_Imput
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1126, 620);
+            this.Controls.Add(this.wtxtZustand);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.wtxtBauform);
+            this.Controls.Add(this.wtxtRAM);
+            this.Controls.Add(this.wtxtSockel);
+            this.Controls.Add(this.wtxtTyp);
+            this.Controls.Add(this.wtxtHersteller);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.cmdQR);
             this.Controls.Add(this.txtSonstiges);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.txtBauform);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cmdBildEinfugen);
             this.Controls.Add(this.cmdClear);
             this.Controls.Add(this.cmdSpeichern);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.txtRAM);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtSockel);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtTyp);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtHersteller);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmdBeenden);
             this.Controls.Add(this.pcmdMainbord);
@@ -1077,12 +1178,8 @@
         private System.Windows.Forms.PictureBox pcmdMainbord;
         private System.Windows.Forms.Button cmdBeenden;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtHersteller;
-        private System.Windows.Forms.TextBox txtTyp;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtSockel;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtRAM;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.NumericUpDown nudKlinke;
@@ -1103,7 +1200,6 @@
         private System.Windows.Forms.NumericUpDown nudThunderbolt;
         private System.Windows.Forms.NumericUpDown nudFireWire;
         private System.Windows.Forms.NumericUpDown nudMidiPort;
-        private System.Windows.Forms.TextBox txtBauform;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtSonstiges;
         private System.Windows.Forms.Label label6;
@@ -1148,8 +1244,12 @@
         private System.Windows.Forms.CheckBox cbtPS2;
         private System.Windows.Forms.Button cmdQR;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PrintDialog printDialog1;
-        private System.Drawing.Printing.PrintDocument printDocument1;
-        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
+        private System.Windows.Forms.ComboBox wtxtHersteller;
+        private System.Windows.Forms.ComboBox wtxtTyp;
+        private System.Windows.Forms.ComboBox wtxtSockel;
+        private System.Windows.Forms.ComboBox wtxtRAM;
+        private System.Windows.Forms.ComboBox wtxtBauform;
+        private System.Windows.Forms.ComboBox wtxtZustand;
+        private System.Windows.Forms.Label label7;
     }
 }

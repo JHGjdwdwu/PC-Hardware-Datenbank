@@ -31,10 +31,10 @@ namespace PC_Hardware_Datenbank
 
         private void LoschFunktion()//Löschen Funktion
         {
-            wtxtKartenhersteller.Text = wtxtModell.Text = null;
-            cbtExternCardreader.Checked = cbtExternUSB2.Checked = cbtExternUSB3.Checked = cbtExternUSB3_1.Checked = cbtExternAudio.Checked = cbtExternFireWire.Checked = cbtExternThunderbolt.Checked = false;
+            wtxtKartenhersteller.Text = wtxtModell.Text = wtxtZustand.Text = null;
+            cbtExternCardreader.Checked = cbtExternUSB2.Checked = cbtExternUSB3.Checked = cbtExternUSB3_1.Checked = cbtExternLineOut.Checked = cbtExternMikrofon.Checked = cbtExternLineIn.Checked = cbtExternFireWire.Checked = cbtExternThunderbolt.Checked = false;
             cbtInternUSB2.Checked = cbtInternUSB3.Checked = cbtInternUSB3_1.Checked = cbtInternAudio.Checked = cbtInternFireWire.Checked = cbtInternThunderbolt.Checked = false;
-            nudExternCardreader.Value = nudExternUSB2.Value = nudExternUSB3.Value = nudExternUSB3_1.Value = nudExternAudio.Value = nudExternFireWire.Value = nudExternThunderbolt.Value = 0;
+            nudExternCardreader.Value = nudExternUSB2.Value = nudExternUSB3.Value = nudExternUSB3_1.Value = nudExternLineOut.Value = nudExternMikrofon.Value = nudExternLineIn.Value = nudExternFireWire.Value = nudExternThunderbolt.Value = 0;
             nudInternUSB2.Value = nudInternUSB3.Value = nudInternUSB3_1.Value = nudInternAudio.Value = nudInternFireWire.Value = nudInternThunderbolt.Value = 0;
             wtxtKartenhersteller.Focus();
         }
@@ -48,20 +48,64 @@ namespace PC_Hardware_Datenbank
         {
             if (File.Exists(@"./FrontErweiterung_Datenbank.csv") == true)//Prüffen ob eine .csv Datei bereits erstellt wurde
             {
-                Datensatz = File.ReadAllText(@"./FrontErweiterung_Datenbank.csv");//Datenbanck lessen und in Datensatz speichern
+                if (wtxtZustand.Text != "")//Prüfft die Pflichtangaben
+                {
 
-                #region Datensatz bilden
-                Datensatz += LF + wtxtKartenhersteller.Text + ";" + wtxtModell.Text + ";";
-                Datensatz += nudExternCardreader.Value + ";" + nudExternUSB2.Value + ";" + nudExternUSB3.Value + ";" + nudExternUSB3_1.Value + ";" + nudExternAudio.Value + ";" + nudExternFireWire.Value + ";" + nudExternThunderbolt.Value;
-                Datensatz += nudInternUSB2.Value + ";" + nudInternUSB3.Value + ";" + nudInternUSB3_1.Value + ";" + nudInternAudio.Value + ";" + nudInternFireWire.Value + ";" + nudInternThunderbolt.Value;
-                #endregion
+                    Datensatz = File.ReadAllText(@"./FrontErweiterung_Datenbank.csv");//Datenbanck lessen und in Datensatz speichern
 
-                #region QR Code
-                QR = "Hersteller:" + wtxtKartenhersteller.Text + LF + "Modell:" + wtxtModell.Text + LF + "Externe Schnittstellen" + LF + "Cardreader:" + nudExternCardreader.Value + LF + "USB2.0:" + nudExternUSB2.Value + LF + "USB3.0:" + nudExternUSB3.Value + LF + "USB3.1:" + nudExternUSB3_1.Value + LF + "Audio:" + nudExternAudio.Value + LF + "FireWire:" + nudExternFireWire.Value + LF + "Thunderbolt:" + nudExternThunderbolt.Value + LF + "Interne-Schnittstelle" + LF + "USB2.0:" + nudInternUSB2.Value + LF + "USB3.0:" + nudInternUSB3.Value + LF + "USB3.1:" + nudInternUSB3_1.Value + LF + "Audio:" + nudInternAudio.Value + LF + "FireWire:" + nudInternFireWire.Value + LF + "Thunderbolt:" + nudInternThunderbolt.Value;
-                #endregion
+                    #region Datensatz bilden
+                    Datensatz += LF +
+                        wtxtZustand.Text + ";" +
+                        wtxtKartenhersteller.Text + ";" +
+                        wtxtModell.Text + ";" +
+                        nudExternCardreader.Value + ";" +
+                        nudExternUSB2.Value + ";" +
+                        nudExternUSB3.Value + ";" +
+                        nudExternUSB3_1.Value + ";" +
+                        nudExternLineOut.Value + ";" +
+                        nudExternMikrofon.Value + ";" +
+                        nudExternLineIn.Value + ";" +
+                        nudExternFireWire.Value + ";" +
+                        nudExternThunderbolt.Value + ";" +
+                        nudInternUSB2.Value + ";" +
+                        nudInternUSB3.Value + ";" +
+                        nudInternUSB3_1.Value + ";" +
+                        nudInternAudio.Value + ";" +
+                        nudInternFireWire.Value + ";" +
+                        nudInternThunderbolt.Value;
+                    #endregion
 
-                File.WriteAllText(@"./FrontErweiterung_Datenbank.csv", Datensatz);//Datensatz in Mainbord_Datenbank.csv schreiben
-                MessageBox.Show("Datensatz geschrieben!");//Bestätigung das der Datensatz geschrieben wurd
+                    #region QR Code
+                    QR =
+                        "Zustand: " + wtxtZustand.Text + LF +
+                        "Hersteller: " + wtxtKartenhersteller.Text + LF +
+                        "Modell: " + wtxtModell.Text + LF +
+                        "Externe Schnittstellen: " + LF +
+                        "Cardreader: " + nudExternCardreader.Value + LF +
+                        "USB2.0: " + nudExternUSB2.Value + LF +
+                        "USB3.0: " + nudExternUSB3.Value + LF +
+                        "USB3.1: " + nudExternUSB3_1.Value + LF +
+                        "Line-Out: " + nudExternLineOut.Value + LF +
+                        "Mikrofon: " + nudExternMikrofon.Value + LF +
+                        "Line-In: " + nudExternLineIn.Value + LF +
+                        "FireWire: " + nudExternFireWire.Value + LF +
+                        "Thunderbolt: " + nudExternThunderbolt.Value + LF +
+                        "Interne-Schnittstelle: " + LF +
+                        "USB2.0: " + nudInternUSB2.Value + LF +
+                        "USB3.0: " + nudInternUSB3.Value + LF +
+                        "USB3.1: " + nudInternUSB3_1.Value + LF +
+                        "Audio: " + nudInternAudio.Value + LF +
+                        "FireWire: " + nudInternFireWire.Value + LF +
+                        "Thunderbolt: " + nudInternThunderbolt.Value;
+                    #endregion
+
+                    File.WriteAllText(@"./FrontErweiterung_Datenbank.csv", Datensatz);//Datensatz in Mainbord_Datenbank.csv schreiben
+                    MessageBox.Show("Datensatz geschrieben!");//Bestätigung das der Datensatz geschrieben wurd
+                }
+                else
+                {
+                    MessageBox.Show("Bitte alle roten Pflichtfelder ausfüllen!");
+                }
             }
             else
             {
@@ -118,15 +162,39 @@ namespace PC_Hardware_Datenbank
             }
         }
 
+        private void nudExternLineOut_ValueChanged(object sender, EventArgs e)
+        {
+            if (nudExternLineOut.Value > 0)
+            {
+                cbtExternLineOut.Checked = true;
+            }
+            if (nudExternLineOut.Value == 0)
+            {
+                cbtExternLineOut.Checked = false;
+            }
+        }
+
         private void nudExternAudio_ValueChanged(object sender, EventArgs e)
         {
-            if (nudExternAudio.Value > 0)
+            if (nudExternMikrofon.Value > 0)
             {
-                cbtExternAudio.Checked = true;
+                cbtExternMikrofon.Checked = true;
             }
-            if (nudExternAudio.Value == 0)
+            if (nudExternMikrofon.Value == 0)
             {
-                cbtExternAudio.Checked = false;
+                cbtExternMikrofon.Checked = false;
+            }
+        }
+
+        private void nudExternLineIn_ValueChanged(object sender, EventArgs e)
+        {
+            if (nudExternLineIn.Value > 0)
+            {
+                cbtExternLineIn.Checked = true;
+            }
+            if (nudExternLineIn.Value == 0)
+            {
+                cbtExternLineIn.Checked = false;
             }
         }
 
@@ -275,15 +343,39 @@ namespace PC_Hardware_Datenbank
             }
         }
 
+        private void cbtExternLineOut_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbtExternLineOut.Checked == true)
+            {
+                nudExternLineOut.Value = 1;
+            }
+            if (cbtExternLineOut.Checked == false)
+            {
+                nudExternLineOut.Value = 0;
+            }
+        }
+
         private void cbtExternAudio_CheckedChanged(object sender, EventArgs e)
         {
-            if (cbtExternAudio.Checked == true)
+            if (cbtExternMikrofon.Checked == true)
             {
-                nudExternAudio.Value = 1;
+                nudExternMikrofon.Value = 1;
             }
-            if (cbtExternAudio.Checked == false)
+            if (cbtExternMikrofon.Checked == false)
             {
-                nudExternAudio.Value = 0;
+                nudExternMikrofon.Value = 0;
+            }
+        }
+
+        private void cbtExternLineIn_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbtExternLineIn.Checked == true)
+            {
+                nudExternLineIn.Value = 1;
+            }
+            if (cbtExternLineIn.Checked == false)
+            {
+                nudExternLineIn.Value = 0;
             }
         }
 
@@ -414,6 +506,8 @@ namespace PC_Hardware_Datenbank
             e.Graphics.DrawImage(qrCodeImage, 10, 10);
             qrCodeImage.Dispose();
         }
+
+
         #endregion
     }
 }

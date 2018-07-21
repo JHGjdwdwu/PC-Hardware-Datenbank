@@ -45,6 +45,8 @@
             this.wtxtSchnittstelle = new System.Windows.Forms.ComboBox();
             this.wtxtBauart = new System.Windows.Forms.ComboBox();
             this.cbtBrenner = new System.Windows.Forms.CheckBox();
+            this.wtxtZustand = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcmdMainbord)).BeginInit();
             this.SuspendLayout();
@@ -79,9 +81,10 @@
             this.cmdQR.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdQR.Name = "cmdQR";
             this.cmdQR.Size = new System.Drawing.Size(171, 35);
-            this.cmdQR.TabIndex = 8;
+            this.cmdQR.TabIndex = 9;
             this.cmdQR.Text = "QR-Code Drucken";
             this.cmdQR.UseVisualStyleBackColor = false;
+            this.cmdQR.Click += new System.EventHandler(this.cmdQR_Click);
             // 
             // cmdBildEinfugen
             // 
@@ -91,7 +94,7 @@
             this.cmdBildEinfugen.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdBildEinfugen.Name = "cmdBildEinfugen";
             this.cmdBildEinfugen.Size = new System.Drawing.Size(150, 35);
-            this.cmdBildEinfugen.TabIndex = 5;
+            this.cmdBildEinfugen.TabIndex = 6;
             this.cmdBildEinfugen.Text = "Bild einfügen";
             this.cmdBildEinfugen.UseVisualStyleBackColor = false;
             // 
@@ -103,7 +106,7 @@
             this.cmdClear.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdClear.Name = "cmdClear";
             this.cmdClear.Size = new System.Drawing.Size(150, 35);
-            this.cmdClear.TabIndex = 7;
+            this.cmdClear.TabIndex = 8;
             this.cmdClear.Text = "Zurücksetzen";
             this.cmdClear.UseVisualStyleBackColor = false;
             this.cmdClear.Click += new System.EventHandler(this.cmdClear_Click);
@@ -116,7 +119,7 @@
             this.cmdSpeichern.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdSpeichern.Name = "cmdSpeichern";
             this.cmdSpeichern.Size = new System.Drawing.Size(150, 35);
-            this.cmdSpeichern.TabIndex = 6;
+            this.cmdSpeichern.TabIndex = 7;
             this.cmdSpeichern.Text = "Speichern";
             this.cmdSpeichern.UseVisualStyleBackColor = false;
             this.cmdSpeichern.Click += new System.EventHandler(this.cmdSpeichern_Click);
@@ -129,7 +132,7 @@
             this.cmdBeenden.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdBeenden.Name = "cmdBeenden";
             this.cmdBeenden.Size = new System.Drawing.Size(150, 35);
-            this.cmdBeenden.TabIndex = 9;
+            this.cmdBeenden.TabIndex = 10;
             this.cmdBeenden.Text = "Schließen";
             this.cmdBeenden.UseVisualStyleBackColor = false;
             this.cmdBeenden.Click += new System.EventHandler(this.cmdBeenden_Click);
@@ -171,13 +174,63 @@
             this.label2.ForeColor = System.Drawing.Color.Red;
             this.label2.Location = new System.Drawing.Point(30, 112);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 20);
+            this.label2.Size = new System.Drawing.Size(34, 20);
             this.label2.TabIndex = 62;
-            this.label2.Text = "Typ:";
+            this.label2.Text = "Art:";
             // 
             // wtxtHersteller
             // 
             this.wtxtHersteller.FormattingEnabled = true;
+            this.wtxtHersteller.Items.AddRange(new object[] {
+            "Acer",
+            "Actima",
+            "Afreey",
+            "Aopen",
+            "Artec",
+            "Asus",
+            "ASUS Computer",
+            "BenQ",
+            "BestRunner",
+            "BIGtec",
+            "Creative",
+            "CyberDrive",
+            "DEEPOW",
+            "Dell",
+            "Delta Solution",
+            "DOY",
+            "Firstcom",
+            "Fujitsu-Siemens",
+            "Hercules",
+            "Hitachi",
+            "iAmotus",
+            "IBM",
+            "LaCie",
+            "LEADSTAR",
+            "LG",
+            "LiteOn",
+            "Lite-On IT",
+            "Lonedo",
+            "Matsushita",
+            "Memorex",
+            "Mitsumi",
+            "MSI",
+            "Multiport",
+            "NEC",
+            "Panasonic",
+            "Philips",
+            "Pioneer",
+            "Plextor",
+            "Salcar",
+            "Samsung",
+            "Shuttle",
+            "SONOKA",
+            "Sony",
+            "Sony NEC Optiarc",
+            "Sunreal",
+            "Teac",
+            "Toshiba",
+            "Trust",
+            "Zacfton"});
             this.wtxtHersteller.Location = new System.Drawing.Point(34, 61);
             this.wtxtHersteller.Name = "wtxtHersteller";
             this.wtxtHersteller.Size = new System.Drawing.Size(146, 28);
@@ -222,18 +275,41 @@
             // cbtBrenner
             // 
             this.cbtBrenner.AutoSize = true;
-            this.cbtBrenner.Location = new System.Drawing.Point(34, 189);
+            this.cbtBrenner.Location = new System.Drawing.Point(249, 211);
             this.cbtBrenner.Name = "cbtBrenner";
             this.cbtBrenner.Size = new System.Drawing.Size(85, 24);
-            this.cbtBrenner.TabIndex = 4;
+            this.cbtBrenner.TabIndex = 5;
             this.cbtBrenner.Text = "Brenner";
             this.cbtBrenner.UseVisualStyleBackColor = true;
+            // 
+            // wtxtZustand
+            // 
+            this.wtxtZustand.FormattingEnabled = true;
+            this.wtxtZustand.Items.AddRange(new object[] {
+            "verbaut",
+            "auf Lager"});
+            this.wtxtZustand.Location = new System.Drawing.Point(34, 209);
+            this.wtxtZustand.Name = "wtxtZustand";
+            this.wtxtZustand.Size = new System.Drawing.Size(146, 28);
+            this.wtxtZustand.TabIndex = 4;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.Red;
+            this.label4.Location = new System.Drawing.Point(30, 186);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(72, 20);
+            this.label4.TabIndex = 117;
+            this.label4.Text = "Zustand:";
             // 
             // Laufwerk_Imput
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1126, 620);
+            this.Controls.Add(this.wtxtZustand);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.cbtBrenner);
             this.Controls.Add(this.wtxtBauart);
             this.Controls.Add(this.wtxtSchnittstelle);
@@ -280,5 +356,7 @@
         private System.Windows.Forms.ComboBox wtxtSchnittstelle;
         private System.Windows.Forms.ComboBox wtxtBauart;
         private System.Windows.Forms.CheckBox cbtBrenner;
+        private System.Windows.Forms.ComboBox wtxtZustand;
+        private System.Windows.Forms.Label label4;
     }
 }

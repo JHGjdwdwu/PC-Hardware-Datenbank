@@ -31,7 +31,7 @@ namespace PC_Hardware_Datenbank
 
         private void LoschFunktion()//Löschen Funktion
         {
-            wtxtHersteller.Text = wtxtModell.Text = wtxtTechnik.Text = wtxtMaxAuflosung.Text = null;
+            wtxtHersteller.Text = wtxtModell.Text = wtxtTechnik.Text = wtxtMaxAuflosung.Text = wtxtZustand.Text = null;
             cbtLautsprecher.Checked = cbtHöhenVerstellbar.Checked = cbtVESA.Checked = false;
             cbtEingangVGA.Checked = cbtEingangDVI.Checked = cbtEingangHDMI.Checked = cbtEingangDisplaport.Checked = cbtEingangRGB.Checked = cbtEingangAudio.Checked = cbtEingangUSB.Checked = false;
             nudEingangVGA.Value = nudEingangDVI.Value = nudEingangHDMI.Value = nudEingangDisplaport.Value = nudEingangRGB.Value = nudEingangAudio.Value = nudEingangUSB.Value = 0;
@@ -49,7 +49,7 @@ namespace PC_Hardware_Datenbank
         {
             if (File.Exists(@"./Monitor_Datenbank.csv") == true)//Prüffen ob eine .csv Datei bereits erstellt wurde
             {
-                if (wtxtHersteller.Text != "" && wtxtModell.Text != "")//Prüfft die Pflichtangaben
+                if (wtxtHersteller.Text != "" && wtxtModell.Text != "" && wtxtZustand.Text != "")//Prüfft die Pflichtangaben
                 {
                     Datensatz = File.ReadAllText(@"./Monitor_Datenbank.csv");//Datenbanck lessen und in Datensatz speichern
 
@@ -74,13 +74,47 @@ namespace PC_Hardware_Datenbank
                     #endregion
 
                     #region Datensatz bilden
-                    Datensatz += LF + wtxtHersteller.Text + ";" + wtxtModell.Text + ";" + wtxtTechnik.Text + ";" + wtxtMaxAuflosung + ";" + Lautsprecher + ";" + HöhenVerstellbar + ";" + VESA + ";";
-                    Datensatz += nudEingangVGA.Value + ";" + nudEingangDVI.Value + ";" + nudEingangHDMI.Value + ";" + nudEingangDisplaport.Value + ";" + nudEingangRGB.Value + ";";
-                    Datensatz += nudEingangAudio.Value + ";" + nudEingangUSB.Value + ";" + nudAusgangAudio.Value + ";" + nudAusgangUSB.Value;
+                    Datensatz += LF +
+                        wtxtHersteller.Text + ";" +
+                        wtxtModell.Text + ";" +
+                        wtxtZustand.Text + ";" +
+                        wtxtTechnik.Text + ";" +
+                        wtxtMaxAuflosung + ";" +
+                        Lautsprecher + ";" +
+                        HöhenVerstellbar + ";" +
+                        VESA + ";" +
+                        nudEingangVGA.Value + ";" +
+                        nudEingangDVI.Value + ";" +
+                        nudEingangHDMI.Value + ";" +
+                        nudEingangDisplaport.Value + ";" +
+                        nudEingangRGB.Value + ";" +
+                        nudEingangAudio.Value + ";" +
+                        nudEingangUSB.Value + ";" +
+                        nudAusgangAudio.Value + ";" +
+                        nudAusgangUSB.Value;
                     #endregion
 
                     #region QR Code
-                    QR = "Hersteller:" + wtxtHersteller.Text + LF + "Modell:" + wtxtModell.Text + LF + "Technik:" + wtxtTechnik.Text + LF + "Max.Auflösung:" + wtxtMaxAuflosung.Text + LF + "Lautsprecher:" + Lautsprecher + LF + "Höhen verstellbar:" + HöhenVerstellbar + LF + "VESA Halterung:" + VESA + LF + "Eingänge" + LF + "VGA:" + nudEingangVGA.Value + LF + "DVI:" + nudEingangDVI.Value + LF + "HDMI" + nudEingangHDMI.Value + LF + "Displayport:" + nudEingangDisplaport.Value + LF + "RGB:" + nudEingangRGB.Value + LF + "Ausio:" + nudEingangAudio.Value + LF + "USB:" + nudEingangUSB.Value + LF + "Ausgänge" + LF + "Audio:" + nudAusgangAudio.Value + LF + "USB:" + nudAusgangUSB.Value;
+                    QR =
+                        "Hersteller: " + wtxtHersteller.Text + LF +
+                        "Modell: " + wtxtModell.Text + LF +
+                        "Zustand: " + wtxtZustand.Text + LF +
+                        "Technik: " + wtxtTechnik.Text + LF +
+                        "Max.Auflösung: " + wtxtMaxAuflosung.Text + LF +
+                        "Lautsprecher: " + Lautsprecher + LF +
+                        "Höhen verstellbar: " + HöhenVerstellbar + LF +
+                        "VESA Halterung: " + VESA + LF +
+                        "Eingänge: " + LF +
+                        "VGA: " + nudEingangVGA.Value + LF +
+                        "DVI: " + nudEingangDVI.Value + LF +
+                        "HDMI: " + nudEingangHDMI.Value + LF +
+                        "Displayport: " + nudEingangDisplaport.Value + LF +
+                        "RGB: " + nudEingangRGB.Value + LF +
+                        "Ausio: " + nudEingangAudio.Value + LF +
+                        "USB: " + nudEingangUSB.Value + LF +
+                        "Ausgänge: " + LF +
+                        "Audio: " + nudAusgangAudio.Value + LF +
+                        "USB: " + nudAusgangUSB.Value;
                     #endregion
 
                     File.WriteAllText(@"./Monitor_Datenbank.csv", Datensatz);//Datensatz in Monitor_Datenbank.csv schreiben

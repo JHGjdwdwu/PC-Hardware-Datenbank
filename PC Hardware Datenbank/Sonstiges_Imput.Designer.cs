@@ -44,6 +44,8 @@
             this.wtxtGerat = new System.Windows.Forms.ComboBox();
             this.cmdBildEinfugen = new System.Windows.Forms.Button();
             this.cmdClear = new System.Windows.Forms.Button();
+            this.wtxtZustand = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pcmdMainbord)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -59,7 +61,7 @@
             // wtxtAnschluss
             // 
             this.wtxtAnschluss.FormattingEnabled = true;
-            this.wtxtAnschluss.Location = new System.Drawing.Point(34, 133);
+            this.wtxtAnschluss.Location = new System.Drawing.Point(222, 128);
             this.wtxtAnschluss.Name = "wtxtAnschluss";
             this.wtxtAnschluss.Size = new System.Drawing.Size(146, 28);
             this.wtxtAnschluss.TabIndex = 2;
@@ -67,7 +69,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(30, 110);
+            this.label2.Location = new System.Drawing.Point(218, 105);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(86, 20);
             this.label2.TabIndex = 201;
@@ -77,7 +79,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(225, 38);
+            this.label5.Location = new System.Drawing.Point(30, 105);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(100, 20);
             this.label5.TabIndex = 197;
@@ -120,7 +122,7 @@
             // wtxtHersteller
             // 
             this.wtxtHersteller.FormattingEnabled = true;
-            this.wtxtHersteller.Location = new System.Drawing.Point(34, 61);
+            this.wtxtHersteller.Location = new System.Drawing.Point(222, 56);
             this.wtxtHersteller.Name = "wtxtHersteller";
             this.wtxtHersteller.Size = new System.Drawing.Size(146, 28);
             this.wtxtHersteller.TabIndex = 0;
@@ -129,7 +131,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(30, 38);
+            this.label1.Location = new System.Drawing.Point(218, 33);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(81, 20);
             this.label1.TabIndex = 196;
@@ -168,11 +170,12 @@
             this.cmdQR.TabIndex = 7;
             this.cmdQR.Text = "QR-Code Drucken";
             this.cmdQR.UseVisualStyleBackColor = false;
+            this.cmdQR.Click += new System.EventHandler(this.cmdQR_Click);
             // 
             // wtxtGerat
             // 
             this.wtxtGerat.FormattingEnabled = true;
-            this.wtxtGerat.Location = new System.Drawing.Point(229, 61);
+            this.wtxtGerat.Location = new System.Drawing.Point(34, 128);
             this.wtxtGerat.Name = "wtxtGerat";
             this.wtxtGerat.Size = new System.Drawing.Size(146, 28);
             this.wtxtGerat.TabIndex = 1;
@@ -202,11 +205,34 @@
             this.cmdClear.UseVisualStyleBackColor = false;
             this.cmdClear.Click += new System.EventHandler(this.cmdClear_Click);
             // 
+            // wtxtZustand
+            // 
+            this.wtxtZustand.FormattingEnabled = true;
+            this.wtxtZustand.Items.AddRange(new object[] {
+            "verbaut",
+            "auf Lager"});
+            this.wtxtZustand.Location = new System.Drawing.Point(34, 56);
+            this.wtxtZustand.Name = "wtxtZustand";
+            this.wtxtZustand.Size = new System.Drawing.Size(146, 28);
+            this.wtxtZustand.TabIndex = 202;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.Red;
+            this.label4.Location = new System.Drawing.Point(30, 33);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(72, 20);
+            this.label4.TabIndex = 203;
+            this.label4.Text = "Zustand:";
+            // 
             // Sonstiges_Imput
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1126, 620);
+            this.Controls.Add(this.wtxtZustand);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.txtBemerkung);
             this.Controls.Add(this.wtxtAnschluss);
             this.Controls.Add(this.label2);
@@ -251,5 +277,7 @@
         private System.Windows.Forms.ComboBox wtxtGerat;
         private System.Windows.Forms.Button cmdBildEinfugen;
         private System.Windows.Forms.Button cmdClear;
+        private System.Windows.Forms.ComboBox wtxtZustand;
+        private System.Windows.Forms.Label label4;
     }
 }
