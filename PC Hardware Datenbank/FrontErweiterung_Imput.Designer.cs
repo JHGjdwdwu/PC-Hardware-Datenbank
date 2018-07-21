@@ -181,7 +181,7 @@
             this.nudExternLineIn.Location = new System.Drawing.Point(154, 227);
             this.nudExternLineIn.Name = "nudExternLineIn";
             this.nudExternLineIn.Size = new System.Drawing.Size(57, 26);
-            this.nudExternLineIn.TabIndex = 81;
+            this.nudExternLineIn.TabIndex = 6;
             this.nudExternLineIn.ValueChanged += new System.EventHandler(this.nudExternLineIn_ValueChanged);
             // 
             // cbtExternLineOut
@@ -203,7 +203,7 @@
             this.nudExternLineOut.Location = new System.Drawing.Point(154, 163);
             this.nudExternLineOut.Name = "nudExternLineOut";
             this.nudExternLineOut.Size = new System.Drawing.Size(57, 26);
-            this.nudExternLineOut.TabIndex = 79;
+            this.nudExternLineOut.TabIndex = 4;
             this.nudExternLineOut.ValueChanged += new System.EventHandler(this.nudExternLineOut_ValueChanged);
             // 
             // cbtExternThunderbolt
@@ -225,7 +225,7 @@
             this.nudExternThunderbolt.Location = new System.Drawing.Point(154, 291);
             this.nudExternThunderbolt.Name = "nudExternThunderbolt";
             this.nudExternThunderbolt.Size = new System.Drawing.Size(57, 26);
-            this.nudExternThunderbolt.TabIndex = 6;
+            this.nudExternThunderbolt.TabIndex = 8;
             this.nudExternThunderbolt.ValueChanged += new System.EventHandler(this.nudExternThunderbolt_ValueChanged);
             // 
             // cbtExternUSB3
@@ -273,7 +273,7 @@
             this.nudExternFireWire.Location = new System.Drawing.Point(154, 259);
             this.nudExternFireWire.Name = "nudExternFireWire";
             this.nudExternFireWire.Size = new System.Drawing.Size(57, 26);
-            this.nudExternFireWire.TabIndex = 5;
+            this.nudExternFireWire.TabIndex = 7;
             this.nudExternFireWire.ValueChanged += new System.EventHandler(this.nudExternFireWire_ValueChanged);
             // 
             // nudExternMikrofon
@@ -282,7 +282,7 @@
             this.nudExternMikrofon.Location = new System.Drawing.Point(154, 195);
             this.nudExternMikrofon.Name = "nudExternMikrofon";
             this.nudExternMikrofon.Size = new System.Drawing.Size(57, 26);
-            this.nudExternMikrofon.TabIndex = 4;
+            this.nudExternMikrofon.TabIndex = 5;
             this.nudExternMikrofon.ValueChanged += new System.EventHandler(this.nudExternAudio_ValueChanged);
             // 
             // nudExternUSB3_1

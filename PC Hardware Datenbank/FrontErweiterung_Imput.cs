@@ -80,7 +80,7 @@ namespace PC_Hardware_Datenbank
                         "Zustand: " + wtxtZustand.Text + LF +
                         "Hersteller: " + wtxtKartenhersteller.Text + LF +
                         "Modell: " + wtxtModell.Text + LF +
-                        "Externe Schnittstellen: " + LF +
+                        "<Externe Schnittstellen>" + LF +
                         "Cardreader: " + nudExternCardreader.Value + LF +
                         "USB2.0: " + nudExternUSB2.Value + LF +
                         "USB3.0: " + nudExternUSB3.Value + LF +
@@ -90,7 +90,7 @@ namespace PC_Hardware_Datenbank
                         "Line-In: " + nudExternLineIn.Value + LF +
                         "FireWire: " + nudExternFireWire.Value + LF +
                         "Thunderbolt: " + nudExternThunderbolt.Value + LF +
-                        "Interne-Schnittstelle: " + LF +
+                        "<Interne-Schnittstelle>" + LF +
                         "USB2.0: " + nudInternUSB2.Value + LF +
                         "USB3.0: " + nudInternUSB3.Value + LF +
                         "USB3.1: " + nudInternUSB3_1.Value + LF +

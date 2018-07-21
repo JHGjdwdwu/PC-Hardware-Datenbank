@@ -69,7 +69,7 @@ namespace PC_Hardware_Datenbank
                         "Zustand: " + wtxtZustand.Text + LF +
                         "Dicke: " + wtxtDicke.Text + LF +
                         "Durchmesser: " + wtxtDurchmesser.Text + LF +
-                        "Spannung (V): " + wtxtSpannung + LF +
+                        "Spannung (V): " + wtxtSpannung.Text + LF +
                         "Art: " + wtxtArt.Text + LF +
                         "Modell: " + wtxtModell.Text + LF +
                         "Hersteller: " + wtxtHersteller.Text + LF +

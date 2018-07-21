@@ -99,12 +99,12 @@ namespace PC_Hardware_Datenbank
                         "Hersteller: " + wtxtHersteller.Text + LF +
                         "Modell: " + wtxtModell.Text + LF +
                         "Zustand: " + wtxtZustand.Text + LF +
-                        "Technik: " + wtxtTechnik.Text + LF +
                         "Max.Auflösung: " + wtxtMaxAuflosung.Text + LF +
+                        "Technik: " + wtxtTechnik.Text + LF +
                         "Lautsprecher: " + Lautsprecher + LF +
                         "Höhen verstellbar: " + HöhenVerstellbar + LF +
                         "VESA Halterung: " + VESA + LF +
-                        "Eingänge: " + LF +
+                        "<Eingänge>" + LF +
                         "VGA: " + nudEingangVGA.Value + LF +
                         "DVI: " + nudEingangDVI.Value + LF +
                         "HDMI: " + nudEingangHDMI.Value + LF +
@@ -112,7 +112,7 @@ namespace PC_Hardware_Datenbank
                         "RGB: " + nudEingangRGB.Value + LF +
                         "Ausio: " + nudEingangAudio.Value + LF +
                         "USB: " + nudEingangUSB.Value + LF +
-                        "Ausgänge: " + LF +
+                        "<Ausgänge>" + LF +
                         "Audio: " + nudAusgangAudio.Value + LF +
                         "USB: " + nudAusgangUSB.Value;
                     #endregion

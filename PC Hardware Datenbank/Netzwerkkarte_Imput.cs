@@ -72,7 +72,7 @@ namespace PC_Hardware_Datenbank
                         "Typ: " + wtxtTyp.Text + LF +
                         "RJ-45: " + nudRJ45.Value + LF +
                         "Coax: " + nudCoax.Value + LF +
-                        "LWL: " + nudLWL + LF +
+                        "LWL: " + nudLWL.Value + LF +
                         "W-Lan: " + nudWLan.Value;
                     #endregion
 

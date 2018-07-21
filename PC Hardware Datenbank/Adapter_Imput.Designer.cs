@@ -64,7 +64,7 @@
             this.cmdBeenden.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdBeenden.Name = "cmdBeenden";
             this.cmdBeenden.Size = new System.Drawing.Size(150, 35);
-            this.cmdBeenden.TabIndex = 6;
+            this.cmdBeenden.TabIndex = 7;
             this.cmdBeenden.Text = "Schließen";
             this.cmdBeenden.UseVisualStyleBackColor = false;
             this.cmdBeenden.Click += new System.EventHandler(this.cmdBeenden_Click);
@@ -128,7 +128,7 @@
             this.wtxtVon.Location = new System.Drawing.Point(40, 154);
             this.wtxtVon.Name = "wtxtVon";
             this.wtxtVon.Size = new System.Drawing.Size(205, 28);
-            this.wtxtVon.TabIndex = 0;
+            this.wtxtVon.TabIndex = 1;
             // 
             // label1
             // 
@@ -148,7 +148,7 @@
             this.cmdSpeichern.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdSpeichern.Name = "cmdSpeichern";
             this.cmdSpeichern.Size = new System.Drawing.Size(150, 35);
-            this.cmdSpeichern.TabIndex = 3;
+            this.cmdSpeichern.TabIndex = 4;
             this.cmdSpeichern.Text = "Speichern";
             this.cmdSpeichern.UseVisualStyleBackColor = false;
             this.cmdSpeichern.Click += new System.EventHandler(this.cmdSpeichern_Click);
@@ -170,7 +170,7 @@
             this.cmdQR.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdQR.Name = "cmdQR";
             this.cmdQR.Size = new System.Drawing.Size(171, 35);
-            this.cmdQR.TabIndex = 5;
+            this.cmdQR.TabIndex = 6;
             this.cmdQR.Text = "QR-Code Drucken";
             this.cmdQR.UseVisualStyleBackColor = false;
             this.cmdQR.Click += new System.EventHandler(this.cmdQR_Click);
@@ -223,7 +223,7 @@
             this.wtxtAuf.Location = new System.Drawing.Point(251, 154);
             this.wtxtAuf.Name = "wtxtAuf";
             this.wtxtAuf.Size = new System.Drawing.Size(205, 28);
-            this.wtxtAuf.TabIndex = 1;
+            this.wtxtAuf.TabIndex = 2;
             // 
             // cmdBildEinfugen
             // 
@@ -233,7 +233,7 @@
             this.cmdBildEinfugen.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdBildEinfugen.Name = "cmdBildEinfugen";
             this.cmdBildEinfugen.Size = new System.Drawing.Size(150, 35);
-            this.cmdBildEinfugen.TabIndex = 2;
+            this.cmdBildEinfugen.TabIndex = 3;
             this.cmdBildEinfugen.Text = "Bild einfügen";
             this.cmdBildEinfugen.UseVisualStyleBackColor = false;
             // 
@@ -245,7 +245,7 @@
             this.cmdClear.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdClear.Name = "cmdClear";
             this.cmdClear.Size = new System.Drawing.Size(150, 35);
-            this.cmdClear.TabIndex = 4;
+            this.cmdClear.TabIndex = 5;
             this.cmdClear.Text = "Zurücksetzen";
             this.cmdClear.UseVisualStyleBackColor = false;
             this.cmdClear.Click += new System.EventHandler(this.cmdClear_Click);
@@ -259,7 +259,7 @@
             this.wtxtZustand.Location = new System.Drawing.Point(40, 81);
             this.wtxtZustand.Name = "wtxtZustand";
             this.wtxtZustand.Size = new System.Drawing.Size(146, 28);
-            this.wtxtZustand.TabIndex = 198;
+            this.wtxtZustand.TabIndex = 0;
             // 
             // label4
             // 
