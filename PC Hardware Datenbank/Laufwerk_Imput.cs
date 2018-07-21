@@ -62,7 +62,7 @@ namespace PC_Hardware_Datenbank
                     Datensatz += LF +
                         wtxtHersteller.Text + ";" +
                         wtxtSchnittstelle.Text + ";" +
-                        wtxtTyp + ";" +
+                        wtxtTyp.Text + ";" +
                         wtxtBauart.Text + ";" +
                         wtxtZustand.Text + ";" +
                         Brenner;

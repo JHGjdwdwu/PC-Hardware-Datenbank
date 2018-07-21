@@ -323,6 +323,8 @@
             // 
             // wtxtModell
             // 
+            this.wtxtModell.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtModell.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtModell.FormattingEnabled = true;
             this.wtxtModell.Location = new System.Drawing.Point(393, 61);
             this.wtxtModell.Name = "wtxtModell";
@@ -425,6 +427,8 @@
             // 
             // wtxtKartenhersteller
             // 
+            this.wtxtKartenhersteller.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtKartenhersteller.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtKartenhersteller.FormattingEnabled = true;
             this.wtxtKartenhersteller.Location = new System.Drawing.Point(213, 61);
             this.wtxtKartenhersteller.Name = "wtxtKartenhersteller";
@@ -597,8 +601,11 @@
             // 
             // wtxtZustand
             // 
+            this.wtxtZustand.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtZustand.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtZustand.FormattingEnabled = true;
             this.wtxtZustand.Items.AddRange(new object[] {
+            "",
             "verbaut",
             "auf Lager"});
             this.wtxtZustand.Location = new System.Drawing.Point(34, 61);

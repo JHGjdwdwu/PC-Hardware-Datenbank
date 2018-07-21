@@ -957,13 +957,16 @@
             // 
             // wtxtHersteller
             // 
+            this.wtxtHersteller.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtHersteller.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtHersteller.FormattingEnabled = true;
             this.wtxtHersteller.Items.AddRange(new object[] {
+            "",
             "Abit",
             "Albatron",
             "Aopen",
             "Asrock",
-            "Asus",
+            "ASUS",
             "Biostar",
             "Chaintech",
             "DFI",
@@ -994,6 +997,8 @@
             // 
             // wtxtTyp
             // 
+            this.wtxtTyp.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtTyp.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtTyp.FormattingEnabled = true;
             this.wtxtTyp.Location = new System.Drawing.Point(458, 28);
             this.wtxtTyp.Name = "wtxtTyp";
@@ -1002,8 +1007,11 @@
             // 
             // wtxtSockel
             // 
+            this.wtxtSockel.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtSockel.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtSockel.FormattingEnabled = true;
             this.wtxtSockel.Items.AddRange(new object[] {
+            "",
             "3",
             "4",
             "5",
@@ -1062,8 +1070,11 @@
             // 
             // wtxtRAM
             // 
+            this.wtxtRAM.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtRAM.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtRAM.FormattingEnabled = true;
             this.wtxtRAM.Items.AddRange(new object[] {
+            "",
             "SDRAM",
             "DDR",
             "DDR2",
@@ -1077,6 +1088,8 @@
             // 
             // wtxtBauform
             // 
+            this.wtxtBauform.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtBauform.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtBauform.FormattingEnabled = true;
             this.wtxtBauform.Location = new System.Drawing.Point(458, 96);
             this.wtxtBauform.Name = "wtxtBauform";
@@ -1085,8 +1098,11 @@
             // 
             // wtxtZustand
             // 
+            this.wtxtZustand.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtZustand.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtZustand.FormattingEnabled = true;
             this.wtxtZustand.Items.AddRange(new object[] {
+            "",
             "verbaut",
             "auf Lager"});
             this.wtxtZustand.Location = new System.Drawing.Point(120, 65);

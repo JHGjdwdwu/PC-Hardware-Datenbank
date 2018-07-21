@@ -82,8 +82,11 @@
             // 
             // wtxtVon
             // 
+            this.wtxtVon.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtVon.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtVon.FormattingEnabled = true;
             this.wtxtVon.Items.AddRange(new object[] {
+            "",
             "Kaltgerätestecker",
             "kaltgerätekupplung",
             "RJ11",
@@ -177,8 +180,11 @@
             // 
             // wtxtAuf
             // 
+            this.wtxtAuf.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtAuf.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtAuf.FormattingEnabled = true;
             this.wtxtAuf.Items.AddRange(new object[] {
+            "",
             "Kaltgerätestecker",
             "kaltgerätekupplung",
             "RJ11",
@@ -252,8 +258,11 @@
             // 
             // wtxtZustand
             // 
+            this.wtxtZustand.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtZustand.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtZustand.FormattingEnabled = true;
             this.wtxtZustand.Items.AddRange(new object[] {
+            "",
             "verbaut",
             "auf Lager"});
             this.wtxtZustand.Location = new System.Drawing.Point(40, 81);

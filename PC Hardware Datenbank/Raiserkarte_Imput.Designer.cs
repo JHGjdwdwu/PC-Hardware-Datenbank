@@ -108,8 +108,11 @@
             // 
             // wtxtSteckverbindung
             // 
+            this.wtxtSteckverbindung.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtSteckverbindung.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtSteckverbindung.FormattingEnabled = true;
             this.wtxtSteckverbindung.Items.AddRange(new object[] {
+            "",
             "PCI",
             "PCIe x1",
             "PCIe x2",
@@ -169,8 +172,11 @@
             // 
             // wtxtSchnittstelle
             // 
+            this.wtxtSchnittstelle.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtSchnittstelle.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtSchnittstelle.FormattingEnabled = true;
             this.wtxtSchnittstelle.Items.AddRange(new object[] {
+            "",
             "PCI",
             "PCIe x1",
             "PCIe x2",
@@ -258,8 +264,11 @@
             // 
             // wtxtAusrichtung
             // 
+            this.wtxtAusrichtung.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtAusrichtung.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtAusrichtung.FormattingEnabled = true;
             this.wtxtAusrichtung.Items.AddRange(new object[] {
+            "",
             "0 Grad",
             "90 Grad",
             "180 Grad",
@@ -272,8 +281,11 @@
             // 
             // wtxtZustand
             // 
+            this.wtxtZustand.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtZustand.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtZustand.FormattingEnabled = true;
             this.wtxtZustand.Items.AddRange(new object[] {
+            "",
             "verbaut",
             "auf Lager"});
             this.wtxtZustand.Location = new System.Drawing.Point(34, 283);

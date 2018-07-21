@@ -374,7 +374,7 @@ namespace PC_Hardware_Datenbank
         {
             if (File.Exists(@"./I_O_Datenbank.csv") == false)
             {
-                File.WriteAllText(@"./I_O_Datenbank.csv", "Hersteller;Gerät;Anschluss;Bemerkung");
+                File.WriteAllText(@"./I_O_Datenbank.csv", "Hersteller;Gerät;Zustand;Anschluss;Bemerkung");
                 faI_O.BackColor = Color.Green;
             }
             else
@@ -387,7 +387,7 @@ namespace PC_Hardware_Datenbank
         {
             if (File.Exists(@"./Sonstiges_Datenbank.csv") == false)
             {
-                File.WriteAllText(@"./Sonstiges_Datenbank.csv", "Hersteller;Was ist das?;Anschluss;Bemerkung");
+                File.WriteAllText(@"./Sonstiges_Datenbank.csv", "Zustand;Hersteller;Was ist das?;Anschluss;Bemerkung");
                 faSonstiges.BackColor = Color.Green;
             }
             else

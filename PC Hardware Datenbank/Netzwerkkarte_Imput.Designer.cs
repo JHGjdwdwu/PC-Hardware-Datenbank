@@ -66,8 +66,11 @@
             // 
             // wtxtGeschwindigkeit
             // 
+            this.wtxtGeschwindigkeit.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtGeschwindigkeit.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtGeschwindigkeit.FormattingEnabled = true;
             this.wtxtGeschwindigkeit.Items.AddRange(new object[] {
+            "",
             "10Base-T (10Mb/s)",
             "100Base-T (100Mb/s)",
             "1000Base-T (1Gb/s)",
@@ -81,8 +84,11 @@
             // 
             // wtxtHersteller
             // 
+            this.wtxtHersteller.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtHersteller.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtHersteller.FormattingEnabled = true;
             this.wtxtHersteller.Items.AddRange(new object[] {
+            "",
             "Allied Telesis",
             "Allnet",
             "Apple",
@@ -154,8 +160,11 @@
             // 
             // wtxtSchnittstelle
             // 
+            this.wtxtSchnittstelle.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtSchnittstelle.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtSchnittstelle.FormattingEnabled = true;
             this.wtxtSchnittstelle.Items.AddRange(new object[] {
+            "",
             "CardBus",
             "PCIe 1.0 x1",
             "PCIe 1.0 x4",
@@ -408,6 +417,8 @@
             // 
             // wtxtTyp
             // 
+            this.wtxtTyp.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtTyp.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtTyp.FormattingEnabled = true;
             this.wtxtTyp.Location = new System.Drawing.Point(249, 135);
             this.wtxtTyp.Name = "wtxtTyp";
@@ -425,8 +436,11 @@
             // 
             // wtxtZustand
             // 
+            this.wtxtZustand.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtZustand.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtZustand.FormattingEnabled = true;
             this.wtxtZustand.Items.AddRange(new object[] {
+            "",
             "verbaut",
             "auf Lager"});
             this.wtxtZustand.Location = new System.Drawing.Point(464, 61);

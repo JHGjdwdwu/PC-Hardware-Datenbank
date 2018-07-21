@@ -83,6 +83,8 @@
             // 
             // wtxtModell
             // 
+            this.wtxtModell.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtModell.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtModell.FormattingEnabled = true;
             this.wtxtModell.Location = new System.Drawing.Point(249, 61);
             this.wtxtModell.Name = "wtxtModell";
@@ -194,6 +196,8 @@
             // 
             // wtxtSpeichergrosse
             // 
+            this.wtxtSpeichergrosse.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtSpeichergrosse.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtSpeichergrosse.FormattingEnabled = true;
             this.wtxtSpeichergrosse.Location = new System.Drawing.Point(249, 135);
             this.wtxtSpeichergrosse.Name = "wtxtSpeichergrosse";
@@ -211,8 +215,11 @@
             // 
             // wtxtKartenhersteller
             // 
+            this.wtxtKartenhersteller.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtKartenhersteller.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtKartenhersteller.FormattingEnabled = true;
             this.wtxtKartenhersteller.Items.AddRange(new object[] {
+            "",
             "AMD/ATI",
             "Nvidia"});
             this.wtxtKartenhersteller.Location = new System.Drawing.Point(34, 61);
@@ -232,8 +239,11 @@
             // 
             // wtxtKuhlertyp
             // 
+            this.wtxtKuhlertyp.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtKuhlertyp.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtKuhlertyp.FormattingEnabled = true;
             this.wtxtKuhlertyp.Items.AddRange(new object[] {
+            "",
             "Aktiv Kühlung",
             "Passive Kühlung"});
             this.wtxtKuhlertyp.Location = new System.Drawing.Point(249, 209);
@@ -397,8 +407,11 @@
             // 
             // wtxtAnschluss
             // 
+            this.wtxtAnschluss.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtAnschluss.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtAnschluss.FormattingEnabled = true;
             this.wtxtAnschluss.Items.AddRange(new object[] {
+            "",
             "AGP",
             "PCI",
             "PCIe x16"});
@@ -434,8 +447,11 @@
             // 
             // wtxtStromversorgung
             // 
+            this.wtxtStromversorgung.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtStromversorgung.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtStromversorgung.FormattingEnabled = true;
             this.wtxtStromversorgung.Items.AddRange(new object[] {
+            "",
             "2x3-poligen 12V",
             "2x4-poligen 12V",
             "Molex-8981"});
@@ -465,8 +481,11 @@
             // 
             // wtxtSpeicherTyp
             // 
+            this.wtxtSpeicherTyp.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtSpeicherTyp.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtSpeicherTyp.FormattingEnabled = true;
             this.wtxtSpeicherTyp.Items.AddRange(new object[] {
+            "",
             "GDDR2",
             "GDDR3",
             "GDDR4",
@@ -504,8 +523,11 @@
             // 
             // wtxtZustand
             // 
+            this.wtxtZustand.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtZustand.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtZustand.FormattingEnabled = true;
             this.wtxtZustand.Items.AddRange(new object[] {
+            "",
             "verbaut",
             "auf Lager"});
             this.wtxtZustand.Location = new System.Drawing.Point(34, 135);

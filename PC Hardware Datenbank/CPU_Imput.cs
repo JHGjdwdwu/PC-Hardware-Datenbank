@@ -17,7 +17,7 @@ namespace PC_Hardware_Datenbank
     {
         private string Datensatz = "";//Datensatz, der dann in die Datenbank geschoben wird
         private char LF = (char)10;
-        private string Sockel;
+        private string Sockel = "leer";
         private string QR = "";//QR Code
 
         public CPU_Imput()
@@ -32,7 +32,7 @@ namespace PC_Hardware_Datenbank
 
         private void LoschenFunktion()//Löschfunktion
         {
-            wtxtHersteller.Text = txtTyp.Text = wtxtSockelAMD.Text = wtxtSockelINTEL.Text = mtxtTaktrate.Text = nudCach1.Text = nudCach2.Text = nudCach3.Text = nudCach4.Text = wtxtZustand.Text = null;
+            wtxtHersteller.Text = wtxtTyp.Text = wtxtSockelAMD.Text = wtxtSockelINTEL.Text = mtxtTaktrate.Text = wtxtSockel.Text = nudCach1.Text = nudCach2.Text = nudCach3.Text = nudCach4.Text = wtxtZustand.Text = null;
             nudKerne.Value = 1;
             wtxtHersteller.Focus();
         }
@@ -46,15 +46,15 @@ namespace PC_Hardware_Datenbank
         {
             if (File.Exists(@"./CPU_Datenbank.csv") == true)//Prüffen ob eine .csv Datei bereits erstellt wurde
             {
-                if (wtxtHersteller.Text != "" && txtTyp.Text != "" && wtxtZustand.Text != "")//Prüfft die Pflichtangaben
+                if (wtxtHersteller.Text != "" && wtxtTyp.Text != "" && wtxtZustand.Text != "")//Prüfft die Pflichtangaben
                 {
                     Datensatz = File.ReadAllText(@"./CPU_Datenbank.csv");//Datenbanck lessen und in Datensatz speichern
 
                     #region Datensatz erstellen
                     Datensatz += LF +
                         wtxtHersteller.Text + ";" +
-                        txtTyp.Text + ";" +
-                        wtxtZustand.Text +
+                        wtxtTyp.Text + ";" +
+                        wtxtZustand.Text + ";" +
                         Sockel + ";" +
                         mtxtTaktrate.Text + ";" +
                         nudKerne.Value + ";" +
@@ -67,7 +67,7 @@ namespace PC_Hardware_Datenbank
                     #region QR Code
                     QR +=
                         "Hersteller: " + wtxtHersteller.Text + LF +
-                        "Typ: " + txtTyp.Text + LF +
+                        "Typ: " + wtxtTyp.Text + LF +
                         "Zustand: " + wtxtZustand.Text + LF +
                         "Sockel: " + Sockel + LF +
                         "Taktrate: " + mtxtTaktrate.Text + LF +
@@ -93,22 +93,33 @@ namespace PC_Hardware_Datenbank
                 Application.Exit();
             }
         }
-
+        #region CPU Sockel auswerten
         private void wtxtHersteller_SelectedIndexChanged(object sender, EventArgs e)//Giebt die Sokel für den Hersteller frei
         {
+            if (wtxtHersteller.Text == "")
+            {
+                wtxtSockelAMD.Visible = false;
+                wtxtSockelINTEL.Visible = false;
+                wtxtSockel.Visible = true;
+                Sockel = wtxtSockel.Text;
+            }
             if (wtxtHersteller.Text == "AMD")
             {
                 wtxtSockelINTEL.Visible = false;
+                wtxtSockel.Visible = false;
                 wtxtSockelAMD.Visible = true;
                 Sockel = wtxtSockelAMD.Text;
             }
             if (wtxtHersteller.Text == "Intel")
             {
                 wtxtSockelAMD.Visible = false;
+                wtxtSockel.Visible = false;
                 wtxtSockelINTEL.Visible = true;
                 Sockel = wtxtSockelINTEL.Text;
             }
+
         }
+        #endregion
 
         #region Drucken von einem QR-Code
         private void cmdQR_Click(object sender, EventArgs e)

@@ -72,8 +72,11 @@
             // 
             // wtxtPinheader
             // 
+            this.wtxtPinheader.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtPinheader.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtPinheader.FormattingEnabled = true;
             this.wtxtPinheader.Items.AddRange(new object[] {
+            "",
             "2-Pin",
             "3-Pin",
             "4-Pin"});
@@ -93,6 +96,8 @@
             // 
             // wtxtDicke
             // 
+            this.wtxtDicke.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtDicke.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtDicke.FormattingEnabled = true;
             this.wtxtDicke.Location = new System.Drawing.Point(248, 61);
             this.wtxtDicke.Name = "wtxtDicke";
@@ -121,8 +126,11 @@
             // 
             // wtxtArt
             // 
+            this.wtxtArt.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtArt.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtArt.FormattingEnabled = true;
             this.wtxtArt.Items.AddRange(new object[] {
+            "",
             "Gehäuselüfter",
             "CPU-Lüfter",
             "Speicherkühler",
@@ -144,6 +152,8 @@
             // 
             // wtxtModell
             // 
+            this.wtxtModell.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtModell.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtModell.FormattingEnabled = true;
             this.wtxtModell.Location = new System.Drawing.Point(248, 209);
             this.wtxtModell.Name = "wtxtModell";
@@ -225,6 +235,8 @@
             // 
             // wtxtDurchmesser
             // 
+            this.wtxtDurchmesser.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtDurchmesser.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtDurchmesser.FormattingEnabled = true;
             this.wtxtDurchmesser.Location = new System.Drawing.Point(35, 135);
             this.wtxtDurchmesser.Name = "wtxtDurchmesser";
@@ -264,6 +276,8 @@
             // 
             // wtxtMaximaldrehzahl
             // 
+            this.wtxtMaximaldrehzahl.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtMaximaldrehzahl.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtMaximaldrehzahl.FormattingEnabled = true;
             this.wtxtMaximaldrehzahl.Location = new System.Drawing.Point(35, 357);
             this.wtxtMaximaldrehzahl.Name = "wtxtMaximaldrehzahl";
@@ -281,8 +295,11 @@
             // 
             // wtxtHersteller
             // 
+            this.wtxtHersteller.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtHersteller.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtHersteller.FormattingEnabled = true;
             this.wtxtHersteller.Items.AddRange(new object[] {
+            "",
             "2PCOM",
             "3R System",
             "Aerocool",
@@ -414,8 +431,11 @@
             // 
             // wtxtSpannung
             // 
+            this.wtxtSpannung.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtSpannung.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtSpannung.FormattingEnabled = true;
             this.wtxtSpannung.Items.AddRange(new object[] {
+            "",
             "3V",
             "5V",
             "12V",
@@ -440,8 +460,11 @@
             // 
             // wtxtZustand
             // 
+            this.wtxtZustand.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtZustand.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtZustand.FormattingEnabled = true;
             this.wtxtZustand.Items.AddRange(new object[] {
+            "",
             "verbaut",
             "auf Lager"});
             this.wtxtZustand.Location = new System.Drawing.Point(35, 61);

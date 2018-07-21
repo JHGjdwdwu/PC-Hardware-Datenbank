@@ -60,6 +60,8 @@
             // 
             // wtxtAnschluss
             // 
+            this.wtxtAnschluss.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtAnschluss.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtAnschluss.FormattingEnabled = true;
             this.wtxtAnschluss.Location = new System.Drawing.Point(222, 128);
             this.wtxtAnschluss.Name = "wtxtAnschluss";
@@ -121,6 +123,8 @@
             // 
             // wtxtHersteller
             // 
+            this.wtxtHersteller.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtHersteller.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtHersteller.FormattingEnabled = true;
             this.wtxtHersteller.Location = new System.Drawing.Point(222, 56);
             this.wtxtHersteller.Name = "wtxtHersteller";
@@ -174,6 +178,8 @@
             // 
             // wtxtGerat
             // 
+            this.wtxtGerat.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtGerat.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtGerat.FormattingEnabled = true;
             this.wtxtGerat.Location = new System.Drawing.Point(34, 128);
             this.wtxtGerat.Name = "wtxtGerat";
@@ -207,8 +213,11 @@
             // 
             // wtxtZustand
             // 
+            this.wtxtZustand.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtZustand.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtZustand.FormattingEnabled = true;
             this.wtxtZustand.Items.AddRange(new object[] {
+            "",
             "verbaut",
             "auf Lager"});
             this.wtxtZustand.Location = new System.Drawing.Point(34, 56);

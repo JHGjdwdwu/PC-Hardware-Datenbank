@@ -78,8 +78,8 @@ namespace PC_Hardware_Datenbank
                         wtxtHersteller.Text + ";" +
                         wtxtModell.Text + ";" +
                         wtxtZustand.Text + ";" +
+                        wtxtMaxAuflosung.Text + ";" +
                         wtxtTechnik.Text + ";" +
-                        wtxtMaxAuflosung + ";" +
                         Lautsprecher + ";" +
                         HöhenVerstellbar + ";" +
                         VESA + ";" +

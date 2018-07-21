@@ -323,8 +323,11 @@
             // 
             // wtxtHersteller
             // 
+            this.wtxtHersteller.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtHersteller.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtHersteller.FormattingEnabled = true;
             this.wtxtHersteller.Items.AddRange(new object[] {
+            "",
             "AdLib",
             "Akai",
             "Analog Devices",
@@ -376,8 +379,11 @@
             // 
             // wtxtBitaufloesung
             // 
+            this.wtxtBitaufloesung.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtBitaufloesung.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtBitaufloesung.FormattingEnabled = true;
             this.wtxtBitaufloesung.Items.AddRange(new object[] {
+            "",
             "8",
             "16",
             "24"});
@@ -388,8 +394,11 @@
             // 
             // wtxtAnschlusssSchnittstelle
             // 
+            this.wtxtAnschlusssSchnittstelle.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtAnschlusssSchnittstelle.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtAnschlusssSchnittstelle.FormattingEnabled = true;
             this.wtxtAnschlusssSchnittstelle.Items.AddRange(new object[] {
+            "",
             "ExpressCard",
             "ISA",
             "PCI",
@@ -414,8 +423,11 @@
             // 
             // wtxtAusgabestandard
             // 
+            this.wtxtAusgabestandard.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtAusgabestandard.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtAusgabestandard.FormattingEnabled = true;
             this.wtxtAusgabestandard.Items.AddRange(new object[] {
+            "",
             "ASIO",
             "DTS-ES",
             "EAX"});
@@ -426,8 +438,11 @@
             // 
             // wtxtZustand
             // 
+            this.wtxtZustand.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtZustand.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtZustand.FormattingEnabled = true;
             this.wtxtZustand.Items.AddRange(new object[] {
+            "",
             "verbaut",
             "auf Lager"});
             this.wtxtZustand.Location = new System.Drawing.Point(465, 61);

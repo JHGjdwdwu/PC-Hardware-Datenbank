@@ -60,10 +60,14 @@
             // 
             // wtxtStromversorgung
             // 
+            this.wtxtStromversorgung.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtStromversorgung.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtStromversorgung.FormattingEnabled = true;
             this.wtxtStromversorgung.Items.AddRange(new object[] {
+            "",
             "Molex-8981",
-            "SATA"});
+            "SATA",
+            "Molex-8981 & SATA"});
             this.wtxtStromversorgung.Location = new System.Drawing.Point(34, 285);
             this.wtxtStromversorgung.Name = "wtxtStromversorgung";
             this.wtxtStromversorgung.Size = new System.Drawing.Size(146, 28);
@@ -96,8 +100,11 @@
             // 
             // wtxtAnschluss
             // 
+            this.wtxtAnschluss.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtAnschluss.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtAnschluss.FormattingEnabled = true;
             this.wtxtAnschluss.Items.AddRange(new object[] {
+            "",
             "IDE",
             "SATA",
             "SCSI",
@@ -118,8 +125,11 @@
             // 
             // wtxtHersteller
             // 
+            this.wtxtHersteller.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtHersteller.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtHersteller.FormattingEnabled = true;
             this.wtxtHersteller.Items.AddRange(new object[] {
+            "",
             "HGST",
             "Seagate Technology",
             "Toshiba",
@@ -160,6 +170,8 @@
             // 
             // wtxtTyp
             // 
+            this.wtxtTyp.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtTyp.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtTyp.FormattingEnabled = true;
             this.wtxtTyp.Location = new System.Drawing.Point(249, 61);
             this.wtxtTyp.Name = "wtxtTyp";
@@ -290,8 +302,11 @@
             // 
             // wtxtBaugrose
             // 
+            this.wtxtBaugrose.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtBaugrose.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtBaugrose.FormattingEnabled = true;
             this.wtxtBaugrose.Items.AddRange(new object[] {
+            "",
             "3,5",
             "2,5"});
             this.wtxtBaugrose.Location = new System.Drawing.Point(249, 283);
@@ -311,8 +326,11 @@
             // 
             // wtxtZustand
             // 
+            this.wtxtZustand.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtZustand.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtZustand.FormattingEnabled = true;
             this.wtxtZustand.Items.AddRange(new object[] {
+            "",
             "verbaut",
             "auf Lager"});
             this.wtxtZustand.Location = new System.Drawing.Point(34, 135);
@@ -332,8 +350,11 @@
             // 
             // wtxtGrosse
             // 
+            this.wtxtGrosse.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtGrosse.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtGrosse.FormattingEnabled = true;
             this.wtxtGrosse.Items.AddRange(new object[] {
+            "",
             "40 GB",
             "60 GB",
             "80 GB",

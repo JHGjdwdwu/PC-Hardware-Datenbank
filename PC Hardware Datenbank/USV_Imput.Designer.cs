@@ -72,6 +72,8 @@
             // 
             // wtxtWatt
             // 
+            this.wtxtWatt.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtWatt.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtWatt.FormattingEnabled = true;
             this.wtxtWatt.Location = new System.Drawing.Point(34, 209);
             this.wtxtWatt.Name = "wtxtWatt";
@@ -99,6 +101,8 @@
             // 
             // wtxtArbeitsweise
             // 
+            this.wtxtArbeitsweise.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtArbeitsweise.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtArbeitsweise.FormattingEnabled = true;
             this.wtxtArbeitsweise.Items.AddRange(new object[] {
             "Offline USV",
@@ -123,12 +127,14 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(33, 336);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(87, 20);
+            this.label8.Size = new System.Drawing.Size(102, 20);
             this.label8.TabIndex = 137;
-            this.label8.Text = "Akkanzahl:";
+            this.label8.Text = "Akku Anzahl:";
             // 
             // wtxtAkkutyp
             // 
+            this.wtxtAkkutyp.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtAkkutyp.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtAkkutyp.FormattingEnabled = true;
             this.wtxtAkkutyp.Items.AddRange(new object[] {
             "AGP",
@@ -181,6 +187,8 @@
             // 
             // wtxtModell
             // 
+            this.wtxtModell.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtModell.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtModell.FormattingEnabled = true;
             this.wtxtModell.Location = new System.Drawing.Point(249, 61);
             this.wtxtModell.Name = "wtxtModell";
@@ -262,6 +270,8 @@
             // 
             // wtxtVA
             // 
+            this.wtxtVA.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtVA.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtVA.FormattingEnabled = true;
             this.wtxtVA.Location = new System.Drawing.Point(249, 135);
             this.wtxtVA.Name = "wtxtVA";
@@ -300,6 +310,8 @@
             // 
             // wtxtHersteller
             // 
+            this.wtxtHersteller.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtHersteller.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtHersteller.FormattingEnabled = true;
             this.wtxtHersteller.Location = new System.Drawing.Point(34, 61);
             this.wtxtHersteller.Name = "wtxtHersteller";
@@ -318,8 +330,11 @@
             // 
             // wtxtZustand
             // 
+            this.wtxtZustand.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtZustand.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtZustand.FormattingEnabled = true;
             this.wtxtZustand.Items.AddRange(new object[] {
+            "",
             "verbaut",
             "auf Lager"});
             this.wtxtZustand.Location = new System.Drawing.Point(34, 135);

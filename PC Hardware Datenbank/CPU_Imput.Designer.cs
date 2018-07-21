@@ -36,7 +36,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtTyp = new System.Windows.Forms.TextBox();
             this.mtxtTaktrate = new System.Windows.Forms.MaskedTextBox();
             this.nudKerne = new System.Windows.Forms.NumericUpDown();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -57,6 +56,8 @@
             this.wtxtSockelINTEL = new System.Windows.Forms.ComboBox();
             this.wtxtZustand = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.wtxtSockel = new System.Windows.Forms.ComboBox();
+            this.wtxtTyp = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudKerne)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcmdMainbord)).BeginInit();
@@ -78,8 +79,11 @@
             // 
             // wtxtHersteller
             // 
+            this.wtxtHersteller.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtHersteller.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtHersteller.FormattingEnabled = true;
             this.wtxtHersteller.Items.AddRange(new object[] {
+            "",
             "Intel",
             "AMD"});
             this.wtxtHersteller.Location = new System.Drawing.Point(34, 61);
@@ -87,9 +91,12 @@
             this.wtxtHersteller.Size = new System.Drawing.Size(146, 28);
             this.wtxtHersteller.TabIndex = 0;
             this.wtxtHersteller.SelectedIndexChanged += new System.EventHandler(this.wtxtHersteller_SelectedIndexChanged);
+            this.wtxtHersteller.Click += new System.EventHandler(this.wtxtHersteller_SelectedIndexChanged);
             // 
             // wtxtSockelAMD
             // 
+            this.wtxtSockelAMD.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtSockelAMD.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtSockelAMD.FormattingEnabled = true;
             this.wtxtSockelAMD.Items.AddRange(new object[] {
             "7",
@@ -113,7 +120,9 @@
             this.wtxtSockelAMD.Location = new System.Drawing.Point(249, 135);
             this.wtxtSockelAMD.Name = "wtxtSockelAMD";
             this.wtxtSockelAMD.Size = new System.Drawing.Size(146, 28);
-            this.wtxtSockelAMD.TabIndex = 2;
+            this.wtxtSockelAMD.TabIndex = 3;
+            this.wtxtSockelAMD.Visible = false;
+            this.wtxtSockelAMD.SelectedIndexChanged += new System.EventHandler(this.wtxtHersteller_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -152,19 +161,12 @@
             this.label6.TabIndex = 12;
             this.label6.Text = "Anzahl Kerne:";
             // 
-            // txtTyp
-            // 
-            this.txtTyp.Location = new System.Drawing.Point(249, 61);
-            this.txtTyp.Name = "txtTyp";
-            this.txtTyp.Size = new System.Drawing.Size(146, 26);
-            this.txtTyp.TabIndex = 1;
-            // 
             // mtxtTaktrate
             // 
             this.mtxtTaktrate.Location = new System.Drawing.Point(34, 209);
             this.mtxtTaktrate.Name = "mtxtTaktrate";
             this.mtxtTaktrate.Size = new System.Drawing.Size(146, 26);
-            this.mtxtTaktrate.TabIndex = 4;
+            this.mtxtTaktrate.TabIndex = 6;
             // 
             // nudKerne
             // 
@@ -176,7 +178,7 @@
             0});
             this.nudKerne.Name = "nudKerne";
             this.nudKerne.Size = new System.Drawing.Size(146, 26);
-            this.nudKerne.TabIndex = 5;
+            this.nudKerne.TabIndex = 7;
             this.nudKerne.Value = new decimal(new int[] {
             1,
             0,
@@ -200,7 +202,7 @@
             this.cmdQR.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdQR.Name = "cmdQR";
             this.cmdQR.Size = new System.Drawing.Size(171, 35);
-            this.cmdQR.TabIndex = 13;
+            this.cmdQR.TabIndex = 15;
             this.cmdQR.Text = "QR-Code Drucken";
             this.cmdQR.UseVisualStyleBackColor = false;
             this.cmdQR.Click += new System.EventHandler(this.cmdQR_Click);
@@ -213,7 +215,7 @@
             this.cmdBildEinfugen.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdBildEinfugen.Name = "cmdBildEinfugen";
             this.cmdBildEinfugen.Size = new System.Drawing.Size(150, 35);
-            this.cmdBildEinfugen.TabIndex = 10;
+            this.cmdBildEinfugen.TabIndex = 12;
             this.cmdBildEinfugen.Text = "Bild einfügen";
             this.cmdBildEinfugen.UseVisualStyleBackColor = false;
             // 
@@ -225,7 +227,7 @@
             this.cmdClear.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdClear.Name = "cmdClear";
             this.cmdClear.Size = new System.Drawing.Size(150, 35);
-            this.cmdClear.TabIndex = 12;
+            this.cmdClear.TabIndex = 14;
             this.cmdClear.Text = "Zurücksetzen";
             this.cmdClear.UseVisualStyleBackColor = false;
             this.cmdClear.Click += new System.EventHandler(this.cmdClear_Click);
@@ -238,7 +240,7 @@
             this.cmdSpeichern.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdSpeichern.Name = "cmdSpeichern";
             this.cmdSpeichern.Size = new System.Drawing.Size(150, 35);
-            this.cmdSpeichern.TabIndex = 11;
+            this.cmdSpeichern.TabIndex = 13;
             this.cmdSpeichern.Text = "Speichern";
             this.cmdSpeichern.UseVisualStyleBackColor = false;
             this.cmdSpeichern.Click += new System.EventHandler(this.cmdSpeichern_Click);
@@ -251,7 +253,7 @@
             this.cmdBeenden.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdBeenden.Name = "cmdBeenden";
             this.cmdBeenden.Size = new System.Drawing.Size(150, 35);
-            this.cmdBeenden.TabIndex = 14;
+            this.cmdBeenden.TabIndex = 16;
             this.cmdBeenden.Text = "Schließen";
             this.cmdBeenden.UseVisualStyleBackColor = false;
             this.cmdBeenden.Click += new System.EventHandler(this.cmdBeenden_Click);
@@ -313,7 +315,7 @@
             0});
             this.nudCach1.Name = "nudCach1";
             this.nudCach1.Size = new System.Drawing.Size(146, 26);
-            this.nudCach1.TabIndex = 6;
+            this.nudCach1.TabIndex = 8;
             // 
             // nudCach2
             // 
@@ -325,7 +327,7 @@
             0});
             this.nudCach2.Name = "nudCach2";
             this.nudCach2.Size = new System.Drawing.Size(146, 26);
-            this.nudCach2.TabIndex = 7;
+            this.nudCach2.TabIndex = 9;
             // 
             // nudCach3
             // 
@@ -337,7 +339,7 @@
             0});
             this.nudCach3.Name = "nudCach3";
             this.nudCach3.Size = new System.Drawing.Size(146, 26);
-            this.nudCach3.TabIndex = 8;
+            this.nudCach3.TabIndex = 10;
             // 
             // nudCach4
             // 
@@ -349,10 +351,12 @@
             0});
             this.nudCach4.Name = "nudCach4";
             this.nudCach4.Size = new System.Drawing.Size(146, 26);
-            this.nudCach4.TabIndex = 9;
+            this.nudCach4.TabIndex = 11;
             // 
             // wtxtSockelINTEL
             // 
+            this.wtxtSockelINTEL.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtSockelINTEL.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtSockelINTEL.FormattingEnabled = true;
             this.wtxtSockelINTEL.Items.AddRange(new object[] {
             "3",
@@ -391,12 +395,17 @@
             this.wtxtSockelINTEL.Location = new System.Drawing.Point(249, 135);
             this.wtxtSockelINTEL.Name = "wtxtSockelINTEL";
             this.wtxtSockelINTEL.Size = new System.Drawing.Size(146, 28);
-            this.wtxtSockelINTEL.TabIndex = 3;
+            this.wtxtSockelINTEL.TabIndex = 4;
+            this.wtxtSockelINTEL.Visible = false;
+            this.wtxtSockelINTEL.SelectedIndexChanged += new System.EventHandler(this.wtxtHersteller_SelectedIndexChanged);
             // 
             // wtxtZustand
             // 
+            this.wtxtZustand.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtZustand.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtZustand.FormattingEnabled = true;
             this.wtxtZustand.Items.AddRange(new object[] {
+            "",
             "verbaut",
             "auf Lager"});
             this.wtxtZustand.Location = new System.Drawing.Point(34, 135);
@@ -414,11 +423,87 @@
             this.label4.TabIndex = 55;
             this.label4.Text = "Zustand:";
             // 
+            // wtxtSockel
+            // 
+            this.wtxtSockel.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtSockel.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.wtxtSockel.FormattingEnabled = true;
+            this.wtxtSockel.Items.AddRange(new object[] {
+            "",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "463/NextGen",
+            "8",
+            "Slot 1",
+            "479",
+            "M",
+            "P",
+            "370",
+            "µPGA2",
+            "Slot 2",
+            "495",
+            "603",
+            "604",
+            "771/J",
+            "1356/B2",
+            "441",
+            "423",
+            "478",
+            "1150",
+            "1151",
+            "1155",
+            "1156",
+            "1567",
+            "2011",
+            "2011-3",
+            "3647/P3",
+            "775/T",
+            "989/G1",
+            "1366",
+            "7",
+            "Slot A",
+            "A/462",
+            "563",
+            "754",
+            "939",
+            "940",
+            "F/1207",
+            "S1",
+            "AM2",
+            "AM2+",
+            "AM3",
+            "AM3+",
+            "AM4",
+            "FM1",
+            "FM2",
+            "FM2+",
+            "TR4"});
+            this.wtxtSockel.Location = new System.Drawing.Point(249, 135);
+            this.wtxtSockel.Name = "wtxtSockel";
+            this.wtxtSockel.Size = new System.Drawing.Size(146, 28);
+            this.wtxtSockel.TabIndex = 5;
+            this.wtxtSockel.SelectedIndexChanged += new System.EventHandler(this.wtxtHersteller_SelectedIndexChanged);
+            // 
+            // wtxtTyp
+            // 
+            this.wtxtTyp.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtTyp.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.wtxtTyp.FormattingEnabled = true;
+            this.wtxtTyp.Location = new System.Drawing.Point(249, 61);
+            this.wtxtTyp.Name = "wtxtTyp";
+            this.wtxtTyp.Size = new System.Drawing.Size(146, 28);
+            this.wtxtTyp.TabIndex = 1;
+            // 
             // CPU_Imput
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1126, 620);
+            this.Controls.Add(this.wtxtTyp);
+            this.Controls.Add(this.wtxtSockel);
             this.Controls.Add(this.wtxtZustand);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.wtxtSockelINTEL);
@@ -439,7 +524,6 @@
             this.Controls.Add(this.pcmdMainbord);
             this.Controls.Add(this.nudKerne);
             this.Controls.Add(this.mtxtTaktrate);
-            this.Controls.Add(this.txtTyp);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
@@ -472,7 +556,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtTyp;
         private System.Windows.Forms.MaskedTextBox mtxtTaktrate;
         private System.Windows.Forms.NumericUpDown nudKerne;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -493,5 +576,7 @@
         private System.Windows.Forms.ComboBox wtxtSockelINTEL;
         private System.Windows.Forms.ComboBox wtxtZustand;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox wtxtSockel;
+        private System.Windows.Forms.ComboBox wtxtTyp;
     }
 }

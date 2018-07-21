@@ -84,8 +84,11 @@
             // 
             // wtxtAnschluss
             // 
+            this.wtxtAnschluss.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtAnschluss.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtAnschluss.FormattingEnabled = true;
             this.wtxtAnschluss.Items.AddRange(new object[] {
+            "",
             "CardBus",
             "PCIe 1.0 x1",
             "PCIe 1.0 x4",
@@ -138,6 +141,8 @@
             // 
             // wtxtModell
             // 
+            this.wtxtModell.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtModell.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtModell.FormattingEnabled = true;
             this.wtxtModell.Location = new System.Drawing.Point(249, 61);
             this.wtxtModell.Name = "wtxtModell";
@@ -240,8 +245,11 @@
             // 
             // wtxtKartenhersteller
             // 
+            this.wtxtKartenhersteller.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtKartenhersteller.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtKartenhersteller.FormattingEnabled = true;
             this.wtxtKartenhersteller.Items.AddRange(new object[] {
+            "",
             "Adaptec",
             "ADS Tech",
             "AJA",
@@ -608,8 +616,11 @@
             // 
             // wtxtZustand
             // 
+            this.wtxtZustand.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtZustand.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtZustand.FormattingEnabled = true;
             this.wtxtZustand.Items.AddRange(new object[] {
+            "",
             "verbaut",
             "auf Lager"});
             this.wtxtZustand.Location = new System.Drawing.Point(34, 135);

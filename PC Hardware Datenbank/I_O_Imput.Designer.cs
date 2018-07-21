@@ -52,8 +52,11 @@
             // 
             // wtxtAnschluss
             // 
+            this.wtxtAnschluss.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtAnschluss.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtAnschluss.FormattingEnabled = true;
             this.wtxtAnschluss.Items.AddRange(new object[] {
+            "",
             "USB",
             "Bluetooth",
             "Klinke"});
@@ -116,6 +119,8 @@
             // 
             // wtxtHersteller
             // 
+            this.wtxtHersteller.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtHersteller.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtHersteller.FormattingEnabled = true;
             this.wtxtHersteller.Location = new System.Drawing.Point(34, 61);
             this.wtxtHersteller.Name = "wtxtHersteller";
@@ -169,8 +174,11 @@
             // 
             // wtxtGerat
             // 
+            this.wtxtGerat.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtGerat.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtGerat.FormattingEnabled = true;
             this.wtxtGerat.Items.AddRange(new object[] {
+            "",
             "Tastatur",
             "Maus",
             "Drucker",
@@ -219,8 +227,11 @@
             // 
             // wtxtZustand
             // 
+            this.wtxtZustand.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtZustand.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtZustand.FormattingEnabled = true;
             this.wtxtZustand.Items.AddRange(new object[] {
+            "",
             "verbaut",
             "auf Lager"});
             this.wtxtZustand.Location = new System.Drawing.Point(34, 133);

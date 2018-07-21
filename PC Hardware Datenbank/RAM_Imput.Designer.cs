@@ -174,8 +174,11 @@
             // 
             // wtxtHersteller
             // 
+            this.wtxtHersteller.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtHersteller.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtHersteller.FormattingEnabled = true;
             this.wtxtHersteller.Items.AddRange(new object[] {
+            "",
             "Corsair",
             "Kingston Technology",
             "MDT",
@@ -197,8 +200,11 @@
             // 
             // wtxtSlot
             // 
+            this.wtxtSlot.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtSlot.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtSlot.FormattingEnabled = true;
             this.wtxtSlot.Items.AddRange(new object[] {
+            "",
             "SDRAM",
             "DDR",
             "DDR2",
@@ -222,6 +228,7 @@
             // 
             // txtTyp
             // 
+            this.txtTyp.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtTyp.Location = new System.Drawing.Point(34, 209);
             this.txtTyp.Name = "txtTyp";
             this.txtTyp.Size = new System.Drawing.Size(146, 26);
@@ -229,6 +236,8 @@
             // 
             // wtxtTacktrate
             // 
+            this.wtxtTacktrate.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtTacktrate.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtTacktrate.FormattingEnabled = true;
             this.wtxtTacktrate.Location = new System.Drawing.Point(249, 209);
             this.wtxtTacktrate.Name = "wtxtTacktrate";
@@ -237,8 +246,11 @@
             // 
             // wtxtGrosse
             // 
+            this.wtxtGrosse.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtGrosse.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtGrosse.FormattingEnabled = true;
             this.wtxtGrosse.Items.AddRange(new object[] {
+            "",
             "64MB",
             "128MB",
             "512MB",
@@ -253,6 +265,7 @@
             // 
             // txtLatenz
             // 
+            this.txtLatenz.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtLatenz.Location = new System.Drawing.Point(34, 283);
             this.txtLatenz.Name = "txtLatenz";
             this.txtLatenz.Size = new System.Drawing.Size(146, 26);
@@ -309,8 +322,11 @@
             // 
             // wtxtZustand
             // 
+            this.wtxtZustand.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtZustand.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtZustand.FormattingEnabled = true;
             this.wtxtZustand.Items.AddRange(new object[] {
+            "",
             "verbaut",
             "auf Lager"});
             this.wtxtZustand.Location = new System.Drawing.Point(34, 135);
@@ -330,8 +346,11 @@
             // 
             // wtxtChiphersteller
             // 
+            this.wtxtChiphersteller.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtChiphersteller.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtChiphersteller.FormattingEnabled = true;
             this.wtxtChiphersteller.Items.AddRange(new object[] {
+            "",
             "Nanya",
             "Hynix Semiconductor",
             "Micron Technology",
