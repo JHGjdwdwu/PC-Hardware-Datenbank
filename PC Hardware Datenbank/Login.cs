@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+//21.07.18
 
 namespace PC_Hardware_Datenbank
 {
