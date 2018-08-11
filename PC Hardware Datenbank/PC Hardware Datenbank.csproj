@@ -69,12 +69,19 @@
     <Compile Include="Admin.Designer.cs">
       <DependentUpon>Admin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Benutzer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Benutzer.Designer.cs">
+      <DependentUpon>Benutzer.cs</DependentUpon>
+    </Compile>
     <Compile Include="CPU_Imput.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CPU_Imput.Designer.cs">
       <DependentUpon>CPU_Imput.cs</DependentUpon>
     </Compile>
+    <Compile Include="Crypto_AES.cs" />
     <Compile Include="FrontErweiterung_Imput.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -209,6 +216,9 @@
     <EmbeddedResource Include="Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Benutzer.resx">
+      <DependentUpon>Benutzer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CPU_Imput.resx">
       <DependentUpon>CPU_Imput.cs</DependentUpon>
     </EmbeddedResource>
@@ -262,6 +272,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Raiserkarte_Imput.resx">
       <DependentUpon>Raiserkarte_Imput.cs</DependentUpon>
@@ -300,6 +311,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Hardware.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

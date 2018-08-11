@@ -525,5 +525,11 @@ namespace PC_Hardware_Datenbank
             faSonstiges.BackColor = Color.Red;
         }
         #endregion
+
+        private void button1_Click(object sender, EventArgs e)//Button Benutzer erstellen / löschen
+        {
+            Benutzer User = new Benutzer();
+            User.Show();
+        }
     }
 }

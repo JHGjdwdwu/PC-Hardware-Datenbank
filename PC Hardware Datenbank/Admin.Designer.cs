@@ -60,6 +60,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.faRaiserkarte = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.cmdLaufwerk = new System.Windows.Forms.Button();
             this.cmdRaiserkarte = new System.Windows.Forms.Button();
             this.cmdTVKarteLoschen = new System.Windows.Forms.Button();
@@ -108,7 +109,7 @@
             this.cmdPfad.Location = new System.Drawing.Point(782, 422);
             this.cmdPfad.Name = "cmdPfad";
             this.cmdPfad.Size = new System.Drawing.Size(274, 45);
-            this.cmdPfad.TabIndex = 42;
+            this.cmdPfad.TabIndex = 43;
             this.cmdPfad.Text = "Datenbank Pfad bestimmen";
             this.cmdPfad.UseVisualStyleBackColor = true;
             // 
@@ -452,6 +453,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.cmdPfad);
             this.groupBox1.Controls.Add(this.cmdSonstigesLoschen);
             this.groupBox1.Controls.Add(this.faSonstiges);
@@ -523,6 +525,16 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datenbanken Anlegen und Löschen";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(782, 371);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(274, 45);
+            this.button1.TabIndex = 42;
+            this.button1.Text = "Benutzer erstellen / löschen";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // cmdLaufwerk
             // 
@@ -972,7 +984,7 @@
             // 
             // Admin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1112, 620);
             this.Controls.Add(this.pictureBox1);
@@ -1064,5 +1076,6 @@
         private System.Windows.Forms.Button cmdBetrachten;
         private System.Windows.Forms.Button cmdLogout;
         private System.Windows.Forms.Button cmdEingabe;
+        private System.Windows.Forms.Button button1;
     }
 }
