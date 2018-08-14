@@ -23,6 +23,7 @@ namespace PC_Hardware_Datenbank
         private string Datensatz;//Datensatz der dan in die Datenbank geschoben wird
         private char LF = (char)10;
         private string QR = "";//QR Code
+        public string DateiPfad;
 
         private void cmdBeenden_Click(object sender, EventArgs e)//Fenster schlißen
         {
@@ -49,11 +50,11 @@ namespace PC_Hardware_Datenbank
 
         private void cmdSpeichern_Click(object sender, EventArgs e)//Speichern Button
         {
-            if (File.Exists(@"./Soundkarte_Datenbank.csv") == true)//Prüffen ob eine .csv Datei bereits erstellt wurde
+            if (File.Exists(DateiPfad + @"/Soundkarte_Datenbank.csv") == true)//Prüffen ob eine .csv Datei bereits erstellt wurde
             {
                 if (wtxtAnschlusssSchnittstelle.Text != "" && wtxtAusgabestandard.Text != "" && wtxtZustand.Text != "")//Prüfft die Pflichtangaben
                 {
-                    Datensatz = File.ReadAllText(@"./Soundkarte_Datenbank.csv");//Datenbanck einlessen und in Datensatz schreiben
+                    Datensatz = File.ReadAllText(DateiPfad + @"/Soundkarte_Datenbank.csv");//Datenbanck einlessen und in Datensatz schreiben
 
                     #region Checkboxen
                     string ADAT = "NEIN", AES_EBU = "NEIN", Chinchbuchse = "NEIN", Klinkenbuchse = "NEIN", MADI = "NEIN", SPDIF = "NEIN", TDIF = "NEIN", BreakoutBox = "NEIN", DSP = "NEIN", Gameport = "NEIN", MIDI = "NEIN", Mikrofoneingang = "NEIN", Wavetable = "NEIN";
@@ -155,7 +156,7 @@ namespace PC_Hardware_Datenbank
                         "Wavetable: " + Wavetable;
                     #endregion
 
-                    File.WriteAllText(@"./Soundkarte_Datenbank.csv", Datensatz); //Datensatz in Soundkarte_Datenbank.csv schreiben
+                    File.WriteAllText(DateiPfad + @"/Soundkarte_Datenbank.csv", Datensatz); //Datensatz in Soundkarte_Datenbank.csv schreiben
                     MessageBox.Show("Datensatz geschrieben!");//Bestätigung das der Datensatz geschrieben wurd
                 }
                 else
@@ -201,5 +202,15 @@ namespace PC_Hardware_Datenbank
             qrCodeImage.Dispose();
         }
         #endregion
+
+        private void Soundkarte_Imput_Load(object sender, EventArgs e)//lesen des gespeicherten DateiPfad
+        {
+            DateiPfad = File.ReadAllText(@"./settings");
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/tpbischof");
+        }
     }
 }

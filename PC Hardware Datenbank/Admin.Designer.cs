@@ -112,6 +112,7 @@
             this.cmdPfad.TabIndex = 43;
             this.cmdPfad.Text = "Datenbank Pfad bestimmen";
             this.cmdPfad.UseVisualStyleBackColor = true;
+            this.cmdPfad.Click += new System.EventHandler(this.cmdPfad_Click);
             // 
             // cmdSonstigesLoschen
             // 
@@ -998,6 +999,7 @@
             this.Name = "Admin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin Datenbank";
+            this.Load += new System.EventHandler(this.Admin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);

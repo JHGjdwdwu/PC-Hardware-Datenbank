@@ -745,6 +745,7 @@
             this.Name = "Monitor_Imput";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Monitor_Imput";
+            this.Load += new System.EventHandler(this.Monitor_Imput_Load);
             this.grub.ResumeLayout(false);
             this.grub.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudEingangUSB)).EndInit();

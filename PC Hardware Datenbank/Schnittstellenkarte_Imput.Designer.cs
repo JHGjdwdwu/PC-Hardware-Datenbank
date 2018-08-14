@@ -271,6 +271,7 @@
             this.Name = "Schnittstellenkarte_Imput";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Schnittstellenkarte";
+            this.Load += new System.EventHandler(this.Schnittstellenkarte_Imput_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcmdMainbord)).EndInit();
             this.ResumeLayout(false);

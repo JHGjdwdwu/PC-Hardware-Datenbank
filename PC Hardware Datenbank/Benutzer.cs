@@ -27,22 +27,31 @@ namespace PC_Hardware_Datenbank
 
         private void Datei_lesen()//Datei einlesen und in die dgv schreiben
         {
-            try
+            if (File.Exists(@"./User")==true)
             {
-                string verlusselt_text = File.ReadAllText(@"./User");//Verschlüsselten Text lesen
-                string unverslusselt_text = crypto.decrypt(verlusselt_text);//Text entschlüsseln
-                string[] zellen = unverslusselt_text.Split(';');//Text teilen bei ;
-
-                //lblNR.Text = Convert.ToString((zellen.Length -1) / 3);
-
-                for (int i = 0; i < zellen.Length - 1; i = i + 3)//Das dgv beschreiben Daten aus dem Arry benutzen
+                try
                 {
-                    dgvUser.Rows.Add(zellen[i], zellen[i + 1], zellen[i + 2]);
+                    string verlusselt_text = File.ReadAllText(@"./User");//Verschlüsselten Text lesen
+                    string unverslusselt_text = crypto.decrypt(verlusselt_text);//Text entschlüsseln
+                    string[] zellen = unverslusselt_text.Split(';');//Text teilen bei ;
+
+                    //lblNR.Text = Convert.ToString((zellen.Length -1) / 3);
+
+                    for (int i = 0; i < zellen.Length - 1; i = i + 3)//Das dgv beschreiben Daten aus dem Arry benutzen
+                    {
+                        dgvUser.Rows.Add(zellen[i], zellen[i + 1], zellen[i + 2]);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Fehler beim einlesen der Datei! " + ex.Message);
                 }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Fehler beim einlesen der Datei! " + ex.Message);
+                MessageBox.Show("Eine User Datenbank konnte nicht gefunden werden und wird erstellt!");
+                File.WriteAllText(@"./User", "");
+                Datei_lesen();
             }
         }
 
@@ -78,39 +87,32 @@ namespace PC_Hardware_Datenbank
         {
             try
             {
-                dgvUser.Rows.RemoveAt(dgvUser.SelectedRows[0].Index);//aus der dgv den makirten User Löschen
-
-                //allt ohne verschlüsselung
-                //int zeile = dgvUser.CurrentCell.RowIndex;//Nummer der mackirten Zeile
-                //string verlusselt_text = File.ReadAllText(@"./User");//Verschlüsselten Text lesen
-                //string unverslusselt_text = crypto.decrypt(verlusselt_text);//Text entschlüsseln
-                //string[] zellen = unverslusselt_text.Split(';');//Text teilen bei ;
-
-                //var file = new List<string>(File.ReadAllLines(@"./User"));
-                //file.RemoveAt(zeile);
-                //File.WriteAllLines(@"./User", file.ToArray());
+                dgvUser.Rows.RemoveAt(dgvUser.CurrentCell.RowIndex);//aus der dgv den makirten User Löschen
 
                 string verlusselt_text = File.ReadAllText(@"./User");//Verschlüsselten Text lesen
                 string unverslusselt_text = crypto.decrypt(verlusselt_text);//Text entschlüsseln
                 string[] zellen = unverslusselt_text.Split(';');//Text teilen bei ;
 
-                int zeile = dgvUser.SelectedRows[0].Index + 1;//Nummer der mackirten Zeile ///Fehler noch die letzte Zeile wird nicht richtig gezählt!
-                int entfernen = zeile * 3;
-
-
+                int zeile = dgvUser.SelectedRows[0].Index;//Nummer der mackirten Zeile
+                //int zeile = (dgvUser.SelectedRows[0].Index + 1) * 3 - 1;//Nummer der mackirten Zellen
                 List<string> list = new List<string>(zellen);
+                //erzeugt eine Liste mit allen Eintragungen
+                /*  0    0 ; 1 ; 2
+                 *  1    3 ; 4 ; 5
+                 *  2    6 ; 7 ; 8
+                 */
+                lblNR.Text = Convert.ToString(zeile - 2) + ";" + Convert.ToString(zeile - 1) + ";" + Convert.ToString(zeile);
 
-                //list.Sort();//Liste sortieren!
-                //list.Remove("4");//entfernt anhang String
-                //list.RemoveAt(entfernen);//entfernt anhang ID
+                //list.RemoveAt(zeile-2);//entfernt Zelle ID
+                //list.RemoveAt(zeile-1);//entfernt Zelle ID
+                //list.RemoveAt(zeile);//entfernt Zelle ID
+                list.RemoveRange(zeile, 3);//entferne Index, Anzahl
 
-                list.RemoveRange(entfernen, entfernen - 2);//entfern von bis
-                zellen = list.ToArray();
-
-                for (int i = 0; i < zellen.Length - 1; i++)
-                {
-                    File.WriteAllText(@"./User", zellen[i] + ";");
-                }
+                zellen = list.ToArray();//schreibt die Liste in das Array wider zurück
+                
+                File.WriteAllText(@"./User", "");//löscht die alten Daten
+                //File.WriteAllText(@"./User",string.Join(";", zellen));//schreibt die neue User Liste
+                File.WriteAllText(@"./User", crypto.encrypt(string.Join(";", zellen)));//schreibt die neue User Liste
             }
             catch (Exception ex)
             {
@@ -118,6 +120,16 @@ namespace PC_Hardware_Datenbank
             }
             dgvUser.Rows.Clear();
             Datei_lesen();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/tpbischof");
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/JHGjdwdwu");
         }
     }
 }

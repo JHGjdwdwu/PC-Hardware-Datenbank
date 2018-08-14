@@ -18,6 +18,7 @@ namespace PC_Hardware_Datenbank
         private string Datensatz = "";//Datensatz der dan in die Datenbank geschoben wird
         private char LF = (char)10;
         private string QR = "";//QR Code
+        public string DateiPfad;
 
         public RAM_Imput()
         {
@@ -42,11 +43,11 @@ namespace PC_Hardware_Datenbank
 
         private void cmdSpeichern_Click(object sender, EventArgs e)//Speichern Button
         {
-            if (File.Exists(@"./RAM_Datenbank.csv") == true)//Prüffen ob eine .csv Datei bereits erstellt wurde
+            if (File.Exists(DateiPfad + @"/RAM_Datenbank.csv") == true)//Prüffen ob eine .csv Datei bereits erstellt wurde
             {
                 if (wtxtSlot.Text != "" && wtxtGrosse.Text != "" && wtxtZustand.Text != "")//Prüfft die Pflichtangaben
                 {
-                    Datensatz = File.ReadAllText(@"./RAM_Datenbank.csv");//Datenbanck einlessen und in Datensatz schreiben
+                    Datensatz = File.ReadAllText(DateiPfad + @"/RAM_Datenbank.csv");//Datenbanck einlessen und in Datensatz schreiben
 
                     #region Chak Boxen auswerten und Daten zuweisen
                     string SO_DIMM = "NEIN";
@@ -105,7 +106,7 @@ namespace PC_Hardware_Datenbank
                         "Registered: " + Registered + LF +
                         "Unbuffered: " + Unbuffered;
                     #endregion
-                    File.WriteAllText(@"./RAM_Datenbank.csv", Datensatz);//Datensatz in RAM_Datenbank.csv schreiben
+                    File.WriteAllText(DateiPfad + @"/RAM_Datenbank.csv", Datensatz);//Datensatz in RAM_Datenbank.csv schreiben
                     MessageBox.Show("Datensatz geschrieben!");//Bestätigung das der Datensatz geschrieben wurd
                 }
                 else
@@ -151,5 +152,10 @@ namespace PC_Hardware_Datenbank
             qrCodeImage.Dispose();
         }
         #endregion
+
+        private void RAM_Imput_Load(object sender, EventArgs e)//lesen des gespeicherten DateiPfad
+        {
+            DateiPfad = File.ReadAllText(@"./settings");
+        }
     }
 }

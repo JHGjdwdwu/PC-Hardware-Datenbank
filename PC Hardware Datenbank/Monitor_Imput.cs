@@ -18,6 +18,7 @@ namespace PC_Hardware_Datenbank
         private string Datensatz = "";//Datensatz der dan in die Datenbank geschoben wird
         private char LF = (char)10;
         private string QR = "";//QR Code
+        public string DateiPfad;
 
         public Monitor_Imput()
         {
@@ -47,11 +48,11 @@ namespace PC_Hardware_Datenbank
 
         private void cmdSpeichern_Click(object sender, EventArgs e)//Speichern Button
         {
-            if (File.Exists(@"./Monitor_Datenbank.csv") == true)//Prüffen ob eine .csv Datei bereits erstellt wurde
+            if (File.Exists(DateiPfad + @"/Monitor_Datenbank.csv") == true)//Prüffen ob eine .csv Datei bereits erstellt wurde
             {
                 if (wtxtHersteller.Text != "" && wtxtModell.Text != "" && wtxtZustand.Text != "")//Prüfft die Pflichtangaben
                 {
-                    Datensatz = File.ReadAllText(@"./Monitor_Datenbank.csv");//Datenbanck lessen und in Datensatz speichern
+                    Datensatz = File.ReadAllText(DateiPfad + @"/Monitor_Datenbank.csv");//Datenbanck lessen und in Datensatz speichern
 
                     #region Chak Boxen auswerten und Daten zuweisen
                     string Lautsprecher = "NEIN";
@@ -117,7 +118,7 @@ namespace PC_Hardware_Datenbank
                         "USB: " + nudAusgangUSB.Value;
                     #endregion
 
-                    File.WriteAllText(@"./Monitor_Datenbank.csv", Datensatz);//Datensatz in Monitor_Datenbank.csv schreiben
+                    File.WriteAllText(DateiPfad + @"/Monitor_Datenbank.csv", Datensatz);//Datensatz in Monitor_Datenbank.csv schreiben
                     MessageBox.Show("Datensatz geschrieben!");//Bestätigung das der Datensatz geschrieben wurd
                 }
                 else
@@ -381,5 +382,10 @@ namespace PC_Hardware_Datenbank
             qrCodeImage.Dispose();
         }
         #endregion
+
+        private void Monitor_Imput_Load(object sender, EventArgs e)//lesen des gespeicherten DateiPfad
+        {
+            DateiPfad = File.ReadAllText(@"./settings");
+        }
     }
 }

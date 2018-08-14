@@ -262,6 +262,7 @@
             this.Name = "Sonstiges_Imput";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sonstiges_Imput";
+            this.Load += new System.EventHandler(this.Sonstiges_Imput_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pcmdMainbord)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

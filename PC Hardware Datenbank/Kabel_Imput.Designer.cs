@@ -339,6 +339,7 @@
             this.Name = "Kabel_Imput";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Kabel_Imput";
+            this.Load += new System.EventHandler(this.Kabel_Imput_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudLange)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcmdMainbord)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -332,6 +332,7 @@
             this.Name = "Raiserkarte_Imput";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Raiserkarte_Imput";
+            this.Load += new System.EventHandler(this.Raiserkarte_Imput_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudSteckverbindung)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcmdMainbord)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

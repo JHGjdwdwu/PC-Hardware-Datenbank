@@ -519,6 +519,7 @@
             this.Name = "Lufter_Imput";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lufter_Imput";
+            this.Load += new System.EventHandler(this.Lufter_Imput_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcmdMainbord)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudStrom)).EndInit();

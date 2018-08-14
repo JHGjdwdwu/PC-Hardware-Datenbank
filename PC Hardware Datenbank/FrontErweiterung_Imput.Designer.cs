@@ -648,6 +648,7 @@
             this.Name = "FrontErweiterung_Imput";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrontErweiterung_Imput";
+            this.Load += new System.EventHandler(this.FrontErweiterung_Imput_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudExternLineIn)).EndInit();

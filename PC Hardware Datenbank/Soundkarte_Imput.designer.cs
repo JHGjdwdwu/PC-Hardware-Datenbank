@@ -76,6 +76,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 91;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // cmdQR
             // 
@@ -489,6 +490,7 @@
             this.Name = "Soundkarte_Imput";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Soundkarte_Imput";
+            this.Load += new System.EventHandler(this.Soundkarte_Imput_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcmdMainbord)).EndInit();
             this.grpAudioSchnittstellen.ResumeLayout(false);

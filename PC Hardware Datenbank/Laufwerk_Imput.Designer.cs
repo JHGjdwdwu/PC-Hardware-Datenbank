@@ -346,6 +346,7 @@
             this.Name = "Laufwerk_Imput";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Laufwerk_Imput";
+            this.Load += new System.EventHandler(this.Laufwerk_Imput_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcmdMainbord)).EndInit();
             this.ResumeLayout(false);

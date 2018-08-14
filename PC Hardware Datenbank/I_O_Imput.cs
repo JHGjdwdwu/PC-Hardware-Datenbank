@@ -18,6 +18,7 @@ namespace PC_Hardware_Datenbank
         private string Datensatz = "";//Datensatz der dan in die Datenbank geschoben wird
         private char LF = (char)10;
         private string QR = "";//QR Code
+        public string DateiPfad;
 
         public I_O_Imput()
         {
@@ -42,11 +43,11 @@ namespace PC_Hardware_Datenbank
 
         private void cmdSpeichern_Click(object sender, EventArgs e)//Speichern Button
         {
-            if (File.Exists(@"./I_O_Datenbank.csv") == true)//Prüffen ob eine .csv Datei bereits erstellt wurde
+            if (File.Exists(DateiPfad + @"/I_O_Datenbank.csv") == true)//Prüffen ob eine .csv Datei bereits erstellt wurde
             {
                 if (wtxtHersteller.Text != "" && wtxtGerat.Text != "" && wtxtZustand.Text != "")//Prüfft die Pflichtangaben
                 {
-                    Datensatz = File.ReadAllText(@"./I_O_Datenbank.csv");//Datenbanck lessen und in Datensatz speichern
+                    Datensatz = File.ReadAllText(DateiPfad + @"/I_O_Datenbank.csv");//Datenbanck lessen und in Datensatz speichern
 
                     #region Datensatz bilden
                     Datensatz += LF +
@@ -66,7 +67,7 @@ namespace PC_Hardware_Datenbank
                         "Bemerkung:" + txtBemerkung.Text;
                     #endregion
 
-                    File.WriteAllText(@"./I_O_Datenbank.csv", Datensatz);//Datensatz in I_O_Datenbank.csv schreiben
+                    File.WriteAllText(DateiPfad + @"/I_O_Datenbank.csv", Datensatz);//Datensatz in I_O_Datenbank.csv schreiben
                     MessageBox.Show("Datensatz geschrieben!");//Bestätigung das der Datensatz geschrieben wurd
                 }
                 else
@@ -112,5 +113,10 @@ namespace PC_Hardware_Datenbank
             qrCodeImage.Dispose();
         }
         #endregion
+
+        private void I_O_Imput_Load(object sender, EventArgs e)//lesen des gespeicherten DateiPfad
+        {
+            DateiPfad = File.ReadAllText(@"./settings");
+        }
     }
 }

@@ -486,6 +486,7 @@
             this.Name = "Netzwerkkarte_Imput";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Netzwerkkarte_Imput";
+            this.Load += new System.EventHandler(this.Netzwerkkarte_Imput_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcmdMainbord)).EndInit();
             this.groupBox1.ResumeLayout(false);

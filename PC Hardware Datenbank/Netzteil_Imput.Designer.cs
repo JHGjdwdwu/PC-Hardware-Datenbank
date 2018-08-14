@@ -922,6 +922,7 @@
             this.Name = "Netzteil_Imput";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Netzteil_Imput";
+            this.Load += new System.EventHandler(this.Netzteil_Imput_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcmdMainbord)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudLuster)).EndInit();

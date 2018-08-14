@@ -276,6 +276,7 @@
             this.Name = "I_O_Imput";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "I_O_Imput";
+            this.Load += new System.EventHandler(this.I_O_Imput_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pcmdMainbord)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

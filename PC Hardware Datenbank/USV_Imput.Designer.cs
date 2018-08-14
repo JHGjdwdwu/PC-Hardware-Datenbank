@@ -388,6 +388,7 @@
             this.Name = "USV_Imput";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "USV_Import";
+            this.Load += new System.EventHandler(this.USV_Imput_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudUSB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAkkanzahl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

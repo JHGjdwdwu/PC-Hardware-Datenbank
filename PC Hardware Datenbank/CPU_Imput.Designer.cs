@@ -536,6 +536,7 @@
             this.Name = "CPU_Imput";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CPU_Imput";
+            this.Load += new System.EventHandler(this.CPU_Imput_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudKerne)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcmdMainbord)).EndInit();

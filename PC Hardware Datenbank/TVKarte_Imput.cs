@@ -18,6 +18,7 @@ namespace PC_Hardware_Datenbank
         private string Datensatz = "";//Datensatz der dan in die Datenbank geschoben wird
         private char LF = (char)10;
         private string QR = "";//QR Code
+        public string DateiPfad;
 
         public TVKarte_Imput()
         {
@@ -44,11 +45,11 @@ namespace PC_Hardware_Datenbank
 
         private void cmdSpeichern_Click(object sender, EventArgs e)//Speichern Button
         {
-            if (File.Exists(@"./TVKarte_Datenbank.csv") == true)//Prüffen ob eine .csv Datei bereits erstellt wurde
+            if (File.Exists(DateiPfad + @"/TVKarte_Datenbank.csv") == true)//Prüffen ob eine .csv Datei bereits erstellt wurde
             {
                 if (wtxtKartenhersteller.Text != "" && wtxtModell.Text != "" && wtxtZustand.Text != "")//Prüfft die Pflichtangaben
                 {
-                    Datensatz = File.ReadAllText(@"./TVKarte_Datenbank.csv");//Datenbanck einlessen und in Datensatz speichern
+                    Datensatz = File.ReadAllText(DateiPfad + @"/TVKarte_Datenbank.csv");//Datenbanck einlessen und in Datensatz speichern
 
                     #region Datensatz bilden
                     Datensatz += LF +
@@ -86,7 +87,7 @@ namespace PC_Hardware_Datenbank
                         "Cinch: " + nudCinch.Value;
                     #endregion
 
-                    File.WriteAllText(@"./TVKarte_Datenbank.csv", Datensatz);//Datensatz in GPU_Datenbank.csv schreiben
+                    File.WriteAllText(DateiPfad + @"/TVKarte_Datenbank.csv", Datensatz);//Datensatz in GPU_Datenbank.csv schreiben
                     MessageBox.Show("Datensatz geschrieben!");//Bestätigung das der Datensatz geschrieben wurd
                 }
                 else
@@ -357,5 +358,10 @@ namespace PC_Hardware_Datenbank
             qrCodeImage.Dispose();
         }
         #endregion
+
+        private void TVKarte_Imput_Load(object sender, EventArgs e)//lesen des gespeicherten DateiPfad
+        {
+            DateiPfad = File.ReadAllText(@"./settings");
+        }
     }
 }

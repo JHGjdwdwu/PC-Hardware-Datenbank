@@ -1153,6 +1153,7 @@
             this.Name = "Mainbord_Imput";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mainbord";
+            this.Load += new System.EventHandler(this.Mainbord_Imput_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pcmdMainbord)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();

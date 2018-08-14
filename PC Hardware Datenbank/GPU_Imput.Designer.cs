@@ -584,6 +584,7 @@
             this.Name = "GPU_Imput";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GPU_Imput";
+            this.Load += new System.EventHandler(this.GPU_Imput_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcmdMainbord)).EndInit();
             this.groupBox1.ResumeLayout(false);

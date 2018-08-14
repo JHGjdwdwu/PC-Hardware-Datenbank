@@ -665,6 +665,7 @@
             this.Name = "TVKarte_Imput";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TVKarte_Imput";
+            this.Load += new System.EventHandler(this.TVKarte_Imput_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcmdMainbord)).EndInit();
             this.groupBox1.ResumeLayout(false);

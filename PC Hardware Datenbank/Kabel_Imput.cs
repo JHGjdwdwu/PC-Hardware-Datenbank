@@ -18,6 +18,7 @@ namespace PC_Hardware_Datenbank
         private string Datensatz = "";//Datensatz der dan in die Datenbank geschoben wird
         private char LF = (char)10;
         private string QR = "";//QR Code
+        public string DateiPfad;
 
         public Kabel_Imput()
         {
@@ -44,11 +45,11 @@ namespace PC_Hardware_Datenbank
 
         private void cmdSpeichern_Click(object sender, EventArgs e)//Speichern Button
         {
-            if (File.Exists(@"./Kabel_Datenbank.csv") == true)//Prüffen ob eine .csv Datei bereits erstellt wurde
+            if (File.Exists(DateiPfad + @"/Kabel_Datenbank.csv") == true)//Prüffen ob eine .csv Datei bereits erstellt wurde
             {
                 if (wtxtKabelendeA.Text != "" && wtxtKabelendeB.Text != "" && wtxtZustand.Text != "" && nudLange.Value != 0)//Prüfft die Pflichtangaben
                 {
-                    Datensatz = File.ReadAllText(@"./Kabel_Datenbank.csv");//Datenbanck lessen und in Datensatz speichern
+                    Datensatz = File.ReadAllText(DateiPfad + @"/Kabel_Datenbank.csv");//Datenbanck lessen und in Datensatz speichern
 
                     #region Chak Boxen auswerten und Daten zuweisen
                     string Schaltbar = "NEIN";
@@ -76,7 +77,7 @@ namespace PC_Hardware_Datenbank
                         "Schaltbar: " + Schaltbar;
                     #endregion
 
-                    File.WriteAllText(@"./Kabel_Datenbank.csv", Datensatz);//Datensatz in GPU_Datenbank.csv schreiben
+                    File.WriteAllText(DateiPfad + @"/Kabel_Datenbank.csv", Datensatz);//Datensatz in GPU_Datenbank.csv schreiben
                     MessageBox.Show("Datensatz geschrieben!");//Bestätigung das der Datensatz geschrieben wurd
                 }
                 else
@@ -122,5 +123,10 @@ namespace PC_Hardware_Datenbank
             qrCodeImage.Dispose();
         }
         #endregion
+
+        private void Kabel_Imput_Load(object sender, EventArgs e)//lesen des gespeicherten DateiPfad
+        {
+            DateiPfad = File.ReadAllText(@"./settings");
+        }
     }
 }
