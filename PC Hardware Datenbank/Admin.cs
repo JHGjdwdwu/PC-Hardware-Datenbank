@@ -553,7 +553,21 @@ namespace PC_Hardware_Datenbank
 
         private void Admin_Load(object sender, EventArgs e)//lesen des gespeicherten DateiPfad
         {
-            DateiPfad = File.ReadAllText(@"./settings");
+            if (File.Exists(@"./settings") == true)
+            {
+                DateiPfad = File.ReadAllText(@"./settings");
+            }
+            else
+            {
+                MessageBox.Show("Settings-Datei existiert nicht! Bitte einen Ort für die Speicherung Ihrer Datenbanken" +
+                    " festlegen, damit die settings-Datei erstellt werden kann.");
+                FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
+                if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
+                {
+                    DateiPfad = Convert.ToString(folderBrowserDialog.SelectedPath);
+                    File.WriteAllText(@"./settings", Convert.ToString(DateiPfad));//schreibt den neuen Dateipfad
+                }
+            }
         }
     }
 }
