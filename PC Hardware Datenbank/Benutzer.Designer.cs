@@ -46,6 +46,7 @@
             this.lblNR = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.cbxRechte = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -87,16 +88,17 @@
             // wtxtRechte
             // 
             this.wtxtRechte.FormattingEnabled = true;
-            this.wtxtRechte.ItemHeight = 20;
+            this.wtxtRechte.ItemHeight = 25;
             this.wtxtRechte.Items.AddRange(new object[] {
             "lesen",
             "schreiben",
             "root"});
-            this.wtxtRechte.Location = new System.Drawing.Point(321, 73);
+            this.wtxtRechte.Location = new System.Drawing.Point(329, 5);
             this.wtxtRechte.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.wtxtRechte.Name = "wtxtRechte";
-            this.wtxtRechte.Size = new System.Drawing.Size(148, 24);
+            this.wtxtRechte.Size = new System.Drawing.Size(148, 29);
             this.wtxtRechte.TabIndex = 2;
+            this.wtxtRechte.Visible = false;
             // 
             // dgvUser
             // 
@@ -139,7 +141,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(9, 50);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 20);
+            this.label1.Size = new System.Drawing.Size(75, 25);
             this.label1.TabIndex = 7;
             this.label1.Text = "Name:";
             // 
@@ -149,7 +151,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(162, 50);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 20);
+            this.label2.Size = new System.Drawing.Size(113, 25);
             this.label2.TabIndex = 8;
             this.label2.Text = "Password:";
             // 
@@ -159,7 +161,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(317, 48);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 20);
+            this.label3.Size = new System.Drawing.Size(86, 25);
             this.label3.TabIndex = 9;
             this.label3.Text = "Rechte:";
             // 
@@ -168,7 +170,7 @@
             this.txtName.Location = new System.Drawing.Point(12, 73);
             this.txtName.MaxLength = 10;
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(148, 26);
+            this.txtName.Size = new System.Drawing.Size(148, 30);
             this.txtName.TabIndex = 0;
             // 
             // txtPassword
@@ -177,7 +179,7 @@
             this.txtPassword.MaxLength = 50;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(148, 26);
+            this.txtPassword.Size = new System.Drawing.Size(148, 30);
             this.txtPassword.TabIndex = 1;
             // 
             // label4
@@ -186,7 +188,7 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(174, 121);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(303, 20);
+            this.label4.Size = new System.Drawing.Size(369, 25);
             this.label4.TabIndex = 10;
             this.label4.Text = "Namen Markieren um ihn zu löschen:";
             // 
@@ -196,9 +198,10 @@
             this.lblNR.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNR.Location = new System.Drawing.Point(224, 9);
             this.lblNR.Name = "lblNR";
-            this.lblNR.Size = new System.Drawing.Size(39, 20);
+            this.lblNR.Size = new System.Drawing.Size(48, 25);
             this.lblNR.TabIndex = 11;
             this.lblNR.Text = "NR:";
+            this.lblNR.Visible = false;
             // 
             // pictureBox1
             // 
@@ -222,11 +225,25 @@
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
+            // cbxRechte
+            // 
+            this.cbxRechte.FormattingEnabled = true;
+            this.cbxRechte.ItemHeight = 25;
+            this.cbxRechte.Items.AddRange(new object[] {
+            "lesen",
+            "schreiben",
+            "root"});
+            this.cbxRechte.Location = new System.Drawing.Point(322, 73);
+            this.cbxRechte.Name = "cbxRechte";
+            this.cbxRechte.Size = new System.Drawing.Size(148, 33);
+            this.cbxRechte.TabIndex = 15;
+            // 
             // Benutzer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(609, 584);
+            this.ClientSize = new System.Drawing.Size(610, 584);
+            this.Controls.Add(this.cbxRechte);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblNR);
@@ -274,5 +291,6 @@
         private System.Windows.Forms.Label lblNR;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.ComboBox cbxRechte;
     }
 }

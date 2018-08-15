@@ -112,9 +112,15 @@ namespace PC_Hardware_Datenbank
 
         private void Login_Load(object sender, EventArgs e)//Was beim erstelle der Fensters gemacht wird
         {
-            
+
             try
             {
+
+                //
+                // TODO: Es fehlt eine Bedingung um Fehlermeldung zu unterdrücken, wenn User-Datei existiert, aber 
+                // leer ist. Fehler in Zeile 131.
+                //
+
                 if (File.Exists(@"./User") == true)
                 {
                     Crypto_AES crypto = new Crypto_AES();
