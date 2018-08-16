@@ -100,7 +100,7 @@ namespace PC_Hardware_Datenbank
 
                 List<string> list = new List<string>(zellen);
 
-                list.RemoveRange(zeile, 3);//entferne Index, Anzahl
+                list.RemoveRange(zeile * 3 , 3);//entferne Index, Anzahl
 
                 zellen = list.ToArray();//schreibt die Liste in das Array wider zurück
                 
