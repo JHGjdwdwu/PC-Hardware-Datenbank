@@ -115,12 +115,6 @@ namespace PC_Hardware_Datenbank
 
             try
             {
-
-                //
-                // TODO: Es fehlt eine Bedingung um Fehlermeldung zu unterdrücken, wenn User-Datei existiert, aber 
-                // leer ist. Fehler in Zeile 131.
-                //
-
                 if (File.Exists(@"./User") == true)
                 {
                     Crypto_AES crypto = new Crypto_AES();
@@ -128,9 +122,16 @@ namespace PC_Hardware_Datenbank
                     string unverslusselt_text = crypto.decrypt(verlusselt_text);//Text entschlüsseln
                     zellen = unverslusselt_text.Split(';');//Text teilen bei ;
 
-                    Name = zellen[0];
-                    Password = zellen[1];
-                    Rechte = zellen[2];
+                    if (unverslusselt_text == "")
+                    {
+
+                    }
+                    else
+                    {
+                        Name = zellen[0];
+                        Password = zellen[1];
+                        Rechte = zellen[2];
+                    }
                 }
                 else
                 {

@@ -12,7 +12,7 @@ using System.IO;
 namespace PC_Hardware_Datenbank
 {
     //
-    // TODO: Sortiert der Benutzer das dgv neu ehe er löscht, dann wird der falsche Benutzer entfernt
+    // TODO: Sortiert der Benutzer das dgv neu ehe er löscht, dann wird der falsche Benutzer entfernt;
     //
 
 
@@ -90,8 +90,8 @@ namespace PC_Hardware_Datenbank
         {
             try
             {
-                MessageBox.Show(dgvUser.CurrentCell.RowIndex.ToString());
-                int zeile = dgvUser.CurrentCell.RowIndex;
+                //MessageBox.Show(dgvUser.CurrentCell.RowIndex.ToString());
+                int zeile = dgvUser.CurrentCell.RowIndex; // aktuell ausgewählte Zeile
                 dgvUser.Rows.RemoveAt(zeile);//aus der dgv den makirten User Löschen
 
                 string verlusselt_text = File.ReadAllText(@"./User");//Verschlüsselten Text lesen
@@ -100,7 +100,7 @@ namespace PC_Hardware_Datenbank
 
                 List<string> list = new List<string>(zellen);
 
-                list.RemoveRange(zeile * 3 , 3);//entferne Index, Anzahl
+                list.RemoveRange(zeile * 3 , 3);//entfernt die ausgewählte Zeile komplett aus dem List-Objekt
 
                 zellen = list.ToArray();//schreibt die Liste in das Array wider zurück
                 
