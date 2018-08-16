@@ -118,4 +118,73 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Adapter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Adapter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CPU" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CPU.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Download" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Download.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DVDLaufwerk" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DVDLaufwerk.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FrontErweiterung" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FrontErweiterung.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Gehause" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Gehause.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GPU" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GPU.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Hardware" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Hardware.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HDD" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HDD.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="I_O" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\I-O.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Kabel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Kabel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Lufter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Lufter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Mainboard" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Mainboard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Monitor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Monitor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Netzteil" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Netzteil.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Netzwerkkarte" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Netzwerkkarte.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Raiserkarte" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Raiserkarte.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RAM" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RAM.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Schnittstellenkarte" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Schnittstellenkarte.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Sonstiges" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sonstiges.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Soundkarte" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Soundkarte.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TVKarte" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TVKarte.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="USV" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\USV.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

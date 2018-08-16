@@ -58,10 +58,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Adapter_Imput.cs">
+    <Compile Include="Imput_Hardware\Adapter_Imput.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Adapter_Imput.Designer.cs">
+    <Compile Include="Imput_Hardware\Adapter_Imput.Designer.cs">
       <DependentUpon>Adapter_Imput.cs</DependentUpon>
     </Compile>
     <Compile Include="Admin.cs">
@@ -76,35 +76,35 @@
     <Compile Include="Benutzer.Designer.cs">
       <DependentUpon>Benutzer.cs</DependentUpon>
     </Compile>
-    <Compile Include="CPU_Imput.cs">
+    <Compile Include="Imput_Hardware\CPU_Imput.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CPU_Imput.Designer.cs">
+    <Compile Include="Imput_Hardware\CPU_Imput.Designer.cs">
       <DependentUpon>CPU_Imput.cs</DependentUpon>
     </Compile>
     <Compile Include="Crypto_AES.cs" />
-    <Compile Include="FrontErweiterung_Imput.cs">
+    <Compile Include="Imput_Hardware\FrontErweiterung_Imput.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrontErweiterung_Imput.Designer.cs">
+    <Compile Include="Imput_Hardware\FrontErweiterung_Imput.Designer.cs">
       <DependentUpon>FrontErweiterung_Imput.cs</DependentUpon>
     </Compile>
-    <Compile Include="Gehause_Imput.cs">
+    <Compile Include="Imput_Hardware\Gehause_Imput.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Gehause_Imput.Designer.cs">
+    <Compile Include="Imput_Hardware\Gehause_Imput.Designer.cs">
       <DependentUpon>Gehause_Imput.cs</DependentUpon>
     </Compile>
-    <Compile Include="GPU_Imput.cs">
+    <Compile Include="Imput_Hardware\GPU_Imput.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GPU_Imput.Designer.cs">
+    <Compile Include="Imput_Hardware\GPU_Imput.Designer.cs">
       <DependentUpon>GPU_Imput.cs</DependentUpon>
     </Compile>
-    <Compile Include="HDD_Imput.cs">
+    <Compile Include="Imput_Hardware\HDD_Imput.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HDD_Imput.Designer.cs">
+    <Compile Include="Imput_Hardware\HDD_Imput.Designer.cs">
       <DependentUpon>HDD_Imput.cs</DependentUpon>
     </Compile>
     <Compile Include="Home_Imput.cs">
@@ -113,22 +113,28 @@
     <Compile Include="Home_Imput.Designer.cs">
       <DependentUpon>Home_Imput.cs</DependentUpon>
     </Compile>
-    <Compile Include="I_O_Imput.cs">
+    <Compile Include="Home_Suche.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="I_O_Imput.Designer.cs">
+    <Compile Include="Home_Suche.Designer.cs">
+      <DependentUpon>Home_Suche.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Imput_Hardware\I_O_Imput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Imput_Hardware\I_O_Imput.Designer.cs">
       <DependentUpon>I_O_Imput.cs</DependentUpon>
     </Compile>
-    <Compile Include="Kabel_Imput.cs">
+    <Compile Include="Imput_Hardware\Kabel_Imput.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Kabel_Imput.Designer.cs">
+    <Compile Include="Imput_Hardware\Kabel_Imput.Designer.cs">
       <DependentUpon>Kabel_Imput.cs</DependentUpon>
     </Compile>
-    <Compile Include="Laufwerk_Imput.cs">
+    <Compile Include="Imput_Hardware\Laufwerk_Imput.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Laufwerk_Imput.Designer.cs">
+    <Compile Include="Imput_Hardware\Laufwerk_Imput.Designer.cs">
       <DependentUpon>Laufwerk_Imput.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
@@ -137,81 +143,84 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Lufter_Imput.cs">
+    <Compile Include="Imput_Hardware\Lufter_Imput.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Lufter_Imput.Designer.cs">
+    <Compile Include="Imput_Hardware\Lufter_Imput.Designer.cs">
       <DependentUpon>Lufter_Imput.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mainbord_Imput.cs">
+    <Compile Include="Imput_Hardware\Mainbord_Imput.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Mainbord_Imput.Designer.cs">
+    <Compile Include="Imput_Hardware\Mainbord_Imput.Designer.cs">
       <DependentUpon>Mainbord_Imput.cs</DependentUpon>
     </Compile>
-    <Compile Include="Monitor_Imput.cs">
+    <Compile Include="Imput_Hardware\Monitor_Imput.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Monitor_Imput.Designer.cs">
+    <Compile Include="Imput_Hardware\Monitor_Imput.Designer.cs">
       <DependentUpon>Monitor_Imput.cs</DependentUpon>
     </Compile>
-    <Compile Include="Netzteil_Imput.cs">
+    <Compile Include="Imput_Hardware\Netzteil_Imput.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Netzteil_Imput.Designer.cs">
+    <Compile Include="Imput_Hardware\Netzteil_Imput.Designer.cs">
       <DependentUpon>Netzteil_Imput.cs</DependentUpon>
     </Compile>
-    <Compile Include="Netzwerkkarte_Imput.cs">
+    <Compile Include="Imput_Hardware\Netzwerkkarte_Imput.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Netzwerkkarte_Imput.Designer.cs">
+    <Compile Include="Imput_Hardware\Netzwerkkarte_Imput.Designer.cs">
       <DependentUpon>Netzwerkkarte_Imput.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Raiserkarte_Imput.cs">
+    <Compile Include="Imput_Hardware\Raiserkarte_Imput.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Raiserkarte_Imput.Designer.cs">
+    <Compile Include="Imput_Hardware\Raiserkarte_Imput.Designer.cs">
       <DependentUpon>Raiserkarte_Imput.cs</DependentUpon>
     </Compile>
-    <Compile Include="RAM_Imput.cs">
+    <Compile Include="Imput_Hardware\RAM_Imput.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RAM_Imput.Designer.cs">
+    <Compile Include="Imput_Hardware\RAM_Imput.Designer.cs">
       <DependentUpon>RAM_Imput.cs</DependentUpon>
     </Compile>
-    <Compile Include="Schnittstellenkarte_Imput.cs">
+    <Compile Include="Imput_Hardware\Schnittstellenkarte_Imput.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Schnittstellenkarte_Imput.Designer.cs">
+    <Compile Include="Imput_Hardware\Schnittstellenkarte_Imput.Designer.cs">
       <DependentUpon>Schnittstellenkarte_Imput.cs</DependentUpon>
     </Compile>
-    <Compile Include="Sonstiges_Imput.cs">
+    <Compile Include="Imput_Hardware\Sonstiges_Imput.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Sonstiges_Imput.Designer.cs">
+    <Compile Include="Imput_Hardware\Sonstiges_Imput.Designer.cs">
       <DependentUpon>Sonstiges_Imput.cs</DependentUpon>
     </Compile>
-    <Compile Include="Soundkarte_Imput.cs">
+    <Compile Include="Imput_Hardware\Soundkarte_Imput.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Soundkarte_Imput.designer.cs">
+    <Compile Include="Imput_Hardware\Soundkarte_Imput.designer.cs">
       <DependentUpon>Soundkarte_Imput.cs</DependentUpon>
     </Compile>
-    <Compile Include="TVKarte_Imput.cs">
+    <Compile Include="Imput_Hardware\TVKarte_Imput.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TVKarte_Imput.Designer.cs">
+    <Compile Include="Imput_Hardware\TVKarte_Imput.Designer.cs">
       <DependentUpon>TVKarte_Imput.cs</DependentUpon>
     </Compile>
-    <Compile Include="USV_Imput.cs">
+    <Compile Include="Imput_Hardware\USV_Imput.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="USV_Imput.Designer.cs">
+    <Compile Include="Imput_Hardware\USV_Imput.Designer.cs">
       <DependentUpon>USV_Imput.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Adapter_Imput.resx">
+    <EmbeddedResource Include="Home_Suche.resx">
+      <DependentUpon>Home_Suche.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imput_Hardware\Adapter_Imput.resx">
       <DependentUpon>Adapter_Imput.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin.resx">
@@ -220,49 +229,49 @@
     <EmbeddedResource Include="Benutzer.resx">
       <DependentUpon>Benutzer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CPU_Imput.resx">
+    <EmbeddedResource Include="Imput_Hardware\CPU_Imput.resx">
       <DependentUpon>CPU_Imput.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrontErweiterung_Imput.resx">
+    <EmbeddedResource Include="Imput_Hardware\FrontErweiterung_Imput.resx">
       <DependentUpon>FrontErweiterung_Imput.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Gehause_Imput.resx">
+    <EmbeddedResource Include="Imput_Hardware\Gehause_Imput.resx">
       <DependentUpon>Gehause_Imput.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GPU_Imput.resx">
+    <EmbeddedResource Include="Imput_Hardware\GPU_Imput.resx">
       <DependentUpon>GPU_Imput.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HDD_Imput.resx">
+    <EmbeddedResource Include="Imput_Hardware\HDD_Imput.resx">
       <DependentUpon>HDD_Imput.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Home_Imput.resx">
       <DependentUpon>Home_Imput.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="I_O_Imput.resx">
+    <EmbeddedResource Include="Imput_Hardware\I_O_Imput.resx">
       <DependentUpon>I_O_Imput.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Kabel_Imput.resx">
+    <EmbeddedResource Include="Imput_Hardware\Kabel_Imput.resx">
       <DependentUpon>Kabel_Imput.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Laufwerk_Imput.resx">
+    <EmbeddedResource Include="Imput_Hardware\Laufwerk_Imput.resx">
       <DependentUpon>Laufwerk_Imput.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Lufter_Imput.resx">
+    <EmbeddedResource Include="Imput_Hardware\Lufter_Imput.resx">
       <DependentUpon>Lufter_Imput.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Mainbord_Imput.resx">
+    <EmbeddedResource Include="Imput_Hardware\Mainbord_Imput.resx">
       <DependentUpon>Mainbord_Imput.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Monitor_Imput.resx">
+    <EmbeddedResource Include="Imput_Hardware\Monitor_Imput.resx">
       <DependentUpon>Monitor_Imput.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Netzteil_Imput.resx">
+    <EmbeddedResource Include="Imput_Hardware\Netzteil_Imput.resx">
       <DependentUpon>Netzteil_Imput.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Netzwerkkarte_Imput.resx">
+    <EmbeddedResource Include="Imput_Hardware\Netzwerkkarte_Imput.resx">
       <DependentUpon>Netzwerkkarte_Imput.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -275,25 +284,25 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Raiserkarte_Imput.resx">
+    <EmbeddedResource Include="Imput_Hardware\Raiserkarte_Imput.resx">
       <DependentUpon>Raiserkarte_Imput.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RAM_Imput.resx">
+    <EmbeddedResource Include="Imput_Hardware\RAM_Imput.resx">
       <DependentUpon>RAM_Imput.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Schnittstellenkarte_Imput.resx">
+    <EmbeddedResource Include="Imput_Hardware\Schnittstellenkarte_Imput.resx">
       <DependentUpon>Schnittstellenkarte_Imput.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Sonstiges_Imput.resx">
+    <EmbeddedResource Include="Imput_Hardware\Sonstiges_Imput.resx">
       <DependentUpon>Sonstiges_Imput.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Soundkarte_Imput.resx">
+    <EmbeddedResource Include="Imput_Hardware\Soundkarte_Imput.resx">
       <DependentUpon>Soundkarte_Imput.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TVKarte_Imput.resx">
+    <EmbeddedResource Include="Imput_Hardware\TVKarte_Imput.resx">
       <DependentUpon>TVKarte_Imput.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="USV_Imput.resx">
+    <EmbeddedResource Include="Imput_Hardware\USV_Imput.resx">
       <DependentUpon>USV_Imput.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
@@ -312,9 +321,30 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Hardware.ico" />
+    <None Include="Resources\Download.png" />
+    <None Include="Resources\USV.png" />
+    <None Include="Resources\TVKarte.png" />
+    <None Include="Resources\Soundkarte.png" />
+    <None Include="Resources\Sonstiges.png" />
+    <None Include="Resources\Schnittstellenkarte.png" />
+    <None Include="Resources\RAM.png" />
+    <None Include="Resources\Raiserkarte.png" />
+    <None Include="Resources\Netzwerkkarte.png" />
+    <None Include="Resources\Netzteil.png" />
+    <None Include="Resources\Monitor.png" />
+    <None Include="Resources\Mainboard.png" />
+    <None Include="Resources\Lufter.png" />
+    <None Include="Resources\Kabel.png" />
+    <None Include="Resources\I-O.png" />
+    <None Include="Resources\HDD.png" />
+    <None Include="Resources\Hardware.ico" />
+    <None Include="Resources\GPU.png" />
+    <None Include="Resources\Gehause.png" />
+    <None Include="Resources\FrontErweiterung.png" />
+    <None Include="Resources\DVDLaufwerk.png" />
+    <None Include="Resources\CPU.png" />
+    <None Include="Resources\Adapter.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

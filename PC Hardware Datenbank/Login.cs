@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-//14.08.18
+//16.08.18
 
 namespace PC_Hardware_Datenbank
 {
@@ -133,7 +133,7 @@ namespace PC_Hardware_Datenbank
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Es würde kein Benuzer gefunden! Fehler: " + ex.Message);
             }
         }
 

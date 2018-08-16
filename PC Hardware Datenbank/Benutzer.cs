@@ -71,6 +71,9 @@ namespace PC_Hardware_Datenbank
                     string UserDatenUnver = crypto.decrypt(UserDatenVers);
                     dgvUser.Rows.Add(txtName.Text, txtPassword.Text, wtxtRechte.Text);//schreibt den neuen Benuzer in die dgvUser
                     File.WriteAllText(@"./User", crypto.encrypt(UserDatenUnver + txtName.Text + ";" + txtPassword.Text + ";" + wtxtRechte.Text + ";"));//Neien Dateiinhalt schreiben
+
+                    txtName.Text = txtPassword.Text = null;//Löscht die Eingabe
+                    wtxtRechte.Text = "lesen";//Standart auswahl ist lesen
                 }
                 catch
                 {
@@ -87,31 +90,18 @@ namespace PC_Hardware_Datenbank
         {
             try
             {
-                dgvUser.Rows.RemoveAt(dgvUser.CurrentCell.RowIndex);//aus der dgv den makirten User Löschen
-
                 string verlusselt_text = File.ReadAllText(@"./User");//Verschlüsselten Text lesen
                 string unverslusselt_text = crypto.decrypt(verlusselt_text);//Text entschlüsseln
                 string[] zellen = unverslusselt_text.Split(';');//Text teilen bei ;
 
-                int zeile = dgvUser.SelectedRows[0].Index;//Nummer der mackirten Zeile
-                //int zeile = (dgvUser.SelectedRows[0].Index + 1) * 3 - 1;//Nummer der mackirten Zellen
-                List<string> list = new List<string>(zellen);
-                //erzeugt eine Liste mit allen Eintragungen
-                /*  0    0 ; 1 ; 2
-                 *  1    3 ; 4 ; 5
-                 *  2    6 ; 7 ; 8
-                 */
-                lblNR.Text = Convert.ToString(zeile - 2) + ";" + Convert.ToString(zeile - 1) + ";" + Convert.ToString(zeile);
+                int zeile = dgvUser.CurrentCell.RowIndex;//Nummer der mackirten Zeile
+                List<string> list = new List<string>(zellen);//Wandelt das Array in eine Liste
 
-                //list.RemoveAt(zeile-2);//entfernt Zelle ID
-                //list.RemoveAt(zeile-1);//entfernt Zelle ID
-                //list.RemoveAt(zeile);//entfernt Zelle ID
-                list.RemoveRange(zeile, 3);//entferne Index, Anzahl
+                list.RemoveRange(zeile * 3, 3);//entferne Index, Anzahl
 
                 zellen = list.ToArray();//schreibt die Liste in das Array wider zurück
-                
+
                 File.WriteAllText(@"./User", "");//löscht die alten Daten
-                //File.WriteAllText(@"./User",string.Join(";", zellen));//schreibt die neue User Liste
                 File.WriteAllText(@"./User", crypto.encrypt(string.Join(";", zellen)));//schreibt die neue User Liste
             }
             catch (Exception ex)

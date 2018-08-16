@@ -892,7 +892,7 @@
             this.cmdMainbordLoschen.Name = "cmdMainbordLoschen";
             this.cmdMainbordLoschen.Size = new System.Drawing.Size(150, 50);
             this.cmdMainbordLoschen.TabIndex = 8;
-            this.cmdMainbordLoschen.Text = "Mainbord löschen";
+            this.cmdMainbordLoschen.Text = "Mainboard löschen";
             this.cmdMainbordLoschen.UseVisualStyleBackColor = true;
             this.cmdMainbordLoschen.Click += new System.EventHandler(this.cmdMainbordLoschen_Click);
             // 
@@ -940,7 +940,7 @@
             this.cmdMainbord.Name = "cmdMainbord";
             this.cmdMainbord.Size = new System.Drawing.Size(150, 50);
             this.cmdMainbord.TabIndex = 0;
-            this.cmdMainbord.Text = "Mainbord anlegen";
+            this.cmdMainbord.Text = "Mainboard anlegen";
             this.cmdMainbord.UseVisualStyleBackColor = true;
             this.cmdMainbord.Click += new System.EventHandler(this.cmdMainbord_Click);
             // 
@@ -960,8 +960,9 @@
             this.cmdBetrachten.Name = "cmdBetrachten";
             this.cmdBetrachten.Size = new System.Drawing.Size(150, 45);
             this.cmdBetrachten.TabIndex = 2;
-            this.cmdBetrachten.Text = "Daten betrachten";
+            this.cmdBetrachten.Text = "Daten suchen";
             this.cmdBetrachten.UseVisualStyleBackColor = true;
+            this.cmdBetrachten.Click += new System.EventHandler(this.cmdBetrachten_Click);
             // 
             // cmdLogout
             // 

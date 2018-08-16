@@ -43,7 +43,6 @@
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.lblNR = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).BeginInit();
@@ -87,6 +86,7 @@
             // wtxtRechte
             // 
             this.wtxtRechte.FormattingEnabled = true;
+            this.wtxtRechte.ImeMode = System.Windows.Forms.ImeMode.On;
             this.wtxtRechte.ItemHeight = 20;
             this.wtxtRechte.Items.AddRange(new object[] {
             "lesen",
@@ -95,6 +95,7 @@
             this.wtxtRechte.Location = new System.Drawing.Point(321, 73);
             this.wtxtRechte.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.wtxtRechte.Name = "wtxtRechte";
+            this.wtxtRechte.ScrollAlwaysVisible = true;
             this.wtxtRechte.Size = new System.Drawing.Size(148, 24);
             this.wtxtRechte.TabIndex = 2;
             // 
@@ -190,16 +191,6 @@
             this.label4.TabIndex = 10;
             this.label4.Text = "Namen Markieren um ihn zu löschen:";
             // 
-            // lblNR
-            // 
-            this.lblNR.AutoSize = true;
-            this.lblNR.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNR.Location = new System.Drawing.Point(224, 9);
-            this.lblNR.Name = "lblNR";
-            this.lblNR.Size = new System.Drawing.Size(39, 20);
-            this.lblNR.TabIndex = 11;
-            this.lblNR.Text = "NR:";
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -229,7 +220,6 @@
             this.ClientSize = new System.Drawing.Size(609, 584);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.lblNR);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtName);
@@ -271,7 +261,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.Label lblNR;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
     }
