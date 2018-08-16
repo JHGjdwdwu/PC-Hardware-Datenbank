@@ -112,7 +112,7 @@ namespace PC_Hardware_Datenbank
 
         private void Login_Load(object sender, EventArgs e)//Was beim erstelle der Fensters gemacht wird
         {
-            
+
             try
             {
                 if (File.Exists(@"./User") == true)
@@ -122,9 +122,16 @@ namespace PC_Hardware_Datenbank
                     string unverslusselt_text = crypto.decrypt(verlusselt_text);//Text entschlüsseln
                     zellen = unverslusselt_text.Split(';');//Text teilen bei ;
 
-                    Name = zellen[0];
-                    Password = zellen[1];
-                    Rechte = zellen[2];
+                    if (unverslusselt_text == "")
+                    {
+
+                    }
+                    else
+                    {
+                        Name = zellen[0];
+                        Password = zellen[1];
+                        Rechte = zellen[2];
+                    }
                 }
                 else
                 {
