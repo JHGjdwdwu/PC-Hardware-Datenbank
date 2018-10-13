@@ -32,9 +32,9 @@ namespace PC_Hardware_Datenbank
 
         private void LoschFunktion()//Löschen Funktion
         {
-            wtxtKartenhersteller.Text = wtxtModell.Text = wtxtAnschluss.Text = wtxtZustand.Text = null;
-            nudAnalog.Value = nudDVB_C.Value = nudDVB_T.Value = nudDVB_S.Value = nudKlinke.Value = nudODT.Value = nudHDMI.Value = nudScart.Value = nudSVideo.Value = nudCinch.Value = 0;
-            cbtAnalog.Checked = cbtDVB_C.Checked = cbtDVB_T.Checked = cbtDVB_S.Checked = cbtKlinke.Checked = cbtODT.Checked = cbtHDMI.Checked = cbtScart.Checked = cbtSVideo.Checked = cbtCinch.Checked;
+            TVKarte_Imput NewForm = new TVKarte_Imput();
+            NewForm.Show();
+            this.Dispose(false);
             wtxtKartenhersteller.Focus();
         }
 
@@ -51,6 +51,14 @@ namespace PC_Hardware_Datenbank
                 {
                     Datensatz = File.ReadAllText(DateiPfad + @"/TVKarte_Datenbank.csv");//Datenbanck einlessen und in Datensatz speichern
 
+                    #region Chak Boxen auswerten und Daten zuweisen
+                    string HD = "NEIN";
+                    if (cbtHD.Checked == true)
+                    {
+                        HD = "JA";
+                    }
+                    #endregion
+
                     #region Datensatz bilden
                     Datensatz += LF +
                         wtxtKartenhersteller.Text + ";" +
@@ -59,8 +67,12 @@ namespace PC_Hardware_Datenbank
                         wtxtAnschluss.Text + ";" +
                         nudAnalog.Value + ";" +
                         nudDVB_C.Value + ";" +
+                        nudDVB_C2.Value + ";" +
                         nudDVB_T.Value + ";" +
+                        nudDVB_T2.Value + ";" +
                         nudDVB_S.Value + ";" +
+                        nudDVB_S2.Value + ";" +
+                        HD + ";" +
                         nudKlinke.Value + ";" +
                         nudODT.Value + ";" +
                         nudHDMI.Value + ";" +
@@ -77,8 +89,12 @@ namespace PC_Hardware_Datenbank
                         "Anschlussart: " + wtxtAnschluss.Text + LF +
                         "Analog: " + nudAnalog.Value + LF +
                         "DVB-C: " + nudDVB_C.Value + LF +
+                        "DVB-C2: " + nudDVB_C2.Value + LF +
                         "DVB-T: " + nudDVB_T.Value + LF +
+                        "DVB-T2: " + nudDVB_T2.Value + LF +
                         "DVB-S: " + nudDVB_S.Value + LF +
+                        "DVB-S2: " + nudDVB_S2.Value + LF +
+                        "HD: " + HD + LF +
                         "Klinke: " + nudKlinke.Value + LF +
                         "ODT: " + nudODT.Value + LF +
                         "HDMI: " + nudHDMI.Value + LF +
@@ -125,6 +141,17 @@ namespace PC_Hardware_Datenbank
                 nudDVB_C.Value = 0;
             }
         }
+        private void cbtDVB_C2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbtDVB_C2.Checked == true)
+            {
+                nudDVB_C2.Value = 1;
+            }
+            if (cbtDVB_C2.Checked == false)
+            {
+                nudDVB_C2.Value = 0;
+            }
+        }
         private void cbtCVB_T_CheckedChanged(object sender, EventArgs e)
         {
             if (cbtDVB_T.Checked == true)
@@ -136,6 +163,17 @@ namespace PC_Hardware_Datenbank
                 nudDVB_T.Value = 0;
             }
         }
+        private void cbtDVB_T2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbtDVB_T2.Checked == true)
+            {
+                nudDVB_T2.Value = 1;
+            }
+            if (cbtDVB_T2.Checked == false)
+            {
+                nudDVB_T2.Value = 0;
+            }
+        }
         private void cbtDVB_S_CheckedChanged(object sender, EventArgs e)
         {
             if (cbtDVB_S.Checked == true)
@@ -145,6 +183,17 @@ namespace PC_Hardware_Datenbank
             if (cbtDVB_S.Checked == false)
             {
                 nudDVB_S.Value = 0;
+            }
+        }
+        private void cbtDVB_S2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbtDVB_S2.Checked == true)
+            {
+                nudDVB_S2.Value = 1;
+            }
+            if (cbtDVB_S2.Checked == false)
+            {
+                nudDVB_S2.Value = 0;
             }
         }
         private void cbtKlinke_CheckedChanged(object sender, EventArgs e)
@@ -204,11 +253,11 @@ namespace PC_Hardware_Datenbank
         }
         private void cbtCinch_CheckedChanged(object sender, EventArgs e)
         {
-            if (cbtCinch.Checked == true)
+            if (cbtVideo.Checked == true)
             {
                 nudCinch.Value = 1;
             }
-            if (cbtCinch.Checked == false)
+            if (cbtVideo.Checked == false)
             {
                 nudCinch.Value = 0;
             }
@@ -237,6 +286,17 @@ namespace PC_Hardware_Datenbank
                 cbtDVB_C.Checked = false;
             }
         }
+        private void nudDVB_C2_ValueChanged(object sender, EventArgs e)
+        {
+            if (nudDVB_C2.Value > 0)
+            {
+                cbtDVB_C2.Checked = true;
+            }
+            if (nudDVB_C2.Value == 0)
+            {
+                cbtDVB_C2.Checked = false;
+            }
+        }
         private void nudCVB_T_ValueChanged(object sender, EventArgs e)
         {
             if (nudDVB_T.Value > 0)
@@ -248,6 +308,17 @@ namespace PC_Hardware_Datenbank
                 cbtDVB_T.Checked = false;
             }
         }
+        private void nudDVB_T2_ValueChanged(object sender, EventArgs e)
+        {
+            if (nudDVB_T2.Value > 0)
+            {
+                cbtDVB_T2.Checked = true;
+            }
+            if (nudDVB_T2.Value == 0)
+            {
+                cbtDVB_T2.Checked = false;
+            }
+        }
         private void nudDVB_S_ValueChanged(object sender, EventArgs e)
         {
             if (nudDVB_S.Value > 0)
@@ -257,6 +328,17 @@ namespace PC_Hardware_Datenbank
             if (nudDVB_S.Value == 0)
             {
                 cbtDVB_S.Checked = false;
+            }
+        }
+        private void nudDVB_S2_ValueChanged(object sender, EventArgs e)
+        {
+            if (nudDVB_S2.Value > 0)
+            {
+                cbtDVB_S2.Checked = true;
+            }
+            if (nudDVB_S2.Value == 0)
+            {
+                cbtDVB_S2.Checked = false;
             }
         }
         private void nudKlinke_ValueChanged(object sender, EventArgs e)
@@ -318,11 +400,11 @@ namespace PC_Hardware_Datenbank
         {
             if (nudCinch.Value > 0)
             {
-                cbtCinch.Checked = true;
+                cbtVideo.Checked = true;
             }
             if (nudCinch.Value == 0)
             {
-                cbtCinch.Checked = false;
+                cbtVideo.Checked = false;
             }
         }
         #endregion
@@ -368,5 +450,7 @@ namespace PC_Hardware_Datenbank
         {
             System.Diagnostics.Process.Start("https://github.com/JHGjdwdwu");
         }
+
+        
     }
 }

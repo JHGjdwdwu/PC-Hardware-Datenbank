@@ -32,15 +32,10 @@ namespace PC_Hardware_Datenbank
 
         private void LoschenFunktin() //Löschen Funktion
         {
-            wtxtBitaufloesung.Text = wtxtAusgabestandard.Text = wtxtAnschlusssSchnittstelle.Text = wtxtHersteller.Text = wtxtZustand.Text = null;
-            foreach (Control ctr in grpAudioSchnittstellen.Controls)//Alle Chekboxen zurücksetzen in der Gruppe AudioSchnittstellen
-            {
-                ((CheckBox)ctr).Checked = false;
-            }
-            foreach (Control ctr in grpSonstiges.Controls)//Alle Chekboxen zurücksetzen in der Gruppe Sonstiges
-            {
-                ((CheckBox)ctr).Checked = false;
-            }
+            Soundkarte_Imput NewForm = new Soundkarte_Imput();
+            NewForm.Show();
+            this.Dispose(false);
+            wtxtAusgabestandard.Focus();
         }
 
         private void cmdClear_Click(object sender, EventArgs e)//Löschen Button
@@ -57,7 +52,7 @@ namespace PC_Hardware_Datenbank
                     Datensatz = File.ReadAllText(DateiPfad + @"/Soundkarte_Datenbank.csv");//Datenbanck einlessen und in Datensatz schreiben
 
                     #region Checkboxen
-                    string ADAT = "NEIN", AES_EBU = "NEIN", Chinchbuchse = "NEIN", Klinkenbuchse = "NEIN", MADI = "NEIN", SPDIF = "NEIN", TDIF = "NEIN", BreakoutBox = "NEIN", DSP = "NEIN", Gameport = "NEIN", MIDI = "NEIN", Mikrofoneingang = "NEIN", Wavetable = "NEIN";
+                    string ADAT = "NEIN", AES_EBU = "NEIN", Chinchbuchse = "NEIN", Klinkenbuchse = "NEIN", MADI = "NEIN", SPDIFo = "NEIN", SPDIFc = "NEIN", TDIF = "NEIN", BreakoutBox = "NEIN", DSP = "NEIN", Gameport = "NEIN", MIDI = "NEIN", Mikrofoneingang = "NEIN", Wavetable = "NEIN";
                     if (chbADAT.Checked == true)
                     {
                         ADAT = "JA";
@@ -78,9 +73,13 @@ namespace PC_Hardware_Datenbank
                     {
                         MADI = "JA";
                     }
-                    if (chbS_PDIF.Checked == true)
+                    if (chbS_PDIFo.Checked == true)
                     {
-                        SPDIF = "JA";
+                        SPDIFo = "JA";
+                    }
+                    if (chbS_PDIFc.Checked == true)
+                    {
+                        SPDIFc = "JA";
                     }
                     if (chbTDIF.Checked == true)
                     {
@@ -124,7 +123,8 @@ namespace PC_Hardware_Datenbank
                         Chinchbuchse + ";" +
                         Klinkenbuchse + ";" +
                         MADI + ";" +
-                        SPDIF + ";" +
+                        SPDIFo + ";" +
+                        SPDIFc + ";" +
                         TDIF + ";" +
                         BreakoutBox + ";" +
                         DSP + ";" +
@@ -146,7 +146,8 @@ namespace PC_Hardware_Datenbank
                         "Chinchbuchse: " + Chinchbuchse + LF +
                         "Klinkenbuchse: " + Klinkenbuchse + LF +
                         "MADI: " + MADI + LF +
-                        "S/PDIF: " + SPDIF + LF +
+                        "S/PDIF: " + SPDIFo + LF +
+                        "S/PDIF: " + SPDIFc + LF +
                         "TDIF: " + TDIF + LF +
                         "Breakout Box: " + BreakoutBox + LF +
                         "DSP: " + DSP + LF +

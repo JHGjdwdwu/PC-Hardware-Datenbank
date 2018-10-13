@@ -536,7 +536,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "CPU_Imput";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CPU_Imput";
+            this.Text = "Prozessor";
             this.Load += new System.EventHandler(this.CPU_Imput_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudKerne)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

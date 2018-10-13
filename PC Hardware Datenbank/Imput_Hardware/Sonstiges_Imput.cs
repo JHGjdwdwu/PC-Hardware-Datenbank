@@ -32,7 +32,9 @@ namespace PC_Hardware_Datenbank
 
         private void LoschFunktion()//Löschen Funktion
         {
-            wtxtZustand.Text = wtxtHersteller.Text = wtxtGerat.Text = wtxtAnschluss.Text = txtBemerkung.Text = null;
+            Sonstiges_Imput NewForm = new Sonstiges_Imput();
+            NewForm.Show();
+            this.Dispose(false);
             wtxtHersteller.Focus();
         }
 

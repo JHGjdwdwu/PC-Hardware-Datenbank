@@ -37,8 +37,9 @@
             this.cmdBeenden = new System.Windows.Forms.Button();
             this.pcmdMainbord = new System.Windows.Forms.PictureBox();
             this.grpAudioSchnittstellen = new System.Windows.Forms.GroupBox();
+            this.chbS_PDIFc = new System.Windows.Forms.CheckBox();
             this.chbTDIF = new System.Windows.Forms.CheckBox();
-            this.chbS_PDIF = new System.Windows.Forms.CheckBox();
+            this.chbS_PDIFo = new System.Windows.Forms.CheckBox();
             this.chbMADI = new System.Windows.Forms.CheckBox();
             this.chbChinch = new System.Windows.Forms.CheckBox();
             this.chbKlinke = new System.Windows.Forms.CheckBox();
@@ -154,8 +155,9 @@
             // 
             // grpAudioSchnittstellen
             // 
+            this.grpAudioSchnittstellen.Controls.Add(this.chbS_PDIFc);
             this.grpAudioSchnittstellen.Controls.Add(this.chbTDIF);
-            this.grpAudioSchnittstellen.Controls.Add(this.chbS_PDIF);
+            this.grpAudioSchnittstellen.Controls.Add(this.chbS_PDIFo);
             this.grpAudioSchnittstellen.Controls.Add(this.chbMADI);
             this.grpAudioSchnittstellen.Controls.Add(this.chbChinch);
             this.grpAudioSchnittstellen.Controls.Add(this.chbKlinke);
@@ -163,30 +165,40 @@
             this.grpAudioSchnittstellen.Controls.Add(this.chbADAT);
             this.grpAudioSchnittstellen.Location = new System.Drawing.Point(34, 189);
             this.grpAudioSchnittstellen.Name = "grpAudioSchnittstellen";
-            this.grpAudioSchnittstellen.Size = new System.Drawing.Size(159, 293);
+            this.grpAudioSchnittstellen.Size = new System.Drawing.Size(159, 339);
             this.grpAudioSchnittstellen.TabIndex = 5;
             this.grpAudioSchnittstellen.TabStop = false;
             this.grpAudioSchnittstellen.Text = "Audioschnittstellen";
             // 
+            // chbS_PDIFc
+            // 
+            this.chbS_PDIFc.AutoSize = true;
+            this.chbS_PDIFc.Location = new System.Drawing.Point(15, 260);
+            this.chbS_PDIFc.Name = "chbS_PDIFc";
+            this.chbS_PDIFc.Size = new System.Drawing.Size(121, 24);
+            this.chbS_PDIFc.TabIndex = 6;
+            this.chbS_PDIFc.Text = "S/PDIF cinch";
+            this.chbS_PDIFc.UseVisualStyleBackColor = true;
+            // 
             // chbTDIF
             // 
             this.chbTDIF.AutoSize = true;
-            this.chbTDIF.Location = new System.Drawing.Point(15, 257);
+            this.chbTDIF.Location = new System.Drawing.Point(15, 296);
             this.chbTDIF.Name = "chbTDIF";
             this.chbTDIF.Size = new System.Drawing.Size(64, 24);
-            this.chbTDIF.TabIndex = 6;
+            this.chbTDIF.TabIndex = 7;
             this.chbTDIF.Text = "TDIF";
             this.chbTDIF.UseVisualStyleBackColor = true;
             // 
-            // chbS_PDIF
+            // chbS_PDIFo
             // 
-            this.chbS_PDIF.AutoSize = true;
-            this.chbS_PDIF.Location = new System.Drawing.Point(15, 220);
-            this.chbS_PDIF.Name = "chbS_PDIF";
-            this.chbS_PDIF.Size = new System.Drawing.Size(80, 24);
-            this.chbS_PDIF.TabIndex = 5;
-            this.chbS_PDIF.Text = "S/PDIF";
-            this.chbS_PDIF.UseVisualStyleBackColor = true;
+            this.chbS_PDIFo.AutoSize = true;
+            this.chbS_PDIFo.Location = new System.Drawing.Point(15, 220);
+            this.chbS_PDIFo.Name = "chbS_PDIFo";
+            this.chbS_PDIFo.Size = new System.Drawing.Size(130, 24);
+            this.chbS_PDIFo.TabIndex = 5;
+            this.chbS_PDIFo.Text = "S/PDIF optical";
+            this.chbS_PDIFo.UseVisualStyleBackColor = true;
             // 
             // chbMADI
             // 
@@ -248,7 +260,7 @@
             this.grpSonstiges.Controls.Add(this.chbBreakoutBox);
             this.grpSonstiges.Location = new System.Drawing.Point(244, 189);
             this.grpSonstiges.Name = "grpSonstiges";
-            this.grpSonstiges.Size = new System.Drawing.Size(166, 293);
+            this.grpSonstiges.Size = new System.Drawing.Size(166, 339);
             this.grpSonstiges.TabIndex = 6;
             this.grpSonstiges.TabStop = false;
             this.grpSonstiges.Text = "Sonstiges";
@@ -489,7 +501,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Soundkarte_Imput";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Soundkarte_Imput";
+            this.Text = "Soundkarten";
             this.Load += new System.EventHandler(this.Soundkarte_Imput_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcmdMainbord)).EndInit();
@@ -512,7 +524,7 @@
         private System.Windows.Forms.PictureBox pcmdMainbord;
         private System.Windows.Forms.GroupBox grpAudioSchnittstellen;
         private System.Windows.Forms.CheckBox chbTDIF;
-        private System.Windows.Forms.CheckBox chbS_PDIF;
+        private System.Windows.Forms.CheckBox chbS_PDIFo;
         private System.Windows.Forms.CheckBox chbMADI;
         private System.Windows.Forms.CheckBox chbChinch;
         private System.Windows.Forms.CheckBox chbKlinke;
@@ -535,5 +547,6 @@
         private System.Windows.Forms.ComboBox wtxtAusgabestandard;
         private System.Windows.Forms.ComboBox wtxtZustand;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.CheckBox chbS_PDIFc;
     }
 }

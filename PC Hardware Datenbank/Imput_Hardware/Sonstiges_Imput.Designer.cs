@@ -262,7 +262,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Sonstiges_Imput";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Sonstiges_Imput";
+            this.Text = "Sonstiges";
             this.Load += new System.EventHandler(this.Sonstiges_Imput_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pcmdMainbord)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

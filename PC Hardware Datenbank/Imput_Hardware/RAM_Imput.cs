@@ -32,8 +32,10 @@ namespace PC_Hardware_Datenbank
 
         private void LoschenFunktin()//Löschen Funktion
         {
-            wtxtSlot.Text = wtxtGrosse.Text = wtxtHersteller.Text = txtTyp.Text = wtxtTacktrate.Text = wtxtChiphersteller.Text = wtxtZustand.Text = null;
-            cbtSO_DIMM.Checked = cbtECC.Checked = cbtRegistered.Checked = cbtUnbuffered.Checked = false;
+            RAM_Imput NewForm = new RAM_Imput();
+            NewForm.Show();
+            this.Dispose(false);
+            wtxtSlot.Focus();
         }
 
         private void cmdClear_Click(object sender, EventArgs e)//Löschen Button

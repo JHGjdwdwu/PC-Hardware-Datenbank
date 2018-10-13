@@ -32,8 +32,9 @@ namespace PC_Hardware_Datenbank
 
         private void LoschFunktion()//Löschen Funktion
         {
-            wtxtSteckverbindung.Text = wtxtSchnittstelle.Text = wtxtAusrichtung.Text = wtxtZustand.Text = null;
-            nudSteckverbindung.Value = nudSchnittstelle.Value = 1;
+            Raiserkarte_Imput NewForm = new Raiserkarte_Imput();
+            NewForm.Show();
+            this.Dispose(false);
             wtxtSteckverbindung.Focus();
         }
 

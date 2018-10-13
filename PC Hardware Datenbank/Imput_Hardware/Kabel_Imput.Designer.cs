@@ -339,7 +339,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Kabel_Imput";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Kabel_Imput";
+            this.Text = "Kabel";
             this.Load += new System.EventHandler(this.Kabel_Imput_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudLange)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcmdMainbord)).EndInit();

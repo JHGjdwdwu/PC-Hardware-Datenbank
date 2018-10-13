@@ -43,6 +43,13 @@
             this.wtxtKartenhersteller = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbtHD = new System.Windows.Forms.CheckBox();
+            this.cbtDVB_S2 = new System.Windows.Forms.CheckBox();
+            this.nudDVB_S2 = new System.Windows.Forms.NumericUpDown();
+            this.cbtDVB_C2 = new System.Windows.Forms.CheckBox();
+            this.nudDVB_C2 = new System.Windows.Forms.NumericUpDown();
+            this.cbtDVB_T2 = new System.Windows.Forms.CheckBox();
+            this.nudDVB_T2 = new System.Windows.Forms.NumericUpDown();
             this.cbtDVB_S = new System.Windows.Forms.CheckBox();
             this.cbtDVB_T = new System.Windows.Forms.CheckBox();
             this.cbtDVB_C = new System.Windows.Forms.CheckBox();
@@ -52,7 +59,7 @@
             this.nudDVB_C = new System.Windows.Forms.NumericUpDown();
             this.nudAnalog = new System.Windows.Forms.NumericUpDown();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.cbtCinch = new System.Windows.Forms.CheckBox();
+            this.cbtVideo = new System.Windows.Forms.CheckBox();
             this.cbtSVideo = new System.Windows.Forms.CheckBox();
             this.cbtScart = new System.Windows.Forms.CheckBox();
             this.cbtHDMI = new System.Windows.Forms.CheckBox();
@@ -69,6 +76,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcmdMainbord)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDVB_S2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDVB_C2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDVB_T2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDVB_S)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDVB_T)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDVB_C)).BeginInit();
@@ -90,6 +100,10 @@
             this.wtxtAnschluss.Items.AddRange(new object[] {
             "",
             "CardBus",
+            "PCI-X",
+            "PCI 2.1",
+            "PCI 2.2",
+            "PCI 2.3",
             "PCIe 1.0 x1",
             "PCIe 1.0 x4",
             "PCIe 1.0 x8",
@@ -102,10 +116,6 @@
             "PCIe 3.0 x4",
             "PCIe 3.0 x8",
             "PCIe 3.0 x16",
-            "PCI-X",
-            "PCI 2.1",
-            "PCI 2.2",
-            "PCI 2.3",
             "USB-A 2.0",
             "USB-A 3.0",
             "Thunderbolt 1",
@@ -113,12 +123,6 @@
             "Thunderbolt 3",
             "SFP",
             "SFP+",
-            "PCI",
-            "PCIe",
-            "PCIe 1.0",
-            "PCIe 2.0",
-            "PCIe 2.1",
-            "PCIe 3.0",
             "Thunderbolt",
             "USB 2.0",
             "USB 3.0",
@@ -357,6 +361,13 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbtHD);
+            this.groupBox1.Controls.Add(this.cbtDVB_S2);
+            this.groupBox1.Controls.Add(this.nudDVB_S2);
+            this.groupBox1.Controls.Add(this.cbtDVB_C2);
+            this.groupBox1.Controls.Add(this.nudDVB_C2);
+            this.groupBox1.Controls.Add(this.cbtDVB_T2);
+            this.groupBox1.Controls.Add(this.nudDVB_T2);
             this.groupBox1.Controls.Add(this.cbtDVB_S);
             this.groupBox1.Controls.Add(this.cbtDVB_T);
             this.groupBox1.Controls.Add(this.cbtDVB_C);
@@ -368,16 +379,93 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(34, 202);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(213, 239);
+            this.groupBox1.Size = new System.Drawing.Size(213, 319);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Empfänger";
+            // 
+            // cbtHD
+            // 
+            this.cbtHD.AutoSize = true;
+            this.cbtHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbtHD.Location = new System.Drawing.Point(17, 256);
+            this.cbtHD.Name = "cbtHD";
+            this.cbtHD.Size = new System.Drawing.Size(87, 24);
+            this.cbtHD.TabIndex = 7;
+            this.cbtHD.Text = "DVB-S2";
+            this.cbtHD.UseVisualStyleBackColor = true;
+            // 
+            // cbtDVB_S2
+            // 
+            this.cbtDVB_S2.AutoSize = true;
+            this.cbtDVB_S2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbtDVB_S2.Location = new System.Drawing.Point(17, 226);
+            this.cbtDVB_S2.Name = "cbtDVB_S2";
+            this.cbtDVB_S2.Size = new System.Drawing.Size(87, 24);
+            this.cbtDVB_S2.TabIndex = 72;
+            this.cbtDVB_S2.TabStop = false;
+            this.cbtDVB_S2.Text = "DVB-S2";
+            this.cbtDVB_S2.UseVisualStyleBackColor = true;
+            this.cbtDVB_S2.CheckedChanged += new System.EventHandler(this.cbtDVB_S2_CheckedChanged);
+            // 
+            // nudDVB_S2
+            // 
+            this.nudDVB_S2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudDVB_S2.Location = new System.Drawing.Point(130, 225);
+            this.nudDVB_S2.Name = "nudDVB_S2";
+            this.nudDVB_S2.Size = new System.Drawing.Size(57, 26);
+            this.nudDVB_S2.TabIndex = 6;
+            this.nudDVB_S2.ValueChanged += new System.EventHandler(this.nudDVB_S2_ValueChanged);
+            // 
+            // cbtDVB_C2
+            // 
+            this.cbtDVB_C2.AutoSize = true;
+            this.cbtDVB_C2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbtDVB_C2.Location = new System.Drawing.Point(17, 99);
+            this.cbtDVB_C2.Name = "cbtDVB_C2";
+            this.cbtDVB_C2.Size = new System.Drawing.Size(87, 24);
+            this.cbtDVB_C2.TabIndex = 70;
+            this.cbtDVB_C2.TabStop = false;
+            this.cbtDVB_C2.Text = "DVB-C2";
+            this.cbtDVB_C2.UseVisualStyleBackColor = true;
+            this.cbtDVB_C2.CheckedChanged += new System.EventHandler(this.cbtDVB_C2_CheckedChanged);
+            // 
+            // nudDVB_C2
+            // 
+            this.nudDVB_C2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudDVB_C2.Location = new System.Drawing.Point(130, 98);
+            this.nudDVB_C2.Name = "nudDVB_C2";
+            this.nudDVB_C2.Size = new System.Drawing.Size(57, 26);
+            this.nudDVB_C2.TabIndex = 2;
+            this.nudDVB_C2.ValueChanged += new System.EventHandler(this.nudDVB_C2_ValueChanged);
+            // 
+            // cbtDVB_T2
+            // 
+            this.cbtDVB_T2.AutoSize = true;
+            this.cbtDVB_T2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbtDVB_T2.Location = new System.Drawing.Point(17, 163);
+            this.cbtDVB_T2.Name = "cbtDVB_T2";
+            this.cbtDVB_T2.Size = new System.Drawing.Size(85, 24);
+            this.cbtDVB_T2.TabIndex = 68;
+            this.cbtDVB_T2.TabStop = false;
+            this.cbtDVB_T2.Text = "DVB-T2";
+            this.cbtDVB_T2.UseVisualStyleBackColor = true;
+            this.cbtDVB_T2.CheckedChanged += new System.EventHandler(this.cbtDVB_T2_CheckedChanged);
+            // 
+            // nudDVB_T2
+            // 
+            this.nudDVB_T2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudDVB_T2.Location = new System.Drawing.Point(130, 162);
+            this.nudDVB_T2.Name = "nudDVB_T2";
+            this.nudDVB_T2.Size = new System.Drawing.Size(57, 26);
+            this.nudDVB_T2.TabIndex = 4;
+            this.nudDVB_T2.ValueChanged += new System.EventHandler(this.nudDVB_T2_ValueChanged);
             // 
             // cbtDVB_S
             // 
             this.cbtDVB_S.AutoSize = true;
             this.cbtDVB_S.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbtDVB_S.Location = new System.Drawing.Point(17, 131);
+            this.cbtDVB_S.Location = new System.Drawing.Point(17, 194);
             this.cbtDVB_S.Name = "cbtDVB_S";
             this.cbtDVB_S.Size = new System.Drawing.Size(78, 24);
             this.cbtDVB_S.TabIndex = 29;
@@ -390,7 +478,7 @@
             // 
             this.cbtDVB_T.AutoSize = true;
             this.cbtDVB_T.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbtDVB_T.Location = new System.Drawing.Point(17, 99);
+            this.cbtDVB_T.Location = new System.Drawing.Point(17, 131);
             this.cbtDVB_T.Name = "cbtDVB_T";
             this.cbtDVB_T.Size = new System.Drawing.Size(76, 24);
             this.cbtDVB_T.TabIndex = 26;
@@ -428,19 +516,19 @@
             // nudDVB_S
             // 
             this.nudDVB_S.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudDVB_S.Location = new System.Drawing.Point(130, 130);
+            this.nudDVB_S.Location = new System.Drawing.Point(130, 193);
             this.nudDVB_S.Name = "nudDVB_S";
             this.nudDVB_S.Size = new System.Drawing.Size(57, 26);
-            this.nudDVB_S.TabIndex = 3;
+            this.nudDVB_S.TabIndex = 5;
             this.nudDVB_S.ValueChanged += new System.EventHandler(this.nudDVB_S_ValueChanged);
             // 
             // nudDVB_T
             // 
             this.nudDVB_T.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudDVB_T.Location = new System.Drawing.Point(130, 98);
+            this.nudDVB_T.Location = new System.Drawing.Point(130, 130);
             this.nudDVB_T.Name = "nudDVB_T";
             this.nudDVB_T.Size = new System.Drawing.Size(57, 26);
-            this.nudDVB_T.TabIndex = 2;
+            this.nudDVB_T.TabIndex = 3;
             this.nudDVB_T.ValueChanged += new System.EventHandler(this.nudCVB_T_ValueChanged);
             // 
             // nudDVB_C
@@ -463,7 +551,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.cbtCinch);
+            this.groupBox2.Controls.Add(this.cbtVideo);
             this.groupBox2.Controls.Add(this.cbtSVideo);
             this.groupBox2.Controls.Add(this.cbtScart);
             this.groupBox2.Controls.Add(this.cbtHDMI);
@@ -478,23 +566,23 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(287, 202);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(213, 239);
+            this.groupBox2.Size = new System.Drawing.Size(213, 319);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Externe Schnittstellen";
             // 
-            // cbtCinch
+            // cbtVideo
             // 
-            this.cbtCinch.AutoSize = true;
-            this.cbtCinch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbtCinch.Location = new System.Drawing.Point(17, 195);
-            this.cbtCinch.Name = "cbtCinch";
-            this.cbtCinch.Size = new System.Drawing.Size(68, 24);
-            this.cbtCinch.TabIndex = 31;
-            this.cbtCinch.TabStop = false;
-            this.cbtCinch.Text = "Cinch";
-            this.cbtCinch.UseVisualStyleBackColor = true;
-            this.cbtCinch.CheckedChanged += new System.EventHandler(this.cbtCinch_CheckedChanged);
+            this.cbtVideo.AutoSize = true;
+            this.cbtVideo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbtVideo.Location = new System.Drawing.Point(17, 195);
+            this.cbtVideo.Name = "cbtVideo";
+            this.cbtVideo.Size = new System.Drawing.Size(69, 24);
+            this.cbtVideo.TabIndex = 31;
+            this.cbtVideo.TabStop = false;
+            this.cbtVideo.Text = "Video";
+            this.cbtVideo.UseVisualStyleBackColor = true;
+            this.cbtVideo.CheckedChanged += new System.EventHandler(this.cbtCinch_CheckedChanged);
             // 
             // cbtSVideo
             // 
@@ -665,12 +753,15 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "TVKarte_Imput";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "TVKarte_Imput";
+            this.Text = "TVKarten";
             this.Load += new System.EventHandler(this.TVKarte_Imput_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcmdMainbord)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDVB_S2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDVB_C2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDVB_T2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDVB_S)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDVB_T)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDVB_C)).EndInit();
@@ -712,7 +803,7 @@
         private System.Windows.Forms.NumericUpDown nudDVB_C;
         private System.Windows.Forms.NumericUpDown nudAnalog;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.CheckBox cbtCinch;
+        private System.Windows.Forms.CheckBox cbtVideo;
         private System.Windows.Forms.CheckBox cbtSVideo;
         private System.Windows.Forms.CheckBox cbtScart;
         private System.Windows.Forms.CheckBox cbtHDMI;
@@ -726,5 +817,12 @@
         private System.Windows.Forms.NumericUpDown nudKlinke;
         private System.Windows.Forms.ComboBox wtxtZustand;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.CheckBox cbtHD;
+        private System.Windows.Forms.CheckBox cbtDVB_S2;
+        private System.Windows.Forms.NumericUpDown nudDVB_S2;
+        private System.Windows.Forms.CheckBox cbtDVB_C2;
+        private System.Windows.Forms.NumericUpDown nudDVB_C2;
+        private System.Windows.Forms.CheckBox cbtDVB_T2;
+        private System.Windows.Forms.NumericUpDown nudDVB_T2;
     }
 }

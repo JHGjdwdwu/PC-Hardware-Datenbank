@@ -32,9 +32,9 @@ namespace PC_Hardware_Datenbank
 
         private void LoschFunktion()//Löschen Funktion
         {
-            wtxtZustand.Text = wtxtKabelendeA.Text = wtxtKabelendeB.Text = null;
-            nudLange.Value = 0;
-            cbtSchaltbar.Checked = false;
+            Kabel_Imput NewForm = new Kabel_Imput();
+            NewForm.Show();
+            this.Dispose(false);
             wtxtKabelendeA.Focus();
         }
 

@@ -234,9 +234,9 @@
             this.label1.ForeColor = System.Drawing.Color.Red;
             this.label1.Location = new System.Drawing.Point(30, 38);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(125, 20);
+            this.label1.Size = new System.Drawing.Size(121, 20);
             this.label1.TabIndex = 85;
-            this.label1.Text = "Kartenhersteller:";
+            this.label1.Text = "GPU-Hersteller:";
             // 
             // wtxtKuhlertyp
             // 
@@ -280,10 +280,10 @@
             this.cbtCinch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbtCinch.Location = new System.Drawing.Point(17, 195);
             this.cbtCinch.Name = "cbtCinch";
-            this.cbtCinch.Size = new System.Drawing.Size(68, 24);
+            this.cbtCinch.Size = new System.Drawing.Size(69, 24);
             this.cbtCinch.TabIndex = 31;
             this.cbtCinch.TabStop = false;
-            this.cbtCinch.Text = "Cinch";
+            this.cbtCinch.Text = "Video";
             this.cbtCinch.UseVisualStyleBackColor = true;
             this.cbtCinch.CheckedChanged += new System.EventHandler(this.cbtCinch_CheckedChanged);
             // 
@@ -491,7 +491,10 @@
             "GDDR3",
             "GDDR4",
             "GDDR5",
-            "GDDR6"});
+            "GDDR6",
+            "DDR2",
+            "DDR3",
+            "DDR4"});
             this.wtxtSpeicherTyp.Location = new System.Drawing.Point(34, 209);
             this.wtxtSpeicherTyp.Name = "wtxtSpeicherTyp";
             this.wtxtSpeicherTyp.Size = new System.Drawing.Size(146, 28);
@@ -584,7 +587,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "GPU_Imput";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "GPU_Imput";
+            this.Text = "Grafikkarte";
             this.Load += new System.EventHandler(this.GPU_Imput_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcmdMainbord)).EndInit();

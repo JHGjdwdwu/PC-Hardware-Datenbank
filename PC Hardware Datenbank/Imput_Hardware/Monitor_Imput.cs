@@ -32,12 +32,9 @@ namespace PC_Hardware_Datenbank
 
         private void LoschFunktion()//Löschen Funktion
         {
-            wtxtHersteller.Text = wtxtModell.Text = wtxtTechnik.Text = wtxtMaxAuflosung.Text = wtxtZustand.Text = null;
-            cbtLautsprecher.Checked = cbtHöhenVerstellbar.Checked = cbtVESA.Checked = false;
-            cbtEingangVGA.Checked = cbtEingangDVI.Checked = cbtEingangHDMI.Checked = cbtEingangDisplaport.Checked = cbtEingangRGB.Checked = cbtEingangAudio.Checked = cbtEingangUSB.Checked = false;
-            nudEingangVGA.Value = nudEingangDVI.Value = nudEingangHDMI.Value = nudEingangDisplaport.Value = nudEingangRGB.Value = nudEingangAudio.Value = nudEingangUSB.Value = 0;
-            cbtAusgangAudio.Checked = cbtAusgangUSB.Checked = false;
-            nudAusgangAudio.Value = nudAusgangUSB.Value = 0;
+            Monitor_Imput NewForm = new Monitor_Imput();
+            NewForm.Show();
+            this.Dispose(false);
             wtxtHersteller.Focus();
         }
 

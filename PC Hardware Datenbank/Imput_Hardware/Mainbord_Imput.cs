@@ -13,14 +13,14 @@ using QRCoder;//Zusäzlich für den QR-Code Generator
 
 namespace PC_Hardware_Datenbank
 {
-    public partial class Mainbord_Imput : Form
+    public partial class Mainboard_Imput : Form
     {
         private string Datensatz = "";//Datensatz der dan in die Datenbank geschoben wird
         private char LF = (char)10;
         private string QR = "";//QR Code
         public string DateiPfad;
 
-        public Mainbord_Imput()
+        public Mainboard_Imput()
         {
             InitializeComponent();
         }
@@ -32,13 +32,9 @@ namespace PC_Hardware_Datenbank
 
         private void LoschFunktion()//Löschen Funktion
         {
-            wtxtHersteller.Text = wtxtTyp.Text = wtxtSockel.Text = wtxtRAM.Text = wtxtBauform.Text = txtSonstiges.Text = wtxtZustand.Text = null;
-            cbtAGP.Checked = cbtPCI.Checked = cbtPCIe1.Checked = cbtPCIe4.Checked = cbtPCIe8.Checked = cbtPCIe16.Checked = cbtPCIe64.Checked = cbtIDE.Checked = cbtSATA.Checked = cbtISA.Checked = false;
-            cbtPS2.Checked = cbtUSB2.Checked = cbtUSB3.Checked = cbtRJ45.Checked = cbtKlinke.Checked = cbtVGA.Checked = cbtDVI.Checked = cbtHDMI.Checked = cbtDisplayPort.Checked = false;
-            cbtMidiPort.Checked = cbtFireWire.Checked = cbtThunderbolt.Checked = cbtRS232.Checked = cbtBluetooth.Checked = cbtWLan.Checked = cbtLPT1.Checked = cbtESATA.Checked = cbtInfrarot.Checked = false;
-            nudAGP.Value = nudPCI.Value = nudPCIe1.Value = nudPCIe4.Value = nudPCIe8.Value = nudPCIe16.Value = nudPCIe64.Value = nudIDE.Value = nudSATA.Value = nudISA.Value = 0;
-            nudPS2.Value = nudUSB2.Value = nudUSB3.Value = nudRJ45.Value = nudKlinke.Value = nudVGA.Value = nudDVI.Value = nudHDMI.Value = 0;
-            nudDisplayPort.Value = nudMidiPort.Value = nudFireWire.Value = nudThunderbolt.Value = nudRS232.Value = nudLPT1.Value = nudESATA.Value = 0;
+            Mainboard_Imput NewForm = new Mainboard_Imput();
+            NewForm.Show();
+            this.Dispose(false);
             wtxtHersteller.Focus();
         }
 
@@ -94,11 +90,11 @@ namespace PC_Hardware_Datenbank
                         txtSonstiges.Text + ";" +
                         nudAGP.Value + ";" +
                         nudPCI.Value + ";" +
+                        nudPCI64.Value + ";" +
                         nudPCIe1.Value + ";" +
                         nudPCIe4.Value + ";" +
                         nudPCIe8.Value + ";" +
                         nudPCIe16.Value + ";" +
-                        nudPCIe64.Value + ";" +
                         nudIDE.Value + ";" +
                         nudSATA.Value + ";" +
                         nudISA.Value + ";" +
@@ -106,7 +102,7 @@ namespace PC_Hardware_Datenbank
                         nudUSB2.Value + ";" +
                         nudUSB3.Value + ";" +
                         nudRJ45.Value + ";" +
-                        nudKlinke.Value + ";" +
+                        wtxtAudio.Text + ";" +
                         nudVGA.Value + ";" +
                         nudDVI.Value + ";" +
                         nudHDMI.Value + ";" +
@@ -133,11 +129,11 @@ namespace PC_Hardware_Datenbank
                         "Sonstiges: " + txtSonstiges.Text + LF +
                         "AGP: " + nudAGP.Value + LF +
                         "PCI: " + nudPCI.Value + LF +
+                        "PCIe64: " + nudPCI64.Value + LF +
                         "PCIe1: " + nudPCIe1.Value + LF +
                         "PCIe4: " + nudPCIe4.Value + LF +
                         "PCIe8: " + nudPCIe8.Value + LF +
                         "PCIe16: " + nudPCIe16.Value + LF +
-                        "PCIe64: " + nudPCIe64.Value + LF +
                         "IDE: " + nudIDE.Value + LF +
                         "SATA: " + nudSATA.Value + LF +
                         "ISA: " + nudISA.Value + LF +
@@ -145,7 +141,7 @@ namespace PC_Hardware_Datenbank
                         "USB2: " + nudUSB2.Value + LF +
                         "USB3: " + nudUSB3.Value + LF +
                         "RJ45: " + nudRJ45.Value + LF +
-                        "Klinke: " + nudKlinke.Value + LF +
+                        "Klinke: " + wtxtAudio.Text + LF +
                         "VGA: " + nudVGA.Value + LF +
                         "DVI: " + nudDVI.Value + LF +
                         "HDMI: " + nudHDMI.Value + LF +
@@ -342,18 +338,6 @@ namespace PC_Hardware_Datenbank
             if (cbtRJ45.Checked == false)
             {
                 nudRJ45.Value = 0;
-            }
-        }
-
-        private void cbtKlinke_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cbtKlinke.Checked == true)
-            {
-                nudKlinke.Value = 1;
-            }
-            if (cbtKlinke.Checked == false)
-            {
-                nudKlinke.Value = 0;
             }
         }
 
@@ -644,18 +628,6 @@ namespace PC_Hardware_Datenbank
             if (nudRJ45.Value == 0)
             {
                 cbtRJ45.Checked = false;
-            }
-        }
-
-        private void nudKlinke_ValueChanged(object sender, EventArgs e)
-        {
-            if (nudKlinke.Value != 0)
-            {
-                cbtKlinke.Checked = true;
-            }
-            if (nudKlinke.Value == 0)
-            {
-                cbtKlinke.Checked = false;
             }
         }
 

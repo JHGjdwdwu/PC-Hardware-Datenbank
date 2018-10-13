@@ -76,10 +76,18 @@
             "1000Base-T (1Gb/s)",
             "2.5GBase-T (2.5Gb/s)",
             "5GBase-T (5Gb/s)",
-            "10GBase-T (10Gb/s)"});
-            this.wtxtGeschwindigkeit.Location = new System.Drawing.Point(34, 135);
+            "10GBase-T (10Gb/s)",
+            "IEEE 802.11",
+            "IEEE 802.11a",
+            "IEEE 802.11b",
+            "IEEE 802.11g",
+            "IEEE 802.11n",
+            "IEEE 802.11ac",
+            "IEEE 802.11ad",
+            "IEEE 802.11ah"});
+            this.wtxtGeschwindigkeit.Location = new System.Drawing.Point(311, 135);
             this.wtxtGeschwindigkeit.Name = "wtxtGeschwindigkeit";
-            this.wtxtGeschwindigkeit.Size = new System.Drawing.Size(146, 28);
+            this.wtxtGeschwindigkeit.Size = new System.Drawing.Size(229, 28);
             this.wtxtGeschwindigkeit.TabIndex = 3;
             // 
             // wtxtHersteller
@@ -145,7 +153,7 @@
             "V7"});
             this.wtxtHersteller.Location = new System.Drawing.Point(34, 61);
             this.wtxtHersteller.Name = "wtxtHersteller";
-            this.wtxtHersteller.Size = new System.Drawing.Size(146, 28);
+            this.wtxtHersteller.Size = new System.Drawing.Size(229, 28);
             this.wtxtHersteller.TabIndex = 0;
             // 
             // label1
@@ -201,9 +209,9 @@
             "USB-A",
             "USB Micro-B",
             "USB-C"});
-            this.wtxtSchnittstelle.Location = new System.Drawing.Point(249, 61);
+            this.wtxtSchnittstelle.Location = new System.Drawing.Point(311, 61);
             this.wtxtSchnittstelle.Name = "wtxtSchnittstelle";
-            this.wtxtSchnittstelle.Size = new System.Drawing.Size(146, 28);
+            this.wtxtSchnittstelle.Size = new System.Drawing.Size(229, 28);
             this.wtxtSchnittstelle.TabIndex = 1;
             // 
             // pictureBox1
@@ -295,7 +303,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(245, 38);
+            this.label5.Location = new System.Drawing.Point(307, 38);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(100, 20);
             this.label5.TabIndex = 151;
@@ -304,7 +312,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(30, 112);
+            this.label2.Location = new System.Drawing.Point(307, 112);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(129, 20);
             this.label2.TabIndex = 150;
@@ -321,7 +329,7 @@
             this.groupBox1.Controls.Add(this.nudCoax);
             this.groupBox1.Controls.Add(this.nudRJ45);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(132, 217);
+            this.groupBox1.Location = new System.Drawing.Point(182, 283);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(213, 181);
             this.groupBox1.TabIndex = 5;
@@ -421,15 +429,15 @@
             this.wtxtTyp.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.wtxtTyp.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtTyp.FormattingEnabled = true;
-            this.wtxtTyp.Location = new System.Drawing.Point(249, 135);
+            this.wtxtTyp.Location = new System.Drawing.Point(34, 209);
             this.wtxtTyp.Name = "wtxtTyp";
-            this.wtxtTyp.Size = new System.Drawing.Size(146, 28);
+            this.wtxtTyp.Size = new System.Drawing.Size(229, 28);
             this.wtxtTyp.TabIndex = 4;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(245, 112);
+            this.label3.Location = new System.Drawing.Point(30, 186);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(38, 20);
             this.label3.TabIndex = 156;
@@ -444,16 +452,16 @@
             "",
             "verbaut",
             "auf Lager"});
-            this.wtxtZustand.Location = new System.Drawing.Point(464, 61);
+            this.wtxtZustand.Location = new System.Drawing.Point(34, 135);
             this.wtxtZustand.Name = "wtxtZustand";
-            this.wtxtZustand.Size = new System.Drawing.Size(146, 28);
+            this.wtxtZustand.Size = new System.Drawing.Size(229, 28);
             this.wtxtZustand.TabIndex = 2;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(460, 38);
+            this.label4.Location = new System.Drawing.Point(30, 112);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(72, 20);
             this.label4.TabIndex = 158;
@@ -486,7 +494,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Netzwerkkarte_Imput";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Netzwerkkarte_Imput";
+            this.Text = "Netzwerkkarten";
             this.Load += new System.EventHandler(this.Netzwerkkarte_Imput_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcmdMainbord)).EndInit();

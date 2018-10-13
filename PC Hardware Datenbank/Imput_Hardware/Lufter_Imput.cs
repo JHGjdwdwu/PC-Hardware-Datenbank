@@ -33,8 +33,9 @@ namespace PC_Hardware_Datenbank
 
         private void LoschFunktion()//Löschen Funktion
         {
-            wtxtZustand.Text = wtxtHersteller.Text = wtxtModell.Text = wtxtMaximaldrehzahl.Text = wtxtPinheader.Text = wtxtDurchmesser.Text = wtxtDicke.Text = wtxtArt.Text = wtxtSpannung.Text = null;
-            nudStrom.Value = 0;
+            Lufter_Imput NewForm = new Lufter_Imput();
+            NewForm.Show();
+            this.Dispose(false);
             wtxtHersteller.Focus();
         }
 

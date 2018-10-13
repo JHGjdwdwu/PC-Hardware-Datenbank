@@ -124,9 +124,9 @@
             this.cbtxStromAusganag.AutoSize = true;
             this.cbtxStromAusganag.Location = new System.Drawing.Point(34, 470);
             this.cbtxStromAusganag.Name = "cbtxStromAusganag";
-            this.cbtxStromAusganag.Size = new System.Drawing.Size(133, 24);
+            this.cbtxStromAusganag.Size = new System.Drawing.Size(123, 24);
             this.cbtxStromAusganag.TabIndex = 12;
-            this.cbtxStromAusganag.Text = "Stromausgang";
+            this.cbtxStromAusganag.Text = "Netzausgang";
             this.cbtxStromAusganag.UseVisualStyleBackColor = true;
             // 
             // wtxtLeistung
@@ -134,10 +134,6 @@
             this.wtxtLeistung.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.wtxtLeistung.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtLeistung.FormattingEnabled = true;
-            this.wtxtLeistung.Items.AddRange(new object[] {
-            "",
-            "Molex-8981",
-            "SATA"});
             this.wtxtLeistung.Location = new System.Drawing.Point(229, 201);
             this.wtxtLeistung.Name = "wtxtLeistung";
             this.wtxtLeistung.Size = new System.Drawing.Size(146, 28);
@@ -922,7 +918,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Netzteil_Imput";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Netzteil_Imput";
+            this.Text = "Netzteil";
             this.Load += new System.EventHandler(this.Netzteil_Imput_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcmdMainbord)).EndInit();

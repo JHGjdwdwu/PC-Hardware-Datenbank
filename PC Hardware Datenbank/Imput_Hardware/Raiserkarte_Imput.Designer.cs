@@ -332,7 +332,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Raiserkarte_Imput";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Raiserkarte_Imput";
+            this.Text = "Raiserkarten";
             this.Load += new System.EventHandler(this.Raiserkarte_Imput_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudSteckverbindung)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcmdMainbord)).EndInit();

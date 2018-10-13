@@ -32,13 +32,9 @@ namespace PC_Hardware_Datenbank
 
         private void LoschFunktion()//Löschen Funktion
         {
-            wtxtHersteller.Text = wtxtTyp.Text = wtxtFormat.Text = wtxtLeistung.Text = wtxtZustand.Text = null;
-            nudLuster.Value = nud12V.Value = nud5V.Value = nud3V.Value = nud12W.Value = nud5W.Value = nud3W.Value = 0;
-            cbtxStromAusganag.Checked = cbtxSchaltera.Checked = cbtx110vSchalter.Checked = cbtx110vBetrieb.Checked = false;
-            cbtMolex8981.Checked = cbtSATA.Checked = cbtAT.Checked = cbtATX.Checked = cbtBTX.Checked = cbtATXlarge.Checked = cbtCFX.Checked = false;
-            cbtSFX.Checked = cbtTFX.Checked = cbtLFX.Checked = cbt2x2.Checked = cbt2x3.Checked = cbt2x4.Checked = cbtBerg.Checked = false;
-            nudMolex8981.Value = nudSATA.Value = nudAT.Value = nudATX.Value = nudBTX.Value = nudATXlarge.Value = nudCFX.Value = nudSFX.Value = 0;
-            nudTFX.Value = nudLFX.Value = nud2x2.Value = nud2x3.Value = nud2x4.Value = nudBerg.Value = 0;
+            Netzteil_Imput NewForm = new Netzteil_Imput();
+            NewForm.Show();
+            this.Dispose(false);
             wtxtHersteller.Focus();
         }
 

@@ -33,8 +33,9 @@ namespace PC_Hardware_Datenbank
 
         private void LoschenFunktion()//Löschfunktion
         {
-            wtxtHersteller.Text = wtxtTyp.Text = wtxtSockelAMD.Text = wtxtSockelINTEL.Text = mtxtTaktrate.Text = wtxtSockel.Text = nudCach1.Text = nudCach2.Text = nudCach3.Text = nudCach4.Text = wtxtZustand.Text = null;
-            nudKerne.Value = 1;
+            CPU_Imput NewForm = new CPU_Imput();
+            NewForm.Show();
+            this.Dispose(false);
             wtxtHersteller.Focus();
         }
 

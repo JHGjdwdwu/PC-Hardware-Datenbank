@@ -32,11 +32,9 @@ namespace PC_Hardware_Datenbank
 
         private void LoschFunktion()//Löschen Funktion
         {
-            wtxtKartenhersteller.Text = wtxtModell.Text = wtxtZustand.Text = null;
-            cbtExternCardreader.Checked = cbtExternUSB2.Checked = cbtExternUSB3.Checked = cbtExternUSB3_1.Checked = cbtExternLineOut.Checked = cbtExternMikrofon.Checked = cbtExternLineIn.Checked = cbtExternFireWire.Checked = cbtExternThunderbolt.Checked = false;
-            cbtInternUSB2.Checked = cbtInternUSB3.Checked = cbtInternUSB3_1.Checked = cbtInternAudio.Checked = cbtInternFireWire.Checked = cbtInternThunderbolt.Checked = false;
-            nudExternCardreader.Value = nudExternUSB2.Value = nudExternUSB3.Value = nudExternUSB3_1.Value = nudExternLineOut.Value = nudExternMikrofon.Value = nudExternLineIn.Value = nudExternFireWire.Value = nudExternThunderbolt.Value = 0;
-            nudInternUSB2.Value = nudInternUSB3.Value = nudInternUSB3_1.Value = nudInternAudio.Value = nudInternFireWire.Value = nudInternThunderbolt.Value = 0;
+            FrontErweiterung_Imput NewForm = new FrontErweiterung_Imput();
+            NewForm.Show();
+            this.Dispose(false);
             wtxtKartenhersteller.Focus();
         }
 

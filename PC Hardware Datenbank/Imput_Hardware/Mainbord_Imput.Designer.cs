@@ -1,6 +1,6 @@
 ﻿namespace PC_Hardware_Datenbank
 {
-    partial class Mainbord_Imput
+    partial class Mainboard_Imput
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.Button button1;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Mainbord_Imput));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Mainboard_Imput));
             this.pcmdMainbord = new System.Windows.Forms.PictureBox();
             this.cmdBeenden = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -37,6 +37,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.wtxtAudio = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.cbtInfrarot = new System.Windows.Forms.CheckBox();
             this.cbtESATA = new System.Windows.Forms.CheckBox();
             this.cbtRS232 = new System.Windows.Forms.CheckBox();
@@ -50,7 +52,6 @@
             this.cbtHDMI = new System.Windows.Forms.CheckBox();
             this.cbtDVI = new System.Windows.Forms.CheckBox();
             this.cbtVGA = new System.Windows.Forms.CheckBox();
-            this.cbtKlinke = new System.Windows.Forms.CheckBox();
             this.cbtRJ45 = new System.Windows.Forms.CheckBox();
             this.cbtUSB3 = new System.Windows.Forms.CheckBox();
             this.cbtUSB2 = new System.Windows.Forms.CheckBox();
@@ -65,7 +66,6 @@
             this.nudHDMI = new System.Windows.Forms.NumericUpDown();
             this.nudDVI = new System.Windows.Forms.NumericUpDown();
             this.nudVGA = new System.Windows.Forms.NumericUpDown();
-            this.nudKlinke = new System.Windows.Forms.NumericUpDown();
             this.nudRJ45 = new System.Windows.Forms.NumericUpDown();
             this.nudUSB3 = new System.Windows.Forms.NumericUpDown();
             this.nudUSB2 = new System.Windows.Forms.NumericUpDown();
@@ -80,7 +80,6 @@
             this.cbtISA = new System.Windows.Forms.CheckBox();
             this.cbtSATA = new System.Windows.Forms.CheckBox();
             this.cbtIDE = new System.Windows.Forms.CheckBox();
-            this.cbtPCIe64 = new System.Windows.Forms.CheckBox();
             this.cbtPCIe16 = new System.Windows.Forms.CheckBox();
             this.cbtPCIe8 = new System.Windows.Forms.CheckBox();
             this.cbtPCIe4 = new System.Windows.Forms.CheckBox();
@@ -88,7 +87,6 @@
             this.cbtPCI = new System.Windows.Forms.CheckBox();
             this.cbtAGP = new System.Windows.Forms.CheckBox();
             this.nudISA = new System.Windows.Forms.NumericUpDown();
-            this.nudPCIe64 = new System.Windows.Forms.NumericUpDown();
             this.nudPCIe16 = new System.Windows.Forms.NumericUpDown();
             this.nudPCIe8 = new System.Windows.Forms.NumericUpDown();
             this.nudPCIe4 = new System.Windows.Forms.NumericUpDown();
@@ -106,6 +104,8 @@
             this.wtxtBauform = new System.Windows.Forms.ComboBox();
             this.wtxtZustand = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.nudPCI64 = new System.Windows.Forms.NumericUpDown();
+            this.cbtPCI64 = new System.Windows.Forms.CheckBox();
             button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pcmdMainbord)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -119,14 +119,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudHDMI)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDVI)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudVGA)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudKlinke)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudRJ45)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudUSB3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudUSB2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPS2)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudISA)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudPCIe64)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPCIe16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPCIe8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPCIe4)).BeginInit();
@@ -136,6 +134,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudPCI)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAGP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPCI64)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -215,6 +214,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.wtxtAudio);
+            this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.cbtInfrarot);
             this.groupBox2.Controls.Add(this.cbtESATA);
             this.groupBox2.Controls.Add(this.cbtRS232);
@@ -228,7 +229,6 @@
             this.groupBox2.Controls.Add(this.cbtHDMI);
             this.groupBox2.Controls.Add(this.cbtDVI);
             this.groupBox2.Controls.Add(this.cbtVGA);
-            this.groupBox2.Controls.Add(this.cbtKlinke);
             this.groupBox2.Controls.Add(this.cbtRJ45);
             this.groupBox2.Controls.Add(this.cbtUSB3);
             this.groupBox2.Controls.Add(this.cbtUSB2);
@@ -244,7 +244,6 @@
             this.groupBox2.Controls.Add(this.nudHDMI);
             this.groupBox2.Controls.Add(this.nudDVI);
             this.groupBox2.Controls.Add(this.nudVGA);
-            this.groupBox2.Controls.Add(this.nudKlinke);
             this.groupBox2.Controls.Add(this.nudRJ45);
             this.groupBox2.Controls.Add(this.nudUSB3);
             this.groupBox2.Controls.Add(this.nudUSB2);
@@ -256,6 +255,31 @@
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Externen Schnittstellen";
+            // 
+            // wtxtAudio
+            // 
+            this.wtxtAudio.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtAudio.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.wtxtAudio.FormattingEnabled = true;
+            this.wtxtAudio.Items.AddRange(new object[] {
+            "grün",
+            "blau, grün",
+            "blau, grün, rosa",
+            "rosa, grün, blau, grau, orange, schwarz"});
+            this.wtxtAudio.Location = new System.Drawing.Point(71, 163);
+            this.wtxtAudio.Name = "wtxtAudio";
+            this.wtxtAudio.Size = new System.Drawing.Size(114, 28);
+            this.wtxtAudio.TabIndex = 4;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(15, 168);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(50, 20);
+            this.label8.TabIndex = 47;
+            this.label8.Text = "Audio";
             // 
             // cbtInfrarot
             // 
@@ -420,19 +444,6 @@
             this.cbtVGA.UseVisualStyleBackColor = true;
             this.cbtVGA.CheckedChanged += new System.EventHandler(this.cbtVGA_CheckedChanged);
             // 
-            // cbtKlinke
-            // 
-            this.cbtKlinke.AutoSize = true;
-            this.cbtKlinke.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbtKlinke.Location = new System.Drawing.Point(19, 166);
-            this.cbtKlinke.Name = "cbtKlinke";
-            this.cbtKlinke.Size = new System.Drawing.Size(70, 24);
-            this.cbtKlinke.TabIndex = 113;
-            this.cbtKlinke.TabStop = false;
-            this.cbtKlinke.Text = "Klinke";
-            this.cbtKlinke.UseVisualStyleBackColor = true;
-            this.cbtKlinke.CheckedChanged += new System.EventHandler(this.cbtKlinke_CheckedChanged);
-            // 
             // cbtRJ45
             // 
             this.cbtRJ45.AutoSize = true;
@@ -575,15 +586,6 @@
             this.nudVGA.TabIndex = 5;
             this.nudVGA.ValueChanged += new System.EventHandler(this.nudVGA_ValueChanged);
             // 
-            // nudKlinke
-            // 
-            this.nudKlinke.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudKlinke.Location = new System.Drawing.Point(128, 165);
-            this.nudKlinke.Name = "nudKlinke";
-            this.nudKlinke.Size = new System.Drawing.Size(57, 26);
-            this.nudKlinke.TabIndex = 4;
-            this.nudKlinke.ValueChanged += new System.EventHandler(this.nudKlinke_ValueChanged);
-            // 
             // nudRJ45
             // 
             this.nudRJ45.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -688,7 +690,7 @@
             this.groupBox1.Controls.Add(this.cbtISA);
             this.groupBox1.Controls.Add(this.cbtSATA);
             this.groupBox1.Controls.Add(this.cbtIDE);
-            this.groupBox1.Controls.Add(this.cbtPCIe64);
+            this.groupBox1.Controls.Add(this.cbtPCI64);
             this.groupBox1.Controls.Add(this.cbtPCIe16);
             this.groupBox1.Controls.Add(this.cbtPCIe8);
             this.groupBox1.Controls.Add(this.cbtPCIe4);
@@ -696,9 +698,9 @@
             this.groupBox1.Controls.Add(this.cbtPCI);
             this.groupBox1.Controls.Add(this.cbtAGP);
             this.groupBox1.Controls.Add(this.nudISA);
-            this.groupBox1.Controls.Add(this.nudPCIe64);
             this.groupBox1.Controls.Add(this.nudPCIe16);
             this.groupBox1.Controls.Add(this.nudPCIe8);
+            this.groupBox1.Controls.Add(this.nudPCI64);
             this.groupBox1.Controls.Add(this.nudPCIe4);
             this.groupBox1.Controls.Add(this.nudSATA);
             this.groupBox1.Controls.Add(this.nudIDE);
@@ -752,24 +754,11 @@
             this.cbtIDE.UseVisualStyleBackColor = true;
             this.cbtIDE.CheckedChanged += new System.EventHandler(this.cbtIDE_CheckedChanged);
             // 
-            // cbtPCIe64
-            // 
-            this.cbtPCIe64.AutoSize = true;
-            this.cbtPCIe64.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbtPCIe64.Location = new System.Drawing.Point(17, 234);
-            this.cbtPCIe64.Name = "cbtPCIe64";
-            this.cbtPCIe64.Size = new System.Drawing.Size(92, 24);
-            this.cbtPCIe64.TabIndex = 32;
-            this.cbtPCIe64.TabStop = false;
-            this.cbtPCIe64.Text = "PCIe x64";
-            this.cbtPCIe64.UseVisualStyleBackColor = true;
-            this.cbtPCIe64.CheckedChanged += new System.EventHandler(this.cbtPCIe64_CheckedChanged);
-            // 
             // cbtPCIe16
             // 
             this.cbtPCIe16.AutoSize = true;
             this.cbtPCIe16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbtPCIe16.Location = new System.Drawing.Point(17, 199);
+            this.cbtPCIe16.Location = new System.Drawing.Point(17, 230);
             this.cbtPCIe16.Name = "cbtPCIe16";
             this.cbtPCIe16.Size = new System.Drawing.Size(92, 24);
             this.cbtPCIe16.TabIndex = 31;
@@ -782,7 +771,7 @@
             // 
             this.cbtPCIe8.AutoSize = true;
             this.cbtPCIe8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbtPCIe8.Location = new System.Drawing.Point(17, 165);
+            this.cbtPCIe8.Location = new System.Drawing.Point(17, 196);
             this.cbtPCIe8.Name = "cbtPCIe8";
             this.cbtPCIe8.Size = new System.Drawing.Size(83, 24);
             this.cbtPCIe8.TabIndex = 30;
@@ -795,7 +784,7 @@
             // 
             this.cbtPCIe4.AutoSize = true;
             this.cbtPCIe4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbtPCIe4.Location = new System.Drawing.Point(17, 133);
+            this.cbtPCIe4.Location = new System.Drawing.Point(17, 164);
             this.cbtPCIe4.Name = "cbtPCIe4";
             this.cbtPCIe4.Size = new System.Drawing.Size(83, 24);
             this.cbtPCIe4.TabIndex = 29;
@@ -808,7 +797,7 @@
             // 
             this.cbtPCIe1.AutoSize = true;
             this.cbtPCIe1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbtPCIe1.Location = new System.Drawing.Point(17, 104);
+            this.cbtPCIe1.Location = new System.Drawing.Point(17, 135);
             this.cbtPCIe1.Name = "cbtPCIe1";
             this.cbtPCIe1.Size = new System.Drawing.Size(83, 24);
             this.cbtPCIe1.TabIndex = 26;
@@ -852,19 +841,10 @@
             this.nudISA.TabIndex = 9;
             this.nudISA.ValueChanged += new System.EventHandler(this.nudISA_ValueChanged);
             // 
-            // nudPCIe64
-            // 
-            this.nudPCIe64.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudPCIe64.Location = new System.Drawing.Point(114, 229);
-            this.nudPCIe64.Name = "nudPCIe64";
-            this.nudPCIe64.Size = new System.Drawing.Size(57, 26);
-            this.nudPCIe64.TabIndex = 6;
-            this.nudPCIe64.ValueChanged += new System.EventHandler(this.nudPCIe64_ValueChanged);
-            // 
             // nudPCIe16
             // 
             this.nudPCIe16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudPCIe16.Location = new System.Drawing.Point(114, 197);
+            this.nudPCIe16.Location = new System.Drawing.Point(114, 228);
             this.nudPCIe16.Name = "nudPCIe16";
             this.nudPCIe16.Size = new System.Drawing.Size(57, 26);
             this.nudPCIe16.TabIndex = 5;
@@ -873,7 +853,7 @@
             // nudPCIe8
             // 
             this.nudPCIe8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudPCIe8.Location = new System.Drawing.Point(114, 165);
+            this.nudPCIe8.Location = new System.Drawing.Point(114, 196);
             this.nudPCIe8.Name = "nudPCIe8";
             this.nudPCIe8.Size = new System.Drawing.Size(57, 26);
             this.nudPCIe8.TabIndex = 4;
@@ -882,7 +862,7 @@
             // nudPCIe4
             // 
             this.nudPCIe4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudPCIe4.Location = new System.Drawing.Point(114, 133);
+            this.nudPCIe4.Location = new System.Drawing.Point(114, 164);
             this.nudPCIe4.Name = "nudPCIe4";
             this.nudPCIe4.Size = new System.Drawing.Size(57, 26);
             this.nudPCIe4.TabIndex = 3;
@@ -909,7 +889,7 @@
             // nudPCIe1
             // 
             this.nudPCIe1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudPCIe1.Location = new System.Drawing.Point(114, 101);
+            this.nudPCIe1.Location = new System.Drawing.Point(114, 132);
             this.nudPCIe1.Name = "nudPCIe1";
             this.nudPCIe1.Size = new System.Drawing.Size(57, 26);
             this.nudPCIe1.TabIndex = 2;
@@ -1121,7 +1101,29 @@
             this.label7.TabIndex = 45;
             this.label7.Text = "Zustand:";
             // 
-            // Mainbord_Imput
+            // nudPCI64
+            // 
+            this.nudPCI64.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudPCI64.Location = new System.Drawing.Point(114, 100);
+            this.nudPCI64.Name = "nudPCI64";
+            this.nudPCI64.Size = new System.Drawing.Size(57, 26);
+            this.nudPCI64.TabIndex = 6;
+            this.nudPCI64.ValueChanged += new System.EventHandler(this.nudPCIe64_ValueChanged);
+            // 
+            // cbtPCI64
+            // 
+            this.cbtPCI64.AutoSize = true;
+            this.cbtPCI64.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbtPCI64.Location = new System.Drawing.Point(17, 105);
+            this.cbtPCI64.Name = "cbtPCI64";
+            this.cbtPCI64.Size = new System.Drawing.Size(83, 24);
+            this.cbtPCI64.TabIndex = 32;
+            this.cbtPCI64.TabStop = false;
+            this.cbtPCI64.Text = "PCI x64";
+            this.cbtPCI64.UseVisualStyleBackColor = true;
+            this.cbtPCI64.CheckedChanged += new System.EventHandler(this.cbtPCIe64_CheckedChanged);
+            // 
+            // Mainboard_Imput
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1151,9 +1153,9 @@
             this.Controls.Add(this.pcmdMainbord);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "Mainbord_Imput";
+            this.Name = "Mainboard_Imput";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Mainbord";
+            this.Text = "Mainboard";
             this.Load += new System.EventHandler(this.Mainbord_Imput_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pcmdMainbord)).EndInit();
             this.groupBox2.ResumeLayout(false);
@@ -1168,7 +1170,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudHDMI)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDVI)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudVGA)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudKlinke)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudRJ45)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudUSB3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudUSB2)).EndInit();
@@ -1176,7 +1177,6 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudISA)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudPCIe64)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPCIe16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPCIe8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPCIe4)).EndInit();
@@ -1186,6 +1186,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudPCI)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAGP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPCI64)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1200,7 +1201,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.NumericUpDown nudKlinke;
         private System.Windows.Forms.NumericUpDown nudRJ45;
         private System.Windows.Forms.NumericUpDown nudUSB3;
         private System.Windows.Forms.NumericUpDown nudUSB2;
@@ -1225,7 +1225,6 @@
         private System.Windows.Forms.CheckBox cbtISA;
         private System.Windows.Forms.CheckBox cbtSATA;
         private System.Windows.Forms.CheckBox cbtIDE;
-        private System.Windows.Forms.CheckBox cbtPCIe64;
         private System.Windows.Forms.CheckBox cbtPCIe16;
         private System.Windows.Forms.CheckBox cbtPCIe8;
         private System.Windows.Forms.CheckBox cbtPCIe4;
@@ -1233,7 +1232,6 @@
         private System.Windows.Forms.CheckBox cbtPCI;
         private System.Windows.Forms.CheckBox cbtAGP;
         private System.Windows.Forms.NumericUpDown nudISA;
-        private System.Windows.Forms.NumericUpDown nudPCIe64;
         private System.Windows.Forms.NumericUpDown nudPCIe16;
         private System.Windows.Forms.NumericUpDown nudPCIe8;
         private System.Windows.Forms.NumericUpDown nudPCIe4;
@@ -1255,7 +1253,6 @@
         private System.Windows.Forms.CheckBox cbtHDMI;
         private System.Windows.Forms.CheckBox cbtDVI;
         private System.Windows.Forms.CheckBox cbtVGA;
-        private System.Windows.Forms.CheckBox cbtKlinke;
         private System.Windows.Forms.CheckBox cbtRJ45;
         private System.Windows.Forms.CheckBox cbtUSB3;
         private System.Windows.Forms.CheckBox cbtUSB2;
@@ -1269,5 +1266,9 @@
         private System.Windows.Forms.ComboBox wtxtBauform;
         private System.Windows.Forms.ComboBox wtxtZustand;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox wtxtAudio;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.CheckBox cbtPCI64;
+        private System.Windows.Forms.NumericUpDown nudPCI64;
     }
 }

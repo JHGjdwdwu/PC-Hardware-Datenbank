@@ -32,9 +32,9 @@ namespace PC_Hardware_Datenbank
 
         private void LoschFunktion()//Löschen Funktion
         {
-            wtxtHersteller.Text = wtxtSchnittstelle.Text = wtxtGeschwindigkeit.Text = wtxtTyp.Text = wtxtZustand.Text = null;
-            cbtRJ45.Checked = cbtCoax.Checked = cbtLWL.Checked = cbtWLan.Checked = false;
-            nudRJ45.Value = nudCoax.Value = nudLWL.Value = nudWLan.Value = 0;
+            Netzwerkkarte_Imput NewForm = new Netzwerkkarte_Imput();
+            NewForm.Show();
+            this.Dispose(false);
             wtxtHersteller.Focus();
         }
 

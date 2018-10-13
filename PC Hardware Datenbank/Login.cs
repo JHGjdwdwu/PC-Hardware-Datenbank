@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-//16.08.18
+//13.10.18
 
 namespace PC_Hardware_Datenbank
 {

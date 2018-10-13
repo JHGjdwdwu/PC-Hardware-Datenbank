@@ -32,9 +32,9 @@ namespace PC_Hardware_Datenbank
 
         private void LoschFunktion()//Löschen Funktion
         {
-            wtxtKartenhersteller.Text = wtxtModell.Text = wtxtSpeichergrosse.Text = wtxtSpeicherTyp.Text = wtxtKuhlertyp.Text = wtxtAnschluss.Text = wtxtStromversorgung.Text = wtxtStromverbrauch.Text = txtTaktrate.Text = wtxtZustand.Text = null;
-            cbtMultiGPU.Checked = cbtVGA.Checked = cbtDVI.Checked = cbtHDMI.Checked = cbtDisplaport.Checked = cbtSVideo.Checked = cbtCinch.Checked = false;
-            nudVGA.Value = nudDVI.Value = nudHDMI.Value = nudDisplaport.Value = nudSVideo.Value = nudCinch.Value = 0;
+            GPU_Imput NewForm = new GPU_Imput();
+            NewForm.Show();
+            this.Dispose(false);
             wtxtKartenhersteller.Focus();
         }
 

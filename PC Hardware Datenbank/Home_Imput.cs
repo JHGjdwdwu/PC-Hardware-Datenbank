@@ -24,7 +24,7 @@ namespace PC_Hardware_Datenbank
 
         private void cmdMainbord_Click(object sender, EventArgs e)//Form Mainbord öffnen
         {
-            Mainbord_Imput mainbord = new Mainbord_Imput();
+            Mainboard_Imput mainbord = new Mainboard_Imput();
             mainbord.Show();
         }
 

@@ -32,8 +32,10 @@ namespace PC_Hardware_Datenbank
 
         private void LoschFunktion()//Löschen Funktion
         {
-            wtxtHersteller.Text = wtxtTyp.Text = wtxtGrosse.Text = wtxtAnschluss.Text = wtxtStromverbrauch.Text = wtxtStromversorgung.Text = wtxtBaugrose.Text = wtxtZustand.Text = null;
-            cbtxSSD.Checked = cbtSSHD.Checked = false;
+            HDD_Imput NewForm = new HDD_Imput();
+            NewForm.Show();
+            this.Dispose(false);
+            wtxtHersteller.Focus();
         }
 
         private void cmdClear_Click(object sender, EventArgs e)//Löschen Button

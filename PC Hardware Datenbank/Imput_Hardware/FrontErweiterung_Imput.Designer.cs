@@ -648,7 +648,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrontErweiterung_Imput";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrontErweiterung_Imput";
+            this.Text = "Fronteinschub";
             this.Load += new System.EventHandler(this.FrontErweiterung_Imput_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

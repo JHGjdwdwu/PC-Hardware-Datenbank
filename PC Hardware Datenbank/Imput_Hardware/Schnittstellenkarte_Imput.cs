@@ -32,7 +32,9 @@ namespace PC_Hardware_Datenbank
 
         private void LoschFunktion()//Löschen Funktion
         {
-            wtxtKartenhersteller.Text = wtxtModell.Text = wtxtAnschluss.Text = txtBemerkungen.Text = wtxtZustand.Text = null;
+            Schnittstellenkarte_Imput NewForm = new Schnittstellenkarte_Imput();
+            NewForm.Show();
+            this.Dispose(false);
             wtxtKartenhersteller.Focus();
         }
 
@@ -55,6 +57,7 @@ namespace PC_Hardware_Datenbank
                         wtxtModell.Text + ";" +
                         wtxtZustand.Text + ";" +
                         wtxtAnschluss.Text + ";" +
+                        wtxtUbertragungsart.Text + ";" +
                         txtBemerkungen.Text;
                     #endregion
 
@@ -64,6 +67,7 @@ namespace PC_Hardware_Datenbank
                         "Modell: " + wtxtModell.Text + LF +
                         "Zustand: " + wtxtZustand.Text + LF +
                         "Anschlussart: " + wtxtAnschluss.Text + LF +
+                        "Übertragungsart: " + wtxtUbertragungsart.Text + LF +
                         "Bemerkungen: " + txtBemerkungen.Text;
                     #endregion
 

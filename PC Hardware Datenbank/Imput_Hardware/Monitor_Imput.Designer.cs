@@ -745,7 +745,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Monitor_Imput";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Monitor_Imput";
+            this.Text = "Monitor";
             this.Load += new System.EventHandler(this.Monitor_Imput_Load);
             this.grub.ResumeLayout(false);
             this.grub.PerformLayout();

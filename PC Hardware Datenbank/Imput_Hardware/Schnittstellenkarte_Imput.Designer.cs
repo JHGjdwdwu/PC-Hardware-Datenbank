@@ -46,6 +46,8 @@
             this.txtBemerkungen = new System.Windows.Forms.TextBox();
             this.wtxtZustand = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.wtxtUbertragungsart = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcmdMainbord)).BeginInit();
             this.SuspendLayout();
@@ -57,14 +59,31 @@
             this.wtxtAnschluss.FormattingEnabled = true;
             this.wtxtAnschluss.Items.AddRange(new object[] {
             "",
-            "AGP",
-            "PCI",
-            "PCIe x1",
-            "PCIe x2",
-            "PCIe x4",
-            "PCIe x8",
-            "PCIe x16",
-            "PCIe x32"});
+            "PCI 2.0",
+            "PCI 2.3",
+            "PCI-X 1.0",
+            "PCI-X 266 (2.0)",
+            "PCI-X 533 (2.0)",
+            "PCIe x1 (v1.1)",
+            "PCIe x4 (v1.1)",
+            "PCIe x8 (v1.1)",
+            "PCIe x16 (v1.1)",
+            "PCIe x1 (v2.0)",
+            "PCIe x4 (v2.0)",
+            "PCIe x8 (v2.0)",
+            "PCIe x16 (v2.0)",
+            "PCIe x1 (v3.0)",
+            "PCIe x4 (v3.0)",
+            "PCIe x8 (v3.0)",
+            "PCIe x16 (v3.0)",
+            "PCIe x1 (v4.0)",
+            "PCIe x4 (v4.0)",
+            "PCIe x8 (v4.0)",
+            "PCIe x16 (v4.0)",
+            "PCIe x1 (v5.0)",
+            "PCIe x4 (v5.0)",
+            "PCIe x8 (v5.0)",
+            "PCIe x16 (v5.0)"});
             this.wtxtAnschluss.Location = new System.Drawing.Point(249, 135);
             this.wtxtAnschluss.Name = "wtxtAnschluss";
             this.wtxtAnschluss.Size = new System.Drawing.Size(146, 28);
@@ -107,7 +126,7 @@
             this.cmdQR.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdQR.Name = "cmdQR";
             this.cmdQR.Size = new System.Drawing.Size(171, 35);
-            this.cmdQR.TabIndex = 8;
+            this.cmdQR.TabIndex = 9;
             this.cmdQR.Text = "QR-Code Drucken";
             this.cmdQR.UseVisualStyleBackColor = false;
             this.cmdQR.Click += new System.EventHandler(this.cmdQR_Click);
@@ -120,7 +139,7 @@
             this.cmdBildEinfugen.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdBildEinfugen.Name = "cmdBildEinfugen";
             this.cmdBildEinfugen.Size = new System.Drawing.Size(150, 35);
-            this.cmdBildEinfugen.TabIndex = 5;
+            this.cmdBildEinfugen.TabIndex = 6;
             this.cmdBildEinfugen.Text = "Bild einfügen";
             this.cmdBildEinfugen.UseVisualStyleBackColor = false;
             // 
@@ -132,7 +151,7 @@
             this.cmdClear.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdClear.Name = "cmdClear";
             this.cmdClear.Size = new System.Drawing.Size(150, 35);
-            this.cmdClear.TabIndex = 7;
+            this.cmdClear.TabIndex = 8;
             this.cmdClear.Text = "Zurücksetzen";
             this.cmdClear.UseVisualStyleBackColor = false;
             this.cmdClear.Click += new System.EventHandler(this.cmdClear_Click);
@@ -145,7 +164,7 @@
             this.cmdSpeichern.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdSpeichern.Name = "cmdSpeichern";
             this.cmdSpeichern.Size = new System.Drawing.Size(150, 35);
-            this.cmdSpeichern.TabIndex = 6;
+            this.cmdSpeichern.TabIndex = 7;
             this.cmdSpeichern.Text = "Speichern";
             this.cmdSpeichern.UseVisualStyleBackColor = false;
             this.cmdSpeichern.Click += new System.EventHandler(this.cmdSpeichern_Click);
@@ -158,7 +177,7 @@
             this.cmdBeenden.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdBeenden.Name = "cmdBeenden";
             this.cmdBeenden.Size = new System.Drawing.Size(150, 35);
-            this.cmdBeenden.TabIndex = 9;
+            this.cmdBeenden.TabIndex = 10;
             this.cmdBeenden.Text = "Schließen";
             this.cmdBeenden.UseVisualStyleBackColor = false;
             this.cmdBeenden.Click += new System.EventHandler(this.cmdBeenden_Click);
@@ -207,7 +226,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(30, 208);
+            this.label3.Location = new System.Drawing.Point(30, 286);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(113, 20);
             this.label3.TabIndex = 137;
@@ -215,11 +234,11 @@
             // 
             // txtBemerkungen
             // 
-            this.txtBemerkungen.Location = new System.Drawing.Point(34, 231);
+            this.txtBemerkungen.Location = new System.Drawing.Point(34, 309);
             this.txtBemerkungen.Multiline = true;
             this.txtBemerkungen.Name = "txtBemerkungen";
             this.txtBemerkungen.Size = new System.Drawing.Size(406, 190);
-            this.txtBemerkungen.TabIndex = 4;
+            this.txtBemerkungen.TabIndex = 5;
             // 
             // wtxtZustand
             // 
@@ -245,11 +264,36 @@
             this.label4.TabIndex = 139;
             this.label4.Text = "Zustand:";
             // 
+            // wtxtUbertragungsart
+            // 
+            this.wtxtUbertragungsart.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtUbertragungsart.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.wtxtUbertragungsart.FormattingEnabled = true;
+            this.wtxtUbertragungsart.Items.AddRange(new object[] {
+            "",
+            "seriell",
+            "parallel"});
+            this.wtxtUbertragungsart.Location = new System.Drawing.Point(34, 209);
+            this.wtxtUbertragungsart.Name = "wtxtUbertragungsart";
+            this.wtxtUbertragungsart.Size = new System.Drawing.Size(146, 28);
+            this.wtxtUbertragungsart.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(30, 186);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(130, 20);
+            this.label2.TabIndex = 141;
+            this.label2.Text = "Übertragungsart:";
+            // 
             // Schnittstellenkarte_Imput
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1126, 620);
+            this.Controls.Add(this.wtxtUbertragungsart);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.wtxtZustand);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtBemerkungen);
@@ -298,5 +342,7 @@
         private System.Windows.Forms.TextBox txtBemerkungen;
         private System.Windows.Forms.ComboBox wtxtZustand;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox wtxtUbertragungsart;
+        private System.Windows.Forms.Label label2;
     }
 }

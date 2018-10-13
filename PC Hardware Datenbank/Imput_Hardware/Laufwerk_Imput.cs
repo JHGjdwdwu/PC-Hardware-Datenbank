@@ -33,8 +33,9 @@ namespace PC_Hardware_Datenbank
 
         private void LoschenFunktion()//Lösch Funktion
         {
-            wtxtHersteller.Text = wtxtSchnittstelle.Text = wtxtTyp.Text = wtxtBauart.Text = wtxtZustand.Text = null;
-            cbtBrenner.Checked = false;
+            Laufwerk_Imput NewForm = new Laufwerk_Imput();
+            NewForm.Show();
+            this.Dispose(false);
             wtxtHersteller.Focus();
         }
 

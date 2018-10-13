@@ -129,7 +129,7 @@ namespace PC_Hardware_Datenbank
         {
             if (File.Exists(DateiPfad + @"/Mainbord_Datenbank.csv") == false)
             {
-                File.WriteAllText(DateiPfad + @"/Mainbord_Datenbank.csv", "Hersteller;Typ;Zustand;Sockel;RAM;Bauform;Sonstiges;AGP;PCI;PCIe x1;PCIe x4;PCIe x8;PCIe x16;PCIe x64;IDE;SATA;ISA;PS2;USB2;USB3;RJ45;Klinke;VGA;DVI;HDMI;DisplayPort;MidiPort;FireWire;Thunderbolt;RS232;Bluetooth;WLan;LPT1;eSATA;Infrarot");
+                File.WriteAllText(DateiPfad + @"/Mainbord_Datenbank.csv", "Hersteller;Typ;Zustand;Sockel;RAM;Bauform;Sonstiges;AGP;PCI;PCIx64;PCIe x1;PCIe x4;PCIe x8;PCIe x16;IDE;SATA;ISA;PS2;USB2;USB3;RJ45;Audio;VGA;DVI;HDMI;DisplayPort;MidiPort;FireWire;Thunderbolt;RS232;Bluetooth;WLan;LPT1;eSATA;Infrarot");
                 faMainbord.BackColor = Color.Green;
             }
             else
@@ -168,7 +168,7 @@ namespace PC_Hardware_Datenbank
         {
             if (File.Exists(DateiPfad + @"/GPU_Datenbank.csv") == false)
             {
-                File.WriteAllText(DateiPfad + @"/GPU_Datenbank.csv", "Kartenhersteller;Modell;Zustand;Speichergröße;Speichertyp;Kühlertyp;Stromversorgung;Anschlussart;Stromverbrauch;Taktrate;Multi-Grafikkarten-Betrieb;VGA;DVI;HDMI;Displaport;S-Video;Cinch");
+                File.WriteAllText(DateiPfad + @"/GPU_Datenbank.csv", "GPU-Hersteller;Modell;Zustand;Speichergröße;Speichertyp;Kühlertyp;Stromversorgung;Anschlussart;Stromverbrauch;Taktrate;Multi-Grafikkarten-Betrieb;VGA;DVI;HDMI;Displaport;S-Video;Cinch");
                 faGPU.BackColor = Color.Green;
             }
             else
@@ -194,7 +194,7 @@ namespace PC_Hardware_Datenbank
         {
             if (File.Exists(DateiPfad + @"/Netzteil_Datenbank.csv") == false)
             {
-                File.WriteAllText(DateiPfad + @"/Netzteil_Datenbank.csv", "Hersteller;Typ;Zustand;Anzahl-Lüfter;Breite-Tiefe-Höhe;Leistung;max-Ampere-3V;Leistung 3V;max-Ampere-5V;Leistung 5V;max-Ampere-12V;Leistung 12V;Stromausgang;Netzschalter;110V-Schalter;110V-Betrieb-möglich;Molex-8981;SATA;AT;ATX;BTX;ATX-large;CFX;SFX;TFX;LFX;2x2-12V;2x3-12V;2x4-12V;BERG");
+                File.WriteAllText(DateiPfad + @"/Netzteil_Datenbank.csv", "Hersteller;Typ;Zustand;Anzahl-Lüfter;Breite-Tiefe-Höhe;Leistung;max-Ampere-3V;Leistung 3V;max-Ampere-5V;Leistung 5V;max-Ampere-12V;Leistung 12V;Netzausgang;Netzschalter;110V-Schalter;110V-Betrieb-möglich;Molex-8981;SATA;AT;ATX;BTX;ATX-large;CFX;SFX;TFX;LFX;2x2-12V;2x3-12V;2x4-12V;BERG");
                 faNetzteil.BackColor = Color.Green;
             }
             else
@@ -207,7 +207,7 @@ namespace PC_Hardware_Datenbank
         {
             if (File.Exists(DateiPfad + @"/Gehause_Datenbank.csv") == false)
             {
-                File.WriteAllText(DateiPfad + @"/Gehause_Datenbank.csv", "Breite-Höhe-Tiefe;Hersteller;Zustand;Typ;Netzteil-Position;Einschub-5,25-Zoll;Einschub-3,5-Zoll;Einschub-3,5-HDD;Einschub-2,5-HDD;Front-USB;Front-Klinke;Formfaktor;Kabelsystem;Beleuchtung;Plexiglas-Fenster");
+                File.WriteAllText(DateiPfad + @"/Gehause_Datenbank.csv", "Breite-Höhe-Tiefe;Hersteller;Zustand;Typ;Netzteil-Position;Einschub-5,25-Zoll;Einschub-3,5-Zoll-intern;Einschub-3,5-Zoll-extern;Einschub-2,5-Zoll-intern;Einschub-2,5-Zoll-extern;Front-USB;Front-Klinke;Formfaktor;Kabelsystem;Beleuchtung;Plexiglas-Fenster");
                 faGehause.BackColor = Color.Green;
             }
             else
@@ -220,7 +220,7 @@ namespace PC_Hardware_Datenbank
         {
             if (File.Exists(DateiPfad + @"/Soundkarte_Datenbank.csv") == false)
             {
-                File.WriteAllText(DateiPfad + @"/Soundkarte_Datenbank.csv", "Ausgabestandard;Anschlussschnittstelle;Zustand;Bit-Aufloesung;Hersteller;ADAT;AES/EBU;Chinchbuchse;Klinkenbuchse;MADI;S/PDIF;TDIF;Breakout Box;DSP;Gameport;MIDI;Mikrofoneingang;Wavetable");
+                File.WriteAllText(DateiPfad + @"/Soundkarte_Datenbank.csv", "Ausgabestandard;Anschlussschnittstelle;Zustand;Bit-Aufloesung;Hersteller;ADAT;AES/EBU;Chinchbuchse;Klinkenbuchse;MADI;S/PDIF-optical;S/PDIF-cinch;TDIF;Breakout Box;DSP;Gameport;MIDI;Mikrofoneingang;Wavetable");
                 faSoundkarte.BackColor = Color.Green;
             }
             else
@@ -246,7 +246,7 @@ namespace PC_Hardware_Datenbank
         {
             if (File.Exists(DateiPfad + @"/Schnittstellenkarte_Datenbank.csv") == false)
             {
-                File.WriteAllText(DateiPfad + @"/Schnittstellenkarte_Datenbank.csv", "Hersteller;Modell;Zustand;Anschlussart;Bemerkungen");
+                File.WriteAllText(DateiPfad + @"/Schnittstellenkarte_Datenbank.csv", "Hersteller;Modell;Zustand;Anschlussart;Übertragungsart;Bemerkungen");
                 faSchnittstellenkarte.BackColor = Color.Green;
             }
             else
@@ -259,7 +259,7 @@ namespace PC_Hardware_Datenbank
         {
             if (File.Exists(DateiPfad + @"/TVKarte_Datenbank.csv") == false)
             {
-                File.WriteAllText(DateiPfad + @"/TVKarte_Datenbank.csv", "Hersteller;Modell;Zustand;Anschlussart;Analog;DVB-C;DVB-T;DVB-S;Klinge;ODT;HDMI;Scart;S-Video;Cinch");
+                File.WriteAllText(DateiPfad + @"/TVKarte_Datenbank.csv", "Hersteller;Modell;Zustand;Anschlussart;Analog;DVB-C;DVB-C2;DVB-T;DVB-T2;DVB-S;DVB-S2;HD;Klinge;ODT;HDMI;Scart;S-Video;Cinch");
                 faTVKarte.BackColor = Color.Green;
             }
             else

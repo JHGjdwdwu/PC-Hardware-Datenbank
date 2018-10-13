@@ -35,8 +35,6 @@ namespace PC_Hardware_Datenbank
                     string unverslusselt_text = crypto.decrypt(verlusselt_text);//Text entschlüsseln
                     string[] zellen = unverslusselt_text.Split(';');//Text teilen bei ;
 
-                    //lblNR.Text = Convert.ToString((zellen.Length -1) / 3);
-
                     for (int i = 0; i < zellen.Length - 1; i = i + 3)//Das dgv beschreiben Daten aus dem Arry benutzen
                     {
                         dgvUser.Rows.Add(zellen[i], zellen[i + 1], zellen[i + 2]);
@@ -74,6 +72,7 @@ namespace PC_Hardware_Datenbank
 
                     txtName.Text = txtPassword.Text = null;//Löscht die Eingabe
                     wtxtRechte.Text = "lesen";//Standart auswahl ist lesen
+                    txtName.Focus();
                 }
                 catch
                 {
@@ -99,10 +98,8 @@ namespace PC_Hardware_Datenbank
 
                 list.RemoveRange(zeile * 3, 3);//entferne Index, Anzahl
 
-                zellen = list.ToArray();//schreibt die Liste in das Array wider zurück
-
                 File.WriteAllText(@"./User", "");//löscht die alten Daten
-                File.WriteAllText(@"./User", crypto.encrypt(string.Join(";", zellen)));//schreibt die neue User Liste
+                File.WriteAllText(@"./User", crypto.encrypt(string.Join(";", list)));//schreibt die neue User Liste
             }
             catch (Exception ex)
             {

@@ -32,9 +32,9 @@ namespace PC_Hardware_Datenbank
 
         private void LoschFunktion()//Löschen Funktion
         {
-            wtxtHersteller.Text = wtxtModell.Text = wtxtWatt.Text = wtxtZustand.Text = wtxtVA.Text = wtxtArbeitsweise.Text = wtxtAkkutyp.Text = null;
-            nudAkkanzahl.Value = nudUSB.Value = 0;
-            cbtCOM.Checked = false;
+            USV_Imput NewForm = new USV_Imput();
+            NewForm.Show();
+            this.Dispose(false);
             wtxtHersteller.Focus();
         }
 

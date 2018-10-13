@@ -32,9 +32,10 @@ namespace PC_Hardware_Datenbank
 
         private void LoschFuncktion()//Lösch Funktion
         {
-            mtxtBreiteHocheTiefe.Text = wtxtHersteller.Text = wtxtTyp.Text = wtxtNetzteilPosition.Text = wtxtFormfaktor.Text = wtxtZustand.Text = null;
-            nudEinschub5.Value = nudEinschub3.Value = nudHDD3.Value = nudHDD2.Value = nudFrontUSB.Value = nudFrontKlinke.Value = 0;
-            cbtKabelsystem.Checked = cbtBelechtung.Checked = cbtFenster.Checked = false;
+            Gehause_Imput NewForm = new Gehause_Imput();
+            NewForm.Show();
+            this.Dispose(false);
+            mtxtBreiteHocheTiefe.Focus();
         }
 
         private void cmdClear_Click(object sender, EventArgs e)//Löschen Button
@@ -74,9 +75,10 @@ namespace PC_Hardware_Datenbank
                         wtxtTyp.Text + ";" +
                         wtxtNetzteilPosition.Text + ";" +
                         nudEinschub5.Value + ";" +
-                        nudEinschub3.Value + ";" +
-                        nudHDD3.Value + ";" +
-                        nudHDD2.Value + ";" +
+                        nudEinschub3in.Value + ";" +
+                        nudEinschub3ex.Value + ";" +
+                        nudEinschub2in.Value + ";" +
+                        nudEinschub2ex.Value + ";" +
                         nudFrontUSB.Value + ";" +
                         nudFrontKlinke.Value + ";" +
                         wtxtFormfaktor.Text + ";" +
@@ -92,10 +94,11 @@ namespace PC_Hardware_Datenbank
                         "Hersteller: " + wtxtHersteller.Text + LF + 
                         "Typ: " + wtxtTyp.Text + LF + 
                         "Netzteil Position: " + wtxtNetzteilPosition.Text + LF + 
-                        "Einschub 5,25 Zoll: " + nudEinschub5.Value + LF + 
-                        "Einschub 3,5 Zoll: " + nudEinschub3.Value + LF + 
-                        "Einschub 3,5 HDD: " + nudHDD3.Value + LF + 
-                        "Einschub 2,5 HDD: " + nudHDD2.Value + LF + 
+                        "Einschub 5,25 Zoll: " + nudEinschub5.Value + LF +
+                        "Einschub 3,5 intern: " + nudEinschub3in.Value + LF +
+                        "Einschub 3,5 extern: " + nudEinschub3ex.Value + LF + 
+                        "Einschub 2,5 intern: " + nudEinschub2in.Value + LF +
+                        "Einschub 2,5 extern: " + nudEinschub2ex.Value + LF +
                         "Front USB: " + nudFrontUSB.Value + LF + 
                         "Front Klinke: " + nudFrontKlinke.Value + LF + 
                         "Formfaktor: " + wtxtFormfaktor.Text + LF +
