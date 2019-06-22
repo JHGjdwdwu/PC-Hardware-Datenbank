@@ -99,7 +99,6 @@
             this.wtxtKabelendeA.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtKabelendeA.FormattingEnabled = true;
             this.wtxtKabelendeA.Items.AddRange(new object[] {
-            "",
             "Kaltgerätestecker",
             "kaltgerätekupplung",
             "RJ11",
@@ -198,7 +197,6 @@
             this.wtxtKabelendeB.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtKabelendeB.FormattingEnabled = true;
             this.wtxtKabelendeB.Items.AddRange(new object[] {
-            "",
             "Kaltgerätestecker",
             "kaltgerätekupplung",
             "RJ11",
@@ -296,7 +294,6 @@
             this.wtxtZustand.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtZustand.FormattingEnabled = true;
             this.wtxtZustand.Items.AddRange(new object[] {
-            "",
             "verbaut",
             "auf Lager"});
             this.wtxtZustand.Location = new System.Drawing.Point(40, 81);
@@ -340,7 +337,6 @@
             this.Name = "Kabel_Imput";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Kabel";
-            this.Load += new System.EventHandler(this.Kabel_Imput_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudLange)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcmdMainbord)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

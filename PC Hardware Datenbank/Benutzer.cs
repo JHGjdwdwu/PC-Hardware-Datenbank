@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,11 +14,22 @@ namespace PC_Hardware_Datenbank
 {
     public partial class Benutzer : Form
     {
-        Crypto_AES crypto = new Crypto_AES();//Aufruf des Crypto Tool
-
         public Benutzer()
         {
             InitializeComponent();
+        }
+
+        Methoden methoden = new Methoden();//Class eigene Methoden
+        string[] UKR = new string[3];//User,Key,Recht
+
+        private void Benutzer_Load(object sender, EventArgs e)//Ausfüren wen Fenster geöffnet wird
+        {
+            wtxtRechte.Text = "lesen";//Standart auswahl ist lesen
+            string mysqlconnectionstring = methoden.MySqlConnectionString();//Angaben um sich an der Datenbank anzumelden
+            methoden.MySQL_ping_check(mysqlconnectionstring);//Testabfrage bei der Datenkan
+            string mysqlcommandtext = "SELECT * FROM `user`;";//SQL Befehl Abfrage aller User
+            dgvUser.DataSource = methoden.MySqlDataToDatGrid(mysqlconnectionstring, mysqlcommandtext);//Alle User in die DataGridViwe schreiben
+            dgvUser.Columns["Password"].Visible = false;//Spalte mit den Passwörten ausblenden
         }
 
         private void cmdSchliessen_Click(object sender, EventArgs e)//Button Schließen
@@ -25,98 +37,93 @@ namespace PC_Hardware_Datenbank
             Close();
         }
 
-        private void Datei_lesen()//Datei einlesen und in die dgv schreiben
-        {
-            if (File.Exists(@"./User")==true)
-            {
-                try
-                {
-                    string verlusselt_text = File.ReadAllText(@"./User");//Verschlüsselten Text lesen
-                    string unverslusselt_text = crypto.decrypt(verlusselt_text);//Text entschlüsseln
-                    string[] zellen = unverslusselt_text.Split(';');//Text teilen bei ;
-
-                    for (int i = 0; i < zellen.Length - 1; i = i + 3)//Das dgv beschreiben Daten aus dem Arry benutzen
-                    {
-                        dgvUser.Rows.Add(zellen[i], zellen[i + 1], zellen[i + 2]);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Fehler beim einlesen der Datei! " + ex.Message);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Eine User Datenbank konnte nicht gefunden werden und wird erstellt!");
-                File.WriteAllText(@"./User", "");
-                Datei_lesen();
-            }
-        }
-
-        private void Benutzer_Load(object sender, EventArgs e)//Ausfüren wen Fenster geöffnet wird
-        {
-            wtxtRechte.Text = "lesen";//Standart auswahl ist lesen
-            Datei_lesen();
-        }
-
         private void cmdErstellen_Click(object sender, EventArgs e)//Button Erstellen
         {
-            if (txtName.Text != "" && txtPassword.Text != "" && wtxtRechte.Text != "")
+            if (cmdErstellen.Text== "&Erstellen")
             {
-                try
+                if (txtName.Text != "" && txtPassword.Text != "" && wtxtRechte.Text != "")
                 {
-                    string UserDatenVers = File.ReadAllText(@"./User");//Dateiinhalt einlesen
-                    string UserDatenUnver = crypto.decrypt(UserDatenVers);
-                    dgvUser.Rows.Add(txtName.Text, txtPassword.Text, wtxtRechte.Text);//schreibt den neuen Benuzer in die dgvUser
-                    File.WriteAllText(@"./User", crypto.encrypt(UserDatenUnver + txtName.Text + ";" + txtPassword.Text + ";" + wtxtRechte.Text + ";"));//Neien Dateiinhalt schreiben
+                    string mysqlconnectionstring = methoden.MySqlConnectionString();//Angaben um sich an der Datenbank anzumelden
+                    methoden.MySQL_ping_check(mysqlconnectionstring);//Testabfrage bei der Datenkan
 
-                    txtName.Text = txtPassword.Text = null;//Löscht die Eingabe
-                    wtxtRechte.Text = "lesen";//Standart auswahl ist lesen
-                    txtName.Focus();
+                    string hash = methoden.StringToSha512(txtPassword.Text);//erzeugt ein Hash vom Password
+
+                    string mysqlcommandtext = "INSERT INTO `user` (`Name`, `Password`, `Rechte`) VALUES ('" + txtName.Text + "', '" + hash + "', '" + wtxtRechte.Text + "');";//SQL Befehl Abfrage aller User
+                    methoden.MySqlCommand(mysqlconnectionstring, mysqlcommandtext);//Daten in die Datenbank schreiben
+                    txtName.Text = txtPassword.Text = null;//Eigegebenen Text löschen
+                    txtName.Focus();//Tabstop auf das Textfeld Name setzen
+                    Benutzer_Load(cmdErstellen, e);//Daten mit den User aus der Datenbank neu auslesen
                 }
-                catch
+                else
                 {
-                    MessageBox.Show("Fehler keine User Datenbank gefunden!");
+                    MessageBox.Show("Bitte gebe einen Benuzernamen, Passwort und das Recht an!");
                 }
             }
-            else
+            if (cmdErstellen.Text == "&Ändern")
             {
-                MessageBox.Show("Bitte gebe eine Namen, Passwort und Rechte an!");
+                string mysqlconnectionstring = methoden.MySqlConnectionString();//Angaben um sich an der Datenbank anzumelden
+                methoden.MySQL_ping_check(mysqlconnectionstring);//Testabfrage bei der Datenkan
+
+
+
+                string mysqlcommandtext = "UPDATE `user` SET `Name`='" + txtName.Text + "',`Password`='" + txtPassword.Text + "',`Rechte`='" + wtxtRechte.Text + "' WHERE `Name`='" + UKR[0] + "'AND`Password`='" + UKR[1] + "'AND`Rechte`='" + UKR[2] + "';";//SQL Befehl Abfrage aller User
+                methoden.MySqlCommand(mysqlconnectionstring, mysqlcommandtext);//Daten in die Datenbank schreiben
+                txtName.Text = txtPassword.Text = null;//Eigegebenen Text löschen
+                txtName.Focus();//Tabstop auf das Textfeld Name setzen
+                Benutzer_Load(cmdErstellen, e);//Daten mit den User aus der Datenbank neu auslesen
             }
         }
 
         private void cmdLoschen_Click(object sender, EventArgs e)//Button Löschen
         {
-            try
+            int anz = dgvUser.ColumnCount;//Anzahl der Spalten in der DataGridViwe ermitelln
+            string[] Cellen = new string[anz];//Array erzeugen mit der Anzahl der Spalten
+            for (int i = 0; i < anz; i++)//Makirte Zeile Spalte nach Spalte abarbeiten
             {
-                string verlusselt_text = File.ReadAllText(@"./User");//Verschlüsselten Text lesen
-                string unverslusselt_text = crypto.decrypt(verlusselt_text);//Text entschlüsseln
-                string[] zellen = unverslusselt_text.Split(';');//Text teilen bei ;
-
-                int zeile = dgvUser.CurrentCell.RowIndex;//Nummer der mackirten Zeile
-                List<string> list = new List<string>(zellen);//Wandelt das Array in eine Liste
-
-                list.RemoveRange(zeile * 3, 3);//entferne Index, Anzahl
-
-                File.WriteAllText(@"./User", "");//löscht die alten Daten
-                File.WriteAllText(@"./User", crypto.encrypt(string.Join(";", list)));//schreibt die neue User Liste
+                string Celle = Convert.ToString(dgvUser.SelectedRows[0].Cells[i].Value);//Die Daten aus der Zehle ermitteln
+                Cellen[i] = Celle;//Daten in das Array schreiben
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Fehler beim löschen eines Benutzer: " + ex.Message);
-            }
-            dgvUser.Rows.Clear();
-            Datei_lesen();
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start("https://github.com/tpbischof");
+            string mysqlconnectionstring = methoden.MySqlConnectionString();//Angaben um sich an der Datenbank anzumelden
+            methoden.MySQL_ping_check(mysqlconnectionstring);//Testabfrage bei der Datenkan
+            string mysqlcommandtext = "DELETE FROM `user` WHERE `Name`='" + Cellen[0] + "'AND`Password`='" + Cellen[1] + "'AND`Rechte`='" + Cellen[2] + "';";//SQL Befehl Abfrage aller User
+            methoden.MySqlCommand(mysqlconnectionstring, mysqlcommandtext);//User aus der Datenbank löschen
+            Benutzer_Load(cmdErstellen, e);//Daten mit den User aus der Datenbank neu auslesen
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("https://github.com/JHGjdwdwu");
+        }
+
+        private void dgvUser_DoubleClick(object sender, EventArgs e)
+        {
+            int anz = dgvUser.ColumnCount;//Anzahl der Spalten in der DataGridViwe ermitelln
+            string[] Cellen = new string[anz];//Array erzeugen mit der Anzahl der Spalten
+            for (int i = 0; i < anz; i++)//Makirte Zeile Spalte nach Spalte abarbeiten
+            {
+                string Celle = Convert.ToString(dgvUser.SelectedRows[0].Cells[i].Value);//Die Daten aus der Zehle ermitteln
+                Cellen[i] = Celle;//Daten in das Array schreiben
+            }
+            UKR = Cellen;
+            txtName.Text = Cellen[0];
+            txtPassword.Text = Cellen[1];
+            wtxtRechte.Text = Cellen[2];
+
+            cmdErstellen.Text = "&Ändern";
+
+            if (txtName.Text=="" || txtPassword.Text=="")
+            {
+                cmdErstellen.Text = "&Erstellen";
+                wtxtRechte.Text = "lesen";
+            }
+        }
+
+        private void cmdClear_Click(object sender, EventArgs e)
+        {
+            Benutzer NewForm = new Benutzer();
+            NewForm.Show();
+            this.Dispose(false);
+            txtName.Focus();
         }
     }
 }

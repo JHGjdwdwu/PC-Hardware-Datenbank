@@ -37,7 +37,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.wtxtArt = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.wtxtModell = new System.Windows.Forms.ComboBox();
+            this.wtxtID = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cmdQR = new System.Windows.Forms.Button();
             this.cmdBildEinfugen = new System.Windows.Forms.Button();
@@ -76,7 +76,6 @@
             this.wtxtPinheader.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtPinheader.FormattingEnabled = true;
             this.wtxtPinheader.Items.AddRange(new object[] {
-            "",
             "2-Pin",
             "3-Pin",
             "4-Pin"});
@@ -130,7 +129,6 @@
             this.wtxtArt.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtArt.FormattingEnabled = true;
             this.wtxtArt.Items.AddRange(new object[] {
-            "",
             "Gehäuselüfter",
             "CPU-Lüfter",
             "Speicherkühler",
@@ -150,15 +148,15 @@
             this.label7.TabIndex = 136;
             this.label7.Text = "Art:";
             // 
-            // wtxtModell
+            // wtxtID
             // 
-            this.wtxtModell.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.wtxtModell.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.wtxtModell.FormattingEnabled = true;
-            this.wtxtModell.Location = new System.Drawing.Point(248, 209);
-            this.wtxtModell.Name = "wtxtModell";
-            this.wtxtModell.Size = new System.Drawing.Size(146, 28);
-            this.wtxtModell.TabIndex = 5;
+            this.wtxtID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.wtxtID.FormattingEnabled = true;
+            this.wtxtID.Location = new System.Drawing.Point(35, 283);
+            this.wtxtID.Name = "wtxtID";
+            this.wtxtID.Size = new System.Drawing.Size(146, 28);
+            this.wtxtID.TabIndex = 5;
             // 
             // pictureBox1
             // 
@@ -259,11 +257,11 @@
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(244, 186);
+            this.label5.Location = new System.Drawing.Point(31, 260);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(59, 20);
+            this.label5.Size = new System.Drawing.Size(106, 20);
             this.label5.TabIndex = 133;
-            this.label5.Text = "Modell:";
+            this.label5.Text = "Bezeichnung:";
             // 
             // label3
             // 
@@ -300,7 +298,6 @@
             this.wtxtHersteller.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtHersteller.FormattingEnabled = true;
             this.wtxtHersteller.Items.AddRange(new object[] {
-            "",
             "2PCOM",
             "3R System",
             "Aerocool",
@@ -415,7 +412,7 @@
             "YS Tech",
             "Zalman",
             "Zaward"});
-            this.wtxtHersteller.Location = new System.Drawing.Point(35, 283);
+            this.wtxtHersteller.Location = new System.Drawing.Point(245, 209);
             this.wtxtHersteller.Name = "wtxtHersteller";
             this.wtxtHersteller.Size = new System.Drawing.Size(146, 28);
             this.wtxtHersteller.TabIndex = 6;
@@ -424,7 +421,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(31, 260);
+            this.label1.Location = new System.Drawing.Point(241, 186);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(81, 20);
             this.label1.TabIndex = 130;
@@ -436,7 +433,6 @@
             this.wtxtSpannung.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtSpannung.FormattingEnabled = true;
             this.wtxtSpannung.Items.AddRange(new object[] {
-            "",
             "3V",
             "5V",
             "12V",
@@ -465,7 +461,6 @@
             this.wtxtZustand.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtZustand.FormattingEnabled = true;
             this.wtxtZustand.Items.AddRange(new object[] {
-            "",
             "verbaut",
             "auf Lager"});
             this.wtxtZustand.Location = new System.Drawing.Point(35, 61);
@@ -500,7 +495,7 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.wtxtArt);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.wtxtModell);
+            this.Controls.Add(this.wtxtID);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.cmdQR);
             this.Controls.Add(this.cmdBildEinfugen);
@@ -520,7 +515,6 @@
             this.Name = "Lufter_Imput";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lufter und Kühler";
-            this.Load += new System.EventHandler(this.Lufter_Imput_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcmdMainbord)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudStrom)).EndInit();
@@ -538,7 +532,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox wtxtArt;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox wtxtModell;
+        private System.Windows.Forms.ComboBox wtxtID;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button cmdQR;
         private System.Windows.Forms.Button cmdBildEinfugen;

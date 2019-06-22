@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.Button button1;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Mainboard_Imput));
             this.pcmdMainbord = new System.Windows.Forms.PictureBox();
             this.cmdBeenden = new System.Windows.Forms.Button();
@@ -36,9 +35,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.wtxtAudio = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lbtAudio = new System.Windows.Forms.Label();
             this.cbtInfrarot = new System.Windows.Forms.CheckBox();
             this.cbtESATA = new System.Windows.Forms.CheckBox();
             this.cbtRS232 = new System.Windows.Forms.CheckBox();
@@ -76,7 +74,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtSonstiges = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbtISA = new System.Windows.Forms.CheckBox();
             this.cbtSATA = new System.Windows.Forms.CheckBox();
             this.cbtIDE = new System.Windows.Forms.CheckBox();
@@ -98,17 +95,22 @@
             this.cmdQR = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.wtxtHersteller = new System.Windows.Forms.ComboBox();
-            this.wtxtTyp = new System.Windows.Forms.ComboBox();
+            this.wtxtID = new System.Windows.Forms.ComboBox();
             this.wtxtSockel = new System.Windows.Forms.ComboBox();
             this.wtxtRAM = new System.Windows.Forms.ComboBox();
             this.wtxtBauform = new System.Windows.Forms.ComboBox();
             this.wtxtZustand = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.nudPCI64 = new System.Windows.Forms.NumericUpDown();
-            this.cbtPCI64 = new System.Windows.Forms.CheckBox();
-            button1 = new System.Windows.Forms.Button();
+            this.cbtUSBC = new System.Windows.Forms.CheckBox();
+            this.nudUSBC = new System.Windows.Forms.NumericUpDown();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.cbtM2 = new System.Windows.Forms.CheckBox();
+            this.nudM2 = new System.Windows.Forms.NumericUpDown();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.nudUSB31 = new System.Windows.Forms.NumericUpDown();
+            this.cbtUSB31 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pcmdMainbord)).BeginInit();
-            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudESATA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudLPT1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudRS232)).BeginInit();
@@ -123,7 +125,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudUSB3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudUSB2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPS2)).BeginInit();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudISA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPCIe16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPCIe8)).BeginInit();
@@ -134,21 +135,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudPCI)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAGP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudPCI64)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudUSBC)).BeginInit();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudM2)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudUSB31)).BeginInit();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            button1.BackColor = System.Drawing.Color.Gray;
-            button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            button1.CausesValidation = false;
-            button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button1.Location = new System.Drawing.Point(199, 27);
-            button1.Name = "button1";
-            button1.Size = new System.Drawing.Size(1, 312);
-            button1.TabIndex = 99;
-            button1.TabStop = false;
-            button1.UseVisualStyleBackColor = false;
             // 
             // pcmdMainbord
             // 
@@ -169,7 +162,7 @@
             this.cmdBeenden.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdBeenden.Name = "cmdBeenden";
             this.cmdBeenden.Size = new System.Drawing.Size(150, 35);
-            this.cmdBeenden.TabIndex = 13;
+            this.cmdBeenden.TabIndex = 12;
             this.cmdBeenden.Text = "Schließen";
             this.cmdBeenden.UseVisualStyleBackColor = false;
             this.cmdBeenden.Click += new System.EventHandler(this.cmdBeenden_Click);
@@ -178,83 +171,41 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(36, 34);
+            this.label1.Location = new System.Drawing.Point(33, 34);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(81, 20);
-            this.label1.TabIndex = 6;
+            this.label1.TabIndex = 116;
             this.label1.Text = "Hersteller:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(317, 31);
+            this.label2.Location = new System.Drawing.Point(346, 28);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(135, 20);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Typ Bezeichnung:";
+            this.label2.Size = new System.Drawing.Size(106, 20);
+            this.label2.TabIndex = 118;
+            this.label2.Text = "Bezeichnung:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.Red;
             this.label3.Location = new System.Drawing.Point(391, 65);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 20);
-            this.label3.TabIndex = 10;
+            this.label3.TabIndex = 110;
             this.label3.Text = "Sockel:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(36, 99);
+            this.label4.ForeColor = System.Drawing.Color.Red;
+            this.label4.Location = new System.Drawing.Point(36, 102);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(78, 20);
-            this.label4.TabIndex = 12;
+            this.label4.TabIndex = 112;
             this.label4.Text = "RAM Typ:";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.wtxtAudio);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.cbtInfrarot);
-            this.groupBox2.Controls.Add(this.cbtESATA);
-            this.groupBox2.Controls.Add(this.cbtRS232);
-            this.groupBox2.Controls.Add(this.cbtLPT1);
-            this.groupBox2.Controls.Add(this.cbtWLan);
-            this.groupBox2.Controls.Add(this.cbtBluetooth);
-            this.groupBox2.Controls.Add(this.cbtThunderbolt);
-            this.groupBox2.Controls.Add(this.cbtFireWire);
-            this.groupBox2.Controls.Add(this.cbtMidiPort);
-            this.groupBox2.Controls.Add(this.cbtDisplayPort);
-            this.groupBox2.Controls.Add(this.cbtHDMI);
-            this.groupBox2.Controls.Add(this.cbtDVI);
-            this.groupBox2.Controls.Add(this.cbtVGA);
-            this.groupBox2.Controls.Add(this.cbtRJ45);
-            this.groupBox2.Controls.Add(this.cbtUSB3);
-            this.groupBox2.Controls.Add(this.cbtUSB2);
-            this.groupBox2.Controls.Add(this.cbtPS2);
-            this.groupBox2.Controls.Add(this.nudESATA);
-            this.groupBox2.Controls.Add(this.nudLPT1);
-            this.groupBox2.Controls.Add(this.nudRS232);
-            this.groupBox2.Controls.Add(button1);
-            this.groupBox2.Controls.Add(this.nudThunderbolt);
-            this.groupBox2.Controls.Add(this.nudFireWire);
-            this.groupBox2.Controls.Add(this.nudMidiPort);
-            this.groupBox2.Controls.Add(this.nudDisplayPort);
-            this.groupBox2.Controls.Add(this.nudHDMI);
-            this.groupBox2.Controls.Add(this.nudDVI);
-            this.groupBox2.Controls.Add(this.nudVGA);
-            this.groupBox2.Controls.Add(this.nudRJ45);
-            this.groupBox2.Controls.Add(this.nudUSB3);
-            this.groupBox2.Controls.Add(this.nudUSB2);
-            this.groupBox2.Controls.Add(this.nudPS2);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(254, 191);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(394, 363);
-            this.groupBox2.TabIndex = 8;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Externen Schnittstellen";
             // 
             // wtxtAudio
             // 
@@ -266,29 +217,29 @@
             "blau, grün",
             "blau, grün, rosa",
             "rosa, grün, blau, grau, orange, schwarz"});
-            this.wtxtAudio.Location = new System.Drawing.Point(71, 163);
+            this.wtxtAudio.Location = new System.Drawing.Point(94, 206);
             this.wtxtAudio.Name = "wtxtAudio";
             this.wtxtAudio.Size = new System.Drawing.Size(114, 28);
-            this.wtxtAudio.TabIndex = 4;
+            this.wtxtAudio.TabIndex = 6;
             // 
-            // label8
+            // lbtAudio
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(15, 168);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(50, 20);
-            this.label8.TabIndex = 47;
-            this.label8.Text = "Audio";
+            this.lbtAudio.AutoSize = true;
+            this.lbtAudio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbtAudio.Location = new System.Drawing.Point(38, 211);
+            this.lbtAudio.Name = "lbtAudio";
+            this.lbtAudio.Size = new System.Drawing.Size(50, 20);
+            this.lbtAudio.TabIndex = 147;
+            this.lbtAudio.Text = "Audio";
             // 
             // cbtInfrarot
             // 
             this.cbtInfrarot.AutoSize = true;
             this.cbtInfrarot.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbtInfrarot.Location = new System.Drawing.Point(214, 295);
+            this.cbtInfrarot.Location = new System.Drawing.Point(352, 304);
             this.cbtInfrarot.Name = "cbtInfrarot";
             this.cbtInfrarot.Size = new System.Drawing.Size(80, 24);
-            this.cbtInfrarot.TabIndex = 17;
+            this.cbtInfrarot.TabIndex = 19;
             this.cbtInfrarot.Text = "Infrarot";
             this.cbtInfrarot.UseVisualStyleBackColor = true;
             // 
@@ -296,49 +247,49 @@
             // 
             this.cbtESATA.AutoSize = true;
             this.cbtESATA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbtESATA.Location = new System.Drawing.Point(214, 264);
+            this.cbtESATA.Location = new System.Drawing.Point(352, 177);
             this.cbtESATA.Name = "cbtESATA";
             this.cbtESATA.Size = new System.Drawing.Size(79, 24);
             this.cbtESATA.TabIndex = 125;
             this.cbtESATA.TabStop = false;
             this.cbtESATA.Text = "eSATA";
             this.cbtESATA.UseVisualStyleBackColor = true;
-            this.cbtESATA.CheckedChanged += new System.EventHandler(this.cbtESATA_CheckedChanged);
+            this.cbtESATA.Click += new System.EventHandler(this.cbtESATA_CheckedChanged);
             // 
             // cbtRS232
             // 
             this.cbtRS232.AutoSize = true;
             this.cbtRS232.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbtRS232.Location = new System.Drawing.Point(214, 134);
+            this.cbtRS232.Location = new System.Drawing.Point(352, 147);
             this.cbtRS232.Name = "cbtRS232";
             this.cbtRS232.Size = new System.Drawing.Size(82, 24);
             this.cbtRS232.TabIndex = 124;
             this.cbtRS232.TabStop = false;
             this.cbtRS232.Text = "RS 232";
             this.cbtRS232.UseVisualStyleBackColor = true;
-            this.cbtRS232.CheckedChanged += new System.EventHandler(this.cbtRS232_CheckedChanged);
+            this.cbtRS232.Click += new System.EventHandler(this.cbtRS232_CheckedChanged);
             // 
             // cbtLPT1
             // 
             this.cbtLPT1.AutoSize = true;
             this.cbtLPT1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbtLPT1.Location = new System.Drawing.Point(214, 228);
+            this.cbtLPT1.Location = new System.Drawing.Point(352, 210);
             this.cbtLPT1.Name = "cbtLPT1";
             this.cbtLPT1.Size = new System.Drawing.Size(65, 24);
             this.cbtLPT1.TabIndex = 123;
             this.cbtLPT1.TabStop = false;
             this.cbtLPT1.Text = "LPT1";
             this.cbtLPT1.UseVisualStyleBackColor = true;
-            this.cbtLPT1.CheckedChanged += new System.EventHandler(this.cbtLPT1_CheckedChanged);
+            this.cbtLPT1.Click += new System.EventHandler(this.cbtLPT1_CheckedChanged);
             // 
             // cbtWLan
             // 
             this.cbtWLan.AutoSize = true;
             this.cbtWLan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbtWLan.Location = new System.Drawing.Point(214, 196);
+            this.cbtWLan.Location = new System.Drawing.Point(352, 242);
             this.cbtWLan.Name = "cbtWLan";
             this.cbtWLan.Size = new System.Drawing.Size(70, 24);
-            this.cbtWLan.TabIndex = 14;
+            this.cbtWLan.TabIndex = 17;
             this.cbtWLan.Text = "WLan";
             this.cbtWLan.UseVisualStyleBackColor = true;
             // 
@@ -346,10 +297,10 @@
             // 
             this.cbtBluetooth.AutoSize = true;
             this.cbtBluetooth.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbtBluetooth.Location = new System.Drawing.Point(214, 165);
+            this.cbtBluetooth.Location = new System.Drawing.Point(352, 274);
             this.cbtBluetooth.Name = "cbtBluetooth";
             this.cbtBluetooth.Size = new System.Drawing.Size(97, 24);
-            this.cbtBluetooth.TabIndex = 13;
+            this.cbtBluetooth.TabIndex = 18;
             this.cbtBluetooth.Text = "Bluetooth";
             this.cbtBluetooth.UseVisualStyleBackColor = true;
             // 
@@ -357,248 +308,248 @@
             // 
             this.cbtThunderbolt.AutoSize = true;
             this.cbtThunderbolt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbtThunderbolt.Location = new System.Drawing.Point(214, 102);
+            this.cbtThunderbolt.Location = new System.Drawing.Point(352, 115);
             this.cbtThunderbolt.Name = "cbtThunderbolt";
             this.cbtThunderbolt.Size = new System.Drawing.Size(113, 24);
             this.cbtThunderbolt.TabIndex = 120;
             this.cbtThunderbolt.TabStop = false;
             this.cbtThunderbolt.Text = "Thunderbolt";
             this.cbtThunderbolt.UseVisualStyleBackColor = true;
-            this.cbtThunderbolt.CheckedChanged += new System.EventHandler(this.cbtThunderbolt_CheckedChanged);
+            this.cbtThunderbolt.Click += new System.EventHandler(this.cbtThunderbolt_CheckedChanged);
             // 
             // cbtFireWire
             // 
             this.cbtFireWire.AutoSize = true;
             this.cbtFireWire.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbtFireWire.Location = new System.Drawing.Point(214, 71);
+            this.cbtFireWire.Location = new System.Drawing.Point(352, 82);
             this.cbtFireWire.Name = "cbtFireWire";
             this.cbtFireWire.Size = new System.Drawing.Size(87, 24);
             this.cbtFireWire.TabIndex = 119;
             this.cbtFireWire.TabStop = false;
             this.cbtFireWire.Text = "FireWire";
             this.cbtFireWire.UseVisualStyleBackColor = true;
-            this.cbtFireWire.CheckedChanged += new System.EventHandler(this.cbtFireWire_CheckedChanged);
+            this.cbtFireWire.Click += new System.EventHandler(this.cbtFireWire_CheckedChanged);
             // 
             // cbtMidiPort
             // 
             this.cbtMidiPort.AutoSize = true;
             this.cbtMidiPort.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbtMidiPort.Location = new System.Drawing.Point(214, 37);
+            this.cbtMidiPort.Location = new System.Drawing.Point(352, 50);
             this.cbtMidiPort.Name = "cbtMidiPort";
             this.cbtMidiPort.Size = new System.Drawing.Size(90, 24);
             this.cbtMidiPort.TabIndex = 118;
             this.cbtMidiPort.TabStop = false;
             this.cbtMidiPort.Text = "Midi-Port";
             this.cbtMidiPort.UseVisualStyleBackColor = true;
-            this.cbtMidiPort.CheckedChanged += new System.EventHandler(this.cbtMidiPort_CheckedChanged);
+            this.cbtMidiPort.Click += new System.EventHandler(this.cbtMidiPort_CheckedChanged);
             // 
             // cbtDisplayPort
             // 
             this.cbtDisplayPort.AutoSize = true;
             this.cbtDisplayPort.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbtDisplayPort.Location = new System.Drawing.Point(19, 295);
+            this.cbtDisplayPort.Location = new System.Drawing.Point(352, 17);
             this.cbtDisplayPort.Name = "cbtDisplayPort";
             this.cbtDisplayPort.Size = new System.Drawing.Size(108, 24);
             this.cbtDisplayPort.TabIndex = 117;
             this.cbtDisplayPort.TabStop = false;
             this.cbtDisplayPort.Text = "DisplayPort";
             this.cbtDisplayPort.UseVisualStyleBackColor = true;
-            this.cbtDisplayPort.CheckedChanged += new System.EventHandler(this.cbtDisplayPort_CheckedChanged);
+            this.cbtDisplayPort.Click += new System.EventHandler(this.cbtDisplayPort_CheckedChanged);
             // 
             // cbtHDMI
             // 
             this.cbtHDMI.AutoSize = true;
             this.cbtHDMI.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbtHDMI.Location = new System.Drawing.Point(19, 262);
+            this.cbtHDMI.Location = new System.Drawing.Point(42, 305);
             this.cbtHDMI.Name = "cbtHDMI";
             this.cbtHDMI.Size = new System.Drawing.Size(70, 24);
             this.cbtHDMI.TabIndex = 116;
             this.cbtHDMI.TabStop = false;
             this.cbtHDMI.Text = "HDMI";
             this.cbtHDMI.UseVisualStyleBackColor = true;
-            this.cbtHDMI.CheckedChanged += new System.EventHandler(this.cbtHDMI_CheckedChanged);
+            this.cbtHDMI.Click += new System.EventHandler(this.cbtHDMI_CheckedChanged);
             // 
             // cbtDVI
             // 
             this.cbtDVI.AutoSize = true;
             this.cbtDVI.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbtDVI.Location = new System.Drawing.Point(19, 230);
+            this.cbtDVI.Location = new System.Drawing.Point(42, 273);
             this.cbtDVI.Name = "cbtDVI";
             this.cbtDVI.Size = new System.Drawing.Size(56, 24);
             this.cbtDVI.TabIndex = 115;
             this.cbtDVI.TabStop = false;
             this.cbtDVI.Text = "DVI";
             this.cbtDVI.UseVisualStyleBackColor = true;
-            this.cbtDVI.CheckedChanged += new System.EventHandler(this.cbtDVI_CheckedChanged);
+            this.cbtDVI.Click += new System.EventHandler(this.cbtDVI_CheckedChanged);
             // 
             // cbtVGA
             // 
             this.cbtVGA.AutoSize = true;
             this.cbtVGA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbtVGA.Location = new System.Drawing.Point(19, 198);
+            this.cbtVGA.Location = new System.Drawing.Point(42, 241);
             this.cbtVGA.Name = "cbtVGA";
             this.cbtVGA.Size = new System.Drawing.Size(63, 24);
             this.cbtVGA.TabIndex = 114;
             this.cbtVGA.TabStop = false;
             this.cbtVGA.Text = "VGA";
             this.cbtVGA.UseVisualStyleBackColor = true;
-            this.cbtVGA.CheckedChanged += new System.EventHandler(this.cbtVGA_CheckedChanged);
+            this.cbtVGA.Click += new System.EventHandler(this.cbtVGA_CheckedChanged);
             // 
             // cbtRJ45
             // 
             this.cbtRJ45.AutoSize = true;
             this.cbtRJ45.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbtRJ45.Location = new System.Drawing.Point(19, 136);
+            this.cbtRJ45.Location = new System.Drawing.Point(42, 179);
             this.cbtRJ45.Name = "cbtRJ45";
             this.cbtRJ45.Size = new System.Drawing.Size(66, 24);
             this.cbtRJ45.TabIndex = 112;
             this.cbtRJ45.TabStop = false;
             this.cbtRJ45.Text = "RJ45";
             this.cbtRJ45.UseVisualStyleBackColor = true;
-            this.cbtRJ45.CheckedChanged += new System.EventHandler(this.cbtRJ45_CheckedChanged);
+            this.cbtRJ45.Click += new System.EventHandler(this.cbtRJ45_CheckedChanged);
             // 
             // cbtUSB3
             // 
             this.cbtUSB3.AutoSize = true;
             this.cbtUSB3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbtUSB3.Location = new System.Drawing.Point(19, 104);
+            this.cbtUSB3.Location = new System.Drawing.Point(42, 83);
             this.cbtUSB3.Name = "cbtUSB3";
-            this.cbtUSB3.Size = new System.Drawing.Size(75, 24);
+            this.cbtUSB3.Size = new System.Drawing.Size(88, 24);
             this.cbtUSB3.TabIndex = 111;
             this.cbtUSB3.TabStop = false;
-            this.cbtUSB3.Text = "USB 3";
+            this.cbtUSB3.Text = "USB 3.0";
             this.cbtUSB3.UseVisualStyleBackColor = true;
-            this.cbtUSB3.CheckedChanged += new System.EventHandler(this.cbtUSB3_CheckedChanged);
+            this.cbtUSB3.Click += new System.EventHandler(this.cbtUSB3_CheckedChanged);
             // 
             // cbtUSB2
             // 
             this.cbtUSB2.AutoSize = true;
             this.cbtUSB2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbtUSB2.Location = new System.Drawing.Point(19, 72);
+            this.cbtUSB2.Location = new System.Drawing.Point(42, 51);
             this.cbtUSB2.Name = "cbtUSB2";
             this.cbtUSB2.Size = new System.Drawing.Size(75, 24);
-            this.cbtUSB2.TabIndex = 36;
+            this.cbtUSB2.TabIndex = 136;
             this.cbtUSB2.TabStop = false;
             this.cbtUSB2.Text = "USB 2";
             this.cbtUSB2.UseVisualStyleBackColor = true;
-            this.cbtUSB2.CheckedChanged += new System.EventHandler(this.cbtUSB2_CheckedChanged);
+            this.cbtUSB2.Click += new System.EventHandler(this.cbtUSB2_CheckedChanged);
             // 
             // cbtPS2
             // 
             this.cbtPS2.AutoSize = true;
             this.cbtPS2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbtPS2.Location = new System.Drawing.Point(19, 38);
+            this.cbtPS2.Location = new System.Drawing.Point(42, 17);
             this.cbtPS2.Name = "cbtPS2";
             this.cbtPS2.Size = new System.Drawing.Size(58, 24);
-            this.cbtPS2.TabIndex = 37;
+            this.cbtPS2.TabIndex = 137;
             this.cbtPS2.TabStop = false;
             this.cbtPS2.Text = "PS2";
             this.cbtPS2.UseVisualStyleBackColor = true;
-            this.cbtPS2.CheckedChanged += new System.EventHandler(this.cbtPS2_CheckedChanged);
+            this.cbtPS2.Click += new System.EventHandler(this.cbtPS2_CheckedChanged);
             // 
             // nudESATA
             // 
             this.nudESATA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudESATA.Location = new System.Drawing.Point(327, 262);
+            this.nudESATA.Location = new System.Drawing.Point(470, 175);
             this.nudESATA.Name = "nudESATA";
             this.nudESATA.Size = new System.Drawing.Size(57, 26);
-            this.nudESATA.TabIndex = 16;
+            this.nudESATA.TabIndex = 15;
             this.nudESATA.ValueChanged += new System.EventHandler(this.nudESATA_ValueChanged);
             // 
             // nudLPT1
             // 
             this.nudLPT1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudLPT1.Location = new System.Drawing.Point(327, 228);
+            this.nudLPT1.Location = new System.Drawing.Point(470, 207);
             this.nudLPT1.Name = "nudLPT1";
             this.nudLPT1.Size = new System.Drawing.Size(57, 26);
-            this.nudLPT1.TabIndex = 15;
+            this.nudLPT1.TabIndex = 16;
             this.nudLPT1.ValueChanged += new System.EventHandler(this.nudLPT1_ValueChanged);
             // 
             // nudRS232
             // 
             this.nudRS232.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudRS232.Location = new System.Drawing.Point(327, 132);
+            this.nudRS232.Location = new System.Drawing.Point(470, 143);
             this.nudRS232.Name = "nudRS232";
             this.nudRS232.Size = new System.Drawing.Size(57, 26);
-            this.nudRS232.TabIndex = 12;
+            this.nudRS232.TabIndex = 14;
             this.nudRS232.ValueChanged += new System.EventHandler(this.nudRS232_ValueChanged);
             // 
             // nudThunderbolt
             // 
             this.nudThunderbolt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudThunderbolt.Location = new System.Drawing.Point(327, 100);
+            this.nudThunderbolt.Location = new System.Drawing.Point(470, 111);
             this.nudThunderbolt.Name = "nudThunderbolt";
             this.nudThunderbolt.Size = new System.Drawing.Size(57, 26);
-            this.nudThunderbolt.TabIndex = 11;
+            this.nudThunderbolt.TabIndex = 13;
             this.nudThunderbolt.ValueChanged += new System.EventHandler(this.nudThunderbolt_ValueChanged);
             // 
             // nudFireWire
             // 
             this.nudFireWire.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudFireWire.Location = new System.Drawing.Point(327, 69);
+            this.nudFireWire.Location = new System.Drawing.Point(470, 79);
             this.nudFireWire.Name = "nudFireWire";
             this.nudFireWire.Size = new System.Drawing.Size(57, 26);
-            this.nudFireWire.TabIndex = 10;
+            this.nudFireWire.TabIndex = 12;
             this.nudFireWire.ValueChanged += new System.EventHandler(this.nudFireWire_ValueChanged);
             // 
             // nudMidiPort
             // 
             this.nudMidiPort.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudMidiPort.Location = new System.Drawing.Point(327, 36);
+            this.nudMidiPort.Location = new System.Drawing.Point(470, 47);
             this.nudMidiPort.Name = "nudMidiPort";
             this.nudMidiPort.Size = new System.Drawing.Size(57, 26);
-            this.nudMidiPort.TabIndex = 9;
+            this.nudMidiPort.TabIndex = 11;
             this.nudMidiPort.ValueChanged += new System.EventHandler(this.nudMidiPort_ValueChanged);
             // 
             // nudDisplayPort
             // 
             this.nudDisplayPort.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudDisplayPort.Location = new System.Drawing.Point(128, 293);
+            this.nudDisplayPort.Location = new System.Drawing.Point(470, 15);
             this.nudDisplayPort.Name = "nudDisplayPort";
             this.nudDisplayPort.Size = new System.Drawing.Size(57, 26);
-            this.nudDisplayPort.TabIndex = 8;
+            this.nudDisplayPort.TabIndex = 10;
             this.nudDisplayPort.ValueChanged += new System.EventHandler(this.nudDisplayPort_ValueChanged);
             // 
             // nudHDMI
             // 
             this.nudHDMI.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudHDMI.Location = new System.Drawing.Point(128, 261);
+            this.nudHDMI.Location = new System.Drawing.Point(151, 304);
             this.nudHDMI.Name = "nudHDMI";
             this.nudHDMI.Size = new System.Drawing.Size(57, 26);
-            this.nudHDMI.TabIndex = 7;
+            this.nudHDMI.TabIndex = 9;
             this.nudHDMI.ValueChanged += new System.EventHandler(this.nudHDMI_ValueChanged);
             // 
             // nudDVI
             // 
             this.nudDVI.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudDVI.Location = new System.Drawing.Point(128, 229);
+            this.nudDVI.Location = new System.Drawing.Point(151, 272);
             this.nudDVI.Name = "nudDVI";
             this.nudDVI.Size = new System.Drawing.Size(57, 26);
-            this.nudDVI.TabIndex = 6;
+            this.nudDVI.TabIndex = 8;
             this.nudDVI.ValueChanged += new System.EventHandler(this.nudDVI_ValueChanged);
             // 
             // nudVGA
             // 
             this.nudVGA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudVGA.Location = new System.Drawing.Point(128, 197);
+            this.nudVGA.Location = new System.Drawing.Point(151, 240);
             this.nudVGA.Name = "nudVGA";
             this.nudVGA.Size = new System.Drawing.Size(57, 26);
-            this.nudVGA.TabIndex = 5;
+            this.nudVGA.TabIndex = 7;
             this.nudVGA.ValueChanged += new System.EventHandler(this.nudVGA_ValueChanged);
             // 
             // nudRJ45
             // 
             this.nudRJ45.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudRJ45.Location = new System.Drawing.Point(128, 133);
+            this.nudRJ45.Location = new System.Drawing.Point(151, 176);
             this.nudRJ45.Name = "nudRJ45";
             this.nudRJ45.Size = new System.Drawing.Size(57, 26);
-            this.nudRJ45.TabIndex = 3;
+            this.nudRJ45.TabIndex = 5;
             this.nudRJ45.ValueChanged += new System.EventHandler(this.nudRJ45_ValueChanged);
             // 
             // nudUSB3
             // 
             this.nudUSB3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudUSB3.Location = new System.Drawing.Point(128, 101);
+            this.nudUSB3.Location = new System.Drawing.Point(151, 80);
             this.nudUSB3.Name = "nudUSB3";
             this.nudUSB3.Size = new System.Drawing.Size(57, 26);
             this.nudUSB3.TabIndex = 2;
@@ -607,7 +558,7 @@
             // nudUSB2
             // 
             this.nudUSB2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudUSB2.Location = new System.Drawing.Point(128, 69);
+            this.nudUSB2.Location = new System.Drawing.Point(151, 48);
             this.nudUSB2.Name = "nudUSB2";
             this.nudUSB2.Size = new System.Drawing.Size(57, 26);
             this.nudUSB2.TabIndex = 1;
@@ -616,7 +567,7 @@
             // nudPS2
             // 
             this.nudPS2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudPS2.Location = new System.Drawing.Point(128, 37);
+            this.nudPS2.Location = new System.Drawing.Point(151, 15);
             this.nudPS2.Name = "nudPS2";
             this.nudPS2.Size = new System.Drawing.Size(57, 26);
             this.nudPS2.TabIndex = 0;
@@ -630,7 +581,7 @@
             this.cmdSpeichern.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdSpeichern.Name = "cmdSpeichern";
             this.cmdSpeichern.Size = new System.Drawing.Size(150, 35);
-            this.cmdSpeichern.TabIndex = 10;
+            this.cmdSpeichern.TabIndex = 8;
             this.cmdSpeichern.Text = "Speichern";
             this.cmdSpeichern.UseVisualStyleBackColor = false;
             this.cmdSpeichern.Click += new System.EventHandler(this.cmdSpeichern_Click);
@@ -643,7 +594,7 @@
             this.cmdClear.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdClear.Name = "cmdClear";
             this.cmdClear.Size = new System.Drawing.Size(150, 35);
-            this.cmdClear.TabIndex = 11;
+            this.cmdClear.TabIndex = 9;
             this.cmdClear.Text = "Zurücksetzen";
             this.cmdClear.UseVisualStyleBackColor = false;
             this.cmdClear.Click += new System.EventHandler(this.cmdClear_Click);
@@ -656,17 +607,18 @@
             this.cmdBildEinfugen.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdBildEinfugen.Name = "cmdBildEinfugen";
             this.cmdBildEinfugen.Size = new System.Drawing.Size(150, 35);
-            this.cmdBildEinfugen.TabIndex = 9;
+            this.cmdBildEinfugen.TabIndex = 11;
             this.cmdBildEinfugen.Text = "Bild einfügen";
             this.cmdBildEinfugen.UseVisualStyleBackColor = false;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(378, 97);
+            this.label5.ForeColor = System.Drawing.Color.Red;
+            this.label5.Location = new System.Drawing.Point(378, 99);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(74, 20);
-            this.label5.TabIndex = 20;
+            this.label5.TabIndex = 120;
             this.label5.Text = "Bauform:";
             // 
             // txtSonstiges
@@ -682,169 +634,139 @@
             this.label6.Location = new System.Drawing.Point(30, 136);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(84, 20);
-            this.label6.TabIndex = 22;
+            this.label6.TabIndex = 122;
             this.label6.Text = "Sonstiges:";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.cbtISA);
-            this.groupBox1.Controls.Add(this.cbtSATA);
-            this.groupBox1.Controls.Add(this.cbtIDE);
-            this.groupBox1.Controls.Add(this.cbtPCI64);
-            this.groupBox1.Controls.Add(this.cbtPCIe16);
-            this.groupBox1.Controls.Add(this.cbtPCIe8);
-            this.groupBox1.Controls.Add(this.cbtPCIe4);
-            this.groupBox1.Controls.Add(this.cbtPCIe1);
-            this.groupBox1.Controls.Add(this.cbtPCI);
-            this.groupBox1.Controls.Add(this.cbtAGP);
-            this.groupBox1.Controls.Add(this.nudISA);
-            this.groupBox1.Controls.Add(this.nudPCIe16);
-            this.groupBox1.Controls.Add(this.nudPCIe8);
-            this.groupBox1.Controls.Add(this.nudPCI64);
-            this.groupBox1.Controls.Add(this.nudPCIe4);
-            this.groupBox1.Controls.Add(this.nudSATA);
-            this.groupBox1.Controls.Add(this.nudIDE);
-            this.groupBox1.Controls.Add(this.nudPCIe1);
-            this.groupBox1.Controls.Add(this.nudPCI);
-            this.groupBox1.Controls.Add(this.nudAGP);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(23, 191);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(213, 363);
-            this.groupBox1.TabIndex = 7;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Internen Schnittstellen";
             // 
             // cbtISA
             // 
             this.cbtISA.AutoSize = true;
             this.cbtISA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbtISA.Location = new System.Drawing.Point(17, 326);
+            this.cbtISA.Location = new System.Drawing.Point(50, 275);
             this.cbtISA.Name = "cbtISA";
             this.cbtISA.Size = new System.Drawing.Size(55, 24);
             this.cbtISA.TabIndex = 35;
             this.cbtISA.TabStop = false;
             this.cbtISA.Text = "ISA";
             this.cbtISA.UseVisualStyleBackColor = true;
-            this.cbtISA.CheckedChanged += new System.EventHandler(this.cbtISA_CheckedChanged);
+            this.cbtISA.Click += new System.EventHandler(this.cbtISA_CheckedChanged);
             // 
             // cbtSATA
             // 
             this.cbtSATA.AutoSize = true;
             this.cbtSATA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbtSATA.Location = new System.Drawing.Point(17, 295);
+            this.cbtSATA.Location = new System.Drawing.Point(50, 244);
             this.cbtSATA.Name = "cbtSATA";
             this.cbtSATA.Size = new System.Drawing.Size(70, 24);
             this.cbtSATA.TabIndex = 34;
             this.cbtSATA.TabStop = false;
             this.cbtSATA.Text = "SATA";
             this.cbtSATA.UseVisualStyleBackColor = true;
-            this.cbtSATA.CheckedChanged += new System.EventHandler(this.cbtSATA_CheckedChanged);
+            this.cbtSATA.Click += new System.EventHandler(this.cbtSATA_CheckedChanged);
             // 
             // cbtIDE
             // 
             this.cbtIDE.AutoSize = true;
             this.cbtIDE.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbtIDE.Location = new System.Drawing.Point(17, 263);
+            this.cbtIDE.Location = new System.Drawing.Point(50, 212);
             this.cbtIDE.Name = "cbtIDE";
             this.cbtIDE.Size = new System.Drawing.Size(56, 24);
             this.cbtIDE.TabIndex = 33;
             this.cbtIDE.TabStop = false;
             this.cbtIDE.Text = "IDE";
             this.cbtIDE.UseVisualStyleBackColor = true;
-            this.cbtIDE.CheckedChanged += new System.EventHandler(this.cbtIDE_CheckedChanged);
+            this.cbtIDE.Click += new System.EventHandler(this.cbtIDE_CheckedChanged);
             // 
             // cbtPCIe16
             // 
             this.cbtPCIe16.AutoSize = true;
             this.cbtPCIe16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbtPCIe16.Location = new System.Drawing.Point(17, 230);
+            this.cbtPCIe16.Location = new System.Drawing.Point(50, 179);
             this.cbtPCIe16.Name = "cbtPCIe16";
             this.cbtPCIe16.Size = new System.Drawing.Size(92, 24);
             this.cbtPCIe16.TabIndex = 31;
             this.cbtPCIe16.TabStop = false;
             this.cbtPCIe16.Text = "PCIe x16";
             this.cbtPCIe16.UseVisualStyleBackColor = true;
-            this.cbtPCIe16.CheckedChanged += new System.EventHandler(this.cbtPCIe16_CheckedChanged);
+            this.cbtPCIe16.Click += new System.EventHandler(this.cbtPCIe16_CheckedChanged);
             // 
             // cbtPCIe8
             // 
             this.cbtPCIe8.AutoSize = true;
             this.cbtPCIe8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbtPCIe8.Location = new System.Drawing.Point(17, 196);
+            this.cbtPCIe8.Location = new System.Drawing.Point(50, 145);
             this.cbtPCIe8.Name = "cbtPCIe8";
             this.cbtPCIe8.Size = new System.Drawing.Size(83, 24);
             this.cbtPCIe8.TabIndex = 30;
             this.cbtPCIe8.TabStop = false;
             this.cbtPCIe8.Text = "PCIe x8";
             this.cbtPCIe8.UseVisualStyleBackColor = true;
-            this.cbtPCIe8.CheckedChanged += new System.EventHandler(this.cbtPCIe8_CheckedChanged);
+            this.cbtPCIe8.Click += new System.EventHandler(this.cbtPCIe8_CheckedChanged);
             // 
             // cbtPCIe4
             // 
             this.cbtPCIe4.AutoSize = true;
             this.cbtPCIe4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbtPCIe4.Location = new System.Drawing.Point(17, 164);
+            this.cbtPCIe4.Location = new System.Drawing.Point(50, 113);
             this.cbtPCIe4.Name = "cbtPCIe4";
             this.cbtPCIe4.Size = new System.Drawing.Size(83, 24);
             this.cbtPCIe4.TabIndex = 29;
             this.cbtPCIe4.TabStop = false;
             this.cbtPCIe4.Text = "PCIe x4";
             this.cbtPCIe4.UseVisualStyleBackColor = true;
-            this.cbtPCIe4.CheckedChanged += new System.EventHandler(this.cbtPCIe4_CheckedChanged);
+            this.cbtPCIe4.Click += new System.EventHandler(this.cbtPCIe4_CheckedChanged);
             // 
             // cbtPCIe1
             // 
             this.cbtPCIe1.AutoSize = true;
             this.cbtPCIe1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbtPCIe1.Location = new System.Drawing.Point(17, 135);
+            this.cbtPCIe1.Location = new System.Drawing.Point(50, 84);
             this.cbtPCIe1.Name = "cbtPCIe1";
             this.cbtPCIe1.Size = new System.Drawing.Size(83, 24);
             this.cbtPCIe1.TabIndex = 26;
             this.cbtPCIe1.TabStop = false;
             this.cbtPCIe1.Text = "PCIe x1";
             this.cbtPCIe1.UseVisualStyleBackColor = true;
-            this.cbtPCIe1.CheckedChanged += new System.EventHandler(this.cbtPCIe1_CheckedChanged);
+            this.cbtPCIe1.Click += new System.EventHandler(this.cbtPCIe1_CheckedChanged);
             // 
             // cbtPCI
             // 
             this.cbtPCI.AutoSize = true;
             this.cbtPCI.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbtPCI.Location = new System.Drawing.Point(17, 70);
+            this.cbtPCI.Location = new System.Drawing.Point(50, 50);
             this.cbtPCI.Name = "cbtPCI";
             this.cbtPCI.Size = new System.Drawing.Size(54, 24);
             this.cbtPCI.TabIndex = 25;
             this.cbtPCI.TabStop = false;
             this.cbtPCI.Text = "PCI";
             this.cbtPCI.UseVisualStyleBackColor = true;
-            this.cbtPCI.CheckedChanged += new System.EventHandler(this.cbtPCI_CheckedChanged);
+            this.cbtPCI.Click += new System.EventHandler(this.cbtPCI_CheckedChanged);
             // 
             // cbtAGP
             // 
             this.cbtAGP.AutoSize = true;
             this.cbtAGP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbtAGP.Location = new System.Drawing.Point(19, 37);
+            this.cbtAGP.Location = new System.Drawing.Point(52, 17);
             this.cbtAGP.Name = "cbtAGP";
             this.cbtAGP.Size = new System.Drawing.Size(62, 24);
             this.cbtAGP.TabIndex = 66;
             this.cbtAGP.TabStop = false;
             this.cbtAGP.Text = "AGP";
             this.cbtAGP.UseVisualStyleBackColor = true;
-            this.cbtAGP.CheckedChanged += new System.EventHandler(this.cbtAGP_CheckedChanged);
+            this.cbtAGP.Click += new System.EventHandler(this.cbtAGP_CheckedChanged);
             // 
             // nudISA
             // 
             this.nudISA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudISA.Location = new System.Drawing.Point(114, 325);
+            this.nudISA.Location = new System.Drawing.Point(147, 274);
             this.nudISA.Name = "nudISA";
             this.nudISA.Size = new System.Drawing.Size(57, 26);
-            this.nudISA.TabIndex = 9;
+            this.nudISA.TabIndex = 8;
             this.nudISA.ValueChanged += new System.EventHandler(this.nudISA_ValueChanged);
             // 
             // nudPCIe16
             // 
             this.nudPCIe16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudPCIe16.Location = new System.Drawing.Point(114, 228);
+            this.nudPCIe16.Location = new System.Drawing.Point(147, 177);
             this.nudPCIe16.Name = "nudPCIe16";
             this.nudPCIe16.Size = new System.Drawing.Size(57, 26);
             this.nudPCIe16.TabIndex = 5;
@@ -853,7 +775,7 @@
             // nudPCIe8
             // 
             this.nudPCIe8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudPCIe8.Location = new System.Drawing.Point(114, 196);
+            this.nudPCIe8.Location = new System.Drawing.Point(147, 145);
             this.nudPCIe8.Name = "nudPCIe8";
             this.nudPCIe8.Size = new System.Drawing.Size(57, 26);
             this.nudPCIe8.TabIndex = 4;
@@ -862,7 +784,7 @@
             // nudPCIe4
             // 
             this.nudPCIe4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudPCIe4.Location = new System.Drawing.Point(114, 164);
+            this.nudPCIe4.Location = new System.Drawing.Point(147, 113);
             this.nudPCIe4.Name = "nudPCIe4";
             this.nudPCIe4.Size = new System.Drawing.Size(57, 26);
             this.nudPCIe4.TabIndex = 3;
@@ -871,25 +793,25 @@
             // nudSATA
             // 
             this.nudSATA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudSATA.Location = new System.Drawing.Point(114, 293);
+            this.nudSATA.Location = new System.Drawing.Point(147, 242);
             this.nudSATA.Name = "nudSATA";
             this.nudSATA.Size = new System.Drawing.Size(57, 26);
-            this.nudSATA.TabIndex = 8;
+            this.nudSATA.TabIndex = 7;
             this.nudSATA.ValueChanged += new System.EventHandler(this.nudSATA_ValueChanged);
             // 
             // nudIDE
             // 
             this.nudIDE.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudIDE.Location = new System.Drawing.Point(114, 261);
+            this.nudIDE.Location = new System.Drawing.Point(147, 210);
             this.nudIDE.Name = "nudIDE";
             this.nudIDE.Size = new System.Drawing.Size(57, 26);
-            this.nudIDE.TabIndex = 7;
+            this.nudIDE.TabIndex = 6;
             this.nudIDE.ValueChanged += new System.EventHandler(this.nudIDE_ValueChanged);
             // 
             // nudPCIe1
             // 
             this.nudPCIe1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudPCIe1.Location = new System.Drawing.Point(114, 132);
+            this.nudPCIe1.Location = new System.Drawing.Point(147, 81);
             this.nudPCIe1.Name = "nudPCIe1";
             this.nudPCIe1.Size = new System.Drawing.Size(57, 26);
             this.nudPCIe1.TabIndex = 2;
@@ -898,7 +820,7 @@
             // nudPCI
             // 
             this.nudPCI.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudPCI.Location = new System.Drawing.Point(114, 69);
+            this.nudPCI.Location = new System.Drawing.Point(147, 49);
             this.nudPCI.Name = "nudPCI";
             this.nudPCI.Size = new System.Drawing.Size(57, 26);
             this.nudPCI.TabIndex = 1;
@@ -907,7 +829,7 @@
             // nudAGP
             // 
             this.nudAGP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudAGP.Location = new System.Drawing.Point(114, 37);
+            this.nudAGP.Location = new System.Drawing.Point(147, 17);
             this.nudAGP.Name = "nudAGP";
             this.nudAGP.Size = new System.Drawing.Size(57, 26);
             this.nudAGP.TabIndex = 0;
@@ -920,7 +842,7 @@
             this.cmdQR.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdQR.Name = "cmdQR";
             this.cmdQR.Size = new System.Drawing.Size(171, 35);
-            this.cmdQR.TabIndex = 12;
+            this.cmdQR.TabIndex = 10;
             this.cmdQR.Text = "QR-Code Drucken";
             this.cmdQR.UseVisualStyleBackColor = false;
             this.cmdQR.Click += new System.EventHandler(this.cmdQR_Click);
@@ -942,7 +864,6 @@
             this.wtxtHersteller.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtHersteller.FormattingEnabled = true;
             this.wtxtHersteller.Items.AddRange(new object[] {
-            "",
             "Abit",
             "Albatron",
             "Aopen",
@@ -976,15 +897,15 @@
             this.wtxtHersteller.Size = new System.Drawing.Size(159, 28);
             this.wtxtHersteller.TabIndex = 0;
             // 
-            // wtxtTyp
+            // wtxtID
             // 
-            this.wtxtTyp.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.wtxtTyp.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.wtxtTyp.FormattingEnabled = true;
-            this.wtxtTyp.Location = new System.Drawing.Point(458, 28);
-            this.wtxtTyp.Name = "wtxtTyp";
-            this.wtxtTyp.Size = new System.Drawing.Size(159, 28);
-            this.wtxtTyp.TabIndex = 1;
+            this.wtxtID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.wtxtID.FormattingEnabled = true;
+            this.wtxtID.Location = new System.Drawing.Point(458, 28);
+            this.wtxtID.Name = "wtxtID";
+            this.wtxtID.Size = new System.Drawing.Size(159, 28);
+            this.wtxtID.TabIndex = 1;
             // 
             // wtxtSockel
             // 
@@ -992,7 +913,6 @@
             this.wtxtSockel.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtSockel.FormattingEnabled = true;
             this.wtxtSockel.Items.AddRange(new object[] {
-            "",
             "3",
             "4",
             "5",
@@ -1055,8 +975,7 @@
             this.wtxtRAM.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtRAM.FormattingEnabled = true;
             this.wtxtRAM.Items.AddRange(new object[] {
-            "",
-            "SDRAM",
+            "SD-RAM",
             "DDR",
             "DDR2",
             "DDR3",
@@ -1083,7 +1002,6 @@
             this.wtxtZustand.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtZustand.FormattingEnabled = true;
             this.wtxtZustand.Items.AddRange(new object[] {
-            "",
             "verbaut",
             "auf Lager"});
             this.wtxtZustand.Location = new System.Drawing.Point(120, 65);
@@ -1095,45 +1013,179 @@
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.Color.Red;
-            this.label7.Location = new System.Drawing.Point(40, 66);
+            this.label7.Location = new System.Drawing.Point(42, 65);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(72, 20);
-            this.label7.TabIndex = 45;
+            this.label7.TabIndex = 145;
             this.label7.Text = "Zustand:";
             // 
-            // nudPCI64
+            // cbtUSBC
             // 
-            this.nudPCI64.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudPCI64.Location = new System.Drawing.Point(114, 100);
-            this.nudPCI64.Name = "nudPCI64";
-            this.nudPCI64.Size = new System.Drawing.Size(57, 26);
-            this.nudPCI64.TabIndex = 6;
-            this.nudPCI64.ValueChanged += new System.EventHandler(this.nudPCIe64_ValueChanged);
+            this.cbtUSBC.AutoSize = true;
+            this.cbtUSBC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbtUSBC.Location = new System.Drawing.Point(42, 147);
+            this.cbtUSBC.Name = "cbtUSBC";
+            this.cbtUSBC.Size = new System.Drawing.Size(78, 24);
+            this.cbtUSBC.TabIndex = 113;
+            this.cbtUSBC.TabStop = false;
+            this.cbtUSBC.Text = "USB-C";
+            this.cbtUSBC.UseVisualStyleBackColor = true;
+            this.cbtUSBC.Click += new System.EventHandler(this.cbtUSBC_CheckedChanged);
             // 
-            // cbtPCI64
+            // nudUSBC
             // 
-            this.cbtPCI64.AutoSize = true;
-            this.cbtPCI64.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbtPCI64.Location = new System.Drawing.Point(17, 105);
-            this.cbtPCI64.Name = "cbtPCI64";
-            this.cbtPCI64.Size = new System.Drawing.Size(83, 24);
-            this.cbtPCI64.TabIndex = 32;
-            this.cbtPCI64.TabStop = false;
-            this.cbtPCI64.Text = "PCI x64";
-            this.cbtPCI64.UseVisualStyleBackColor = true;
-            this.cbtPCI64.CheckedChanged += new System.EventHandler(this.cbtPCIe64_CheckedChanged);
+            this.nudUSBC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudUSBC.Location = new System.Drawing.Point(151, 144);
+            this.nudUSBC.Name = "nudUSBC";
+            this.nudUSBC.Size = new System.Drawing.Size(57, 26);
+            this.nudUSBC.TabIndex = 4;
+            this.nudUSBC.ValueChanged += new System.EventHandler(this.nudUSBC_ValueChanged);
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Location = new System.Drawing.Point(34, 173);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(583, 381);
+            this.tabControl1.TabIndex = 7;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.AutoScroll = true;
+            this.tabPage1.Controls.Add(this.cbtM2);
+            this.tabPage1.Controls.Add(this.nudM2);
+            this.tabPage1.Controls.Add(this.cbtISA);
+            this.tabPage1.Controls.Add(this.nudAGP);
+            this.tabPage1.Controls.Add(this.cbtSATA);
+            this.tabPage1.Controls.Add(this.nudPCI);
+            this.tabPage1.Controls.Add(this.cbtIDE);
+            this.tabPage1.Controls.Add(this.nudPCIe1);
+            this.tabPage1.Controls.Add(this.cbtPCIe16);
+            this.tabPage1.Controls.Add(this.nudIDE);
+            this.tabPage1.Controls.Add(this.cbtPCIe8);
+            this.tabPage1.Controls.Add(this.nudSATA);
+            this.tabPage1.Controls.Add(this.cbtPCIe4);
+            this.tabPage1.Controls.Add(this.nudPCIe4);
+            this.tabPage1.Controls.Add(this.cbtPCIe1);
+            this.tabPage1.Controls.Add(this.nudPCIe8);
+            this.tabPage1.Controls.Add(this.cbtPCI);
+            this.tabPage1.Controls.Add(this.nudPCIe16);
+            this.tabPage1.Controls.Add(this.cbtAGP);
+            this.tabPage1.Controls.Add(this.nudISA);
+            this.tabPage1.Location = new System.Drawing.Point(4, 29);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(575, 348);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Internen Schnittstellen";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // cbtM2
+            // 
+            this.cbtM2.AutoSize = true;
+            this.cbtM2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbtM2.Location = new System.Drawing.Point(50, 307);
+            this.cbtM2.Name = "cbtM2";
+            this.cbtM2.Size = new System.Drawing.Size(54, 24);
+            this.cbtM2.TabIndex = 68;
+            this.cbtM2.TabStop = false;
+            this.cbtM2.Text = "M.2";
+            this.cbtM2.UseVisualStyleBackColor = true;
+            this.cbtM2.Click += new System.EventHandler(this.cbtM2_CheckedChanged);
+            // 
+            // nudM2
+            // 
+            this.nudM2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudM2.Location = new System.Drawing.Point(147, 306);
+            this.nudM2.Name = "nudM2";
+            this.nudM2.Size = new System.Drawing.Size(57, 26);
+            this.nudM2.TabIndex = 9;
+            this.nudM2.ValueChanged += new System.EventHandler(this.nudM2_ValueChanged);
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.AutoScroll = true;
+            this.tabPage2.Controls.Add(this.nudUSB31);
+            this.tabPage2.Controls.Add(this.cbtUSB31);
+            this.tabPage2.Controls.Add(this.cbtInfrarot);
+            this.tabPage2.Controls.Add(this.nudPS2);
+            this.tabPage2.Controls.Add(this.cbtESATA);
+            this.tabPage2.Controls.Add(this.cbtUSBC);
+            this.tabPage2.Controls.Add(this.cbtRS232);
+            this.tabPage2.Controls.Add(this.nudUSB2);
+            this.tabPage2.Controls.Add(this.cbtLPT1);
+            this.tabPage2.Controls.Add(this.cbtPS2);
+            this.tabPage2.Controls.Add(this.cbtWLan);
+            this.tabPage2.Controls.Add(this.nudUSB3);
+            this.tabPage2.Controls.Add(this.cbtBluetooth);
+            this.tabPage2.Controls.Add(this.wtxtAudio);
+            this.tabPage2.Controls.Add(this.cbtThunderbolt);
+            this.tabPage2.Controls.Add(this.nudRJ45);
+            this.tabPage2.Controls.Add(this.cbtFireWire);
+            this.tabPage2.Controls.Add(this.nudUSBC);
+            this.tabPage2.Controls.Add(this.cbtMidiPort);
+            this.tabPage2.Controls.Add(this.nudVGA);
+            this.tabPage2.Controls.Add(this.nudESATA);
+            this.tabPage2.Controls.Add(this.lbtAudio);
+            this.tabPage2.Controls.Add(this.nudLPT1);
+            this.tabPage2.Controls.Add(this.nudDVI);
+            this.tabPage2.Controls.Add(this.nudRS232);
+            this.tabPage2.Controls.Add(this.nudHDMI);
+            this.tabPage2.Controls.Add(this.nudDisplayPort);
+            this.tabPage2.Controls.Add(this.nudThunderbolt);
+            this.tabPage2.Controls.Add(this.cbtUSB2);
+            this.tabPage2.Controls.Add(this.nudFireWire);
+            this.tabPage2.Controls.Add(this.cbtUSB3);
+            this.tabPage2.Controls.Add(this.nudMidiPort);
+            this.tabPage2.Controls.Add(this.cbtRJ45);
+            this.tabPage2.Controls.Add(this.cbtVGA);
+            this.tabPage2.Controls.Add(this.cbtDVI);
+            this.tabPage2.Controls.Add(this.cbtHDMI);
+            this.tabPage2.Controls.Add(this.cbtDisplayPort);
+            this.tabPage2.Location = new System.Drawing.Point(4, 29);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(575, 348);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Externen Schnittstellen";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // nudUSB31
+            // 
+            this.nudUSB31.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudUSB31.Location = new System.Drawing.Point(151, 112);
+            this.nudUSB31.Name = "nudUSB31";
+            this.nudUSB31.Size = new System.Drawing.Size(57, 26);
+            this.nudUSB31.TabIndex = 3;
+            this.nudUSB31.ValueChanged += new System.EventHandler(this.nudUSB31_ValueChanged);
+            // 
+            // cbtUSB31
+            // 
+            this.cbtUSB31.AutoSize = true;
+            this.cbtUSB31.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbtUSB31.Location = new System.Drawing.Point(42, 115);
+            this.cbtUSB31.Name = "cbtUSB31";
+            this.cbtUSB31.Size = new System.Drawing.Size(88, 24);
+            this.cbtUSB31.TabIndex = 127;
+            this.cbtUSB31.TabStop = false;
+            this.cbtUSB31.Text = "USB 3.1";
+            this.cbtUSB31.UseVisualStyleBackColor = true;
+            this.cbtUSB31.Click += new System.EventHandler(this.cbtUSB31_CheckedChanged);
             // 
             // Mainboard_Imput
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1126, 620);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.wtxtZustand);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.wtxtBauform);
             this.Controls.Add(this.wtxtRAM);
             this.Controls.Add(this.wtxtSockel);
-            this.Controls.Add(this.wtxtTyp);
+            this.Controls.Add(this.wtxtID);
             this.Controls.Add(this.wtxtHersteller);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.cmdQR);
@@ -1143,8 +1195,6 @@
             this.Controls.Add(this.cmdBildEinfugen);
             this.Controls.Add(this.cmdClear);
             this.Controls.Add(this.cmdSpeichern);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -1156,10 +1206,7 @@
             this.Name = "Mainboard_Imput";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mainboard";
-            this.Load += new System.EventHandler(this.Mainbord_Imput_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pcmdMainbord)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudESATA)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudLPT1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudRS232)).EndInit();
@@ -1174,8 +1221,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudUSB3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudUSB2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPS2)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudISA)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPCIe16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPCIe8)).EndInit();
@@ -1186,7 +1231,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudPCI)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAGP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudPCI64)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudUSBC)).EndInit();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudM2)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudUSB31)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1200,7 +1252,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.NumericUpDown nudRJ45;
         private System.Windows.Forms.NumericUpDown nudUSB3;
         private System.Windows.Forms.NumericUpDown nudUSB2;
@@ -1221,7 +1272,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtSonstiges;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.CheckBox cbtISA;
         private System.Windows.Forms.CheckBox cbtSATA;
         private System.Windows.Forms.CheckBox cbtIDE;
@@ -1260,15 +1310,22 @@
         private System.Windows.Forms.Button cmdQR;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ComboBox wtxtHersteller;
-        private System.Windows.Forms.ComboBox wtxtTyp;
+        private System.Windows.Forms.ComboBox wtxtID;
         private System.Windows.Forms.ComboBox wtxtSockel;
         private System.Windows.Forms.ComboBox wtxtRAM;
         private System.Windows.Forms.ComboBox wtxtBauform;
         private System.Windows.Forms.ComboBox wtxtZustand;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox wtxtAudio;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.CheckBox cbtPCI64;
-        private System.Windows.Forms.NumericUpDown nudPCI64;
+        private System.Windows.Forms.Label lbtAudio;
+        private System.Windows.Forms.CheckBox cbtUSBC;
+        private System.Windows.Forms.NumericUpDown nudUSBC;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.CheckBox cbtM2;
+        private System.Windows.Forms.NumericUpDown nudM2;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.NumericUpDown nudUSB31;
+        private System.Windows.Forms.CheckBox cbtUSB31;
     }
 }

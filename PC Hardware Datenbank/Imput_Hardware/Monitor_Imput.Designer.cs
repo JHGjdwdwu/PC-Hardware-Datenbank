@@ -36,8 +36,8 @@
             this.cbtEingangRGB = new System.Windows.Forms.CheckBox();
             this.cbtEingangDisplaport = new System.Windows.Forms.CheckBox();
             this.grub = new System.Windows.Forms.GroupBox();
-            this.cbtEingangUSB = new System.Windows.Forms.CheckBox();
-            this.nudEingangUSB = new System.Windows.Forms.NumericUpDown();
+            this.cbtEingangUSBC = new System.Windows.Forms.CheckBox();
+            this.nudEingangUSBC = new System.Windows.Forms.NumericUpDown();
             this.cbtEingangHDMI = new System.Windows.Forms.CheckBox();
             this.cbtEingangDVI = new System.Windows.Forms.CheckBox();
             this.cbtEingangVGA = new System.Windows.Forms.CheckBox();
@@ -47,7 +47,7 @@
             this.nudEingangHDMI = new System.Windows.Forms.NumericUpDown();
             this.nudEingangDVI = new System.Windows.Forms.NumericUpDown();
             this.nudEingangVGA = new System.Windows.Forms.NumericUpDown();
-            this.wtxtModell = new System.Windows.Forms.ComboBox();
+            this.wtxtID = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cmdQR = new System.Windows.Forms.Button();
             this.cmdBildEinfugen = new System.Windows.Forms.Button();
@@ -60,7 +60,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.wtxtHersteller = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.cbtHöhenVerstellbar = new System.Windows.Forms.CheckBox();
+            this.cbtHohenVerstellbar = new System.Windows.Forms.CheckBox();
             this.cbtVESA = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cbtAusgangUSB = new System.Windows.Forms.CheckBox();
@@ -70,7 +70,7 @@
             this.wtxtZustand = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.grub.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudEingangUSB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEingangUSBC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudEingangAudio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudEingangRGB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudEingangDisplaport)).BeginInit();
@@ -89,15 +89,15 @@
             this.wtxtMaxAuflosung.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.wtxtMaxAuflosung.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtMaxAuflosung.FormattingEnabled = true;
-            this.wtxtMaxAuflosung.Location = new System.Drawing.Point(230, 135);
+            this.wtxtMaxAuflosung.Location = new System.Drawing.Point(34, 209);
             this.wtxtMaxAuflosung.Name = "wtxtMaxAuflosung";
             this.wtxtMaxAuflosung.Size = new System.Drawing.Size(146, 28);
-            this.wtxtMaxAuflosung.TabIndex = 3;
+            this.wtxtMaxAuflosung.TabIndex = 4;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(229, 112);
+            this.label6.Location = new System.Drawing.Point(33, 186);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(118, 20);
             this.label6.TabIndex = 139;
@@ -124,7 +124,7 @@
             this.cbtEingangAudio.TabStop = false;
             this.cbtEingangAudio.Text = "Audio";
             this.cbtEingangAudio.UseVisualStyleBackColor = true;
-            this.cbtEingangAudio.CheckedChanged += new System.EventHandler(this.cbtEingangAudio_CheckedChanged);
+            this.cbtEingangAudio.Click += new System.EventHandler(this.cbtEingangAudio_CheckedChanged);
             // 
             // cbtEingangRGB
             // 
@@ -137,7 +137,7 @@
             this.cbtEingangRGB.TabStop = false;
             this.cbtEingangRGB.Text = "RGB";
             this.cbtEingangRGB.UseVisualStyleBackColor = true;
-            this.cbtEingangRGB.CheckedChanged += new System.EventHandler(this.cbtEingangRGB_CheckedChanged);
+            this.cbtEingangRGB.Click += new System.EventHandler(this.cbtEingangRGB_CheckedChanged);
             // 
             // cbtEingangDisplaport
             // 
@@ -150,12 +150,12 @@
             this.cbtEingangDisplaport.TabStop = false;
             this.cbtEingangDisplaport.Text = "Displayport";
             this.cbtEingangDisplaport.UseVisualStyleBackColor = true;
-            this.cbtEingangDisplaport.CheckedChanged += new System.EventHandler(this.cbtEingangDisplaport_CheckedChanged);
+            this.cbtEingangDisplaport.Click += new System.EventHandler(this.cbtEingangDisplaport_CheckedChanged);
             // 
             // grub
             // 
-            this.grub.Controls.Add(this.cbtEingangUSB);
-            this.grub.Controls.Add(this.nudEingangUSB);
+            this.grub.Controls.Add(this.cbtEingangUSBC);
+            this.grub.Controls.Add(this.nudEingangUSBC);
             this.grub.Controls.Add(this.cbtEingangAudio);
             this.grub.Controls.Add(this.cbtEingangRGB);
             this.grub.Controls.Add(this.cbtEingangDisplaport);
@@ -176,27 +176,27 @@
             this.grub.TabStop = false;
             this.grub.Text = "Eingänge";
             // 
-            // cbtEingangUSB
+            // cbtEingangUSBC
             // 
-            this.cbtEingangUSB.AutoSize = true;
-            this.cbtEingangUSB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbtEingangUSB.Location = new System.Drawing.Point(17, 227);
-            this.cbtEingangUSB.Name = "cbtEingangUSB";
-            this.cbtEingangUSB.Size = new System.Drawing.Size(62, 24);
-            this.cbtEingangUSB.TabIndex = 68;
-            this.cbtEingangUSB.TabStop = false;
-            this.cbtEingangUSB.Text = "USB";
-            this.cbtEingangUSB.UseVisualStyleBackColor = true;
-            this.cbtEingangUSB.CheckedChanged += new System.EventHandler(this.cbtEingangUSB_CheckedChanged);
+            this.cbtEingangUSBC.AutoSize = true;
+            this.cbtEingangUSBC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbtEingangUSBC.Location = new System.Drawing.Point(17, 227);
+            this.cbtEingangUSBC.Name = "cbtEingangUSBC";
+            this.cbtEingangUSBC.Size = new System.Drawing.Size(78, 24);
+            this.cbtEingangUSBC.TabIndex = 68;
+            this.cbtEingangUSBC.TabStop = false;
+            this.cbtEingangUSBC.Text = "USB-C";
+            this.cbtEingangUSBC.UseVisualStyleBackColor = true;
+            this.cbtEingangUSBC.Click += new System.EventHandler(this.cbtEingangUSB_CheckedChanged);
             // 
-            // nudEingangUSB
+            // nudEingangUSBC
             // 
-            this.nudEingangUSB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudEingangUSB.Location = new System.Drawing.Point(130, 226);
-            this.nudEingangUSB.Name = "nudEingangUSB";
-            this.nudEingangUSB.Size = new System.Drawing.Size(57, 26);
-            this.nudEingangUSB.TabIndex = 6;
-            this.nudEingangUSB.ValueChanged += new System.EventHandler(this.nudEingangUSB_ValueChanged);
+            this.nudEingangUSBC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudEingangUSBC.Location = new System.Drawing.Point(130, 226);
+            this.nudEingangUSBC.Name = "nudEingangUSBC";
+            this.nudEingangUSBC.Size = new System.Drawing.Size(57, 26);
+            this.nudEingangUSBC.TabIndex = 6;
+            this.nudEingangUSBC.ValueChanged += new System.EventHandler(this.nudEingangUSB_ValueChanged);
             // 
             // cbtEingangHDMI
             // 
@@ -209,7 +209,7 @@
             this.cbtEingangHDMI.TabStop = false;
             this.cbtEingangHDMI.Text = "HDMI";
             this.cbtEingangHDMI.UseVisualStyleBackColor = true;
-            this.cbtEingangHDMI.CheckedChanged += new System.EventHandler(this.cbtEingangHDMI_CheckedChanged);
+            this.cbtEingangHDMI.Click += new System.EventHandler(this.cbtEingangHDMI_CheckedChanged);
             // 
             // cbtEingangDVI
             // 
@@ -222,7 +222,7 @@
             this.cbtEingangDVI.TabStop = false;
             this.cbtEingangDVI.Text = "DVI";
             this.cbtEingangDVI.UseVisualStyleBackColor = true;
-            this.cbtEingangDVI.CheckedChanged += new System.EventHandler(this.cbtEingangDVI_CheckedChanged);
+            this.cbtEingangDVI.Click += new System.EventHandler(this.cbtEingangDVI_CheckedChanged);
             // 
             // cbtEingangVGA
             // 
@@ -235,7 +235,7 @@
             this.cbtEingangVGA.TabStop = false;
             this.cbtEingangVGA.Text = "VGA";
             this.cbtEingangVGA.UseVisualStyleBackColor = true;
-            this.cbtEingangVGA.CheckedChanged += new System.EventHandler(this.cbtEingangVGA_CheckedChanged);
+            this.cbtEingangVGA.Click += new System.EventHandler(this.cbtEingangVGA_CheckedChanged);
             // 
             // nudEingangAudio
             // 
@@ -291,15 +291,15 @@
             this.nudEingangVGA.TabIndex = 0;
             this.nudEingangVGA.ValueChanged += new System.EventHandler(this.nudEingangVGA_ValueChanged);
             // 
-            // wtxtModell
+            // wtxtID
             // 
-            this.wtxtModell.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.wtxtModell.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.wtxtModell.FormattingEnabled = true;
-            this.wtxtModell.Location = new System.Drawing.Point(233, 61);
-            this.wtxtModell.Name = "wtxtModell";
-            this.wtxtModell.Size = new System.Drawing.Size(146, 28);
-            this.wtxtModell.TabIndex = 1;
+            this.wtxtID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.wtxtID.FormattingEnabled = true;
+            this.wtxtID.Location = new System.Drawing.Point(233, 61);
+            this.wtxtID.Name = "wtxtID";
+            this.wtxtID.Size = new System.Drawing.Size(146, 28);
+            this.wtxtID.TabIndex = 1;
             // 
             // pictureBox1
             // 
@@ -402,22 +402,21 @@
             this.wtxtTechnik.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtTechnik.FormattingEnabled = true;
             this.wtxtTechnik.Items.AddRange(new object[] {
-            "",
             "LED",
             "LED-IPS",
             "IPS",
             "LED-LCD",
             "LCD",
             "Röhre"});
-            this.wtxtTechnik.Location = new System.Drawing.Point(34, 209);
+            this.wtxtTechnik.Location = new System.Drawing.Point(233, 135);
             this.wtxtTechnik.Name = "wtxtTechnik";
             this.wtxtTechnik.Size = new System.Drawing.Size(146, 28);
-            this.wtxtTechnik.TabIndex = 4;
+            this.wtxtTechnik.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(30, 186);
+            this.label2.Location = new System.Drawing.Point(229, 112);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 20);
             this.label2.TabIndex = 131;
@@ -429,7 +428,6 @@
             this.wtxtHersteller.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtHersteller.FormattingEnabled = true;
             this.wtxtHersteller.Items.AddRange(new object[] {
-            "",
             "3M",
             "9X Media",
             "A.C.T. Kern",
@@ -612,15 +610,15 @@
             this.label1.TabIndex = 130;
             this.label1.Text = "Hersteller:";
             // 
-            // cbtHöhenVerstellbar
+            // cbtHohenVerstellbar
             // 
-            this.cbtHöhenVerstellbar.AutoSize = true;
-            this.cbtHöhenVerstellbar.Location = new System.Drawing.Point(33, 306);
-            this.cbtHöhenVerstellbar.Name = "cbtHöhenVerstellbar";
-            this.cbtHöhenVerstellbar.Size = new System.Drawing.Size(152, 24);
-            this.cbtHöhenVerstellbar.TabIndex = 6;
-            this.cbtHöhenVerstellbar.Text = "Höhen verstellbar";
-            this.cbtHöhenVerstellbar.UseVisualStyleBackColor = true;
+            this.cbtHohenVerstellbar.AutoSize = true;
+            this.cbtHohenVerstellbar.Location = new System.Drawing.Point(33, 306);
+            this.cbtHohenVerstellbar.Name = "cbtHohenVerstellbar";
+            this.cbtHohenVerstellbar.Size = new System.Drawing.Size(152, 24);
+            this.cbtHohenVerstellbar.TabIndex = 6;
+            this.cbtHohenVerstellbar.Text = "Höhen verstellbar";
+            this.cbtHohenVerstellbar.UseVisualStyleBackColor = true;
             // 
             // cbtVESA
             // 
@@ -657,7 +655,7 @@
             this.cbtAusgangUSB.TabStop = false;
             this.cbtAusgangUSB.Text = "USB";
             this.cbtAusgangUSB.UseVisualStyleBackColor = true;
-            this.cbtAusgangUSB.CheckedChanged += new System.EventHandler(this.cbtAusgangUSB_CheckedChanged);
+            this.cbtAusgangUSB.Click += new System.EventHandler(this.cbtAusgangUSB_CheckedChanged);
             // 
             // nudAusgangUSB
             // 
@@ -679,7 +677,7 @@
             this.cbtAusgangAudio.TabStop = false;
             this.cbtAusgangAudio.Text = "Audio";
             this.cbtAusgangAudio.UseVisualStyleBackColor = true;
-            this.cbtAusgangAudio.CheckedChanged += new System.EventHandler(this.cbtAusgangAudio_CheckedChanged);
+            this.cbtAusgangAudio.Click += new System.EventHandler(this.cbtAusgangAudio_CheckedChanged);
             // 
             // nudAusgangAudio
             // 
@@ -696,7 +694,6 @@
             this.wtxtZustand.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtZustand.FormattingEnabled = true;
             this.wtxtZustand.Items.AddRange(new object[] {
-            "",
             "verbaut",
             "auf Lager"});
             this.wtxtZustand.Location = new System.Drawing.Point(34, 135);
@@ -723,12 +720,12 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.cbtVESA);
-            this.Controls.Add(this.cbtHöhenVerstellbar);
+            this.Controls.Add(this.cbtHohenVerstellbar);
             this.Controls.Add(this.wtxtMaxAuflosung);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.cbtLautsprecher);
             this.Controls.Add(this.grub);
-            this.Controls.Add(this.wtxtModell);
+            this.Controls.Add(this.wtxtID);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.cmdQR);
             this.Controls.Add(this.cmdBildEinfugen);
@@ -746,10 +743,9 @@
             this.Name = "Monitor_Imput";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Monitor";
-            this.Load += new System.EventHandler(this.Monitor_Imput_Load);
             this.grub.ResumeLayout(false);
             this.grub.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudEingangUSB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEingangUSBC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudEingangAudio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudEingangRGB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudEingangDisplaport)).EndInit();
@@ -784,7 +780,7 @@
         private System.Windows.Forms.NumericUpDown nudEingangHDMI;
         private System.Windows.Forms.NumericUpDown nudEingangDVI;
         private System.Windows.Forms.NumericUpDown nudEingangVGA;
-        private System.Windows.Forms.ComboBox wtxtModell;
+        private System.Windows.Forms.ComboBox wtxtID;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button cmdQR;
         private System.Windows.Forms.Button cmdBildEinfugen;
@@ -797,9 +793,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox wtxtHersteller;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckBox cbtEingangUSB;
-        private System.Windows.Forms.NumericUpDown nudEingangUSB;
-        private System.Windows.Forms.CheckBox cbtHöhenVerstellbar;
+        private System.Windows.Forms.CheckBox cbtEingangUSBC;
+        private System.Windows.Forms.NumericUpDown nudEingangUSBC;
+        private System.Windows.Forms.CheckBox cbtHohenVerstellbar;
         private System.Windows.Forms.CheckBox cbtVESA;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.CheckBox cbtAusgangUSB;

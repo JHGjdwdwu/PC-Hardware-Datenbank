@@ -36,7 +36,7 @@
             this.cmdBeenden = new System.Windows.Forms.Button();
             this.dgvDaten = new System.Windows.Forms.DataGridView();
             this.cmdErweiterteSuche = new System.Windows.Forms.Button();
-            this.lblTest = new System.Windows.Forms.Label();
+            this.cmdLoschen = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.img)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDaten)).BeginInit();
             this.SuspendLayout();
@@ -54,9 +54,10 @@
             // 
             this.wtxtSuche.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.wtxtSuche.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.wtxtSuche.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.wtxtSuche.FormattingEnabled = true;
             this.wtxtSuche.Items.AddRange(new object[] {
-            "",
+            "alles",
             "Mainboard",
             "CPU",
             "RAM",
@@ -122,15 +123,19 @@
             // 
             // dgvDaten
             // 
+            this.dgvDaten.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvDaten.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDaten.Location = new System.Drawing.Point(317, 12);
             this.dgvDaten.Name = "dgvDaten";
+            this.dgvDaten.ReadOnly = true;
+            this.dgvDaten.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDaten.Size = new System.Drawing.Size(782, 551);
             this.dgvDaten.TabIndex = 18;
             this.dgvDaten.TabStop = false;
             // 
             // cmdErweiterteSuche
             // 
+            this.cmdErweiterteSuche.BackColor = System.Drawing.Color.Yellow;
             this.cmdErweiterteSuche.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdErweiterteSuche.Location = new System.Drawing.Point(76, 372);
             this.cmdErweiterteSuche.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -140,21 +145,25 @@
             this.cmdErweiterteSuche.Text = "Erweiterte Suche";
             this.cmdErweiterteSuche.UseVisualStyleBackColor = false;
             // 
-            // lblTest
+            // cmdLoschen
             // 
-            this.lblTest.AutoSize = true;
-            this.lblTest.Location = new System.Drawing.Point(252, 578);
-            this.lblTest.Name = "lblTest";
-            this.lblTest.Size = new System.Drawing.Size(59, 20);
-            this.lblTest.TabIndex = 20;
-            this.lblTest.Text = "Test lbl";
+            this.cmdLoschen.BackColor = System.Drawing.Color.Red;
+            this.cmdLoschen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdLoschen.Location = new System.Drawing.Point(76, 417);
+            this.cmdLoschen.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cmdLoschen.Name = "cmdLoschen";
+            this.cmdLoschen.Size = new System.Drawing.Size(171, 35);
+            this.cmdLoschen.TabIndex = 19;
+            this.cmdLoschen.Text = "Löschen";
+            this.cmdLoschen.UseVisualStyleBackColor = false;
+            this.cmdLoschen.Click += new System.EventHandler(this.cmdLoschen_Click);
             // 
             // Home_Suche
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1112, 620);
-            this.Controls.Add(this.lblTest);
+            this.Controls.Add(this.cmdLoschen);
             this.Controls.Add(this.cmdErweiterteSuche);
             this.Controls.Add(this.dgvDaten);
             this.Controls.Add(this.cmdBeenden);
@@ -183,6 +192,6 @@
         private System.Windows.Forms.Button cmdBeenden;
         private System.Windows.Forms.DataGridView dgvDaten;
         private System.Windows.Forms.Button cmdErweiterteSuche;
-        private System.Windows.Forms.Label lblTest;
+        private System.Windows.Forms.Button cmdLoschen;
     }
 }

@@ -51,7 +51,7 @@
             this.nudLWL = new System.Windows.Forms.NumericUpDown();
             this.nudCoax = new System.Windows.Forms.NumericUpDown();
             this.nudRJ45 = new System.Windows.Forms.NumericUpDown();
-            this.wtxtTyp = new System.Windows.Forms.ComboBox();
+            this.wtxtID = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.wtxtZustand = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -70,7 +70,6 @@
             this.wtxtGeschwindigkeit.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtGeschwindigkeit.FormattingEnabled = true;
             this.wtxtGeschwindigkeit.Items.AddRange(new object[] {
-            "",
             "10Base-T (10Mb/s)",
             "100Base-T (100Mb/s)",
             "1000Base-T (1Gb/s)",
@@ -85,10 +84,10 @@
             "IEEE 802.11ac",
             "IEEE 802.11ad",
             "IEEE 802.11ah"});
-            this.wtxtGeschwindigkeit.Location = new System.Drawing.Point(311, 135);
+            this.wtxtGeschwindigkeit.Location = new System.Drawing.Point(31, 209);
             this.wtxtGeschwindigkeit.Name = "wtxtGeschwindigkeit";
             this.wtxtGeschwindigkeit.Size = new System.Drawing.Size(229, 28);
-            this.wtxtGeschwindigkeit.TabIndex = 3;
+            this.wtxtGeschwindigkeit.TabIndex = 4;
             // 
             // wtxtHersteller
             // 
@@ -96,12 +95,10 @@
             this.wtxtHersteller.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtHersteller.FormattingEnabled = true;
             this.wtxtHersteller.Items.AddRange(new object[] {
-            "",
             "Allied Telesis",
             "Allnet",
             "Apple",
             "ASUS",
-            "Asus",
             "ATTO",
             "Belkin",
             "Broadcom",
@@ -172,47 +169,21 @@
             this.wtxtSchnittstelle.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtSchnittstelle.FormattingEnabled = true;
             this.wtxtSchnittstelle.Items.AddRange(new object[] {
-            "",
-            "CardBus",
-            "PCIe 1.0 x1",
-            "PCIe 1.0 x4",
-            "PCIe 1.0 x8",
-            "PCIe 2.0 x1",
-            "PCIe 2.0 x4",
-            "PCIe 2.0 x8",
-            "PCIe 2.1 x1",
-            "PCIe 2.1 x4",
-            "PCIe 2.1 x8",
-            "PCIe 3.0 x4",
-            "PCIe 3.0 x8",
-            "PCIe 3.0 x16",
-            "PCI-X",
-            "PCI 2.1",
-            "PCI 2.2",
-            "PCI 2.3",
-            "USB-A 2.0",
-            "USB-A 3.0",
-            "Thunderbolt 1",
-            "Thunderbolt 2",
-            "Thunderbolt 3",
-            "SFP",
-            "SFP+",
             "PCI",
-            "PCIe",
-            "PCIe 1.0",
-            "PCIe 2.0",
-            "PCIe 2.1",
-            "PCIe 3.0",
-            "Thunderbolt",
+            "PCIe x1",
+            "PCIe x4",
+            "PCIe x8",
+            "PCIe x16",
+            "CardBus",
             "USB 2.0",
-            "USB 3.0",
-            "USB-A",
-            "USB Micro-B",
-            "USB-C"});
-            this.wtxtSchnittstelle.Location = new System.Drawing.Point(311, 61);
+            "USB 3.X",
+            "USB-C",
+            "Thunderbolt",
+            "SFP"});
+            this.wtxtSchnittstelle.Location = new System.Drawing.Point(311, 135);
             this.wtxtSchnittstelle.Name = "wtxtSchnittstelle";
             this.wtxtSchnittstelle.Size = new System.Drawing.Size(229, 28);
-            this.wtxtSchnittstelle.TabIndex = 1;
+            this.wtxtSchnittstelle.TabIndex = 3;
             // 
             // pictureBox1
             // 
@@ -303,7 +274,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(307, 38);
+            this.label5.Location = new System.Drawing.Point(307, 112);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(100, 20);
             this.label5.TabIndex = 151;
@@ -312,7 +283,8 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(307, 112);
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(27, 186);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(129, 20);
             this.label2.TabIndex = 150;
@@ -347,7 +319,7 @@
             this.cbtWLan.TabStop = false;
             this.cbtWLan.Text = "W-Lan";
             this.cbtWLan.UseVisualStyleBackColor = true;
-            this.cbtWLan.CheckedChanged += new System.EventHandler(this.cbtWLan_CheckedChanged);
+            this.cbtWLan.Click += new System.EventHandler(this.cbtWLan_CheckedChanged);
             // 
             // cbtLWL
             // 
@@ -360,7 +332,7 @@
             this.cbtLWL.TabStop = false;
             this.cbtLWL.Text = "LWL";
             this.cbtLWL.UseVisualStyleBackColor = true;
-            this.cbtLWL.CheckedChanged += new System.EventHandler(this.cbtLWL_CheckedChanged);
+            this.cbtLWL.Click += new System.EventHandler(this.cbtLWL_CheckedChanged);
             // 
             // cbtCoax
             // 
@@ -373,7 +345,7 @@
             this.cbtCoax.TabStop = false;
             this.cbtCoax.Text = "Coax";
             this.cbtCoax.UseVisualStyleBackColor = true;
-            this.cbtCoax.CheckedChanged += new System.EventHandler(this.cbtCoax_CheckedChanged);
+            this.cbtCoax.Click += new System.EventHandler(this.cbtCoax_CheckedChanged);
             // 
             // cbtRJ45
             // 
@@ -386,7 +358,7 @@
             this.cbtRJ45.TabStop = false;
             this.cbtRJ45.Text = "RJ-45";
             this.cbtRJ45.UseVisualStyleBackColor = true;
-            this.cbtRJ45.CheckedChanged += new System.EventHandler(this.cbtRJ45_CheckedChanged);
+            this.cbtRJ45.Click += new System.EventHandler(this.cbtRJ45_CheckedChanged);
             // 
             // nudWLan
             // 
@@ -424,24 +396,25 @@
             this.nudRJ45.TabIndex = 0;
             this.nudRJ45.ValueChanged += new System.EventHandler(this.nudRJ45_ValueChanged);
             // 
-            // wtxtTyp
+            // wtxtID
             // 
-            this.wtxtTyp.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.wtxtTyp.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.wtxtTyp.FormattingEnabled = true;
-            this.wtxtTyp.Location = new System.Drawing.Point(34, 209);
-            this.wtxtTyp.Name = "wtxtTyp";
-            this.wtxtTyp.Size = new System.Drawing.Size(229, 28);
-            this.wtxtTyp.TabIndex = 4;
+            this.wtxtID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.wtxtID.FormattingEnabled = true;
+            this.wtxtID.Location = new System.Drawing.Point(311, 61);
+            this.wtxtID.Name = "wtxtID";
+            this.wtxtID.Size = new System.Drawing.Size(229, 28);
+            this.wtxtID.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(30, 186);
+            this.label3.ForeColor = System.Drawing.Color.Red;
+            this.label3.Location = new System.Drawing.Point(307, 38);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 20);
+            this.label3.Size = new System.Drawing.Size(106, 20);
             this.label3.TabIndex = 156;
-            this.label3.Text = "Typ:";
+            this.label3.Text = "Bezeichnung:";
             // 
             // wtxtZustand
             // 
@@ -449,7 +422,6 @@
             this.wtxtZustand.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtZustand.FormattingEnabled = true;
             this.wtxtZustand.Items.AddRange(new object[] {
-            "",
             "verbaut",
             "auf Lager"});
             this.wtxtZustand.Location = new System.Drawing.Point(34, 135);
@@ -474,7 +446,7 @@
             this.ClientSize = new System.Drawing.Size(1126, 620);
             this.Controls.Add(this.wtxtZustand);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.wtxtTyp);
+            this.Controls.Add(this.wtxtID);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.wtxtGeschwindigkeit);
@@ -495,7 +467,6 @@
             this.Name = "Netzwerkkarte_Imput";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Netzwerkkarten";
-            this.Load += new System.EventHandler(this.Netzwerkkarte_Imput_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcmdMainbord)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -532,7 +503,7 @@
         private System.Windows.Forms.NumericUpDown nudLWL;
         private System.Windows.Forms.NumericUpDown nudCoax;
         private System.Windows.Forms.NumericUpDown nudRJ45;
-        private System.Windows.Forms.ComboBox wtxtTyp;
+        private System.Windows.Forms.ComboBox wtxtID;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox wtxtZustand;
         private System.Windows.Forms.Label label4;

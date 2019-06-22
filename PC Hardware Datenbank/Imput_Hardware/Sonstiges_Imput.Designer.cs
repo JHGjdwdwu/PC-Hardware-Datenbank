@@ -46,6 +46,8 @@
             this.cmdClear = new System.Windows.Forms.Button();
             this.wtxtZustand = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.wtxtID = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pcmdMainbord)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -56,7 +58,7 @@
             this.txtBemerkung.Multiline = true;
             this.txtBemerkung.Name = "txtBemerkung";
             this.txtBemerkung.Size = new System.Drawing.Size(557, 189);
-            this.txtBemerkung.TabIndex = 4;
+            this.txtBemerkung.TabIndex = 5;
             // 
             // wtxtAnschluss
             // 
@@ -66,7 +68,7 @@
             this.wtxtAnschluss.Location = new System.Drawing.Point(222, 128);
             this.wtxtAnschluss.Name = "wtxtAnschluss";
             this.wtxtAnschluss.Size = new System.Drawing.Size(146, 28);
-            this.wtxtAnschluss.TabIndex = 3;
+            this.wtxtAnschluss.TabIndex = 4;
             // 
             // label2
             // 
@@ -105,7 +107,7 @@
             this.cmdBeenden.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdBeenden.Name = "cmdBeenden";
             this.cmdBeenden.Size = new System.Drawing.Size(150, 35);
-            this.cmdBeenden.TabIndex = 9;
+            this.cmdBeenden.TabIndex = 10;
             this.cmdBeenden.Text = "Schließen";
             this.cmdBeenden.UseVisualStyleBackColor = false;
             this.cmdBeenden.Click += new System.EventHandler(this.cmdBeenden_Click);
@@ -149,7 +151,7 @@
             this.cmdSpeichern.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdSpeichern.Name = "cmdSpeichern";
             this.cmdSpeichern.Size = new System.Drawing.Size(150, 35);
-            this.cmdSpeichern.TabIndex = 6;
+            this.cmdSpeichern.TabIndex = 7;
             this.cmdSpeichern.Text = "Speichern";
             this.cmdSpeichern.UseVisualStyleBackColor = false;
             this.cmdSpeichern.Click += new System.EventHandler(this.cmdSpeichern_Click);
@@ -172,7 +174,7 @@
             this.cmdQR.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdQR.Name = "cmdQR";
             this.cmdQR.Size = new System.Drawing.Size(171, 35);
-            this.cmdQR.TabIndex = 8;
+            this.cmdQR.TabIndex = 9;
             this.cmdQR.Text = "QR-Code Drucken";
             this.cmdQR.UseVisualStyleBackColor = false;
             this.cmdQR.Click += new System.EventHandler(this.cmdQR_Click);
@@ -185,7 +187,7 @@
             this.wtxtGerat.Location = new System.Drawing.Point(34, 128);
             this.wtxtGerat.Name = "wtxtGerat";
             this.wtxtGerat.Size = new System.Drawing.Size(146, 28);
-            this.wtxtGerat.TabIndex = 2;
+            this.wtxtGerat.TabIndex = 3;
             // 
             // cmdBildEinfugen
             // 
@@ -195,7 +197,7 @@
             this.cmdBildEinfugen.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdBildEinfugen.Name = "cmdBildEinfugen";
             this.cmdBildEinfugen.Size = new System.Drawing.Size(150, 35);
-            this.cmdBildEinfugen.TabIndex = 5;
+            this.cmdBildEinfugen.TabIndex = 6;
             this.cmdBildEinfugen.Text = "Bild einfügen";
             this.cmdBildEinfugen.UseVisualStyleBackColor = false;
             // 
@@ -207,7 +209,7 @@
             this.cmdClear.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdClear.Name = "cmdClear";
             this.cmdClear.Size = new System.Drawing.Size(150, 35);
-            this.cmdClear.TabIndex = 7;
+            this.cmdClear.TabIndex = 8;
             this.cmdClear.Text = "Zurücksetzen";
             this.cmdClear.UseVisualStyleBackColor = false;
             this.cmdClear.Click += new System.EventHandler(this.cmdClear_Click);
@@ -218,7 +220,6 @@
             this.wtxtZustand.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtZustand.FormattingEnabled = true;
             this.wtxtZustand.Items.AddRange(new object[] {
-            "",
             "verbaut",
             "auf Lager"});
             this.wtxtZustand.Location = new System.Drawing.Point(34, 56);
@@ -236,11 +237,33 @@
             this.label4.TabIndex = 203;
             this.label4.Text = "Zustand:";
             // 
+            // wtxtID
+            // 
+            this.wtxtID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.wtxtID.FormattingEnabled = true;
+            this.wtxtID.Location = new System.Drawing.Point(415, 56);
+            this.wtxtID.Name = "wtxtID";
+            this.wtxtID.Size = new System.Drawing.Size(146, 28);
+            this.wtxtID.TabIndex = 2;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(411, 33);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(106, 20);
+            this.label3.TabIndex = 205;
+            this.label3.Text = "Bezeichnung:";
+            // 
             // Sonstiges_Imput
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1126, 620);
+            this.Controls.Add(this.wtxtID);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.wtxtZustand);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtBemerkung);
@@ -263,7 +286,6 @@
             this.Name = "Sonstiges_Imput";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sonstiges";
-            this.Load += new System.EventHandler(this.Sonstiges_Imput_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pcmdMainbord)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -290,5 +312,7 @@
         private System.Windows.Forms.Button cmdClear;
         private System.Windows.Forms.ComboBox wtxtZustand;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox wtxtID;
+        private System.Windows.Forms.Label label3;
     }
 }

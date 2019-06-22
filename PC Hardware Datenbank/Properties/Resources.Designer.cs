@@ -83,6 +83,16 @@ namespace PC_Hardware_Datenbank.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap DB {
+            get {
+                object obj = ResourceManager.GetObject("DB", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Download {
             get {
                 object obj = ResourceManager.GetObject("Download", resourceCulture);
@@ -276,6 +286,16 @@ namespace PC_Hardware_Datenbank.Properties {
         internal static System.Drawing.Bitmap TVKarte {
             get {
                 object obj = ResourceManager.GetObject("TVKarte", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap USER {
+            get {
+                object obj = ResourceManager.GetObject("USER", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

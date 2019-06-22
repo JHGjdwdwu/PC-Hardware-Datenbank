@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TVKarte_Imput));
             this.wtxtAnschluss = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.wtxtModell = new System.Windows.Forms.ComboBox();
+            this.wtxtID = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cmdQR = new System.Windows.Forms.Button();
             this.cmdBildEinfugen = new System.Windows.Forms.Button();
@@ -40,10 +40,9 @@
             this.cmdBeenden = new System.Windows.Forms.Button();
             this.pcmdMainbord = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.wtxtKartenhersteller = new System.Windows.Forms.ComboBox();
+            this.wtxtHersteller = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cbtHD = new System.Windows.Forms.CheckBox();
             this.cbtDVB_S2 = new System.Windows.Forms.CheckBox();
             this.nudDVB_S2 = new System.Windows.Forms.NumericUpDown();
             this.cbtDVB_C2 = new System.Windows.Forms.CheckBox();
@@ -59,7 +58,7 @@
             this.nudDVB_C = new System.Windows.Forms.NumericUpDown();
             this.nudAnalog = new System.Windows.Forms.NumericUpDown();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.cbtVideo = new System.Windows.Forms.CheckBox();
+            this.cbtCinch = new System.Windows.Forms.CheckBox();
             this.cbtSVideo = new System.Windows.Forms.CheckBox();
             this.cbtScart = new System.Windows.Forms.CheckBox();
             this.cbtHDMI = new System.Windows.Forms.CheckBox();
@@ -98,37 +97,18 @@
             this.wtxtAnschluss.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtAnschluss.FormattingEnabled = true;
             this.wtxtAnschluss.Items.AddRange(new object[] {
-            "",
             "CardBus",
             "PCI-X",
-            "PCI 2.1",
-            "PCI 2.2",
-            "PCI 2.3",
-            "PCIe 1.0 x1",
-            "PCIe 1.0 x4",
-            "PCIe 1.0 x8",
-            "PCIe 2.0 x1",
-            "PCIe 2.0 x4",
-            "PCIe 2.0 x8",
-            "PCIe 2.1 x1",
-            "PCIe 2.1 x4",
-            "PCIe 2.1 x8",
-            "PCIe 3.0 x4",
-            "PCIe 3.0 x8",
-            "PCIe 3.0 x16",
-            "USB-A 2.0",
-            "USB-A 3.0",
-            "Thunderbolt 1",
-            "Thunderbolt 2",
-            "Thunderbolt 3",
-            "SFP",
-            "SFP+",
-            "Thunderbolt",
+            "PCI",
+            "PCIe x1",
+            "PCIe x4",
+            "PCIe x8",
+            "PCIe x16",
             "USB 2.0",
-            "USB 3.0",
-            "USB-A",
-            "USB Micro-B",
-            "USB-C"});
+            "USB 3.X",
+            "USB-C",
+            "SFP",
+            "Thunderbolt"});
             this.wtxtAnschluss.Location = new System.Drawing.Point(249, 135);
             this.wtxtAnschluss.Name = "wtxtAnschluss";
             this.wtxtAnschluss.Size = new System.Drawing.Size(146, 28);
@@ -137,21 +117,22 @@
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.Red;
             this.label7.Location = new System.Drawing.Point(245, 112);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(105, 20);
             this.label7.TabIndex = 151;
             this.label7.Text = "Anschlussart:";
             // 
-            // wtxtModell
+            // wtxtID
             // 
-            this.wtxtModell.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.wtxtModell.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.wtxtModell.FormattingEnabled = true;
-            this.wtxtModell.Location = new System.Drawing.Point(249, 61);
-            this.wtxtModell.Name = "wtxtModell";
-            this.wtxtModell.Size = new System.Drawing.Size(146, 28);
-            this.wtxtModell.TabIndex = 1;
+            this.wtxtID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.wtxtID.FormattingEnabled = true;
+            this.wtxtID.Location = new System.Drawing.Point(249, 61);
+            this.wtxtID.Name = "wtxtID";
+            this.wtxtID.Size = new System.Drawing.Size(146, 28);
+            this.wtxtID.TabIndex = 1;
             // 
             // pictureBox1
             // 
@@ -244,17 +225,16 @@
             this.label5.ForeColor = System.Drawing.Color.Red;
             this.label5.Location = new System.Drawing.Point(245, 38);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(59, 20);
+            this.label5.Size = new System.Drawing.Size(106, 20);
             this.label5.TabIndex = 148;
-            this.label5.Text = "Modell:";
+            this.label5.Text = "Bezeichnung:";
             // 
-            // wtxtKartenhersteller
+            // wtxtHersteller
             // 
-            this.wtxtKartenhersteller.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.wtxtKartenhersteller.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.wtxtKartenhersteller.FormattingEnabled = true;
-            this.wtxtKartenhersteller.Items.AddRange(new object[] {
-            "",
+            this.wtxtHersteller.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtHersteller.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.wtxtHersteller.FormattingEnabled = true;
+            this.wtxtHersteller.Items.AddRange(new object[] {
             "Adaptec",
             "ADS Tech",
             "AJA",
@@ -344,10 +324,10 @@
             "Yakumo",
             "Yamada",
             "Yuan"});
-            this.wtxtKartenhersteller.Location = new System.Drawing.Point(34, 61);
-            this.wtxtKartenhersteller.Name = "wtxtKartenhersteller";
-            this.wtxtKartenhersteller.Size = new System.Drawing.Size(146, 28);
-            this.wtxtKartenhersteller.TabIndex = 0;
+            this.wtxtHersteller.Location = new System.Drawing.Point(34, 61);
+            this.wtxtHersteller.Name = "wtxtHersteller";
+            this.wtxtHersteller.Size = new System.Drawing.Size(146, 28);
+            this.wtxtHersteller.TabIndex = 0;
             // 
             // label1
             // 
@@ -355,13 +335,12 @@
             this.label1.ForeColor = System.Drawing.Color.Red;
             this.label1.Location = new System.Drawing.Point(30, 38);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(125, 20);
+            this.label1.Size = new System.Drawing.Size(81, 20);
             this.label1.TabIndex = 147;
-            this.label1.Text = "Kartenhersteller:";
+            this.label1.Text = "Hersteller:";
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.cbtHD);
             this.groupBox1.Controls.Add(this.cbtDVB_S2);
             this.groupBox1.Controls.Add(this.nudDVB_S2);
             this.groupBox1.Controls.Add(this.cbtDVB_C2);
@@ -384,17 +363,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Empfänger";
             // 
-            // cbtHD
-            // 
-            this.cbtHD.AutoSize = true;
-            this.cbtHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbtHD.Location = new System.Drawing.Point(17, 256);
-            this.cbtHD.Name = "cbtHD";
-            this.cbtHD.Size = new System.Drawing.Size(87, 24);
-            this.cbtHD.TabIndex = 7;
-            this.cbtHD.Text = "DVB-S2";
-            this.cbtHD.UseVisualStyleBackColor = true;
-            // 
             // cbtDVB_S2
             // 
             this.cbtDVB_S2.AutoSize = true;
@@ -406,7 +374,7 @@
             this.cbtDVB_S2.TabStop = false;
             this.cbtDVB_S2.Text = "DVB-S2";
             this.cbtDVB_S2.UseVisualStyleBackColor = true;
-            this.cbtDVB_S2.CheckedChanged += new System.EventHandler(this.cbtDVB_S2_CheckedChanged);
+            this.cbtDVB_S2.Click += new System.EventHandler(this.cbtDVB_S2_CheckedChanged);
             // 
             // nudDVB_S2
             // 
@@ -428,7 +396,7 @@
             this.cbtDVB_C2.TabStop = false;
             this.cbtDVB_C2.Text = "DVB-C2";
             this.cbtDVB_C2.UseVisualStyleBackColor = true;
-            this.cbtDVB_C2.CheckedChanged += new System.EventHandler(this.cbtDVB_C2_CheckedChanged);
+            this.cbtDVB_C2.Click += new System.EventHandler(this.cbtDVB_C2_CheckedChanged);
             // 
             // nudDVB_C2
             // 
@@ -450,7 +418,7 @@
             this.cbtDVB_T2.TabStop = false;
             this.cbtDVB_T2.Text = "DVB-T2";
             this.cbtDVB_T2.UseVisualStyleBackColor = true;
-            this.cbtDVB_T2.CheckedChanged += new System.EventHandler(this.cbtDVB_T2_CheckedChanged);
+            this.cbtDVB_T2.Click += new System.EventHandler(this.cbtDVB_T2_CheckedChanged);
             // 
             // nudDVB_T2
             // 
@@ -472,7 +440,7 @@
             this.cbtDVB_S.TabStop = false;
             this.cbtDVB_S.Text = "DVB-S";
             this.cbtDVB_S.UseVisualStyleBackColor = true;
-            this.cbtDVB_S.CheckedChanged += new System.EventHandler(this.cbtDVB_S_CheckedChanged);
+            this.cbtDVB_S.Click += new System.EventHandler(this.cbtDVB_S_CheckedChanged);
             // 
             // cbtDVB_T
             // 
@@ -485,7 +453,7 @@
             this.cbtDVB_T.TabStop = false;
             this.cbtDVB_T.Text = "DVB-T";
             this.cbtDVB_T.UseVisualStyleBackColor = true;
-            this.cbtDVB_T.CheckedChanged += new System.EventHandler(this.cbtCVB_T_CheckedChanged);
+            this.cbtDVB_T.Click += new System.EventHandler(this.cbtCVB_T_CheckedChanged);
             // 
             // cbtDVB_C
             // 
@@ -498,7 +466,7 @@
             this.cbtDVB_C.TabStop = false;
             this.cbtDVB_C.Text = "DVB-C";
             this.cbtDVB_C.UseVisualStyleBackColor = true;
-            this.cbtDVB_C.CheckedChanged += new System.EventHandler(this.cbtDVB_C_CheckedChanged);
+            this.cbtDVB_C.Click += new System.EventHandler(this.cbtDVB_C_CheckedChanged);
             // 
             // cbtAnalog
             // 
@@ -511,7 +479,7 @@
             this.cbtAnalog.TabStop = false;
             this.cbtAnalog.Text = "Analog";
             this.cbtAnalog.UseVisualStyleBackColor = true;
-            this.cbtAnalog.CheckedChanged += new System.EventHandler(this.cbtAnalog_CheckedChanged);
+            this.cbtAnalog.Click += new System.EventHandler(this.cbtAnalog_CheckedChanged);
             // 
             // nudDVB_S
             // 
@@ -551,7 +519,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.cbtVideo);
+            this.groupBox2.Controls.Add(this.cbtCinch);
             this.groupBox2.Controls.Add(this.cbtSVideo);
             this.groupBox2.Controls.Add(this.cbtScart);
             this.groupBox2.Controls.Add(this.cbtHDMI);
@@ -571,18 +539,18 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Externe Schnittstellen";
             // 
-            // cbtVideo
+            // cbtCinch
             // 
-            this.cbtVideo.AutoSize = true;
-            this.cbtVideo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbtVideo.Location = new System.Drawing.Point(17, 195);
-            this.cbtVideo.Name = "cbtVideo";
-            this.cbtVideo.Size = new System.Drawing.Size(69, 24);
-            this.cbtVideo.TabIndex = 31;
-            this.cbtVideo.TabStop = false;
-            this.cbtVideo.Text = "Video";
-            this.cbtVideo.UseVisualStyleBackColor = true;
-            this.cbtVideo.CheckedChanged += new System.EventHandler(this.cbtCinch_CheckedChanged);
+            this.cbtCinch.AutoSize = true;
+            this.cbtCinch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbtCinch.Location = new System.Drawing.Point(17, 195);
+            this.cbtCinch.Name = "cbtCinch";
+            this.cbtCinch.Size = new System.Drawing.Size(68, 24);
+            this.cbtCinch.TabIndex = 31;
+            this.cbtCinch.TabStop = false;
+            this.cbtCinch.Text = "Cinch";
+            this.cbtCinch.UseVisualStyleBackColor = true;
+            this.cbtCinch.Click += new System.EventHandler(this.cbtCinch_CheckedChanged);
             // 
             // cbtSVideo
             // 
@@ -595,7 +563,7 @@
             this.cbtSVideo.TabStop = false;
             this.cbtSVideo.Text = "S-Video";
             this.cbtSVideo.UseVisualStyleBackColor = true;
-            this.cbtSVideo.CheckedChanged += new System.EventHandler(this.cbtSVideo_CheckedChanged);
+            this.cbtSVideo.Click += new System.EventHandler(this.cbtSVideo_CheckedChanged);
             // 
             // cbtScart
             // 
@@ -608,7 +576,7 @@
             this.cbtScart.TabStop = false;
             this.cbtScart.Text = "Scart";
             this.cbtScart.UseVisualStyleBackColor = true;
-            this.cbtScart.CheckedChanged += new System.EventHandler(this.cbtScart_CheckedChanged);
+            this.cbtScart.Click += new System.EventHandler(this.cbtScart_CheckedChanged);
             // 
             // cbtHDMI
             // 
@@ -621,7 +589,7 @@
             this.cbtHDMI.TabStop = false;
             this.cbtHDMI.Text = "HDMI";
             this.cbtHDMI.UseVisualStyleBackColor = true;
-            this.cbtHDMI.CheckedChanged += new System.EventHandler(this.cbtHDMI_CheckedChanged);
+            this.cbtHDMI.Click += new System.EventHandler(this.cbtHDMI_CheckedChanged);
             // 
             // cbtODT
             // 
@@ -634,7 +602,7 @@
             this.cbtODT.TabStop = false;
             this.cbtODT.Text = "ODT";
             this.cbtODT.UseVisualStyleBackColor = true;
-            this.cbtODT.CheckedChanged += new System.EventHandler(this.cbtODT_CheckedChanged);
+            this.cbtODT.Click += new System.EventHandler(this.cbtODT_CheckedChanged);
             // 
             // cbtKlinke
             // 
@@ -647,7 +615,7 @@
             this.cbtKlinke.TabStop = false;
             this.cbtKlinke.Text = "Klinke";
             this.cbtKlinke.UseVisualStyleBackColor = true;
-            this.cbtKlinke.CheckedChanged += new System.EventHandler(this.cbtKlinke_CheckedChanged);
+            this.cbtKlinke.Click += new System.EventHandler(this.cbtKlinke_CheckedChanged);
             // 
             // nudCinch
             // 
@@ -709,7 +677,6 @@
             this.wtxtZustand.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtZustand.FormattingEnabled = true;
             this.wtxtZustand.Items.AddRange(new object[] {
-            "",
             "verbaut",
             "auf Lager"});
             this.wtxtZustand.Location = new System.Drawing.Point(34, 135);
@@ -738,7 +705,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.wtxtAnschluss);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.wtxtModell);
+            this.Controls.Add(this.wtxtID);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.cmdQR);
             this.Controls.Add(this.cmdBildEinfugen);
@@ -747,14 +714,13 @@
             this.Controls.Add(this.cmdBeenden);
             this.Controls.Add(this.pcmdMainbord);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.wtxtKartenhersteller);
+            this.Controls.Add(this.wtxtHersteller);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "TVKarte_Imput";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TVKarten";
-            this.Load += new System.EventHandler(this.TVKarte_Imput_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcmdMainbord)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -782,7 +748,7 @@
         #endregion
         private System.Windows.Forms.ComboBox wtxtAnschluss;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox wtxtModell;
+        private System.Windows.Forms.ComboBox wtxtID;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button cmdQR;
         private System.Windows.Forms.Button cmdBildEinfugen;
@@ -791,7 +757,7 @@
         private System.Windows.Forms.Button cmdBeenden;
         private System.Windows.Forms.PictureBox pcmdMainbord;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox wtxtKartenhersteller;
+        private System.Windows.Forms.ComboBox wtxtHersteller;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.CheckBox cbtDVB_S;
@@ -803,7 +769,7 @@
         private System.Windows.Forms.NumericUpDown nudDVB_C;
         private System.Windows.Forms.NumericUpDown nudAnalog;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.CheckBox cbtVideo;
+        private System.Windows.Forms.CheckBox cbtCinch;
         private System.Windows.Forms.CheckBox cbtSVideo;
         private System.Windows.Forms.CheckBox cbtScart;
         private System.Windows.Forms.CheckBox cbtHDMI;
@@ -817,7 +783,6 @@
         private System.Windows.Forms.NumericUpDown nudKlinke;
         private System.Windows.Forms.ComboBox wtxtZustand;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.CheckBox cbtHD;
         private System.Windows.Forms.CheckBox cbtDVB_S2;
         private System.Windows.Forms.NumericUpDown nudDVB_S2;
         private System.Windows.Forms.CheckBox cbtDVB_C2;

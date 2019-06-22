@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Schnittstellenkarte_Imput));
             this.wtxtAnschluss = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.wtxtModell = new System.Windows.Forms.ComboBox();
+            this.wtxtID = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cmdQR = new System.Windows.Forms.Button();
             this.cmdBildEinfugen = new System.Windows.Forms.Button();
@@ -40,7 +40,7 @@
             this.cmdBeenden = new System.Windows.Forms.Button();
             this.pcmdMainbord = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.wtxtKartenhersteller = new System.Windows.Forms.ComboBox();
+            this.wtxtHersteller = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtBemerkungen = new System.Windows.Forms.TextBox();
@@ -58,32 +58,12 @@
             this.wtxtAnschluss.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtAnschluss.FormattingEnabled = true;
             this.wtxtAnschluss.Items.AddRange(new object[] {
-            "",
-            "PCI 2.0",
-            "PCI 2.3",
-            "PCI-X 1.0",
-            "PCI-X 266 (2.0)",
-            "PCI-X 533 (2.0)",
-            "PCIe x1 (v1.1)",
-            "PCIe x4 (v1.1)",
-            "PCIe x8 (v1.1)",
-            "PCIe x16 (v1.1)",
-            "PCIe x1 (v2.0)",
-            "PCIe x4 (v2.0)",
-            "PCIe x8 (v2.0)",
-            "PCIe x16 (v2.0)",
-            "PCIe x1 (v3.0)",
-            "PCIe x4 (v3.0)",
-            "PCIe x8 (v3.0)",
-            "PCIe x16 (v3.0)",
-            "PCIe x1 (v4.0)",
-            "PCIe x4 (v4.0)",
-            "PCIe x8 (v4.0)",
-            "PCIe x16 (v4.0)",
-            "PCIe x1 (v5.0)",
-            "PCIe x4 (v5.0)",
-            "PCIe x8 (v5.0)",
-            "PCIe x16 (v5.0)"});
+            "PCI",
+            "PCI-X",
+            "PCIe x1",
+            "PCIe x4",
+            "PCIe x8",
+            "PCIe x16"});
             this.wtxtAnschluss.Location = new System.Drawing.Point(249, 135);
             this.wtxtAnschluss.Name = "wtxtAnschluss";
             this.wtxtAnschluss.Size = new System.Drawing.Size(146, 28);
@@ -92,21 +72,22 @@
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.Red;
             this.label7.Location = new System.Drawing.Point(245, 112);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(105, 20);
             this.label7.TabIndex = 135;
             this.label7.Text = "Anschlussart:";
             // 
-            // wtxtModell
+            // wtxtID
             // 
-            this.wtxtModell.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.wtxtModell.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.wtxtModell.FormattingEnabled = true;
-            this.wtxtModell.Location = new System.Drawing.Point(249, 61);
-            this.wtxtModell.Name = "wtxtModell";
-            this.wtxtModell.Size = new System.Drawing.Size(146, 28);
-            this.wtxtModell.TabIndex = 1;
+            this.wtxtID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.wtxtID.FormattingEnabled = true;
+            this.wtxtID.Location = new System.Drawing.Point(249, 61);
+            this.wtxtID.Name = "wtxtID";
+            this.wtxtID.Size = new System.Drawing.Size(146, 28);
+            this.wtxtID.TabIndex = 1;
             // 
             // pictureBox1
             // 
@@ -199,19 +180,19 @@
             this.label5.ForeColor = System.Drawing.Color.Red;
             this.label5.Location = new System.Drawing.Point(245, 38);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(59, 20);
+            this.label5.Size = new System.Drawing.Size(106, 20);
             this.label5.TabIndex = 132;
-            this.label5.Text = "Modell:";
+            this.label5.Text = "Bezeichnung:";
             // 
-            // wtxtKartenhersteller
+            // wtxtHersteller
             // 
-            this.wtxtKartenhersteller.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.wtxtKartenhersteller.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.wtxtKartenhersteller.FormattingEnabled = true;
-            this.wtxtKartenhersteller.Location = new System.Drawing.Point(34, 61);
-            this.wtxtKartenhersteller.Name = "wtxtKartenhersteller";
-            this.wtxtKartenhersteller.Size = new System.Drawing.Size(146, 28);
-            this.wtxtKartenhersteller.TabIndex = 0;
+            this.wtxtHersteller.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtHersteller.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.wtxtHersteller.FormattingEnabled = true;
+            this.wtxtHersteller.Location = new System.Drawing.Point(34, 61);
+            this.wtxtHersteller.Name = "wtxtHersteller";
+            this.wtxtHersteller.Size = new System.Drawing.Size(146, 28);
+            this.wtxtHersteller.TabIndex = 0;
             // 
             // label1
             // 
@@ -219,9 +200,9 @@
             this.label1.ForeColor = System.Drawing.Color.Red;
             this.label1.Location = new System.Drawing.Point(30, 38);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(125, 20);
+            this.label1.Size = new System.Drawing.Size(81, 20);
             this.label1.TabIndex = 129;
-            this.label1.Text = "Kartenhersteller:";
+            this.label1.Text = "Hersteller:";
             // 
             // label3
             // 
@@ -246,7 +227,6 @@
             this.wtxtZustand.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtZustand.FormattingEnabled = true;
             this.wtxtZustand.Items.AddRange(new object[] {
-            "",
             "verbaut",
             "auf Lager"});
             this.wtxtZustand.Location = new System.Drawing.Point(34, 135);
@@ -270,7 +250,6 @@
             this.wtxtUbertragungsart.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtUbertragungsart.FormattingEnabled = true;
             this.wtxtUbertragungsart.Items.AddRange(new object[] {
-            "",
             "seriell",
             "parallel"});
             this.wtxtUbertragungsart.Location = new System.Drawing.Point(34, 209);
@@ -300,7 +279,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.wtxtAnschluss);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.wtxtModell);
+            this.Controls.Add(this.wtxtID);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.cmdQR);
             this.Controls.Add(this.cmdBildEinfugen);
@@ -309,14 +288,13 @@
             this.Controls.Add(this.cmdBeenden);
             this.Controls.Add(this.pcmdMainbord);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.wtxtKartenhersteller);
+            this.Controls.Add(this.wtxtHersteller);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Schnittstellenkarte_Imput";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Schnittstellenkarte";
-            this.Load += new System.EventHandler(this.Schnittstellenkarte_Imput_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcmdMainbord)).EndInit();
             this.ResumeLayout(false);
@@ -327,7 +305,7 @@
         #endregion
         private System.Windows.Forms.ComboBox wtxtAnschluss;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox wtxtModell;
+        private System.Windows.Forms.ComboBox wtxtID;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button cmdQR;
         private System.Windows.Forms.Button cmdBildEinfugen;
@@ -336,7 +314,7 @@
         private System.Windows.Forms.Button cmdBeenden;
         private System.Windows.Forms.PictureBox pcmdMainbord;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox wtxtKartenhersteller;
+        private System.Windows.Forms.ComboBox wtxtHersteller;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtBemerkungen;

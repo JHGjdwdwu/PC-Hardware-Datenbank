@@ -40,7 +40,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.nudUSB = new System.Windows.Forms.NumericUpDown();
             this.nudAkkanzahl = new System.Windows.Forms.NumericUpDown();
-            this.wtxtModell = new System.Windows.Forms.ComboBox();
+            this.wtxtID = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cmdQR = new System.Windows.Forms.Button();
             this.cmdBildEinfugen = new System.Windows.Forms.Button();
@@ -75,15 +75,15 @@
             this.wtxtWatt.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.wtxtWatt.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtWatt.FormattingEnabled = true;
-            this.wtxtWatt.Location = new System.Drawing.Point(34, 209);
+            this.wtxtWatt.Location = new System.Drawing.Point(249, 135);
             this.wtxtWatt.Name = "wtxtWatt";
             this.wtxtWatt.Size = new System.Drawing.Size(146, 28);
-            this.wtxtWatt.TabIndex = 4;
+            this.wtxtWatt.TabIndex = 3;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(33, 186);
+            this.label6.Location = new System.Drawing.Point(248, 112);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(76, 20);
             this.label6.TabIndex = 139;
@@ -108,15 +108,15 @@
             "Offline USV",
             "Online USV",
             "Netzinteraktife USV"});
-            this.wtxtArbeitsweise.Location = new System.Drawing.Point(34, 283);
+            this.wtxtArbeitsweise.Location = new System.Drawing.Point(249, 209);
             this.wtxtArbeitsweise.Name = "wtxtArbeitsweise";
             this.wtxtArbeitsweise.Size = new System.Drawing.Size(146, 28);
-            this.wtxtArbeitsweise.TabIndex = 6;
+            this.wtxtArbeitsweise.TabIndex = 5;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(33, 260);
+            this.label9.Location = new System.Drawing.Point(248, 186);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(103, 20);
             this.label9.TabIndex = 138;
@@ -136,19 +136,15 @@
             this.wtxtAkkutyp.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.wtxtAkkutyp.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtAkkutyp.FormattingEnabled = true;
-            this.wtxtAkkutyp.Items.AddRange(new object[] {
-            "AGP",
-            "PCI",
-            "PCIe x16"});
-            this.wtxtAkkutyp.Location = new System.Drawing.Point(249, 209);
+            this.wtxtAkkutyp.Location = new System.Drawing.Point(34, 283);
             this.wtxtAkkutyp.Name = "wtxtAkkutyp";
             this.wtxtAkkutyp.Size = new System.Drawing.Size(146, 28);
-            this.wtxtAkkutyp.TabIndex = 5;
+            this.wtxtAkkutyp.TabIndex = 6;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(245, 186);
+            this.label7.Location = new System.Drawing.Point(30, 260);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(70, 20);
             this.label7.TabIndex = 136;
@@ -185,15 +181,15 @@
             0,
             0});
             // 
-            // wtxtModell
+            // wtxtID
             // 
-            this.wtxtModell.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.wtxtModell.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.wtxtModell.FormattingEnabled = true;
-            this.wtxtModell.Location = new System.Drawing.Point(249, 61);
-            this.wtxtModell.Name = "wtxtModell";
-            this.wtxtModell.Size = new System.Drawing.Size(146, 28);
-            this.wtxtModell.TabIndex = 1;
+            this.wtxtID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.wtxtID.FormattingEnabled = true;
+            this.wtxtID.Location = new System.Drawing.Point(249, 61);
+            this.wtxtID.Name = "wtxtID";
+            this.wtxtID.Size = new System.Drawing.Size(146, 28);
+            this.wtxtID.TabIndex = 1;
             // 
             // pictureBox1
             // 
@@ -274,10 +270,10 @@
             this.wtxtVA.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.wtxtVA.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtVA.FormattingEnabled = true;
-            this.wtxtVA.Location = new System.Drawing.Point(249, 135);
+            this.wtxtVA.Location = new System.Drawing.Point(34, 209);
             this.wtxtVA.Name = "wtxtVA";
             this.wtxtVA.Size = new System.Drawing.Size(146, 28);
-            this.wtxtVA.TabIndex = 3;
+            this.wtxtVA.TabIndex = 4;
             // 
             // pcmdMainbord
             // 
@@ -296,14 +292,14 @@
             this.label5.ForeColor = System.Drawing.Color.Red;
             this.label5.Location = new System.Drawing.Point(245, 38);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(59, 20);
+            this.label5.Size = new System.Drawing.Size(106, 20);
             this.label5.TabIndex = 133;
-            this.label5.Text = "Modell:";
+            this.label5.Text = "Bezeichnung:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(245, 112);
+            this.label3.Location = new System.Drawing.Point(30, 186);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(138, 20);
             this.label3.TabIndex = 132;
@@ -335,7 +331,6 @@
             this.wtxtZustand.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtZustand.FormattingEnabled = true;
             this.wtxtZustand.Items.AddRange(new object[] {
-            "",
             "verbaut",
             "auf Lager"});
             this.wtxtZustand.Location = new System.Drawing.Point(34, 135);
@@ -370,7 +365,7 @@
             this.Controls.Add(this.wtxtAkkutyp);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.nudUSB);
-            this.Controls.Add(this.wtxtModell);
+            this.Controls.Add(this.wtxtID);
             this.Controls.Add(this.nudAkkanzahl);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.cmdQR);
@@ -389,7 +384,6 @@
             this.Name = "USV_Imput";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "USV";
-            this.Load += new System.EventHandler(this.USV_Imput_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudUSB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAkkanzahl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -411,7 +405,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.NumericUpDown nudUSB;
         private System.Windows.Forms.NumericUpDown nudAkkanzahl;
-        private System.Windows.Forms.ComboBox wtxtModell;
+        private System.Windows.Forms.ComboBox wtxtID;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button cmdQR;
         private System.Windows.Forms.Button cmdBildEinfugen;

@@ -15,16 +15,14 @@ namespace PC_Hardware_Datenbank
 {
     public partial class Lufter_Imput : Form
     {
-
-        private string Datensatz = "";//Datensatz der dan in die Datenbank geschoben wird
-        private char LF = (char)10;
-        private string QR = "";//QR Code
-        public string DateiPfad;
-
         public Lufter_Imput()
         {
             InitializeComponent();
         }
+
+        Methoden methoden = new Methoden();
+        private char LF = (char)10;
+        private string QR = "";//QR Code
 
         private void cmdBeenden_Click(object sender, EventArgs e)//Fenster Schlissen
         {
@@ -46,25 +44,19 @@ namespace PC_Hardware_Datenbank
 
         private void cmdSpeichern_Click(object sender, EventArgs e)//Speichern Button
         {
-            if (File.Exists(DateiPfad + @"/Lufter_Datenbank.csv") == true)//Prüffen ob eine .csv Datei bereits erstellt wurde
+            if (wtxtZustand.Text != "" && wtxtDicke.Text != "" && wtxtDurchmesser.Text != "" && wtxtSpannung.Text != "" && wtxtArt.Text != "")
             {
-                if (wtxtDurchmesser.Text != "" && wtxtDicke.Text != "" && wtxtArt.Text != "" && wtxtSpannung.Text != "" && wtxtZustand.Text != "")//Prüfft die Pflichtangaben
+                try
                 {
-                    Datensatz = File.ReadAllText(DateiPfad + @"/Lufter_Datenbank.csv");//Datenbanck lessen und in Datensatz speichern
-
-                    #region Datensatz bilden
-                    Datensatz += LF +
-                        wtxtZustand.Text + ";" +
-                        wtxtDicke.Text + ";" +
-                        wtxtDurchmesser.Text + ";" +
-                        wtxtSpannung.Text + ";" +
-                        wtxtArt.Text + ";" +
-                        wtxtModell.Text + ";" +
-                        wtxtHersteller.Text + ";" +
-                        wtxtPinheader.Text + ";" +
-                        wtxtMaximaldrehzahl.Text + ";" +
-                        nudStrom.Value;
-                    #endregion
+                    string mysqlconnectionstring = methoden.MySqlConnectionString();//Angaben um sich an der Datenbank anzumelden
+                    methoden.MySQL_ping_check(mysqlconnectionstring);//Testabfrage bei der Datenkan
+                    string Datensatz = methoden.ObjekteTextToString(",", this);//Erzeugt ein String aus den Daten auf der Form
+                    string sqldatensatz = Datensatz.Substring(0, Datensatz.Length - 1);//Entfert ein überflüssiges Zeichen (Grund Schleife)
+                    string mysqlcommandtext = "INSERT INTO `lufter` VALUES (" + sqldatensatz + ");";//SQL Befehl Abfrage aller User
+                    methoden.MySqlCommand(mysqlconnectionstring, mysqlcommandtext);//Daten in die Datenbank schreiben
+                    LoschFunktion();
+                    wtxtZustand.Focus();
+                    MessageBox.Show("Daten wurden erfolgreich gespeichert!");
 
                     #region QR Code
                     QR =
@@ -73,25 +65,21 @@ namespace PC_Hardware_Datenbank
                         "Durchmesser: " + wtxtDurchmesser.Text + LF +
                         "Spannung (V): " + wtxtSpannung.Text + LF +
                         "Art: " + wtxtArt.Text + LF +
-                        "Modell: " + wtxtModell.Text + LF +
+                        "Modell: " + wtxtID.Text + LF +
                         "Hersteller: " + wtxtHersteller.Text + LF +
                         "Pinheader: " + wtxtPinheader.Text + LF +
                         "Maximaldrehzahl: " + wtxtMaximaldrehzahl.Text + LF +
                         "Strom (A): " + nudStrom.Value;
                     #endregion
-
-                    File.WriteAllText(DateiPfad + @"/Lufter_Datenbank.csv", Datensatz);//Datensatz in GPU_Datenbank.csv schreiben
-                    MessageBox.Show("Datensatz geschrieben!");//Bestätigung das der Datensatz geschrieben wurd
                 }
-                else
+                catch
                 {
-                    MessageBox.Show("Bitte alle roten Pflichtfelder ausfüllen!");
+                    MessageBox.Show("Fehler: Daten konnten nicht gespeichert speichern werden!");
                 }
             }
             else
             {
-                MessageBox.Show("Datenbank nicht vorhanden bitte einen Administrator aufsuchen!");
-                Application.Exit();
+                MessageBox.Show("Bitte füllen sie alle rot markierten Felder aus!");
             }
         }
 
@@ -126,11 +114,6 @@ namespace PC_Hardware_Datenbank
             qrCodeImage.Dispose();
         }
         #endregion
-
-        private void Lufter_Imput_Load(object sender, EventArgs e)//lesen des gespeicherten DateiPfad
-        {
-            DateiPfad = File.ReadAllText(@"./settings");
-        }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {

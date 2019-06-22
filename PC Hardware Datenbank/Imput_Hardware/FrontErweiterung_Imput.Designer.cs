@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrontErweiterung_Imput));
             this.cbtExternFireWire = new System.Windows.Forms.CheckBox();
-            this.cbtExternMikrofon = new System.Windows.Forms.CheckBox();
             this.cbtExternUSB3_1 = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbtExternLineIn = new System.Windows.Forms.CheckBox();
@@ -43,12 +42,11 @@
             this.cbtExternUSB2 = new System.Windows.Forms.CheckBox();
             this.cbtExternCardreader = new System.Windows.Forms.CheckBox();
             this.nudExternFireWire = new System.Windows.Forms.NumericUpDown();
-            this.nudExternMikrofon = new System.Windows.Forms.NumericUpDown();
             this.nudExternUSB3_1 = new System.Windows.Forms.NumericUpDown();
             this.nudExternUSB3 = new System.Windows.Forms.NumericUpDown();
             this.nudExternUSB2 = new System.Windows.Forms.NumericUpDown();
             this.nudExternCardreader = new System.Windows.Forms.NumericUpDown();
-            this.wtxtModell = new System.Windows.Forms.ComboBox();
+            this.wtxtID = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cmdQR = new System.Windows.Forms.Button();
             this.cmdBildEinfugen = new System.Windows.Forms.Button();
@@ -79,7 +77,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudExternLineOut)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudExternThunderbolt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudExternFireWire)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudExternMikrofon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudExternUSB3_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudExternUSB3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudExternUSB2)).BeginInit();
@@ -99,27 +96,14 @@
             // 
             this.cbtExternFireWire.AutoSize = true;
             this.cbtExternFireWire.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbtExternFireWire.Location = new System.Drawing.Point(17, 260);
+            this.cbtExternFireWire.Location = new System.Drawing.Point(17, 228);
             this.cbtExternFireWire.Name = "cbtExternFireWire";
             this.cbtExternFireWire.Size = new System.Drawing.Size(87, 24);
             this.cbtExternFireWire.TabIndex = 31;
             this.cbtExternFireWire.TabStop = false;
             this.cbtExternFireWire.Text = "FireWire";
             this.cbtExternFireWire.UseVisualStyleBackColor = true;
-            this.cbtExternFireWire.CheckedChanged += new System.EventHandler(this.cbtExternFireWire_CheckedChanged);
-            // 
-            // cbtExternMikrofon
-            // 
-            this.cbtExternMikrofon.AutoSize = true;
-            this.cbtExternMikrofon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbtExternMikrofon.Location = new System.Drawing.Point(17, 196);
-            this.cbtExternMikrofon.Name = "cbtExternMikrofon";
-            this.cbtExternMikrofon.Size = new System.Drawing.Size(89, 24);
-            this.cbtExternMikrofon.TabIndex = 30;
-            this.cbtExternMikrofon.TabStop = false;
-            this.cbtExternMikrofon.Text = "Mikrofon";
-            this.cbtExternMikrofon.UseVisualStyleBackColor = true;
-            this.cbtExternMikrofon.CheckedChanged += new System.EventHandler(this.cbtExternAudio_CheckedChanged);
+            this.cbtExternFireWire.Click += new System.EventHandler(this.cbtExternFireWire_CheckedChanged);
             // 
             // cbtExternUSB3_1
             // 
@@ -132,7 +116,7 @@
             this.cbtExternUSB3_1.TabStop = false;
             this.cbtExternUSB3_1.Text = "USB3.1";
             this.cbtExternUSB3_1.UseVisualStyleBackColor = true;
-            this.cbtExternUSB3_1.CheckedChanged += new System.EventHandler(this.cbtExternUSB3_1_CheckedChanged);
+            this.cbtExternUSB3_1.Click += new System.EventHandler(this.cbtExternUSB3_1_CheckedChanged);
             // 
             // groupBox1
             // 
@@ -143,13 +127,11 @@
             this.groupBox1.Controls.Add(this.cbtExternThunderbolt);
             this.groupBox1.Controls.Add(this.nudExternThunderbolt);
             this.groupBox1.Controls.Add(this.cbtExternFireWire);
-            this.groupBox1.Controls.Add(this.cbtExternMikrofon);
             this.groupBox1.Controls.Add(this.cbtExternUSB3_1);
             this.groupBox1.Controls.Add(this.cbtExternUSB3);
             this.groupBox1.Controls.Add(this.cbtExternUSB2);
             this.groupBox1.Controls.Add(this.cbtExternCardreader);
             this.groupBox1.Controls.Add(this.nudExternFireWire);
-            this.groupBox1.Controls.Add(this.nudExternMikrofon);
             this.groupBox1.Controls.Add(this.nudExternUSB3_1);
             this.groupBox1.Controls.Add(this.nudExternUSB3);
             this.groupBox1.Controls.Add(this.nudExternUSB2);
@@ -166,19 +148,19 @@
             // 
             this.cbtExternLineIn.AutoSize = true;
             this.cbtExternLineIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbtExternLineIn.Location = new System.Drawing.Point(17, 228);
+            this.cbtExternLineIn.Location = new System.Drawing.Point(17, 196);
             this.cbtExternLineIn.Name = "cbtExternLineIn";
             this.cbtExternLineIn.Size = new System.Drawing.Size(77, 24);
             this.cbtExternLineIn.TabIndex = 82;
             this.cbtExternLineIn.TabStop = false;
             this.cbtExternLineIn.Text = "Line-In";
             this.cbtExternLineIn.UseVisualStyleBackColor = true;
-            this.cbtExternLineIn.CheckedChanged += new System.EventHandler(this.cbtExternLineIn_CheckedChanged);
+            this.cbtExternLineIn.Click += new System.EventHandler(this.cbtExternLineIn_CheckedChanged);
             // 
             // nudExternLineIn
             // 
             this.nudExternLineIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudExternLineIn.Location = new System.Drawing.Point(154, 227);
+            this.nudExternLineIn.Location = new System.Drawing.Point(154, 195);
             this.nudExternLineIn.Name = "nudExternLineIn";
             this.nudExternLineIn.Size = new System.Drawing.Size(57, 26);
             this.nudExternLineIn.TabIndex = 6;
@@ -195,7 +177,7 @@
             this.cbtExternLineOut.TabStop = false;
             this.cbtExternLineOut.Text = "Line-Out";
             this.cbtExternLineOut.UseVisualStyleBackColor = true;
-            this.cbtExternLineOut.CheckedChanged += new System.EventHandler(this.cbtExternLineOut_CheckedChanged);
+            this.cbtExternLineOut.Click += new System.EventHandler(this.cbtExternLineOut_CheckedChanged);
             // 
             // nudExternLineOut
             // 
@@ -210,19 +192,19 @@
             // 
             this.cbtExternThunderbolt.AutoSize = true;
             this.cbtExternThunderbolt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbtExternThunderbolt.Location = new System.Drawing.Point(17, 292);
+            this.cbtExternThunderbolt.Location = new System.Drawing.Point(17, 260);
             this.cbtExternThunderbolt.Name = "cbtExternThunderbolt";
             this.cbtExternThunderbolt.Size = new System.Drawing.Size(113, 24);
             this.cbtExternThunderbolt.TabIndex = 78;
             this.cbtExternThunderbolt.TabStop = false;
             this.cbtExternThunderbolt.Text = "Thunderbolt";
             this.cbtExternThunderbolt.UseVisualStyleBackColor = true;
-            this.cbtExternThunderbolt.CheckedChanged += new System.EventHandler(this.cbtExternThunderbolt_CheckedChanged);
+            this.cbtExternThunderbolt.Click += new System.EventHandler(this.cbtExternThunderbolt_CheckedChanged);
             // 
             // nudExternThunderbolt
             // 
             this.nudExternThunderbolt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudExternThunderbolt.Location = new System.Drawing.Point(154, 291);
+            this.nudExternThunderbolt.Location = new System.Drawing.Point(154, 259);
             this.nudExternThunderbolt.Name = "nudExternThunderbolt";
             this.nudExternThunderbolt.Size = new System.Drawing.Size(57, 26);
             this.nudExternThunderbolt.TabIndex = 8;
@@ -239,7 +221,7 @@
             this.cbtExternUSB3.TabStop = false;
             this.cbtExternUSB3.Text = "USB3.0";
             this.cbtExternUSB3.UseVisualStyleBackColor = true;
-            this.cbtExternUSB3.CheckedChanged += new System.EventHandler(this.cbtExternUSB3_CheckedChanged);
+            this.cbtExternUSB3.Click += new System.EventHandler(this.cbtExternUSB3_CheckedChanged);
             // 
             // cbtExternUSB2
             // 
@@ -252,7 +234,7 @@
             this.cbtExternUSB2.TabStop = false;
             this.cbtExternUSB2.Text = "USB2.0";
             this.cbtExternUSB2.UseVisualStyleBackColor = true;
-            this.cbtExternUSB2.CheckedChanged += new System.EventHandler(this.cbtExternUSB2_CheckedChanged);
+            this.cbtExternUSB2.Click += new System.EventHandler(this.cbtExternUSB2_CheckedChanged);
             // 
             // cbtExternCardreader
             // 
@@ -270,20 +252,11 @@
             // nudExternFireWire
             // 
             this.nudExternFireWire.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudExternFireWire.Location = new System.Drawing.Point(154, 259);
+            this.nudExternFireWire.Location = new System.Drawing.Point(154, 227);
             this.nudExternFireWire.Name = "nudExternFireWire";
             this.nudExternFireWire.Size = new System.Drawing.Size(57, 26);
             this.nudExternFireWire.TabIndex = 7;
             this.nudExternFireWire.ValueChanged += new System.EventHandler(this.nudExternFireWire_ValueChanged);
-            // 
-            // nudExternMikrofon
-            // 
-            this.nudExternMikrofon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudExternMikrofon.Location = new System.Drawing.Point(154, 195);
-            this.nudExternMikrofon.Name = "nudExternMikrofon";
-            this.nudExternMikrofon.Size = new System.Drawing.Size(57, 26);
-            this.nudExternMikrofon.TabIndex = 5;
-            this.nudExternMikrofon.ValueChanged += new System.EventHandler(this.nudExternAudio_ValueChanged);
             // 
             // nudExternUSB3_1
             // 
@@ -319,17 +292,17 @@
             this.nudExternCardreader.Name = "nudExternCardreader";
             this.nudExternCardreader.Size = new System.Drawing.Size(57, 26);
             this.nudExternCardreader.TabIndex = 0;
-            this.nudExternCardreader.Click += new System.EventHandler(this.nudExternCardreader_ValueChanged);
+            this.nudExternCardreader.ValueChanged += new System.EventHandler(this.nudExternCardreader_ValueChanged);
             // 
-            // wtxtModell
+            // wtxtID
             // 
-            this.wtxtModell.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.wtxtModell.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.wtxtModell.FormattingEnabled = true;
-            this.wtxtModell.Location = new System.Drawing.Point(393, 61);
-            this.wtxtModell.Name = "wtxtModell";
-            this.wtxtModell.Size = new System.Drawing.Size(146, 28);
-            this.wtxtModell.TabIndex = 2;
+            this.wtxtID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.wtxtID.FormattingEnabled = true;
+            this.wtxtID.Location = new System.Drawing.Point(393, 61);
+            this.wtxtID.Name = "wtxtID";
+            this.wtxtID.Size = new System.Drawing.Size(146, 28);
+            this.wtxtID.TabIndex = 2;
             // 
             // pictureBox1
             // 
@@ -340,7 +313,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 134;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // cmdQR
             // 
@@ -422,9 +394,9 @@
             this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(389, 38);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(59, 20);
+            this.label5.Size = new System.Drawing.Size(106, 20);
             this.label5.TabIndex = 132;
-            this.label5.Text = "Modell:";
+            this.label5.Text = "Bezeichnung:";
             // 
             // wtxtKartenhersteller
             // 
@@ -479,7 +451,7 @@
             this.cbtInternThunderbolt.TabStop = false;
             this.cbtInternThunderbolt.Text = "Thunderbolt";
             this.cbtInternThunderbolt.UseVisualStyleBackColor = true;
-            this.cbtInternThunderbolt.CheckedChanged += new System.EventHandler(this.cbtInternThunderbolt_CheckedChanged);
+            this.cbtInternThunderbolt.Click += new System.EventHandler(this.cbtInternThunderbolt_CheckedChanged);
             // 
             // nudInternThunderbolt
             // 
@@ -501,7 +473,7 @@
             this.cbtInternFireWire.TabStop = false;
             this.cbtInternFireWire.Text = "FireWire";
             this.cbtInternFireWire.UseVisualStyleBackColor = true;
-            this.cbtInternFireWire.CheckedChanged += new System.EventHandler(this.cbtInternFireWire_CheckedChanged);
+            this.cbtInternFireWire.Click += new System.EventHandler(this.cbtInternFireWire_CheckedChanged);
             // 
             // cbtInternAudio
             // 
@@ -514,7 +486,7 @@
             this.cbtInternAudio.TabStop = false;
             this.cbtInternAudio.Text = "Audio";
             this.cbtInternAudio.UseVisualStyleBackColor = true;
-            this.cbtInternAudio.CheckedChanged += new System.EventHandler(this.cbtInternAudio_CheckedChanged);
+            this.cbtInternAudio.Click += new System.EventHandler(this.cbtInternAudio_CheckedChanged);
             // 
             // cbtInternUSB3_1
             // 
@@ -527,7 +499,7 @@
             this.cbtInternUSB3_1.TabStop = false;
             this.cbtInternUSB3_1.Text = "USB3.1";
             this.cbtInternUSB3_1.UseVisualStyleBackColor = true;
-            this.cbtInternUSB3_1.CheckedChanged += new System.EventHandler(this.cbtInternUSB3_1_CheckedChanged);
+            this.cbtInternUSB3_1.Click += new System.EventHandler(this.cbtInternUSB3_1_CheckedChanged);
             // 
             // cbtInternUSB3
             // 
@@ -540,7 +512,7 @@
             this.cbtInternUSB3.TabStop = false;
             this.cbtInternUSB3.Text = "USB3.0";
             this.cbtInternUSB3.UseVisualStyleBackColor = true;
-            this.cbtInternUSB3.CheckedChanged += new System.EventHandler(this.cbtInternUSB3_CheckedChanged);
+            this.cbtInternUSB3.Click += new System.EventHandler(this.cbtInternUSB3_CheckedChanged);
             // 
             // cbtInternUSB2
             // 
@@ -553,7 +525,7 @@
             this.cbtInternUSB2.TabStop = false;
             this.cbtInternUSB2.Text = "USB2.0";
             this.cbtInternUSB2.UseVisualStyleBackColor = true;
-            this.cbtInternUSB2.CheckedChanged += new System.EventHandler(this.cbtInternUSB2_CheckedChanged);
+            this.cbtInternUSB2.Click += new System.EventHandler(this.cbtInternUSB2_CheckedChanged);
             // 
             // nudInternFireWire
             // 
@@ -606,7 +578,6 @@
             this.wtxtZustand.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtZustand.FormattingEnabled = true;
             this.wtxtZustand.Items.AddRange(new object[] {
-            "",
             "verbaut",
             "auf Lager"});
             this.wtxtZustand.Location = new System.Drawing.Point(34, 61);
@@ -633,7 +604,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.wtxtModell);
+            this.Controls.Add(this.wtxtID);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.cmdQR);
             this.Controls.Add(this.cmdBildEinfugen);
@@ -649,14 +620,12 @@
             this.Name = "FrontErweiterung_Imput";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fronteinschub";
-            this.Load += new System.EventHandler(this.FrontErweiterung_Imput_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudExternLineIn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudExternLineOut)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudExternThunderbolt)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudExternFireWire)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudExternMikrofon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudExternUSB3_1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudExternUSB3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudExternUSB2)).EndInit();
@@ -679,7 +648,6 @@
         #endregion
 
         private System.Windows.Forms.CheckBox cbtExternFireWire;
-        private System.Windows.Forms.CheckBox cbtExternMikrofon;
         private System.Windows.Forms.CheckBox cbtExternUSB3_1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.CheckBox cbtExternThunderbolt;
@@ -692,7 +660,7 @@
         private System.Windows.Forms.NumericUpDown nudExternUSB3;
         private System.Windows.Forms.NumericUpDown nudExternUSB2;
         private System.Windows.Forms.NumericUpDown nudExternCardreader;
-        private System.Windows.Forms.ComboBox wtxtModell;
+        private System.Windows.Forms.ComboBox wtxtID;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button cmdQR;
         private System.Windows.Forms.Button cmdBildEinfugen;
@@ -722,6 +690,5 @@
         private System.Windows.Forms.NumericUpDown nudExternLineIn;
         private System.Windows.Forms.CheckBox cbtExternLineOut;
         private System.Windows.Forms.NumericUpDown nudExternLineOut;
-        private System.Windows.Forms.NumericUpDown nudExternMikrofon;
     }
 }

@@ -112,7 +112,6 @@
             this.wtxtSteckverbindung.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtSteckverbindung.FormattingEnabled = true;
             this.wtxtSteckverbindung.Items.AddRange(new object[] {
-            "",
             "PCI",
             "PCIe x1",
             "PCIe x2",
@@ -177,7 +176,6 @@
             this.wtxtSchnittstelle.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtSchnittstelle.FormattingEnabled = true;
             this.wtxtSchnittstelle.Items.AddRange(new object[] {
-            "",
             "PCI",
             "PCIe x1",
             "PCIe x2",
@@ -269,7 +267,6 @@
             this.wtxtAusrichtung.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtAusrichtung.FormattingEnabled = true;
             this.wtxtAusrichtung.Items.AddRange(new object[] {
-            "",
             "0 Grad",
             "90 Grad",
             "180 Grad",
@@ -286,7 +283,6 @@
             this.wtxtZustand.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtZustand.FormattingEnabled = true;
             this.wtxtZustand.Items.AddRange(new object[] {
-            "",
             "verbaut",
             "auf Lager"});
             this.wtxtZustand.Location = new System.Drawing.Point(34, 283);
@@ -333,7 +329,6 @@
             this.Name = "Raiserkarte_Imput";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Raiserkarten";
-            this.Load += new System.EventHandler(this.Raiserkarte_Imput_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudSteckverbindung)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcmdMainbord)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

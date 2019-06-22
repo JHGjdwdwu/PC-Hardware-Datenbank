@@ -15,15 +15,14 @@ namespace PC_Hardware_Datenbank
 {
     public partial class Netzteil_Imput : Form
     {
-        private string Datensatz = "";//Datensatz der dan in die Datenbank geschoben wird
-        private char LF = (char)10;
-        private string QR = "";//QR Code
-        public string DateiPfad;
-
         public Netzteil_Imput()
         {
             InitializeComponent();
         }
+
+        Methoden methoden = new Methoden();
+        private char LF = (char)10;
+        private string QR = "";//QR Code
 
         private void cmdBeenden_Click(object sender, EventArgs e)//Fenster schlißen
         {
@@ -45,115 +44,86 @@ namespace PC_Hardware_Datenbank
 
         private void cmdSpeichern_Click(object sender, EventArgs e)//Speichern Button
         {
-            if (File.Exists(DateiPfad + @"/Netzteil_Datenbank.csv") == true)//Prüffen ob eine .csv Datei bereits erstellt wurde
+            if (wtxtHersteller.Text != "" && wtxtID.Text != "" && wtxtZustand.Text != "" && nudLufter.Text != "" && wtxtFormat.Text != "" && wtxtLeistung.Text != "" && wtxtSteckerFormat.Text != "")
             {
-                if (wtxtHersteller.Text != "" && wtxtTyp.Text != "" && wtxtZustand.Text != "")//Prüfft die Pflichtangaben
+                #region CheckBox auswerten für QR-Code
+                string Netzausgang = "Nein", Netzschalter = "Nein", Schalter110V = "Nein", Betrib110V = "Nein";
+                if (cbtStromAusganag.Checked)
                 {
-                    Datensatz = File.ReadAllText(DateiPfad + @"/Netzteil_Datenbank.csv");//Alte Daten einlessen und in Datensatz speichern
+                    Netzausgang = "Ja";
+                }
+                if (cbtSchalter.Checked)
+                {
+                    Netzschalter = "Ja";
+                }
+                if (cbt110vSchalter.Checked)
+                {
+                    Schalter110V = "Ja";
+                }
+                if (cbt110vBetrieb.Checked)
+                {
+                    Betrib110V = "Ja";
+                }
+                #endregion
 
-                    #region Chak Boxen auswerten und Daten zuweisen
-                    string StromAusgang = "NEIN";
-                    if (cbtxStromAusganag.Checked == true)
-                    {
-                        StromAusgang = "JA";
-                    }
-                    string Netzschalter = "NEIN";
-                    if (cbtxSchaltera.Checked == true)
-                    {
-                        Netzschalter = "JA";
-                    }
-                    string Schalter110V = "NEIN";
-                    if (cbtx110vSchalter.Checked == true)
-                    {
-                        Schalter110V = "JA";
-                    }
-                    string Betrieb110Vmöglich = "NEIN";
-                    if (cbtx110vBetrieb.Checked == true)
-                    {
-                        Betrieb110Vmöglich = "JA";
-                    }
-                    #endregion
-
-                    #region Datensatz bilden
-                    Datensatz += LF + 
-                        wtxtHersteller.Text + ";" +
-                        wtxtTyp.Text + ";" +
-                        wtxtZustand.Text + ";" +
-                        nudLuster.Value + ";" +
-                        wtxtFormat.Text + ";" +
-                        wtxtLeistung.Text + ";" +
-                        nud3V.Value + ";" +
-                        nud3W.Value + ";" +
-                        nud5V.Value + ";" +
-                        nud5W.Value + ";" +
-                        nud12V.Value + ";" +
-                        nud12W.Value + ";" +
-                        StromAusgang + ";" +
-                        Netzschalter + ";" +
-                        Schalter110V + ";" +
-                        Betrieb110Vmöglich + ";" +
-                        nudMolex8981.Value + ";" +
-                        nudSATA.Value + ";" +
-                        nudAT.Value + ";" +
-                        nudATX.Value + ";" +
-                        nudBTX.Value + ";" +
-                        nudATXlarge.Value + ";" +
-                        nudCFX.Value + ";" +
-                        nudSFX.Value + ";" +
-                        nudTFX.Value + ";" +
-                        nudLFX.Value + ";" +
-                        nud2x2.Value + ";" +
-                        nud2x3.Value + ";" +
-                        nud2x4.Value + ";" +
-                        nudBerg.Value;
-                    #endregion
+                try
+                {
+                    string mysqlconnectionstring = methoden.MySqlConnectionString();//Angaben um sich an der Datenbank anzumelden
+                    methoden.MySQL_ping_check(mysqlconnectionstring);//Testabfrage bei der Datenkan
+                    string Datensatz = methoden.ObjekteTextToString(",", this);//Erzeugt ein String aus den Daten auf der Form
+                    string sqldatensatz = Datensatz.Substring(0, Datensatz.Length - 1);//Entfert ein überflüssiges Zeichen (Grund Schleife)
+                    string mysqlcommandtext = "INSERT INTO `netzteil` VALUES (" + sqldatensatz + ");";//SQL Befehl Abfrage aller User
+                    methoden.MySqlCommand(mysqlconnectionstring, mysqlcommandtext);//Daten in die Datenbank schreiben
+                    LoschFunktion();
+                    wtxtZustand.Focus();
+                    MessageBox.Show("Daten wurden erfolgreich gespeichert!");
 
                     #region QR Code
-                    QR = 
-                        "Hersteller: " + wtxtHersteller.Text + LF + 
-                        "Typ: " + wtxtTyp.Text + LF +
+                    QR =
+                        "Hersteller: " + wtxtHersteller.Text + LF +
+                        "Typ: " + wtxtID.Text + LF +
                         "Zustand: " + wtxtZustand.Text + LF +
-                        "Anzahl Lüfter: " + nudLuster.Value + LF + 
-                        "Breite-Tiefe-Höhe: " + wtxtFormat.Text + LF + 
+                        "Anzahl Lüfter: " + nudLufter.Value + LF +
+                        "Breite-Tiefe-Höhe: " + wtxtFormat.Text + LF +
                         "Leistung: " + wtxtLeistung.Text + LF +
+                        "Stecker Format: " + wtxtSteckerFormat.Text + LF +
                         "max Ampere 3V: " + nud3V.Value + LF +
                         "Leistung 3V: " + nud3W.Value + LF +
                         "max Ampere 5V: " + nud5V.Value + LF +
                         "Leistung 5V: " + nud5W.Value + LF +
                         "max Ampere 12V: " + nud12V.Value + LF +
                         "Leistung 12V: " + nud12W.Value + LF +
-                        "Stromausgang: " + StromAusgang + LF + 
-                        "Netzschalter: " + Netzschalter + LF + 
-                        "110V Schalter: " + Schalter110V + LF + 
-                        "110V Betrieb möglich: " + Betrieb110Vmöglich + LF + 
-                        "Molex-8981: " + nudMolex8981.Value + LF + 
-                        "SATA: " + nudSATA.Value + LF + 
-                        "AT: " + nudAT.Value + LF + 
-                        "ATX: " + nudATX.Value + LF + 
-                        "BTX: " + nudBTX.Value + LF + 
-                        "ATX large: " + nudATXlarge.Value + LF + 
-                        "CFX: " + nudCFX.Value + LF + 
-                        "SFX: " + nudSFX.Value + LF + 
-                        "TFX: " + nudTFX.Value + LF + 
-                        "LFX: " + nudLFX.Value + LF + 
-                        "2x2-12V: " + nud2x2.Value + LF + 
-                        "2x3-12V: " + nud2x3.Value + LF + 
-                        "2x4-12V: " + nud2x4.Value + LF + 
+                        "Netzausgang: " + Netzausgang + LF +
+                        "Netzschalter: " + Netzschalter + LF +
+                        "110V Schalter: " + Schalter110V + LF +
+                        "110V Betrieb möglich: " + Betrib110V + LF +
+                        "Molex-8981: " + nudMolex8981.Value + LF +
+                        "SATA: " + nudSATA.Value + LF +
+                        "AT: " + nudAT.Value + LF +
+                        "2x2-12V: " + nud2x2.Value + LF +
+                        "2x3-12V: " + nud2x3.Value + LF +
+                        "2x4-12V: " + nud2x4.Value + LF +
                         "BERG: " + nudBerg.Value;
                     #endregion
 
-                    File.WriteAllText(DateiPfad + @"/Netzteil_Datenbank.csv", Datensatz);//Datensatz in GPU_Datenbank.csv schreiben
-                    MessageBox.Show("Datensatz geschrieben!");//Bestätigung das der Datensatz geschrieben wurd
+                    DialogResult dialogresult = MessageBox.Show("Möchten Sie einen QR-Code Drucken?", "QR-Code Drucken?", MessageBoxButtons.YesNo);
+                    if (dialogresult == DialogResult.Yes)
+                    {
+                        cmdQR_Click(cmdQR, e);
+                    }
+                    else if (dialogresult == DialogResult.No)
+                    {
+
+                    }
                 }
-                else
+                catch
                 {
-                    MessageBox.Show("Bitte alle roten Pflichtfelder ausfüllen!");
+                    MessageBox.Show("Fehler: Daten konnten nicht gespeichert speichern werden!");
                 }
             }
             else
             {
-                MessageBox.Show("Datenbank nicht vorhanden bitte einen Administrator aufsuchen!");
-                Application.Exit();
+                MessageBox.Show("Bitte füllen sie alle rot markierten Felder aus!");
             }
         }
 
@@ -191,90 +161,6 @@ namespace PC_Hardware_Datenbank
             if (cbtAT.Checked == false)
             {
                 nudAT.Value = 0;
-            }
-        }
-
-        private void cbtATX_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cbtATX.Checked == true)
-            {
-                nudATX.Value = 1;
-            }
-            if (cbtATX.Checked == false)
-            {
-                nudATX.Value = 0;
-            }
-        }
-
-        private void cbtBTX_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cbtBTX.Checked == true)
-            {
-                nudBTX.Value = 1;
-            }
-            if (cbtBTX.Checked == false)
-            {
-                nudBTX.Value = 0;
-            }
-        }
-
-        private void cbtATXlarge_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cbtATXlarge.Checked == true)
-            {
-                nudATXlarge.Value = 1;
-            }
-            if (cbtATXlarge.Checked == false)
-            {
-                nudATXlarge.Value = 0;
-            }
-        }
-
-        private void cbtCFX_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cbtCFX.Checked == true)
-            {
-                nudCFX.Value = 1;
-            }
-            if (cbtCFX.Checked == false)
-            {
-                nudCFX.Value = 0;
-            }
-        }
-
-        private void cbtSFX_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cbtSFX.Checked == true)
-            {
-                nudSFX.Value = 1;
-            }
-            if (cbtSFX.Checked == false)
-            {
-                nudSFX.Value = 0;
-            }
-        }
-
-        private void cbtTFX_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cbtTFX.Checked == true)
-            {
-                nudTFX.Value = 1;
-            }
-            if (cbtTFX.Checked == false)
-            {
-                nudTFX.Value = 0;
-            }
-        }
-
-        private void cbtLFX_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cbtLFX.Checked == true)
-            {
-                nudLFX.Value = 1;
-            }
-            if (cbtLFX.Checked == false)
-            {
-                nudLFX.Value = 0;
             }
         }
 
@@ -364,90 +250,6 @@ namespace PC_Hardware_Datenbank
             }
         }
 
-        private void nudATX_ValueChanged(object sender, EventArgs e)
-        {
-            if (nudATX.Value > 0)
-            {
-                cbtATX.Checked = true;
-            }
-            if (nudATX.Value < 1)
-            {
-                cbtATX.Checked = false;
-            }
-        }
-
-        private void nudBTX_ValueChanged(object sender, EventArgs e)
-        {
-            if (nudBTX.Value > 0)
-            {
-                cbtBTX.Checked = true;
-            }
-            if (nudBTX.Value < 1)
-            {
-                cbtBTX.Checked = false;
-            }
-        }
-
-        private void nudATXlarge_ValueChanged(object sender, EventArgs e)
-        {
-            if (nudATXlarge.Value > 0)
-            {
-                cbtATXlarge.Checked = true;
-            }
-            if (nudATXlarge.Value < 1)
-            {
-                cbtATXlarge.Checked = false;
-            }
-        }
-
-        private void nudCFX_ValueChanged(object sender, EventArgs e)
-        {
-            if (nudCFX.Value > 0)
-            {
-                cbtCFX.Checked = true;
-            }
-            if (nudCFX.Value < 1)
-            {
-                cbtCFX.Checked = false;
-            }
-        }
-
-        private void nudSFX_ValueChanged(object sender, EventArgs e)
-        {
-            if (nudSFX.Value > 0)
-            {
-                cbtSFX.Checked = true;
-            }
-            if (nudSFX.Value < 1)
-            {
-                cbtSFX.Checked = false;
-            }
-        }
-
-        private void nudTFX_ValueChanged(object sender, EventArgs e)
-        {
-            if (nudTFX.Value > 0)
-            {
-                cbtTFX.Checked = true;
-            }
-            if (nudTFX.Value < 1)
-            {
-                cbtTFX.Checked = false;
-            }
-        }
-
-        private void nudLFX_ValueChanged(object sender, EventArgs e)
-        {
-            if (nudLFX.Value > 0)
-            {
-                cbtLFX.Checked = true;
-            }
-            if (nudLFX.Value < 1)
-            {
-                cbtLFX.Checked = false;
-            }
-        }
-
         private void nud2x2_ValueChanged(object sender, EventArgs e)
         {
             if (nud2x2.Value > 0)
@@ -500,13 +302,13 @@ namespace PC_Hardware_Datenbank
         #region 110V Auswertung Logische schaltung
         private void cbtx110vSchalter_CheckedChanged(object sender, EventArgs e)
         {
-            if (cbtx110vSchalter.Checked == true)
+            if (cbt110vSchalter.Checked == true)
             {
-                cbtx110vBetrieb.Checked = true;
+                cbt110vBetrieb.Checked = true;
             }
-            if (cbtx110vSchalter.Checked == false)
+            if (cbt110vSchalter.Checked == false)
             {
-                cbtx110vBetrieb.Checked = false;
+                cbt110vBetrieb.Checked = false;
             }
         }
         #endregion
@@ -542,11 +344,6 @@ namespace PC_Hardware_Datenbank
             qrCodeImage.Dispose();
         }
         #endregion
-
-        private void Netzteil_Imput_Load(object sender, EventArgs e)//lesen des gespeicherten DateiPfad
-        {
-            DateiPfad = File.ReadAllText(@"./settings");
-        }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {

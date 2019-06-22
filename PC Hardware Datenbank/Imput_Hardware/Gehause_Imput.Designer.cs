@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Gehause_Imput));
-            this.wtxtTyp = new System.Windows.Forms.ComboBox();
+            this.wtxtID = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -48,7 +48,7 @@
             this.wtxtNetzteilPosition = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.mtxtBreiteHocheTiefe = new System.Windows.Forms.MaskedTextBox();
-            this.nudEinschub5 = new System.Windows.Forms.NumericUpDown();
+            this.nudEinschub5ex = new System.Windows.Forms.NumericUpDown();
             this.nudEinschub3in = new System.Windows.Forms.NumericUpDown();
             this.nudEinschub3ex = new System.Windows.Forms.NumericUpDown();
             this.nudEinschub2in = new System.Windows.Forms.NumericUpDown();
@@ -59,15 +59,15 @@
             this.label10 = new System.Windows.Forms.Label();
             this.cbtBelechtung = new System.Windows.Forms.CheckBox();
             this.cbtFenster = new System.Windows.Forms.CheckBox();
-            this.wtxtFormfaktor = new System.Windows.Forms.ComboBox();
             this.fo = new System.Windows.Forms.Label();
             this.wtxtZustand = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.nudEinschub2ex = new System.Windows.Forms.NumericUpDown();
             this.label12 = new System.Windows.Forms.Label();
+            this.wtxtForm = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcmdMainbord)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudEinschub5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEinschub5ex)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudEinschub3in)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudEinschub3ex)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudEinschub2in)).BeginInit();
@@ -76,13 +76,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudEinschub2ex)).BeginInit();
             this.SuspendLayout();
             // 
-            // wtxtTyp
+            // wtxtID
             // 
-            this.wtxtTyp.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.wtxtTyp.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.wtxtTyp.FormattingEnabled = true;
-            this.wtxtTyp.Items.AddRange(new object[] {
-            "",
+            this.wtxtID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.wtxtID.FormattingEnabled = true;
+            this.wtxtID.Items.AddRange(new object[] {
             "Ultra-kompakt (NUC)",
             "ITX/DTX",
             "Mini-Tower",
@@ -92,24 +91,25 @@
             "Desktop",
             "Benchtable",
             "Sonderform"});
-            this.wtxtTyp.Location = new System.Drawing.Point(249, 135);
-            this.wtxtTyp.Name = "wtxtTyp";
-            this.wtxtTyp.Size = new System.Drawing.Size(146, 28);
-            this.wtxtTyp.TabIndex = 3;
+            this.wtxtID.Location = new System.Drawing.Point(464, 288);
+            this.wtxtID.Name = "wtxtID";
+            this.wtxtID.Size = new System.Drawing.Size(146, 28);
+            this.wtxtID.TabIndex = 11;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(245, 112);
+            this.label6.Location = new System.Drawing.Point(460, 265);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(38, 20);
+            this.label6.Size = new System.Drawing.Size(106, 20);
             this.label6.TabIndex = 135;
-            this.label6.Text = "Typ:";
+            this.label6.Text = "Bezeichnung:";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(30, 258);
+            this.label9.ForeColor = System.Drawing.Color.Red;
+            this.label9.Location = new System.Drawing.Point(30, 190);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(178, 20);
             this.label9.TabIndex = 133;
@@ -118,7 +118,8 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(30, 334);
+            this.label8.ForeColor = System.Drawing.Color.Red;
+            this.label8.Location = new System.Drawing.Point(247, 190);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(189, 20);
             this.label8.TabIndex = 132;
@@ -127,7 +128,8 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(245, 260);
+            this.label7.ForeColor = System.Drawing.Color.Red;
+            this.label7.Location = new System.Drawing.Point(247, 114);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(182, 20);
             this.label7.TabIndex = 131;
@@ -221,11 +223,12 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(245, 186);
+            this.label3.ForeColor = System.Drawing.Color.Red;
+            this.label3.Location = new System.Drawing.Point(30, 114);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(143, 20);
+            this.label3.Size = new System.Drawing.Size(191, 20);
             this.label3.TabIndex = 126;
-            this.label3.Text = "Einschub 5,25 Zoll:";
+            this.label3.Text = "Einschub 5,25 Zoll extern:";
             // 
             // label1
             // 
@@ -243,7 +246,6 @@
             this.wtxtHersteller.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtHersteller.FormattingEnabled = true;
             this.wtxtHersteller.Items.AddRange(new object[] {
-            "",
             "A Power",
             "ADATA",
             "AeroCool",
@@ -344,15 +346,15 @@
             "XION",
             "Zalman",
             "Zippy"});
-            this.wtxtHersteller.Location = new System.Drawing.Point(34, 135);
+            this.wtxtHersteller.Location = new System.Drawing.Point(251, 287);
             this.wtxtHersteller.Name = "wtxtHersteller";
             this.wtxtHersteller.Size = new System.Drawing.Size(146, 28);
-            this.wtxtHersteller.TabIndex = 2;
+            this.wtxtHersteller.TabIndex = 10;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(33, 112);
+            this.label4.Location = new System.Drawing.Point(247, 264);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(81, 20);
             this.label4.TabIndex = 137;
@@ -364,19 +366,19 @@
             this.wtxtNetzteilPosition.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtNetzteilPosition.FormattingEnabled = true;
             this.wtxtNetzteilPosition.Items.AddRange(new object[] {
-            "",
             "Oben",
             "Nunten",
             "Extern"});
-            this.wtxtNetzteilPosition.Location = new System.Drawing.Point(34, 207);
+            this.wtxtNetzteilPosition.Location = new System.Drawing.Point(464, 61);
             this.wtxtNetzteilPosition.Name = "wtxtNetzteilPosition";
             this.wtxtNetzteilPosition.Size = new System.Drawing.Size(146, 28);
-            this.wtxtNetzteilPosition.TabIndex = 4;
+            this.wtxtNetzteilPosition.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(33, 184);
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(463, 38);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(126, 20);
             this.label2.TabIndex = 139;
@@ -389,38 +391,38 @@
             this.mtxtBreiteHocheTiefe.Size = new System.Drawing.Size(146, 26);
             this.mtxtBreiteHocheTiefe.TabIndex = 0;
             // 
-            // nudEinschub5
+            // nudEinschub5ex
             // 
-            this.nudEinschub5.Location = new System.Drawing.Point(249, 209);
-            this.nudEinschub5.Name = "nudEinschub5";
-            this.nudEinschub5.Size = new System.Drawing.Size(146, 26);
-            this.nudEinschub5.TabIndex = 5;
+            this.nudEinschub5ex.Location = new System.Drawing.Point(34, 137);
+            this.nudEinschub5ex.Name = "nudEinschub5ex";
+            this.nudEinschub5ex.Size = new System.Drawing.Size(146, 26);
+            this.nudEinschub5ex.TabIndex = 3;
             // 
             // nudEinschub3in
             // 
-            this.nudEinschub3in.Location = new System.Drawing.Point(34, 281);
+            this.nudEinschub3in.Location = new System.Drawing.Point(34, 213);
             this.nudEinschub3in.Name = "nudEinschub3in";
-            this.nudEinschub3in.Size = new System.Drawing.Size(143, 26);
+            this.nudEinschub3in.Size = new System.Drawing.Size(146, 26);
             this.nudEinschub3in.TabIndex = 6;
             // 
             // nudEinschub3ex
             // 
-            this.nudEinschub3ex.Location = new System.Drawing.Point(249, 283);
+            this.nudEinschub3ex.Location = new System.Drawing.Point(251, 137);
             this.nudEinschub3ex.Name = "nudEinschub3ex";
             this.nudEinschub3ex.Size = new System.Drawing.Size(146, 26);
-            this.nudEinschub3ex.TabIndex = 7;
+            this.nudEinschub3ex.TabIndex = 4;
             // 
             // nudEinschub2in
             // 
-            this.nudEinschub2in.Location = new System.Drawing.Point(34, 357);
+            this.nudEinschub2in.Location = new System.Drawing.Point(251, 213);
             this.nudEinschub2in.Name = "nudEinschub2in";
-            this.nudEinschub2in.Size = new System.Drawing.Size(143, 26);
-            this.nudEinschub2in.TabIndex = 8;
+            this.nudEinschub2in.Size = new System.Drawing.Size(146, 26);
+            this.nudEinschub2in.TabIndex = 7;
             // 
             // cbtKabelsystem
             // 
             this.cbtKabelsystem.AutoSize = true;
-            this.cbtKabelsystem.Location = new System.Drawing.Point(462, 63);
+            this.cbtKabelsystem.Location = new System.Drawing.Point(34, 425);
             this.cbtKabelsystem.Name = "cbtKabelsystem";
             this.cbtKabelsystem.Size = new System.Drawing.Size(118, 24);
             this.cbtKabelsystem.TabIndex = 13;
@@ -429,15 +431,16 @@
             // 
             // nudFrontUSB
             // 
-            this.nudFrontUSB.Location = new System.Drawing.Point(34, 427);
+            this.nudFrontUSB.Location = new System.Drawing.Point(464, 213);
             this.nudFrontUSB.Name = "nudFrontUSB";
-            this.nudFrontUSB.Size = new System.Drawing.Size(145, 26);
-            this.nudFrontUSB.TabIndex = 10;
+            this.nudFrontUSB.Size = new System.Drawing.Size(146, 26);
+            this.nudFrontUSB.TabIndex = 8;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(30, 404);
+            this.label5.ForeColor = System.Drawing.Color.Red;
+            this.label5.Location = new System.Drawing.Point(460, 190);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(89, 20);
             this.label5.TabIndex = 145;
@@ -445,15 +448,16 @@
             // 
             // nudFrontKlinke
             // 
-            this.nudFrontKlinke.Location = new System.Drawing.Point(250, 427);
+            this.nudFrontKlinke.Location = new System.Drawing.Point(34, 289);
             this.nudFrontKlinke.Name = "nudFrontKlinke";
-            this.nudFrontKlinke.Size = new System.Drawing.Size(145, 26);
-            this.nudFrontKlinke.TabIndex = 11;
+            this.nudFrontKlinke.Size = new System.Drawing.Size(146, 26);
+            this.nudFrontKlinke.TabIndex = 9;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(246, 404);
+            this.label10.ForeColor = System.Drawing.Color.Red;
+            this.label10.Location = new System.Drawing.Point(30, 266);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(97, 20);
             this.label10.TabIndex = 147;
@@ -462,7 +466,7 @@
             // cbtBelechtung
             // 
             this.cbtBelechtung.AutoSize = true;
-            this.cbtBelechtung.Location = new System.Drawing.Point(462, 137);
+            this.cbtBelechtung.Location = new System.Drawing.Point(251, 425);
             this.cbtBelechtung.Name = "cbtBelechtung";
             this.cbtBelechtung.Size = new System.Drawing.Size(118, 24);
             this.cbtBelechtung.TabIndex = 14;
@@ -472,37 +476,17 @@
             // cbtFenster
             // 
             this.cbtFenster.AutoSize = true;
-            this.cbtFenster.Location = new System.Drawing.Point(462, 210);
+            this.cbtFenster.Location = new System.Drawing.Point(464, 425);
             this.cbtFenster.Name = "cbtFenster";
             this.cbtFenster.Size = new System.Drawing.Size(148, 24);
             this.cbtFenster.TabIndex = 15;
             this.cbtFenster.Text = "Plexiglas Fenster";
             this.cbtFenster.UseVisualStyleBackColor = true;
             // 
-            // wtxtFormfaktor
-            // 
-            this.wtxtFormfaktor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.wtxtFormfaktor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.wtxtFormfaktor.FormattingEnabled = true;
-            this.wtxtFormfaktor.Items.AddRange(new object[] {
-            "",
-            "E-ATX",
-            "ATX",
-            "Mini-ITX",
-            "µATX",
-            "DTX",
-            "Mini-DTX",
-            "Mini-STX",
-            "SSI-CEB"});
-            this.wtxtFormfaktor.Location = new System.Drawing.Point(34, 499);
-            this.wtxtFormfaktor.Name = "wtxtFormfaktor";
-            this.wtxtFormfaktor.Size = new System.Drawing.Size(146, 28);
-            this.wtxtFormfaktor.TabIndex = 12;
-            // 
             // fo
             // 
             this.fo.AutoSize = true;
-            this.fo.Location = new System.Drawing.Point(33, 476);
+            this.fo.Location = new System.Drawing.Point(33, 341);
             this.fo.Name = "fo";
             this.fo.Size = new System.Drawing.Size(91, 20);
             this.fo.TabIndex = 149;
@@ -514,10 +498,9 @@
             this.wtxtZustand.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtZustand.FormattingEnabled = true;
             this.wtxtZustand.Items.AddRange(new object[] {
-            "",
             "verbaut",
             "auf Lager"});
-            this.wtxtZustand.Location = new System.Drawing.Point(249, 61);
+            this.wtxtZustand.Location = new System.Drawing.Point(251, 61);
             this.wtxtZustand.Name = "wtxtZustand";
             this.wtxtZustand.Size = new System.Drawing.Size(146, 28);
             this.wtxtZustand.TabIndex = 1;
@@ -526,7 +509,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.ForeColor = System.Drawing.Color.Red;
-            this.label11.Location = new System.Drawing.Point(248, 38);
+            this.label11.Location = new System.Drawing.Point(250, 38);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(72, 20);
             this.label11.TabIndex = 151;
@@ -534,30 +517,50 @@
             // 
             // nudEinschub2ex
             // 
-            this.nudEinschub2ex.Location = new System.Drawing.Point(249, 357);
+            this.nudEinschub2ex.Location = new System.Drawing.Point(464, 137);
             this.nudEinschub2ex.Name = "nudEinschub2ex";
-            this.nudEinschub2ex.Size = new System.Drawing.Size(143, 26);
-            this.nudEinschub2ex.TabIndex = 9;
+            this.nudEinschub2ex.Size = new System.Drawing.Size(146, 26);
+            this.nudEinschub2ex.TabIndex = 5;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(245, 334);
+            this.label12.ForeColor = System.Drawing.Color.Red;
+            this.label12.Location = new System.Drawing.Point(460, 114);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(193, 20);
+            this.label12.Size = new System.Drawing.Size(182, 20);
             this.label12.TabIndex = 153;
-            this.label12.Text = "Einschub 2,5 HDD extern:";
+            this.label12.Text = "Einschub 2,5 Zoll extern:";
+            // 
+            // wtxtForm
+            // 
+            this.wtxtForm.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtForm.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.wtxtForm.FormattingEnabled = true;
+            this.wtxtForm.Items.AddRange(new object[] {
+            "E-ATX",
+            "ATX",
+            "Mini-ITX",
+            "µATX",
+            "DTX",
+            "Mini-DTX",
+            "Mini-STX",
+            "SSI-CEB"});
+            this.wtxtForm.Location = new System.Drawing.Point(34, 364);
+            this.wtxtForm.Name = "wtxtForm";
+            this.wtxtForm.Size = new System.Drawing.Size(146, 28);
+            this.wtxtForm.TabIndex = 12;
             // 
             // Gehause_Imput
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1126, 620);
+            this.Controls.Add(this.wtxtForm);
             this.Controls.Add(this.nudEinschub2ex);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.wtxtZustand);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.wtxtFormfaktor);
             this.Controls.Add(this.fo);
             this.Controls.Add(this.cbtFenster);
             this.Controls.Add(this.cbtBelechtung);
@@ -568,13 +571,13 @@
             this.Controls.Add(this.nudEinschub2in);
             this.Controls.Add(this.nudEinschub3ex);
             this.Controls.Add(this.nudEinschub3in);
-            this.Controls.Add(this.nudEinschub5);
+            this.Controls.Add(this.nudEinschub5ex);
             this.Controls.Add(this.mtxtBreiteHocheTiefe);
             this.Controls.Add(this.wtxtNetzteilPosition);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.wtxtHersteller);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.wtxtTyp);
+            this.Controls.Add(this.wtxtID);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.cbtKabelsystem);
             this.Controls.Add(this.label9);
@@ -594,10 +597,9 @@
             this.Name = "Gehause_Imput";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gehause";
-            this.Load += new System.EventHandler(this.Gehause_Imput_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcmdMainbord)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudEinschub5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEinschub5ex)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudEinschub3in)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudEinschub3ex)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudEinschub2in)).EndInit();
@@ -610,8 +612,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox wtxtTyp;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
@@ -630,7 +630,7 @@
         private System.Windows.Forms.ComboBox wtxtNetzteilPosition;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.MaskedTextBox mtxtBreiteHocheTiefe;
-        private System.Windows.Forms.NumericUpDown nudEinschub5;
+        private System.Windows.Forms.NumericUpDown nudEinschub5ex;
         private System.Windows.Forms.NumericUpDown nudEinschub3in;
         private System.Windows.Forms.NumericUpDown nudEinschub3ex;
         private System.Windows.Forms.NumericUpDown nudEinschub2in;
@@ -641,11 +641,12 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.CheckBox cbtBelechtung;
         private System.Windows.Forms.CheckBox cbtFenster;
-        private System.Windows.Forms.ComboBox wtxtFormfaktor;
+        private System.Windows.Forms.ComboBox wtxtID;
         private System.Windows.Forms.Label fo;
         private System.Windows.Forms.ComboBox wtxtZustand;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.NumericUpDown nudEinschub2ex;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ComboBox wtxtForm;
     }
 }

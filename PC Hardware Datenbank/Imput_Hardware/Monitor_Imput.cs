@@ -15,15 +15,14 @@ namespace PC_Hardware_Datenbank
 {
     public partial class Monitor_Imput : Form
     {
-        private string Datensatz = "";//Datensatz der dan in die Datenbank geschoben wird
-        private char LF = (char)10;
-        private string QR = "";//QR Code
-        public string DateiPfad;
-
         public Monitor_Imput()
         {
             InitializeComponent();
         }
+
+        Methoden methoden = new Methoden();
+        private char LF = (char)10;
+        private string QR = "";//QR Code
 
         private void cmdBeenden_Click(object sender, EventArgs e)//Fenster Schlissen
         {
@@ -45,62 +44,60 @@ namespace PC_Hardware_Datenbank
 
         private void cmdSpeichern_Click(object sender, EventArgs e)//Speichern Button
         {
-            if (File.Exists(DateiPfad + @"/Monitor_Datenbank.csv") == true)//Prüffen ob eine .csv Datei bereits erstellt wurde
+            if (wtxtHersteller.Text != "" && wtxtID.Text != "" && wtxtZustand.Text != "")
             {
-                if (wtxtHersteller.Text != "" && wtxtModell.Text != "" && wtxtZustand.Text != "")//Prüfft die Pflichtangaben
+                #region CheckBox auswertung
+                string Lautsprecher, HohenVerstellbar, VESA;
+
+                if (cbtLautsprecher.Checked)
                 {
-                    Datensatz = File.ReadAllText(DateiPfad + @"/Monitor_Datenbank.csv");//Datenbanck lessen und in Datensatz speichern
+                    Lautsprecher = "ja";
+                }
+                else
+                {
+                    Lautsprecher = "Nein";
+                }
 
-                    #region Chak Boxen auswerten und Daten zuweisen
-                    string Lautsprecher = "NEIN";
-                    if (cbtLautsprecher.Checked == true)
-                    {
-                        Lautsprecher = "JA";
-                    }
+                if (cbtHohenVerstellbar.Checked)
+                {
+                    HohenVerstellbar = "ja";
+                }
+                else
+                {
+                    HohenVerstellbar = "Nein";
+                }
 
-                    string HöhenVerstellbar = "NEIN";
-                    if (cbtHöhenVerstellbar.Checked == true)
-                    {
-                        HöhenVerstellbar = "JA";
-                    }
+                if (cbtVESA.Checked)
+                {
+                    VESA = "ja";
+                }
+                else
+                {
+                    VESA = "Nein";
+                }
+                #endregion
 
-                    string VESA = "NEIN";
-                    if (cbtVESA.Checked == true)
-                    {
-                        VESA = "JA";
-                    }
-                    #endregion
-
-                    #region Datensatz bilden
-                    Datensatz += LF +
-                        wtxtHersteller.Text + ";" +
-                        wtxtModell.Text + ";" +
-                        wtxtZustand.Text + ";" +
-                        wtxtMaxAuflosung.Text + ";" +
-                        wtxtTechnik.Text + ";" +
-                        Lautsprecher + ";" +
-                        HöhenVerstellbar + ";" +
-                        VESA + ";" +
-                        nudEingangVGA.Value + ";" +
-                        nudEingangDVI.Value + ";" +
-                        nudEingangHDMI.Value + ";" +
-                        nudEingangDisplaport.Value + ";" +
-                        nudEingangRGB.Value + ";" +
-                        nudEingangAudio.Value + ";" +
-                        nudEingangUSB.Value + ";" +
-                        nudAusgangAudio.Value + ";" +
-                        nudAusgangUSB.Value;
-                    #endregion
+                try
+                {
+                    string mysqlconnectionstring = methoden.MySqlConnectionString();//Angaben um sich an der Datenbank anzumelden
+                    methoden.MySQL_ping_check(mysqlconnectionstring);//Testabfrage bei der Datenkan
+                    string Datensatz = methoden.ObjekteTextToString(",", this);//Erzeugt ein String aus den Daten auf der Form
+                    string sqldatensatz = Datensatz.Substring(0, Datensatz.Length - 1);//Entfert ein überflüssiges Zeichen (Grund Schleife)
+                    string mysqlcommandtext = "INSERT INTO `monitor` VALUES (" + sqldatensatz + ");";//SQL Befehl Abfrage aller User
+                    methoden.MySqlCommand(mysqlconnectionstring, mysqlcommandtext);//Daten in die Datenbank schreiben
+                    LoschFunktion();
+                    wtxtZustand.Focus();
+                    MessageBox.Show("Daten wurden erfolgreich gespeichert!");
 
                     #region QR Code
                     QR =
                         "Hersteller: " + wtxtHersteller.Text + LF +
-                        "Modell: " + wtxtModell.Text + LF +
+                        "Modell: " + wtxtID.Text + LF +
                         "Zustand: " + wtxtZustand.Text + LF +
-                        "Max.Auflösung: " + wtxtMaxAuflosung.Text + LF +
                         "Technik: " + wtxtTechnik.Text + LF +
+                        "Max.Auflösung: " + wtxtMaxAuflosung.Text + LF +
                         "Lautsprecher: " + Lautsprecher + LF +
-                        "Höhen verstellbar: " + HöhenVerstellbar + LF +
+                        "Höhen verstellbar: " + HohenVerstellbar + LF +
                         "VESA Halterung: " + VESA + LF +
                         "<Eingänge>" + LF +
                         "VGA: " + nudEingangVGA.Value + LF +
@@ -109,24 +106,30 @@ namespace PC_Hardware_Datenbank
                         "Displayport: " + nudEingangDisplaport.Value + LF +
                         "RGB: " + nudEingangRGB.Value + LF +
                         "Ausio: " + nudEingangAudio.Value + LF +
-                        "USB: " + nudEingangUSB.Value + LF +
+                        "USB: " + nudEingangUSBC.Value + LF +
                         "<Ausgänge>" + LF +
                         "Audio: " + nudAusgangAudio.Value + LF +
                         "USB: " + nudAusgangUSB.Value;
                     #endregion
 
-                    File.WriteAllText(DateiPfad + @"/Monitor_Datenbank.csv", Datensatz);//Datensatz in Monitor_Datenbank.csv schreiben
-                    MessageBox.Show("Datensatz geschrieben!");//Bestätigung das der Datensatz geschrieben wurd
+                    DialogResult dialogresult = MessageBox.Show("Möchten Sie einen QR-Code Drucken?", "QR-Code Drucken?", MessageBoxButtons.YesNo);
+                    if (dialogresult == DialogResult.Yes)
+                    {
+                        cmdQR_Click(cmdQR, e);
+                    }
+                    else if (dialogresult == DialogResult.No)
+                    {
+
+                    }
                 }
-                else
+                catch
                 {
-                    MessageBox.Show("Bitte alle roten Pflichtfelder ausfüllen!");
+                    MessageBox.Show("Fehler: Daten konnten nicht gespeichert speichern werden!");
                 }
             }
             else
             {
-                MessageBox.Show("Datenbank nicht vorhanden bitte einen Administrator aufsuchen!");
-                Application.Exit();
+                MessageBox.Show("Bitte füllen sie alle rot markierten Felder aus!");
             }
         }
         #region Prüfen ob Check-Box aktiv ist dan Nummern Block auf 1
@@ -204,13 +207,13 @@ namespace PC_Hardware_Datenbank
 
         private void cbtEingangUSB_CheckedChanged(object sender, EventArgs e)
         {
-            if (cbtEingangUSB.Checked == true)
+            if (cbtEingangUSBC.Checked == true)
             {
-                nudEingangUSB.Value = 1;
+                nudEingangUSBC.Value = 1;
             }
-            if (cbtEingangUSB.Checked == false)
+            if (cbtEingangUSBC.Checked == false)
             {
-                nudEingangUSB.Value = 0;
+                nudEingangUSBC.Value = 0;
             }
         }
 
@@ -241,7 +244,7 @@ namespace PC_Hardware_Datenbank
         #region Prüfen das Nummern Felder
         private void nudEingangVGA_ValueChanged(object sender, EventArgs e)
         {
-            if (nudEingangVGA.Value > 0)
+            if (nudEingangVGA.Value != 0)
             {
                 cbtEingangVGA.Checked = true;
             }
@@ -253,7 +256,7 @@ namespace PC_Hardware_Datenbank
 
         private void nudEingangDVI_ValueChanged(object sender, EventArgs e)
         {
-            if (nudEingangDVI.Value > 0)
+            if (nudEingangDVI.Value != 0)
             {
                 cbtEingangDVI.Checked = true;
             }
@@ -265,7 +268,7 @@ namespace PC_Hardware_Datenbank
 
         private void nudEingangHDMI_ValueChanged(object sender, EventArgs e)
         {
-            if (nudEingangHDMI.Value > 0)
+            if (nudEingangHDMI.Value != 0)
             {
                 cbtEingangHDMI.Checked = true;
             }
@@ -277,7 +280,7 @@ namespace PC_Hardware_Datenbank
 
         private void nudEingangDisplaport_ValueChanged(object sender, EventArgs e)
         {
-            if (nudEingangDisplaport.Value > 0)
+            if (nudEingangDisplaport.Value != 0)
             {
                 cbtEingangDisplaport.Checked = true;
             }
@@ -289,7 +292,7 @@ namespace PC_Hardware_Datenbank
 
         private void nudEingangRGB_ValueChanged(object sender, EventArgs e)
         {
-            if (nudEingangRGB.Value > 0)
+            if (nudEingangRGB.Value != 0)
             {
                 cbtEingangRGB.Checked = true;
             }
@@ -301,7 +304,7 @@ namespace PC_Hardware_Datenbank
 
         private void nudEingangAudio_ValueChanged(object sender, EventArgs e)
         {
-            if (nudEingangAudio.Value > 0)
+            if (nudEingangAudio.Value != 0)
             {
                 cbtEingangAudio.Checked = true;
             }
@@ -313,19 +316,19 @@ namespace PC_Hardware_Datenbank
 
         private void nudEingangUSB_ValueChanged(object sender, EventArgs e)
         {
-            if (nudEingangUSB.Value > 0)
+            if (nudEingangUSBC.Value != 0)
             {
-                cbtEingangUSB.Checked = true;
+                cbtEingangUSBC.Checked = true;
             }
-            if (nudEingangUSB.Value == 0)
+            if (nudEingangUSBC.Value == 0)
             {
-                cbtEingangUSB.Checked = false;
+                cbtEingangUSBC.Checked = false;
             }
         }
 
         private void nudAusgangAudio_ValueChanged(object sender, EventArgs e)
         {
-            if (nudAusgangAudio.Value > 0)
+            if (nudAusgangAudio.Value != 0)
             {
                 cbtAusgangAudio.Checked = true;
             }
@@ -337,7 +340,7 @@ namespace PC_Hardware_Datenbank
 
         private void nudAusgangUSB_ValueChanged(object sender, EventArgs e)
         {
-            if (nudAusgangUSB.Value > 0)
+            if (nudAusgangUSB.Value != 0)
             {
                 cbtAusgangUSB.Checked = true;
             }
@@ -379,11 +382,6 @@ namespace PC_Hardware_Datenbank
             qrCodeImage.Dispose();
         }
         #endregion
-
-        private void Monitor_Imput_Load(object sender, EventArgs e)//lesen des gespeicherten DateiPfad
-        {
-            DateiPfad = File.ReadAllText(@"./settings");
-        }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {

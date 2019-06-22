@@ -34,19 +34,15 @@
             this.cmdSchliessen = new System.Windows.Forms.Button();
             this.wtxtRechte = new System.Windows.Forms.ListBox();
             this.dgvUser = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.cmdClear = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,10 +70,10 @@
             // 
             // cmdSchliessen
             // 
-            this.cmdSchliessen.Location = new System.Drawing.Point(484, 535);
+            this.cmdSchliessen.Location = new System.Drawing.Point(479, 535);
             this.cmdSchliessen.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdSchliessen.Name = "cmdSchliessen";
-            this.cmdSchliessen.Size = new System.Drawing.Size(112, 35);
+            this.cmdSchliessen.Size = new System.Drawing.Size(117, 35);
             this.cmdSchliessen.TabIndex = 5;
             this.cmdSchliessen.Text = "&Schließen";
             this.cmdSchliessen.UseVisualStyleBackColor = false;
@@ -102,37 +98,18 @@
             // dgvUser
             // 
             this.dgvUser.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvUser.CausesValidation = false;
             this.dgvUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUser.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3});
             this.dgvUser.Location = new System.Drawing.Point(13, 159);
             this.dgvUser.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvUser.Name = "dgvUser";
+            this.dgvUser.ReadOnly = true;
             this.dgvUser.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvUser.ShowEditingIcon = false;
             this.dgvUser.Size = new System.Drawing.Size(583, 366);
             this.dgvUser.TabIndex = 6;
             this.dgvUser.TabStop = false;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Name:";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Password:";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Visible = false;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Rechte:";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
+            this.dgvUser.DoubleClick += new System.EventHandler(this.dgvUser_DoubleClick);
             // 
             // label1
             // 
@@ -191,21 +168,10 @@
             this.label4.TabIndex = 10;
             this.label4.Text = "Namen Markieren um ihn zu löschen:";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(13, 535);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(37, 37);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(56, 535);
+            this.pictureBox2.Location = new System.Drawing.Point(13, 535);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(37, 37);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -213,13 +179,24 @@
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
+            // cmdClear
+            // 
+            this.cmdClear.Location = new System.Drawing.Point(354, 535);
+            this.cmdClear.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cmdClear.Name = "cmdClear";
+            this.cmdClear.Size = new System.Drawing.Size(117, 35);
+            this.cmdClear.TabIndex = 14;
+            this.cmdClear.Text = "&Zurücksetzen";
+            this.cmdClear.UseVisualStyleBackColor = false;
+            this.cmdClear.Click += new System.EventHandler(this.cmdClear_Click);
+            // 
             // Benutzer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(609, 584);
+            this.Controls.Add(this.cmdClear);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtName);
@@ -238,7 +215,6 @@
             this.Text = "Benutzer";
             this.Load += new System.EventHandler(this.Benutzer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -258,10 +234,7 @@
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button cmdClear;
     }
 }

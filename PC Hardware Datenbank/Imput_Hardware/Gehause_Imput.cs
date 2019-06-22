@@ -15,22 +15,21 @@ namespace PC_Hardware_Datenbank
 {
     public partial class Gehause_Imput : Form
     {
-        private string Datensatz = "";//Datensatz der dan in die Datenbank geschoben wird
-        private char LF = (char)10;
-        private string QR = "";//QR Code
-        public string DateiPfad;
-
         public Gehause_Imput()
         {
             InitializeComponent();
         }
+
+        Methoden methoden = new Methoden();
+        private char LF = (char)10;
+        private string QR = "";//QR Code
 
         private void cmdBeenden_Click(object sender, EventArgs e)//Fenster schlissen
         {
             Close();
         }
 
-        private void LoschFuncktion()//Lösch Funktion
+        private void LoschFunktion()//Lösch Funktion
         {
             Gehause_Imput NewForm = new Gehause_Imput();
             NewForm.Show();
@@ -40,85 +39,93 @@ namespace PC_Hardware_Datenbank
 
         private void cmdClear_Click(object sender, EventArgs e)//Löschen Button
         {
-            LoschFuncktion();
+            LoschFunktion();
         }
 
         private void cmdSpeichern_Click(object sender, EventArgs e)//Speichern Button
         {
-            if (File.Exists(DateiPfad + @"/Gehause_Datenbank.csv") == true)//Prüffen ob eine .csv Datei bereits erstellt wurde
+            if (mtxtBreiteHocheTiefe.Text != "" && wtxtZustand.Text != "" && wtxtNetzteilPosition.Text != "" && nudEinschub5ex.Text != "" && nudEinschub3ex.Text != "" && nudEinschub2ex.Text != "" && nudEinschub3in.Text != "" && nudEinschub2in.Text != "" && nudFrontUSB.Text != "" && nudFrontKlinke.Text != "")
             {
-                if (mtxtBreiteHocheTiefe.Text != "" && wtxtZustand.Text != "")//Prüfft die Pflichtangaben
+                #region Chekbox auswerten
+                string Kabelsystem, Beleuchtung, PlexiglassFenster;
+                if (cbtKabelsystem.Checked)
                 {
-                    Datensatz = File.ReadAllText(DateiPfad + @"/Gehause_Datenbank.csv");//Datenbanck lessen und in Datensatz speichern
-
-                    #region Check Box auswerten
-                    string Kabelsystem = "NEIN", Beleuchtung = "NEIN", PlexiglassFenster = "NEIN";
-                    if (cbtKabelsystem.Checked == true)
-                    {
-                        Kabelsystem = "JA";
-                    }
-                    if (cbtBelechtung.Checked == true)
-                    {
-                        Beleuchtung = "JA";
-                    }
-                    if (cbtFenster.Checked == true)
-                    {
-                        PlexiglassFenster = "JA";
-                    }
-                    #endregion
-
-                    #region Datensatz bilden
-                    Datensatz += LF +
-                        mtxtBreiteHocheTiefe.Text + ";" +
-                        wtxtZustand.Text + ";" +
-                        wtxtHersteller.Text + ";" +
-                        wtxtTyp.Text + ";" +
-                        wtxtNetzteilPosition.Text + ";" +
-                        nudEinschub5.Value + ";" +
-                        nudEinschub3in.Value + ";" +
-                        nudEinschub3ex.Value + ";" +
-                        nudEinschub2in.Value + ";" +
-                        nudEinschub2ex.Value + ";" +
-                        nudFrontUSB.Value + ";" +
-                        nudFrontKlinke.Value + ";" +
-                        wtxtFormfaktor.Text + ";" +
-                        Kabelsystem + ";" +
-                        Beleuchtung + ";" +
-                        PlexiglassFenster;
-                    #endregion
-
-                    #region QR Code
-                    QR = 
-                        "Breite-Höhe-Tiefe: " + mtxtBreiteHocheTiefe.Text + LF +
-                        "Zustand: " + wtxtZustand.Text + LF +
-                        "Hersteller: " + wtxtHersteller.Text + LF + 
-                        "Typ: " + wtxtTyp.Text + LF + 
-                        "Netzteil Position: " + wtxtNetzteilPosition.Text + LF + 
-                        "Einschub 5,25 Zoll: " + nudEinschub5.Value + LF +
-                        "Einschub 3,5 intern: " + nudEinschub3in.Value + LF +
-                        "Einschub 3,5 extern: " + nudEinschub3ex.Value + LF + 
-                        "Einschub 2,5 intern: " + nudEinschub2in.Value + LF +
-                        "Einschub 2,5 extern: " + nudEinschub2ex.Value + LF +
-                        "Front USB: " + nudFrontUSB.Value + LF + 
-                        "Front Klinke: " + nudFrontKlinke.Value + LF + 
-                        "Formfaktor: " + wtxtFormfaktor.Text + LF +
-                        "Kabelsystem: " + Kabelsystem + LF + 
-                        "Beleuchtung: " + Beleuchtung + LF + 
-                        "Plexiglas Fenster: " + PlexiglassFenster;
-                    #endregion
-
-                    File.WriteAllText(DateiPfad + @"/Gehause_Datenbank.csv", Datensatz);//Datensatz in Mainbord_Datenbank.csv schreiben
-                    MessageBox.Show("Datensatz geschrieben!");//Bestätigung das der Datensatz geschrieben wurd
+                    Kabelsystem = "Ja";
                 }
                 else
                 {
-                    MessageBox.Show("Bitte alle roten Pflichtfelder ausfüllen!");
+                    Kabelsystem = "Nein";
+                }
+
+                if (cbtBelechtung.Checked)
+                {
+                    Beleuchtung = "Ja";
+                }
+                else
+                {
+                    Beleuchtung = "Nein";
+                }
+
+                if (cbtFenster.Checked)
+                {
+                    PlexiglassFenster = "Ja";
+                }
+                else
+                {
+                    PlexiglassFenster = "Nein";
+                }
+                #endregion
+
+                try
+                {
+                    string mysqlconnectionstring = methoden.MySqlConnectionString();//Angaben um sich an der Datenbank anzumelden
+                    methoden.MySQL_ping_check(mysqlconnectionstring);//Testabfrage bei der Datenkan
+                    string Datensatz = methoden.ObjekteTextToString(",", this);//Erzeugt ein String aus den Daten auf der Form
+                    string sqldatensatz = Datensatz.Substring(0, Datensatz.Length - 1);//Entfert ein überflüssiges Zeichen (Grund Schleife)
+                    string mysqlcommandtext = "INSERT INTO `gehause` VALUES (" + sqldatensatz + ");";//SQL Befehl Abfrage aller User
+                    methoden.MySqlCommand(mysqlconnectionstring, mysqlcommandtext);//Daten in die Datenbank schreiben
+                    LoschFunktion();
+                    wtxtZustand.Focus();
+                    MessageBox.Show("Daten wurden erfolgreich gespeichert!");
+
+                    #region QR Code
+                    QR =
+                        "Breite-Höhe-Tiefe: " + mtxtBreiteHocheTiefe.Text + LF +
+                        "Zustand: " + wtxtZustand.Text + LF +
+                        "Netzteil Position: " + wtxtNetzteilPosition.Text + LF +
+                        "Einschub 5,25 extern: " + nudEinschub5ex.Value + LF +
+                        "Einschub 3,5 extern: " + nudEinschub3ex.Value + LF +
+                        "Einschub 2,5 extern: " + nudEinschub2ex.Value + LF +
+                        "Einschub 3,5 intern: " + nudEinschub3in.Value + LF +
+                        "Einschub 2,5 intern: " + nudEinschub2in.Value + LF +
+                        "Front USB: " + nudFrontUSB.Value + LF +
+                        "Front Klinke: " + nudFrontKlinke.Value + LF +
+                        "Hersteller: " + wtxtHersteller.Text + LF +
+                        "Bezeichnung: " + wtxtID.Text + LF +
+                        "Formfaktor: " + wtxtForm.Text + LF +
+                        "Kabelsystem: " + Kabelsystem + LF +
+                        "Beleuchtung: " + Beleuchtung + LF +
+                        "Plexiglas Fenster: " + PlexiglassFenster;
+                    #endregion
+
+                    DialogResult dialogresult = MessageBox.Show("Möchten Sie einen QR-Code Drucken?", "QR-Code Drucken?", MessageBoxButtons.YesNo);
+                    if (dialogresult == DialogResult.Yes)
+                    {
+                        cmdQR_Click(cmdQR, e);
+                    }
+                    else if (dialogresult == DialogResult.No)
+                    {
+
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Fehler: Daten konnten nicht gespeichert speichern werden!");
                 }
             }
             else
             {
-                MessageBox.Show("Datenbank nicht vorhanden bitte einen Administrator aufsuchen!");
-                Application.Exit();
+                MessageBox.Show("Bitte füllen sie alle rot markierten Felder aus!");
             }
         }
 
@@ -153,11 +160,6 @@ namespace PC_Hardware_Datenbank
             qrCodeImage.Dispose();
         }
         #endregion
-
-        private void Gehause_Imput_Load(object sender, EventArgs e)//lesen des gespeicherten DateiPfad
-        {
-            DateiPfad = File.ReadAllText(@"./settings");
-        }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {

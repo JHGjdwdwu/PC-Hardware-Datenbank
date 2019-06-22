@@ -43,19 +43,21 @@
             this.label2 = new System.Windows.Forms.Label();
             this.wtxtSlot = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtTyp = new System.Windows.Forms.TextBox();
             this.wtxtTacktrate = new System.Windows.Forms.ComboBox();
             this.wtxtGrosse = new System.Windows.Forms.ComboBox();
-            this.txtLatenz = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.cbtECC = new System.Windows.Forms.CheckBox();
-            this.cbtSO_DIMM = new System.Windows.Forms.CheckBox();
-            this.cbtRegistered = new System.Windows.Forms.CheckBox();
-            this.cbtUnbuffered = new System.Windows.Forms.CheckBox();
             this.wtxtZustand = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.wtxtChiphersteller = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.wtxtID = new System.Windows.Forms.ComboBox();
+            this.wtxtModultyp = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.wtxtBetriebstemperatur = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.wtxtLatenz = new System.Windows.Forms.ComboBox();
+            this.wtxtBeleuchtung = new System.Windows.Forms.ComboBox();
+            this.lbl121 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcmdMainbord)).BeginInit();
             this.SuspendLayout();
@@ -78,7 +80,7 @@
             this.cmdQR.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdQR.Name = "cmdQR";
             this.cmdQR.Size = new System.Drawing.Size(171, 35);
-            this.cmdQR.TabIndex = 15;
+            this.cmdQR.TabIndex = 14;
             this.cmdQR.Text = "QR-Code Drucken";
             this.cmdQR.UseVisualStyleBackColor = false;
             this.cmdQR.Click += new System.EventHandler(this.cmdQR_Click);
@@ -91,7 +93,7 @@
             this.cmdBildEinfugen.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdBildEinfugen.Name = "cmdBildEinfugen";
             this.cmdBildEinfugen.Size = new System.Drawing.Size(150, 35);
-            this.cmdBildEinfugen.TabIndex = 12;
+            this.cmdBildEinfugen.TabIndex = 11;
             this.cmdBildEinfugen.Text = "Bild einfügen";
             this.cmdBildEinfugen.UseVisualStyleBackColor = false;
             // 
@@ -103,7 +105,7 @@
             this.cmdClear.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdClear.Name = "cmdClear";
             this.cmdClear.Size = new System.Drawing.Size(150, 35);
-            this.cmdClear.TabIndex = 14;
+            this.cmdClear.TabIndex = 13;
             this.cmdClear.Text = "Zurücksetzen";
             this.cmdClear.UseVisualStyleBackColor = false;
             this.cmdClear.Click += new System.EventHandler(this.cmdClear_Click);
@@ -116,7 +118,7 @@
             this.cmdSpeichern.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdSpeichern.Name = "cmdSpeichern";
             this.cmdSpeichern.Size = new System.Drawing.Size(150, 35);
-            this.cmdSpeichern.TabIndex = 13;
+            this.cmdSpeichern.TabIndex = 12;
             this.cmdSpeichern.Text = "Speichern";
             this.cmdSpeichern.UseVisualStyleBackColor = false;
             this.cmdSpeichern.Click += new System.EventHandler(this.cmdSpeichern_Click);
@@ -129,7 +131,7 @@
             this.cmdBeenden.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdBeenden.Name = "cmdBeenden";
             this.cmdBeenden.Size = new System.Drawing.Size(150, 35);
-            this.cmdBeenden.TabIndex = 16;
+            this.cmdBeenden.TabIndex = 15;
             this.cmdBeenden.Text = "Schließen";
             this.cmdBeenden.UseVisualStyleBackColor = false;
             this.cmdBeenden.Click += new System.EventHandler(this.cmdBeenden_Click);
@@ -148,7 +150,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(245, 186);
+            this.label6.Location = new System.Drawing.Point(30, 260);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(72, 20);
             this.label6.TabIndex = 71;
@@ -158,7 +160,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(245, 38);
+            this.label5.Location = new System.Drawing.Point(30, 186);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(59, 20);
             this.label5.TabIndex = 67;
@@ -167,11 +169,12 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(30, 186);
+            this.label3.ForeColor = System.Drawing.Color.Red;
+            this.label3.Location = new System.Drawing.Point(245, 40);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 20);
+            this.label3.Size = new System.Drawing.Size(106, 20);
             this.label3.TabIndex = 64;
-            this.label3.Text = "Typ:";
+            this.label3.Text = "Bezeichnung:";
             // 
             // wtxtHersteller
             // 
@@ -179,21 +182,22 @@
             this.wtxtHersteller.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtHersteller.FormattingEnabled = true;
             this.wtxtHersteller.Items.AddRange(new object[] {
-            "",
             "Corsair",
             "Kingston Technology",
             "MDT",
             "OCZ",
-            "A-Data"});
-            this.wtxtHersteller.Location = new System.Drawing.Point(249, 135);
+            "A-Data",
+            "Samsung"});
+            this.wtxtHersteller.Location = new System.Drawing.Point(34, 61);
             this.wtxtHersteller.Name = "wtxtHersteller";
             this.wtxtHersteller.Size = new System.Drawing.Size(146, 28);
-            this.wtxtHersteller.TabIndex = 3;
+            this.wtxtHersteller.TabIndex = 0;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(245, 112);
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(30, 38);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(81, 20);
             this.label2.TabIndex = 60;
@@ -205,45 +209,47 @@
             this.wtxtSlot.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtSlot.FormattingEnabled = true;
             this.wtxtSlot.Items.AddRange(new object[] {
-            "",
-            "SDRAM",
+            "SD-RAM",
             "DDR",
             "DDR2",
             "DDR3",
             "DDR4",
             "DDR5"});
-            this.wtxtSlot.Location = new System.Drawing.Point(34, 61);
+            this.wtxtSlot.Location = new System.Drawing.Point(249, 135);
             this.wtxtSlot.Name = "wtxtSlot";
             this.wtxtSlot.Size = new System.Drawing.Size(146, 28);
-            this.wtxtSlot.TabIndex = 0;
+            this.wtxtSlot.TabIndex = 3;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(30, 38);
+            this.label1.Location = new System.Drawing.Point(245, 112);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 20);
+            this.label1.Size = new System.Drawing.Size(70, 20);
             this.label1.TabIndex = 57;
-            this.label1.Text = "Slot:";
-            // 
-            // txtTyp
-            // 
-            this.txtTyp.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.txtTyp.Location = new System.Drawing.Point(34, 209);
-            this.txtTyp.Name = "txtTyp";
-            this.txtTyp.Size = new System.Drawing.Size(146, 26);
-            this.txtTyp.TabIndex = 4;
+            this.label1.Text = "Slot Typ:";
             // 
             // wtxtTacktrate
             // 
             this.wtxtTacktrate.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.wtxtTacktrate.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtTacktrate.FormattingEnabled = true;
-            this.wtxtTacktrate.Location = new System.Drawing.Point(249, 209);
+            this.wtxtTacktrate.Items.AddRange(new object[] {
+            "400MHz",
+            "800MHz",
+            "1600MHz",
+            "2133MHz",
+            "2400MHz",
+            "2666MHz",
+            "3000MHz",
+            "3200MHz",
+            "3600MHz",
+            "4133MHz"});
+            this.wtxtTacktrate.Location = new System.Drawing.Point(34, 283);
             this.wtxtTacktrate.Name = "wtxtTacktrate";
             this.wtxtTacktrate.Size = new System.Drawing.Size(146, 28);
-            this.wtxtTacktrate.TabIndex = 5;
+            this.wtxtTacktrate.TabIndex = 6;
             // 
             // wtxtGrosse
             // 
@@ -251,75 +257,27 @@
             this.wtxtGrosse.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtGrosse.FormattingEnabled = true;
             this.wtxtGrosse.Items.AddRange(new object[] {
-            "",
             "64MB",
             "128MB",
             "512MB",
             "1GB",
             "2GB",
             "4GB",
-            "8GB"});
-            this.wtxtGrosse.Location = new System.Drawing.Point(249, 61);
+            "8GB",
+            "16GB"});
+            this.wtxtGrosse.Location = new System.Drawing.Point(34, 209);
             this.wtxtGrosse.Name = "wtxtGrosse";
             this.wtxtGrosse.Size = new System.Drawing.Size(146, 28);
-            this.wtxtGrosse.TabIndex = 1;
-            // 
-            // txtLatenz
-            // 
-            this.txtLatenz.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.txtLatenz.Location = new System.Drawing.Point(34, 283);
-            this.txtLatenz.Name = "txtLatenz";
-            this.txtLatenz.Size = new System.Drawing.Size(146, 26);
-            this.txtLatenz.TabIndex = 6;
+            this.wtxtGrosse.TabIndex = 4;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(30, 260);
+            this.label4.Location = new System.Drawing.Point(245, 262);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(62, 20);
             this.label4.TabIndex = 76;
             this.label4.Text = "Latenz:";
-            // 
-            // cbtECC
-            // 
-            this.cbtECC.AutoSize = true;
-            this.cbtECC.Location = new System.Drawing.Point(457, 93);
-            this.cbtECC.Name = "cbtECC";
-            this.cbtECC.Size = new System.Drawing.Size(61, 24);
-            this.cbtECC.TabIndex = 9;
-            this.cbtECC.Text = "ECC";
-            this.cbtECC.UseVisualStyleBackColor = true;
-            // 
-            // cbtSO_DIMM
-            // 
-            this.cbtSO_DIMM.AutoSize = true;
-            this.cbtSO_DIMM.Location = new System.Drawing.Point(457, 63);
-            this.cbtSO_DIMM.Name = "cbtSO_DIMM";
-            this.cbtSO_DIMM.Size = new System.Drawing.Size(99, 24);
-            this.cbtSO_DIMM.TabIndex = 8;
-            this.cbtSO_DIMM.Text = "SO-DIMM";
-            this.cbtSO_DIMM.UseVisualStyleBackColor = true;
-            // 
-            // cbtRegistered
-            // 
-            this.cbtRegistered.AutoSize = true;
-            this.cbtRegistered.Location = new System.Drawing.Point(457, 123);
-            this.cbtRegistered.Name = "cbtRegistered";
-            this.cbtRegistered.Size = new System.Drawing.Size(106, 24);
-            this.cbtRegistered.TabIndex = 10;
-            this.cbtRegistered.Text = "Registered";
-            this.cbtRegistered.UseVisualStyleBackColor = true;
-            // 
-            // cbtUnbuffered
-            // 
-            this.cbtUnbuffered.AutoSize = true;
-            this.cbtUnbuffered.Location = new System.Drawing.Point(457, 153);
-            this.cbtUnbuffered.Name = "cbtUnbuffered";
-            this.cbtUnbuffered.Size = new System.Drawing.Size(109, 24);
-            this.cbtUnbuffered.TabIndex = 11;
-            this.cbtUnbuffered.Text = "Unbuffered";
-            this.cbtUnbuffered.UseVisualStyleBackColor = true;
             // 
             // wtxtZustand
             // 
@@ -327,7 +285,6 @@
             this.wtxtZustand.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtZustand.FormattingEnabled = true;
             this.wtxtZustand.Items.AddRange(new object[] {
-            "",
             "verbaut",
             "auf Lager"});
             this.wtxtZustand.Location = new System.Drawing.Point(34, 135);
@@ -351,7 +308,6 @@
             this.wtxtChiphersteller.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtChiphersteller.FormattingEnabled = true;
             this.wtxtChiphersteller.Items.AddRange(new object[] {
-            "",
             "Nanya",
             "Hynix Semiconductor",
             "Micron Technology",
@@ -360,38 +316,126 @@
             "Toshiba",
             "Winbond",
             "Etron"});
-            this.wtxtChiphersteller.Location = new System.Drawing.Point(249, 283);
+            this.wtxtChiphersteller.Location = new System.Drawing.Point(34, 357);
             this.wtxtChiphersteller.Name = "wtxtChiphersteller";
             this.wtxtChiphersteller.Size = new System.Drawing.Size(146, 28);
-            this.wtxtChiphersteller.TabIndex = 7;
+            this.wtxtChiphersteller.TabIndex = 8;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(245, 260);
+            this.label8.Location = new System.Drawing.Point(30, 334);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(110, 20);
             this.label8.TabIndex = 80;
             this.label8.Text = "Chiphersteller:";
+            // 
+            // wtxtID
+            // 
+            this.wtxtID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.wtxtID.FormattingEnabled = true;
+            this.wtxtID.Location = new System.Drawing.Point(249, 63);
+            this.wtxtID.Name = "wtxtID";
+            this.wtxtID.Size = new System.Drawing.Size(146, 28);
+            this.wtxtID.TabIndex = 1;
+            // 
+            // wtxtModultyp
+            // 
+            this.wtxtModultyp.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtModultyp.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.wtxtModultyp.FormattingEnabled = true;
+            this.wtxtModultyp.Items.AddRange(new object[] {
+            "U-DIMM",
+            "SO-DIMM",
+            "ECC SO-DIMM",
+            "ECC U-DIMM",
+            "R-DIMM"});
+            this.wtxtModultyp.Location = new System.Drawing.Point(249, 209);
+            this.wtxtModultyp.Name = "wtxtModultyp";
+            this.wtxtModultyp.Size = new System.Drawing.Size(146, 28);
+            this.wtxtModultyp.TabIndex = 5;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(245, 186);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(77, 20);
+            this.label9.TabIndex = 83;
+            this.label9.Text = "Modultyp:";
+            // 
+            // wtxtBetriebstemperatur
+            // 
+            this.wtxtBetriebstemperatur.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtBetriebstemperatur.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.wtxtBetriebstemperatur.FormattingEnabled = true;
+            this.wtxtBetriebstemperatur.Location = new System.Drawing.Point(249, 357);
+            this.wtxtBetriebstemperatur.Name = "wtxtBetriebstemperatur";
+            this.wtxtBetriebstemperatur.Size = new System.Drawing.Size(146, 28);
+            this.wtxtBetriebstemperatur.TabIndex = 9;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(245, 334);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(150, 20);
+            this.label10.TabIndex = 85;
+            this.label10.Text = "Betriebstemperatur:";
+            // 
+            // wtxtLatenz
+            // 
+            this.wtxtLatenz.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtLatenz.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.wtxtLatenz.FormattingEnabled = true;
+            this.wtxtLatenz.Location = new System.Drawing.Point(249, 283);
+            this.wtxtLatenz.Name = "wtxtLatenz";
+            this.wtxtLatenz.Size = new System.Drawing.Size(146, 28);
+            this.wtxtLatenz.TabIndex = 7;
+            // 
+            // wtxtBeleuchtung
+            // 
+            this.wtxtBeleuchtung.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtBeleuchtung.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.wtxtBeleuchtung.FormattingEnabled = true;
+            this.wtxtBeleuchtung.Items.AddRange(new object[] {
+            "Ja",
+            "Nein"});
+            this.wtxtBeleuchtung.Location = new System.Drawing.Point(34, 431);
+            this.wtxtBeleuchtung.Name = "wtxtBeleuchtung";
+            this.wtxtBeleuchtung.Size = new System.Drawing.Size(146, 28);
+            this.wtxtBeleuchtung.TabIndex = 10;
+            // 
+            // lbl121
+            // 
+            this.lbl121.AutoSize = true;
+            this.lbl121.Location = new System.Drawing.Point(30, 410);
+            this.lbl121.Name = "lbl121";
+            this.lbl121.Size = new System.Drawing.Size(103, 20);
+            this.lbl121.TabIndex = 88;
+            this.lbl121.Text = "Beleuchtung:";
             // 
             // RAM_Imput
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1126, 620);
+            this.Controls.Add(this.wtxtBeleuchtung);
+            this.Controls.Add(this.lbl121);
+            this.Controls.Add(this.wtxtLatenz);
+            this.Controls.Add(this.wtxtBetriebstemperatur);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.wtxtModultyp);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.wtxtID);
             this.Controls.Add(this.wtxtChiphersteller);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.wtxtZustand);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.cbtUnbuffered);
-            this.Controls.Add(this.cbtRegistered);
-            this.Controls.Add(this.cbtSO_DIMM);
-            this.Controls.Add(this.cbtECC);
-            this.Controls.Add(this.txtLatenz);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.wtxtGrosse);
             this.Controls.Add(this.wtxtTacktrate);
-            this.Controls.Add(this.txtTyp);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.cmdQR);
             this.Controls.Add(this.cmdBildEinfugen);
@@ -411,7 +455,6 @@
             this.Name = "RAM_Imput";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Arbeitsspeicher";
-            this.Load += new System.EventHandler(this.RAM_Imput_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcmdMainbord)).EndInit();
             this.ResumeLayout(false);
@@ -434,18 +477,20 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox wtxtSlot;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtTyp;
         private System.Windows.Forms.ComboBox wtxtTacktrate;
         private System.Windows.Forms.ComboBox wtxtGrosse;
-        private System.Windows.Forms.TextBox txtLatenz;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.CheckBox cbtECC;
-        private System.Windows.Forms.CheckBox cbtSO_DIMM;
-        private System.Windows.Forms.CheckBox cbtRegistered;
-        private System.Windows.Forms.CheckBox cbtUnbuffered;
         private System.Windows.Forms.ComboBox wtxtZustand;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox wtxtChiphersteller;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox wtxtID;
+        private System.Windows.Forms.ComboBox wtxtModultyp;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox wtxtBetriebstemperatur;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox wtxtLatenz;
+        private System.Windows.Forms.ComboBox wtxtBeleuchtung;
+        private System.Windows.Forms.Label lbl121;
     }
 }

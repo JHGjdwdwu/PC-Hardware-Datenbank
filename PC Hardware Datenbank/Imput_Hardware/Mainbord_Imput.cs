@@ -15,15 +15,14 @@ namespace PC_Hardware_Datenbank
 {
     public partial class Mainboard_Imput : Form
     {
-        private string Datensatz = "";//Datensatz der dan in die Datenbank geschoben wird
-        private char LF = (char)10;
-        private string QR = "";//QR Code
-        public string DateiPfad;
-
         public Mainboard_Imput()
         {
             InitializeComponent();
         }
+
+        Methoden methoden = new Methoden();
+        private char LF = (char)10;
+        private string QR = "";//QR Code
 
         private void cmdBeenden_Click(object sender, EventArgs e)//Fenster Schlissen
         {
@@ -45,91 +44,59 @@ namespace PC_Hardware_Datenbank
 
         private void cmdSpeichern_Click(object sender, EventArgs e)//Speichern Button
         {
-            if (File.Exists(DateiPfad + @"/Mainbord_Datenbank.csv") == true)//Prüffen ob eine .csv Datei bereits erstellt wurde
+            if (wtxtHersteller.Text != "" && wtxtID.Text != "" && wtxtZustand.Text != "" && wtxtSockel.Text != "" && wtxtRAM.Text != "" && wtxtBauform.Text != "")
             {
-                if (wtxtHersteller.Text != "" && wtxtTyp.Text != "" && wtxtZustand.Text != "")//Prüfft die Pflichtangaben
+                #region CheckBox auswerten
+                string Bluetooth, WLan, Infrarot;
+                if (cbtBluetooth.Checked)
                 {
-                    Datensatz = File.ReadAllText(DateiPfad + @"/Mainbord_Datenbank.csv");//Datenbanck lessen und in Datensatz speichern
+                    Bluetooth = "Ja";
+                }
+                else
+                {
+                    Bluetooth = "Nein";
+                }
 
-                    #region Chak Boxen auswerten und Daten zuweisen
-                    string Bluetooth = "", WLan = "", Infrarot = "";
-                    if (cbtBluetooth.Checked == true)
-                    {
-                        Bluetooth = "JA";
-                    }
-                    if (cbtBluetooth.Checked == false)
-                    {
-                        Bluetooth = "NEIN";
-                    }
-                    if (cbtWLan.Checked == true)
-                    {
-                        WLan = "JA";
-                    }
-                    if (cbtWLan.Checked == false)
-                    {
-                        WLan = "NEIN";
-                    }
-                    if (cbtInfrarot.Checked == true)
-                    {
-                        Infrarot = "JA";
-                    }
-                    if (cbtInfrarot.Checked == false)
-                    {
-                        Infrarot = "NEIN";
-                    }
-                    #endregion
+                if (cbtWLan.Checked)
+                {
+                    WLan = "Ja";
+                }
+                else
+                {
+                    WLan = "Nein";
+                }
 
-                    #region Datensatz bilden
-                    Datensatz += LF +
-                        wtxtHersteller.Text + ";" +
-                        wtxtTyp.Text + ";" +
-                        wtxtZustand.Text + ";" +
-                        wtxtSockel.Text + ";" +
-                        wtxtRAM.Text + ";" +
-                        wtxtBauform.Text + ";" +
-                        txtSonstiges.Text + ";" +
-                        nudAGP.Value + ";" +
-                        nudPCI.Value + ";" +
-                        nudPCI64.Value + ";" +
-                        nudPCIe1.Value + ";" +
-                        nudPCIe4.Value + ";" +
-                        nudPCIe8.Value + ";" +
-                        nudPCIe16.Value + ";" +
-                        nudIDE.Value + ";" +
-                        nudSATA.Value + ";" +
-                        nudISA.Value + ";" +
-                        nudPS2.Value + ";" +
-                        nudUSB2.Value + ";" +
-                        nudUSB3.Value + ";" +
-                        nudRJ45.Value + ";" +
-                        wtxtAudio.Text + ";" +
-                        nudVGA.Value + ";" +
-                        nudDVI.Value + ";" +
-                        nudHDMI.Value + ";" +
-                        nudDisplayPort.Value + ";" +
-                        nudMidiPort.Value + ";" +
-                        nudFireWire.Value + ";" +
-                        nudThunderbolt.Value + ";" +
-                        nudRS232.Value + ";" +
-                        Bluetooth + ";" +
-                        WLan + ";" +
-                        nudLPT1.Value + ";" +
-                        nudESATA.Value + ";" +
-                        Infrarot;
-                    #endregion
+                if (cbtInfrarot.Checked)
+                {
+                    Infrarot = "Ja";
+                }
+                else
+                {
+                    Infrarot = "Nein";
+                }
+                #endregion
+
+                try
+                {
+                    string mysqlconnectionstring = methoden.MySqlConnectionString();//Angaben um sich an der Datenbank anzumelden
+                    methoden.MySQL_ping_check(mysqlconnectionstring);//Testabfrage bei der Datenkan
+                    string Datensatz = methoden.ObjekteTextToString(",", this);//Erzeugt ein String aus den Daten auf der Form
+                    string sqldatensatz = Datensatz.Substring(0, Datensatz.Length - 1);//Entfert ein überflüssiges Zeichen (Grund Schleife)
+                    string mysqlcommandtext = "INSERT INTO `mainboard` VALUES (" + sqldatensatz + ");";//SQL Befehl Abfrage aller User
+                    methoden.MySqlCommand(mysqlconnectionstring, mysqlcommandtext);//Daten in die Datenbank schreiben
+                    MessageBox.Show("Daten wurden erfolgreich gespeichert!");
 
                     #region QR Code
                     QR =
                         "Hersteller: " + wtxtHersteller.Text + LF +
-                        "Typ: " + wtxtTyp.Text + LF +
+                        "Bezeichnung: " + wtxtID.Text + LF +
                         "Zustand: " + wtxtZustand.Text + LF +
                         "Sockel: " + wtxtSockel.Text + LF +
-                        "RAM: " + wtxtRAM.Text + LF +
+                        "RAM Typ: " + wtxtRAM.Text + LF +
                         "Bauform: " + wtxtBauform.Text + LF +
                         "Sonstiges: " + txtSonstiges.Text + LF +
                         "AGP: " + nudAGP.Value + LF +
                         "PCI: " + nudPCI.Value + LF +
-                        "PCIe64: " + nudPCI64.Value + LF +
                         "PCIe1: " + nudPCIe1.Value + LF +
                         "PCIe4: " + nudPCIe4.Value + LF +
                         "PCIe8: " + nudPCIe8.Value + LF +
@@ -137,11 +104,14 @@ namespace PC_Hardware_Datenbank
                         "IDE: " + nudIDE.Value + LF +
                         "SATA: " + nudSATA.Value + LF +
                         "ISA: " + nudISA.Value + LF +
+                        "M.2: " + nudM2.Value + LF +
                         "PS2: " + nudPS2.Value + LF +
-                        "USB2: " + nudUSB2.Value + LF +
-                        "USB3: " + nudUSB3.Value + LF +
+                        "USB 2: " + nudUSB2.Value + LF +
+                        "USB 3.0: " + nudUSB3.Value + LF +
+                        "USB 3.1: " + nudUSB31.Value + LF +
+                        "USB-C: " + nudUSBC.Value + LF +
                         "RJ45: " + nudRJ45.Value + LF +
-                        "Klinke: " + wtxtAudio.Text + LF +
+                        "Audio: " + wtxtAudio.Text + LF +
                         "VGA: " + nudVGA.Value + LF +
                         "DVI: " + nudDVI.Value + LF +
                         "HDMI: " + nudHDMI.Value + LF +
@@ -149,30 +119,37 @@ namespace PC_Hardware_Datenbank
                         "MidiPort: " + nudMidiPort.Value + LF +
                         "FireWire: " + nudFireWire.Value + LF +
                         "Thunderbolt: " + nudThunderbolt.Value + LF +
-                        "RS232: " + nudRS232.Value + LF +
-                        "Bluetooth: " + Bluetooth + LF +
-                        "WLan: " + WLan + LF +
+                        "RS 232: " + nudRS232.Value + LF +
+                        "eSATA: " + nudESATA.Value + LF +
                         "LPT1: " + nudLPT1.Value + LF +
-                        "ESATA: " + nudESATA.Value + LF +
+                        "WLan: " + WLan + LF +
+                        "Bluetooth: " + Bluetooth + LF +
                         "Infrarot: " + Infrarot;
                     #endregion
 
-                    File.WriteAllText(DateiPfad + @"/Mainbord_Datenbank.csv", Datensatz);//Datensatz in Mainbord_Datenbank.csv schreiben
-                    MessageBox.Show("Datensatz geschrieben!");//Bestätigung das der Datensatz geschrieben wurd
+                    DialogResult dialogresult = MessageBox.Show("Möchten Sie einen QR-Code Drucken?", "QR-Code Drucken?",MessageBoxButtons.YesNo);
+                    if (dialogresult == DialogResult.Yes)
+                    {
+                        cmdQR_Click(cmdQR, e);
+                    }
+                    else if (dialogresult == DialogResult.No)
+                    {
+                        
+                    }
                 }
-                else
+                catch
                 {
-                    MessageBox.Show("Bitte alle roten Pflichtfelder ausfüllen!");
+                    MessageBox.Show("Fehler: Daten konnten nicht gespeichert speichern werden!");
                 }
             }
             else
             {
-                MessageBox.Show("Datenbank nicht vorhanden bitte einen Administrator aufsuchen!");
-                Application.Exit();
+                MessageBox.Show("Bitte füllen sie alle rot markierten Felder aus!");
             }
         }
 
-        #region Check Boxen auswerten und wen gedrückt Nummern Feld + 1
+        #region CheckBox auswerten wenn true NumericUpDown + 1
+
         private void cbtAGP_CheckedChanged(object sender, EventArgs e)
         {
             if (cbtAGP.Checked == true)
@@ -245,18 +222,6 @@ namespace PC_Hardware_Datenbank
             }
         }
 
-        private void cbtPCIe64_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cbtPCIe64.Checked == true)
-            {
-                nudPCIe64.Value = 1;
-            }
-            if (cbtPCIe64.Checked == false)
-            {
-                nudPCIe64.Value = 0;
-            }
-        }
-
         private void cbtIDE_CheckedChanged(object sender, EventArgs e)
         {
             if (cbtIDE.Checked == true)
@@ -293,6 +258,18 @@ namespace PC_Hardware_Datenbank
             }
         }
 
+        private void cbtM2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbtM2.Checked == true)
+            {
+                nudM2.Value = 1;
+            }
+            if (cbtM2.Checked == false)
+            {
+                nudM2.Value = 0;
+            }
+        }
+
         private void cbtPS2_CheckedChanged(object sender, EventArgs e)
         {
             if (cbtPS2.Checked == true)
@@ -326,6 +303,30 @@ namespace PC_Hardware_Datenbank
             if (cbtUSB3.Checked == false)
             {
                 nudUSB3.Value = 0;
+            }
+        }
+
+        private void cbtUSB31_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbtUSB31.Checked == true)
+            {
+                nudUSB31.Value = 1;
+            }
+            if (cbtUSB31.Checked == false)
+            {
+                nudUSB31.Value = 0;
+            }
+        }
+
+        private void cbtUSBC_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbtUSBC.Checked == true)
+            {
+                nudUSBC.Value = 1;
+            }
+            if (cbtUSBC.Checked == false)
+            {
+                nudUSBC.Value = 0;
             }
         }
 
@@ -462,7 +463,8 @@ namespace PC_Hardware_Datenbank
         }
         #endregion
 
-        #region Nummer Felder Überwachen wenn nicht 0 dan Check Box aktiviren
+        #region NumericUpDown überwachen wenn 0 dann CheckBox false
+
         private void nudAGP_ValueChanged(object sender, EventArgs e)
         {
             if (nudAGP.Value != 0)
@@ -535,18 +537,6 @@ namespace PC_Hardware_Datenbank
             }
         }
 
-        private void nudPCIe64_ValueChanged(object sender, EventArgs e)
-        {
-            if (nudPCIe64.Value != 0)
-            {
-                cbtPCIe64.Checked = true;
-            }
-            if (nudPCIe64.Value == 0)
-            {
-                cbtPCIe64.Checked = false;
-            }
-        }
-
         private void nudIDE_ValueChanged(object sender, EventArgs e)
         {
             if (nudIDE.Value != 0)
@@ -583,6 +573,18 @@ namespace PC_Hardware_Datenbank
             }
         }
 
+        private void nudM2_ValueChanged(object sender, EventArgs e)
+        {
+            if (nudM2.Value != 0)
+            {
+                cbtM2.Checked = true;
+            }
+            if (nudM2.Value == 0)
+            {
+                cbtM2.Checked = false;
+            }
+        }
+
         private void nudPS2_ValueChanged(object sender, EventArgs e)
         {
             if (nudPS2.Value != 0)
@@ -616,6 +618,30 @@ namespace PC_Hardware_Datenbank
             if (nudUSB3.Value == 0)
             {
                 cbtUSB3.Checked = false;
+            }
+        }
+
+        private void nudUSB31_ValueChanged(object sender, EventArgs e)
+        {
+            if (nudUSB31.Value != 0)
+            {
+                cbtUSB31.Checked = true;
+            }
+            if (nudUSB31.Value == 0)
+            {
+                cbtUSB31.Checked = false;
+            }
+        }
+
+        private void nudUSBC_ValueChanged(object sender, EventArgs e)
+        {
+            if (nudUSBC.Value != 0)
+            {
+                cbtUSBC.Checked = true;
+            }
+            if (nudUSBC.Value == 0)
+            {
+                cbtUSBC.Checked = false;
             }
         }
 
@@ -783,11 +809,6 @@ namespace PC_Hardware_Datenbank
             qrCodeImage.Dispose();
         }
         #endregion
-
-        private void Mainbord_Imput_Load(object sender, EventArgs e)//lesen des gespeicherten DateiPfad
-        {
-            DateiPfad = File.ReadAllText(@"./settings");
-        }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {

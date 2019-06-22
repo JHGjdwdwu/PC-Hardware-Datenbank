@@ -86,7 +86,6 @@
             this.wtxtVon.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtVon.FormattingEnabled = true;
             this.wtxtVon.Items.AddRange(new object[] {
-            "",
             "Kaltgerätestecker",
             "kaltgerätekupplung",
             "RJ11",
@@ -184,7 +183,6 @@
             this.wtxtAuf.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtAuf.FormattingEnabled = true;
             this.wtxtAuf.Items.AddRange(new object[] {
-            "",
             "Kaltgerätestecker",
             "kaltgerätekupplung",
             "RJ11",
@@ -262,7 +260,6 @@
             this.wtxtZustand.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtZustand.FormattingEnabled = true;
             this.wtxtZustand.Items.AddRange(new object[] {
-            "",
             "verbaut",
             "auf Lager"});
             this.wtxtZustand.Location = new System.Drawing.Point(40, 81);
@@ -303,7 +300,6 @@
             this.Name = "Adapter_Imput";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Adapter";
-            this.Load += new System.EventHandler(this.Adapter_Imput_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pcmdMainbord)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

@@ -15,6 +15,7 @@ namespace PC_Hardware_Datenbank
         public Home_Imput()
         {
             InitializeComponent();
+            Form_anpassen_an_Rechte();
         }
 
         private void cmdBeenden_Click(object sender, EventArgs e)//Beenden
@@ -146,6 +147,39 @@ namespace PC_Hardware_Datenbank
         {
             Sonstiges_Imput sonstiges = new Sonstiges_Imput();
             sonstiges.Show();
+        }
+
+        private void cmdAdministration_Click(object sender, EventArgs e)
+        {
+            new Admin().Show(this);
+            this.Hide();
+        }
+
+        private void Form_anpassen_an_Rechte()
+        {
+            string rechte = Speicher.rechte;
+
+            if (rechte=="lesen")
+            {
+                cmdAdministration.Hide();
+                cmdSuchen.Hide();
+            }
+            if (rechte == "schreiben")
+            {
+                cmdAdministration.Hide();
+                cmdSuchen.Hide();
+            }
+        }
+
+        private void cmdSuchen_Eingeben_Click(object sender, EventArgs e)
+        {
+            new Home_Suche().Show(this);
+            this.Hide();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/JHGjdwdwu");
         }
     }
 }

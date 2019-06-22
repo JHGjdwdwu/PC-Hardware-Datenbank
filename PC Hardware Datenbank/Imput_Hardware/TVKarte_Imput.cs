@@ -15,15 +15,14 @@ namespace PC_Hardware_Datenbank
 {
     public partial class TVKarte_Imput : Form
     {
-        private string Datensatz = "";//Datensatz der dan in die Datenbank geschoben wird
-        private char LF = (char)10;
-        private string QR = "";//QR Code
-        public string DateiPfad;
-
         public TVKarte_Imput()
         {
             InitializeComponent();
         }
+
+        Methoden methoden = new Methoden();
+        private char LF = (char)10;
+        private string QR = "";//QR Code
 
         private void cmdBeenden_Click(object sender, EventArgs e)//Fenster Schlissen
         {
@@ -35,7 +34,7 @@ namespace PC_Hardware_Datenbank
             TVKarte_Imput NewForm = new TVKarte_Imput();
             NewForm.Show();
             this.Dispose(false);
-            wtxtKartenhersteller.Focus();
+            wtxtHersteller.Focus();
         }
 
         private void cmdClear_Click(object sender, EventArgs e)//Löschen Button
@@ -45,46 +44,24 @@ namespace PC_Hardware_Datenbank
 
         private void cmdSpeichern_Click(object sender, EventArgs e)//Speichern Button
         {
-            if (File.Exists(DateiPfad + @"/TVKarte_Datenbank.csv") == true)//Prüffen ob eine .csv Datei bereits erstellt wurde
+            if (wtxtHersteller.Text != "" && wtxtID.Text != "" && wtxtZustand.Text != "" && wtxtAnschluss.Text != "")
             {
-                if (wtxtKartenhersteller.Text != "" && wtxtModell.Text != "" && wtxtZustand.Text != "")//Prüfft die Pflichtangaben
+                try
                 {
-                    Datensatz = File.ReadAllText(DateiPfad + @"/TVKarte_Datenbank.csv");//Datenbanck einlessen und in Datensatz speichern
-
-                    #region Chak Boxen auswerten und Daten zuweisen
-                    string HD = "NEIN";
-                    if (cbtHD.Checked == true)
-                    {
-                        HD = "JA";
-                    }
-                    #endregion
-
-                    #region Datensatz bilden
-                    Datensatz += LF +
-                        wtxtKartenhersteller.Text + ";" +
-                        wtxtModell.Text + ";" +
-                        wtxtZustand.Text + ";" +
-                        wtxtAnschluss.Text + ";" +
-                        nudAnalog.Value + ";" +
-                        nudDVB_C.Value + ";" +
-                        nudDVB_C2.Value + ";" +
-                        nudDVB_T.Value + ";" +
-                        nudDVB_T2.Value + ";" +
-                        nudDVB_S.Value + ";" +
-                        nudDVB_S2.Value + ";" +
-                        HD + ";" +
-                        nudKlinke.Value + ";" +
-                        nudODT.Value + ";" +
-                        nudHDMI.Value + ";" +
-                        nudScart.Value + ";" +
-                        nudSVideo.Value + ";" +
-                        nudCinch.Value;
-                    #endregion
+                    string mysqlconnectionstring = methoden.MySqlConnectionString();//Angaben um sich an der Datenbank anzumelden
+                    methoden.MySQL_ping_check(mysqlconnectionstring);//Testabfrage bei der Datenkan
+                    string Datensatz = methoden.ObjekteTextToString(",", this);//Erzeugt ein String aus den Daten auf der Form
+                    string sqldatensatz = Datensatz.Substring(0, Datensatz.Length - 1);//Entfert ein überflüssiges Zeichen (Grund Schleife)
+                    string mysqlcommandtext = "INSERT INTO `tv-karte` VALUES (" + sqldatensatz + ");";//SQL Befehl Abfrage aller User
+                    methoden.MySqlCommand(mysqlconnectionstring, mysqlcommandtext);//Daten in die Datenbank schreiben
+                    LoschFunktion();
+                    wtxtZustand.Focus();
+                    MessageBox.Show("Daten wurden erfolgreich gespeichert!");
 
                     #region QR Code
                     QR =
-                        "Kartenhersteller: " + wtxtKartenhersteller.Text + LF +
-                        "Modell: " + wtxtModell.Text + LF +
+                        "Kartenhersteller: " + wtxtHersteller.Text + LF +
+                        "Modell: " + wtxtID.Text + LF +
                         "Zustand: " + wtxtZustand.Text + LF +
                         "Anschlussart: " + wtxtAnschluss.Text + LF +
                         "Analog: " + nudAnalog.Value + LF +
@@ -94,7 +71,6 @@ namespace PC_Hardware_Datenbank
                         "DVB-T2: " + nudDVB_T2.Value + LF +
                         "DVB-S: " + nudDVB_S.Value + LF +
                         "DVB-S2: " + nudDVB_S2.Value + LF +
-                        "HD: " + HD + LF +
                         "Klinke: " + nudKlinke.Value + LF +
                         "ODT: " + nudODT.Value + LF +
                         "HDMI: " + nudHDMI.Value + LF +
@@ -103,18 +79,24 @@ namespace PC_Hardware_Datenbank
                         "Cinch: " + nudCinch.Value;
                     #endregion
 
-                    File.WriteAllText(DateiPfad + @"/TVKarte_Datenbank.csv", Datensatz);//Datensatz in GPU_Datenbank.csv schreiben
-                    MessageBox.Show("Datensatz geschrieben!");//Bestätigung das der Datensatz geschrieben wurd
+                    DialogResult dialogresult = MessageBox.Show("Möchten Sie einen QR-Code Drucken?", "QR-Code Drucken?", MessageBoxButtons.YesNo);
+                    if (dialogresult == DialogResult.Yes)
+                    {
+                        cmdQR_Click(cmdQR, e);
+                    }
+                    else if (dialogresult == DialogResult.No)
+                    {
+
+                    }
                 }
-                else
+                catch
                 {
-                    MessageBox.Show("Bitte alle roten Pflichtfelder ausfüllen!");
+                    MessageBox.Show("Fehler: Daten konnten nicht gespeichert speichern werden!");
                 }
             }
             else
             {
-                MessageBox.Show("Datenbank nicht vorhanden bitte einen Administrator aufsuchen!");
-                Application.Exit();
+                MessageBox.Show("Bitte füllen sie alle rot markierten Felder aus!");
             }
         }
 
@@ -253,11 +235,11 @@ namespace PC_Hardware_Datenbank
         }
         private void cbtCinch_CheckedChanged(object sender, EventArgs e)
         {
-            if (cbtVideo.Checked == true)
+            if (cbtCinch.Checked == true)
             {
                 nudCinch.Value = 1;
             }
-            if (cbtVideo.Checked == false)
+            if (cbtCinch.Checked == false)
             {
                 nudCinch.Value = 0;
             }
@@ -400,11 +382,11 @@ namespace PC_Hardware_Datenbank
         {
             if (nudCinch.Value > 0)
             {
-                cbtVideo.Checked = true;
+                cbtCinch.Checked = true;
             }
             if (nudCinch.Value == 0)
             {
-                cbtVideo.Checked = false;
+                cbtCinch.Checked = false;
             }
         }
         #endregion
@@ -441,16 +423,9 @@ namespace PC_Hardware_Datenbank
         }
         #endregion
 
-        private void TVKarte_Imput_Load(object sender, EventArgs e)//lesen des gespeicherten DateiPfad
-        {
-            DateiPfad = File.ReadAllText(@"./settings");
-        }
-
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("https://github.com/JHGjdwdwu");
         }
-
-        
     }
 }

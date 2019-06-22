@@ -46,6 +46,8 @@
             this.txtBemerkung = new System.Windows.Forms.TextBox();
             this.wtxtZustand = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.wtxtID = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pcmdMainbord)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -56,19 +58,18 @@
             this.wtxtAnschluss.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtAnschluss.FormattingEnabled = true;
             this.wtxtAnschluss.Items.AddRange(new object[] {
-            "",
             "USB",
             "Bluetooth",
             "Klinke"});
-            this.wtxtAnschluss.Location = new System.Drawing.Point(229, 133);
+            this.wtxtAnschluss.Location = new System.Drawing.Point(241, 133);
             this.wtxtAnschluss.Name = "wtxtAnschluss";
             this.wtxtAnschluss.Size = new System.Drawing.Size(146, 28);
-            this.wtxtAnschluss.TabIndex = 3;
+            this.wtxtAnschluss.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(225, 110);
+            this.label2.Location = new System.Drawing.Point(237, 110);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(86, 20);
             this.label2.TabIndex = 186;
@@ -78,7 +79,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(225, 38);
+            this.label5.Location = new System.Drawing.Point(30, 110);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(54, 20);
             this.label5.TabIndex = 181;
@@ -101,7 +102,7 @@
             this.cmdBeenden.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdBeenden.Name = "cmdBeenden";
             this.cmdBeenden.Size = new System.Drawing.Size(150, 35);
-            this.cmdBeenden.TabIndex = 9;
+            this.cmdBeenden.TabIndex = 10;
             this.cmdBeenden.Text = "Schließen";
             this.cmdBeenden.UseVisualStyleBackColor = false;
             this.cmdBeenden.Click += new System.EventHandler(this.cmdBeenden_Click);
@@ -145,7 +146,7 @@
             this.cmdSpeichern.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdSpeichern.Name = "cmdSpeichern";
             this.cmdSpeichern.Size = new System.Drawing.Size(150, 35);
-            this.cmdSpeichern.TabIndex = 6;
+            this.cmdSpeichern.TabIndex = 7;
             this.cmdSpeichern.Text = "Speichern";
             this.cmdSpeichern.UseVisualStyleBackColor = false;
             this.cmdSpeichern.Click += new System.EventHandler(this.cmdSpeichern_Click);
@@ -168,7 +169,7 @@
             this.cmdQR.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdQR.Name = "cmdQR";
             this.cmdQR.Size = new System.Drawing.Size(171, 35);
-            this.cmdQR.TabIndex = 8;
+            this.cmdQR.TabIndex = 9;
             this.cmdQR.Text = "QR-Code Drucken";
             this.cmdQR.UseVisualStyleBackColor = false;
             this.cmdQR.Click += new System.EventHandler(this.cmdQR_Click);
@@ -179,7 +180,6 @@
             this.wtxtGerat.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtGerat.FormattingEnabled = true;
             this.wtxtGerat.Items.AddRange(new object[] {
-            "",
             "Tastatur",
             "Maus",
             "Drucker",
@@ -188,10 +188,10 @@
             "Barcode-Scanner",
             "USB-Stick",
             "Lautsprecher"});
-            this.wtxtGerat.Location = new System.Drawing.Point(229, 61);
+            this.wtxtGerat.Location = new System.Drawing.Point(34, 133);
             this.wtxtGerat.Name = "wtxtGerat";
             this.wtxtGerat.Size = new System.Drawing.Size(146, 28);
-            this.wtxtGerat.TabIndex = 1;
+            this.wtxtGerat.TabIndex = 3;
             // 
             // cmdBildEinfugen
             // 
@@ -201,7 +201,7 @@
             this.cmdBildEinfugen.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdBildEinfugen.Name = "cmdBildEinfugen";
             this.cmdBildEinfugen.Size = new System.Drawing.Size(150, 35);
-            this.cmdBildEinfugen.TabIndex = 5;
+            this.cmdBildEinfugen.TabIndex = 6;
             this.cmdBildEinfugen.Text = "Bild einfügen";
             this.cmdBildEinfugen.UseVisualStyleBackColor = false;
             // 
@@ -213,7 +213,7 @@
             this.cmdClear.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdClear.Name = "cmdClear";
             this.cmdClear.Size = new System.Drawing.Size(150, 35);
-            this.cmdClear.TabIndex = 7;
+            this.cmdClear.TabIndex = 8;
             this.cmdClear.Text = "Zurücksetzen";
             this.cmdClear.UseVisualStyleBackColor = false;
             this.cmdClear.Click += new System.EventHandler(this.cmdClear_Click);
@@ -224,7 +224,7 @@
             this.txtBemerkung.Multiline = true;
             this.txtBemerkung.Name = "txtBemerkung";
             this.txtBemerkung.Size = new System.Drawing.Size(557, 189);
-            this.txtBemerkung.TabIndex = 4;
+            this.txtBemerkung.TabIndex = 5;
             // 
             // wtxtZustand
             // 
@@ -232,10 +232,9 @@
             this.wtxtZustand.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.wtxtZustand.FormattingEnabled = true;
             this.wtxtZustand.Items.AddRange(new object[] {
-            "",
             "verbaut",
             "auf Lager"});
-            this.wtxtZustand.Location = new System.Drawing.Point(34, 133);
+            this.wtxtZustand.Location = new System.Drawing.Point(445, 61);
             this.wtxtZustand.Name = "wtxtZustand";
             this.wtxtZustand.Size = new System.Drawing.Size(146, 28);
             this.wtxtZustand.TabIndex = 2;
@@ -244,17 +243,39 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(30, 110);
+            this.label4.Location = new System.Drawing.Point(441, 38);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(72, 20);
             this.label4.TabIndex = 188;
             this.label4.Text = "Zustand:";
+            // 
+            // wtxtID
+            // 
+            this.wtxtID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.wtxtID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.wtxtID.FormattingEnabled = true;
+            this.wtxtID.Location = new System.Drawing.Point(241, 61);
+            this.wtxtID.Name = "wtxtID";
+            this.wtxtID.Size = new System.Drawing.Size(146, 28);
+            this.wtxtID.TabIndex = 1;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.Red;
+            this.label3.Location = new System.Drawing.Point(237, 38);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(106, 20);
+            this.label3.TabIndex = 190;
+            this.label3.Text = "Bezeichnung:";
             // 
             // I_O_Imput
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1126, 620);
+            this.Controls.Add(this.wtxtID);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.wtxtZustand);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtBemerkung);
@@ -277,7 +298,6 @@
             this.Name = "I_O_Imput";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Eingabe und Ausgabegeräte";
-            this.Load += new System.EventHandler(this.I_O_Imput_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pcmdMainbord)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -304,5 +324,7 @@
         private System.Windows.Forms.TextBox txtBemerkung;
         private System.Windows.Forms.ComboBox wtxtZustand;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox wtxtID;
+        private System.Windows.Forms.Label label3;
     }
 }

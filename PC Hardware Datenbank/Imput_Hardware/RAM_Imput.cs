@@ -15,22 +15,21 @@ namespace PC_Hardware_Datenbank
 {
     public partial class RAM_Imput : Form
     {
-        private string Datensatz = "";//Datensatz der dan in die Datenbank geschoben wird
-        private char LF = (char)10;
-        private string QR = "";//QR Code
-        public string DateiPfad;
-
         public RAM_Imput()
         {
             InitializeComponent();
         }
+
+        Methoden methoden = new Methoden();
+        private char LF = (char)10;
+        private string QR = "";//QR Code
 
         private void cmdBeenden_Click(object sender, EventArgs e)//Fenster schlißen
         {
             Close();
         }
 
-        private void LoschenFunktin()//Löschen Funktion
+        private void LoschFunktion()//Löschen Funktion
         {
             RAM_Imput NewForm = new RAM_Imput();
             NewForm.Show();
@@ -40,86 +39,58 @@ namespace PC_Hardware_Datenbank
 
         private void cmdClear_Click(object sender, EventArgs e)//Löschen Button
         {
-            LoschenFunktin();
+            LoschFunktion();
         }
 
         private void cmdSpeichern_Click(object sender, EventArgs e)//Speichern Button
         {
-            if (File.Exists(DateiPfad + @"/RAM_Datenbank.csv") == true)//Prüffen ob eine .csv Datei bereits erstellt wurde
+            if (wtxtHersteller.Text != "" && wtxtID.Text != "" && wtxtZustand.Text != "" && wtxtSlot.Text != "" && wtxtGrosse.Text != "")
             {
-                if (wtxtSlot.Text != "" && wtxtGrosse.Text != "" && wtxtZustand.Text != "")//Prüfft die Pflichtangaben
+                try
                 {
-                    Datensatz = File.ReadAllText(DateiPfad + @"/RAM_Datenbank.csv");//Datenbanck einlessen und in Datensatz schreiben
-
-                    #region Chak Boxen auswerten und Daten zuweisen
-                    string SO_DIMM = "NEIN";
-                    if (cbtSO_DIMM.Checked == true)
-                    {
-                        SO_DIMM = "JA";
-                    }
-
-                    string ECC = "NEIN";
-                    if (cbtECC.Checked == true)
-                    {
-                        ECC = "JA";
-                    }
-
-                    string Registered = "NEIN";
-                    if (cbtRegistered.Checked == true)
-                    {
-                        Registered = "JA";
-                    }
-
-                    string Unbuffered = "NEIN";
-                    if (cbtUnbuffered.Checked == true)
-                    {
-                        Unbuffered = "JA";
-                    }
-                    #endregion
-
-                    #region Datensatz bilden
-                    Datensatz += LF +
-                        wtxtSlot.Text + ";" +
-                        wtxtGrosse.Text + ";" +
-                        wtxtZustand.Text + ";" +
-                        wtxtHersteller.Text + ";" +
-                        txtTyp.Text + ";" +
-                        wtxtTacktrate.Text + ";" +
-                        txtLatenz.Text + ";" +
-                        wtxtChiphersteller.Text + ";" +
-                        SO_DIMM + ";" +
-                        ECC + ";" +
-                        Registered + ";" +
-                        Unbuffered;
-                    #endregion
+                    string mysqlconnectionstring = methoden.MySqlConnectionString();//Angaben um sich an der Datenbank anzumelden
+                    methoden.MySQL_ping_check(mysqlconnectionstring);//Testabfrage bei der Datenkan
+                    string Datensatz = methoden.ObjekteTextToString(",", this);//Erzeugt ein String aus den Daten auf der Form
+                    string sqldatensatz = Datensatz.Substring(0, Datensatz.Length - 1);//Entfert ein überflüssiges Zeichen (Grund Schleife)
+                    string mysqlcommandtext = "INSERT INTO `ram` VALUES (" + sqldatensatz + ");";//SQL Befehl Abfrage aller User
+                    methoden.MySqlCommand(mysqlconnectionstring, mysqlcommandtext);//Daten in die Datenbank schreiben
+                    LoschFunktion();
+                    wtxtZustand.Focus();
+                    MessageBox.Show("Daten wurden erfolgreich gespeichert!");
 
                     #region QR Code
                     QR =
+                        "Hersteller: " + wtxtHersteller.Text + LF +
+                        "Typ: " + wtxtID.Text + LF +
+                        "Zustand: " + wtxtZustand.Text + LF +
                         "Slot: " + wtxtSlot.Text + LF +
                         "Größe: " + wtxtGrosse.Text + LF +
-                        "Zustand: " + wtxtZustand.Text + LF +
-                        "Hersteller: " + wtxtHersteller.Text + LF +
-                        "Typ: " + txtTyp.Text + LF +
+                        "Modultyp: " + wtxtModultyp.Text + LF +
                         "Taktrate: " + wtxtTacktrate.Text + LF +
-                        "Latenz: " + txtLatenz.Text + LF +
+                        "Latenz: " + wtxtLatenz.Text + LF +
                         "Chiphersteller: " + wtxtChiphersteller.Text + LF +
-                        "SO-DIMM: " + SO_DIMM + LF +
-                        "ECC: " + ECC + LF +
-                        "Registered: " + Registered + LF +
-                        "Unbuffered: " + Unbuffered;
+                        "Betriebstemperatur: " + wtxtBetriebstemperatur.Text + LF +
+                        "Beleuchtung: " + wtxtBeleuchtung.Text;
                     #endregion
-                    File.WriteAllText(DateiPfad + @"/RAM_Datenbank.csv", Datensatz);//Datensatz in RAM_Datenbank.csv schreiben
-                    MessageBox.Show("Datensatz geschrieben!");//Bestätigung das der Datensatz geschrieben wurd
                 }
-                else
+                catch
                 {
-                    MessageBox.Show("Bitte alle roten Pflichtfelder ausfüllen!");
+                    MessageBox.Show("Fehler: Daten konnten nicht gespeichert speichern werden!");
+                }
+
+                DialogResult dialogresult = MessageBox.Show("Möchten Sie einen QR-Code Drucken?", "QR-Code Drucken?", MessageBoxButtons.YesNo);
+                if (dialogresult == DialogResult.Yes)
+                {
+                    cmdQR_Click(cmdQR, e);
+                }
+                else if (dialogresult == DialogResult.No)
+                {
+
                 }
             }
             else
             {
-                MessageBox.Show("Datenbank nicht vorhanden bitte einen Administrator aufsuchen!");
-                Application.Exit();
+                MessageBox.Show("Bitte füllen sie alle rot markierten Felder aus!");
             }
         }
 
@@ -154,11 +125,6 @@ namespace PC_Hardware_Datenbank
             qrCodeImage.Dispose();
         }
         #endregion
-
-        private void RAM_Imput_Load(object sender, EventArgs e)//lesen des gespeicherten DateiPfad
-        {
-            DateiPfad = File.ReadAllText(@"./settings");
-        }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {

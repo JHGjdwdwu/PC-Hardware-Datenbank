@@ -15,15 +15,14 @@ namespace PC_Hardware_Datenbank
 {
     public partial class FrontErweiterung_Imput : Form
     {
-        private string Datensatz = "";//Datensatz der dan in die Datenbank geschoben wird
-        private char LF = (char)10;
-        private string QR = "";//QR Code
-        public string DateiPfad;
-
         public FrontErweiterung_Imput()
         {
             InitializeComponent();
         }
+
+        Methoden methoden = new Methoden();
+        private char LF = (char)10;
+        private string QR = "";//QR Code
 
         private void cmdBeenden_Click(object sender, EventArgs e)//Fenster Schlissen
         {
@@ -45,47 +44,31 @@ namespace PC_Hardware_Datenbank
 
         private void cmdSpeichern_Click(object sender, EventArgs e)//Speichern Button
         {
-            if (File.Exists(DateiPfad + @"/FrontErweiterung_Datenbank.csv") == true)//Prüffen ob eine .csv Datei bereits erstellt wurde
+            if (wtxtZustand.Text != "")
             {
-                if (wtxtZustand.Text != "")//Prüfft die Pflichtangaben
+                try
                 {
-
-                    Datensatz = File.ReadAllText(DateiPfad + @"/FrontErweiterung_Datenbank.csv");//Datenbanck lessen und in Datensatz speichern
-
-                    #region Datensatz bilden
-                    Datensatz += LF +
-                        wtxtZustand.Text + ";" +
-                        wtxtKartenhersteller.Text + ";" +
-                        wtxtModell.Text + ";" +
-                        nudExternCardreader.Value + ";" +
-                        nudExternUSB2.Value + ";" +
-                        nudExternUSB3.Value + ";" +
-                        nudExternUSB3_1.Value + ";" +
-                        nudExternLineOut.Value + ";" +
-                        nudExternMikrofon.Value + ";" +
-                        nudExternLineIn.Value + ";" +
-                        nudExternFireWire.Value + ";" +
-                        nudExternThunderbolt.Value + ";" +
-                        nudInternUSB2.Value + ";" +
-                        nudInternUSB3.Value + ";" +
-                        nudInternUSB3_1.Value + ";" +
-                        nudInternAudio.Value + ";" +
-                        nudInternFireWire.Value + ";" +
-                        nudInternThunderbolt.Value;
-                    #endregion
+                    string mysqlconnectionstring = methoden.MySqlConnectionString();//Angaben um sich an der Datenbank anzumelden
+                    methoden.MySQL_ping_check(mysqlconnectionstring);//Testabfrage bei der Datenkan
+                    string Datensatz = methoden.ObjekteTextToString(",", this);//Erzeugt ein String aus den Daten auf der Form
+                    string sqldatensatz = Datensatz.Substring(0, Datensatz.Length - 1);//Entfert ein überflüssiges Zeichen (Grund Schleife)
+                    string mysqlcommandtext = "INSERT INTO `fronteinschub` VALUES (" + sqldatensatz + ");";//SQL Befehl Abfrage aller User
+                    methoden.MySqlCommand(mysqlconnectionstring, mysqlcommandtext);//Daten in die Datenbank schreiben
+                    LoschFunktion();
+                    wtxtZustand.Focus();
+                    MessageBox.Show("Daten wurden erfolgreich gespeichert!");
 
                     #region QR Code
                     QR =
                         "Zustand: " + wtxtZustand.Text + LF +
                         "Hersteller: " + wtxtKartenhersteller.Text + LF +
-                        "Modell: " + wtxtModell.Text + LF +
+                        "Bezeichnung: " + wtxtID.Text + LF +
                         "<Externe Schnittstellen>" + LF +
                         "Cardreader: " + nudExternCardreader.Value + LF +
                         "USB2.0: " + nudExternUSB2.Value + LF +
                         "USB3.0: " + nudExternUSB3.Value + LF +
                         "USB3.1: " + nudExternUSB3_1.Value + LF +
                         "Line-Out: " + nudExternLineOut.Value + LF +
-                        "Mikrofon: " + nudExternMikrofon.Value + LF +
                         "Line-In: " + nudExternLineIn.Value + LF +
                         "FireWire: " + nudExternFireWire.Value + LF +
                         "Thunderbolt: " + nudExternThunderbolt.Value + LF +
@@ -98,20 +81,27 @@ namespace PC_Hardware_Datenbank
                         "Thunderbolt: " + nudInternThunderbolt.Value;
                     #endregion
 
-                    File.WriteAllText(DateiPfad + @"/FrontErweiterung_Datenbank.csv", Datensatz);//Datensatz in Mainbord_Datenbank.csv schreiben
-                    MessageBox.Show("Datensatz geschrieben!");//Bestätigung das der Datensatz geschrieben wurd
+                    DialogResult dialogresult = MessageBox.Show("Möchten Sie einen QR-Code Drucken?", "QR-Code Drucken?", MessageBoxButtons.YesNo);
+                    if (dialogresult == DialogResult.Yes)
+                    {
+                        cmdQR_Click(cmdQR, e);
+                    }
+                    else if (dialogresult == DialogResult.No)
+                    {
+
+                    }
                 }
-                else
+                catch
                 {
-                    MessageBox.Show("Bitte alle roten Pflichtfelder ausfüllen!");
+                    MessageBox.Show("Fehler: Daten konnten nicht gespeichert speichern werden!");
                 }
             }
             else
             {
-                MessageBox.Show("Datenbank nicht vorhanden bitte einen Administrator aufsuchen!");
-                Application.Exit();
+                MessageBox.Show("Bitte füllen sie alle rot markierten Felder aus!");
             }
         }
+
         #region Prüfen das Nummern Felder
         private void nudExternCardreader_ValueChanged(object sender, EventArgs e)
         {
@@ -170,18 +160,6 @@ namespace PC_Hardware_Datenbank
             if (nudExternLineOut.Value == 0)
             {
                 cbtExternLineOut.Checked = false;
-            }
-        }
-
-        private void nudExternAudio_ValueChanged(object sender, EventArgs e)
-        {
-            if (nudExternMikrofon.Value > 0)
-            {
-                cbtExternMikrofon.Checked = true;
-            }
-            if (nudExternMikrofon.Value == 0)
-            {
-                cbtExternMikrofon.Checked = false;
             }
         }
 
@@ -293,6 +271,7 @@ namespace PC_Hardware_Datenbank
             }
         }
         #endregion
+
         #region Prüfen ob Check-Box aktiv ist dan Nummern Block auf 1
         private void cbtExternCardreader_CheckedChanged(object sender, EventArgs e)
         {
@@ -351,18 +330,6 @@ namespace PC_Hardware_Datenbank
             if (cbtExternLineOut.Checked == false)
             {
                 nudExternLineOut.Value = 0;
-            }
-        }
-
-        private void cbtExternAudio_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cbtExternMikrofon.Checked == true)
-            {
-                nudExternMikrofon.Value = 1;
-            }
-            if (cbtExternMikrofon.Checked == false)
-            {
-                nudExternMikrofon.Value = 0;
             }
         }
 
@@ -508,11 +475,6 @@ namespace PC_Hardware_Datenbank
 
 
         #endregion
-
-        private void FrontErweiterung_Imput_Load(object sender, EventArgs e)//lesen des gespeicherten DateiPfad
-        {
-            DateiPfad = File.ReadAllText(@"./settings");
-        }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {

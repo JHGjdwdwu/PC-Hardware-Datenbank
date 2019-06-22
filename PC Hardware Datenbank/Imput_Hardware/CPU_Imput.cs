@@ -15,23 +15,21 @@ namespace PC_Hardware_Datenbank
 {
     public partial class CPU_Imput : Form
     {
-        private string Datensatz = "";//Datensatz, der dann in die Datenbank geschoben wird
-        private char LF = (char)10;
-        private string Sockel = "leer";
-        private string QR = "";//QR Code
-        public string DateiPfad;
-
         public CPU_Imput()
         {
             InitializeComponent();
         }
+
+        Methoden methoden = new Methoden();
+        private char LF = (char)10;
+        private string QR = "";//QR Code
 
         private void cmdBeenden_Click(object sender, EventArgs e)//Fenster schliessen
         {
             Close();
         }
 
-        private void LoschenFunktion()//Löschfunktion
+        private void LoschFunktion()//Löschfunktion
         {
             CPU_Imput NewForm = new CPU_Imput();
             NewForm.Show();
@@ -41,87 +39,75 @@ namespace PC_Hardware_Datenbank
 
         private void cmdClear_Click(object sender, EventArgs e)//Löschen Button
         {
-            LoschenFunktion();
+            LoschFunktion();
         }
 
         private void cmdSpeichern_Click(object sender, EventArgs e)//Speichern Button
         {
-            if (File.Exists(DateiPfad + @"/CPU_Datenbank.csv") == true)//Prüffen ob eine .csv Datei bereits erstellt wurde
+            if (wtxtHersteller.Text != "" && wtxtID.Text != "" && wtxtZustand.Text != "" && wtxtSockel.Text != "" && wtxtTaktrate.Text != "" && nudKerne.Text != "")
             {
-                if (wtxtHersteller.Text != "" && wtxtTyp.Text != "" && wtxtZustand.Text != "")//Prüfft die Pflichtangaben
+                try
                 {
-                    Datensatz = File.ReadAllText(DateiPfad + @"/CPU_Datenbank.csv");//Datenbanck lessen und in Datensatz speichern
-
-                    #region Datensatz erstellen
-                    Datensatz += LF +
-                        wtxtHersteller.Text + ";" +
-                        wtxtTyp.Text + ";" +
-                        wtxtZustand.Text + ";" +
-                        Sockel + ";" +
-                        mtxtTaktrate.Text + ";" +
-                        nudKerne.Value + ";" +
-                        nudCach1.Text + ";" +
-                        nudCach2.Text + ";" +
-                        nudCach3.Text + ";" +
-                        nudCach4.Text + ";";
-                    #endregion
+                    string mysqlconnectionstring = methoden.MySqlConnectionString();//Angaben um sich an der Datenbank anzumelden
+                    methoden.MySQL_ping_check(mysqlconnectionstring);//Testabfrage bei der Datenkan
+                    string Datensatz = methoden.ObjekteTextToString(",", this);//Erzeugt ein String aus den Daten auf der Form
+                    string sqldatensatz = Datensatz.Substring(0, Datensatz.Length - 1);//Entfert ein überflüssiges Zeichen (Grund Schleife)
+                    string mysqlcommandtext = "INSERT INTO `cpu` VALUES (" + sqldatensatz + ");";//SQL Befehl Abfrage aller User
+                    methoden.MySqlCommand(mysqlconnectionstring, mysqlcommandtext);//Daten in die Datenbank schreiben
+                    LoschFunktion();
+                    wtxtZustand.Focus();
+                    MessageBox.Show("Daten wurden erfolgreich gespeichert!");
 
                     #region QR Code
                     QR +=
                         "Hersteller: " + wtxtHersteller.Text + LF +
-                        "Typ: " + wtxtTyp.Text + LF +
+                        "Bezeichnung: " + wtxtID.Text + LF +
                         "Zustand: " + wtxtZustand.Text + LF +
-                        "Sockel: " + Sockel + LF +
-                        "Taktrate: " + mtxtTaktrate.Text + LF +
+                        "Sockel: " + wtxtSockel.Text + LF +
+                        "Taktrate: " + wtxtTaktrate.Text + LF +
                         "Anzahl Kerne: " + nudKerne.Value + LF +
                         "Level1 Cache: " + nudCach1.Value + LF +
                         "Level2 Cache: " + nudCach2.Value + LF +
-                        "Level3 Cache: " + nudCach3.Value + LF +
-                        "Level4 Cache: " + nudCach3.Value + LF;
+                        "Level3 Cache: " + nudCach3.Value + LF;
                     #endregion
 
-                    //Datensatz in Datenbank schreiben
-                    File.WriteAllText(DateiPfad + @"/CPU_Datenbank.csv", Datensatz);//Datensatz in RAM_Datenbank.csv schreiben
-                    MessageBox.Show("Datensatz geschrieben!");//Bestätigung das der Datensatz geschrieben wurd
+                    DialogResult dialogresult = MessageBox.Show("Möchten Sie einen QR-Code Drucken?", "QR-Code Drucken?", MessageBoxButtons.YesNo);
+                    if (dialogresult == DialogResult.Yes)
+                    {
+                        cmdQR_Click(cmdQR, e);
+                    }
+                    else if (dialogresult == DialogResult.No)
+                    {
+
+                    }
                 }
-                else
+                catch
                 {
-                    MessageBox.Show("Bitte alle roten Pflichtfelder ausfüllen!");
+                    MessageBox.Show("Fehler: Daten konnten nicht gespeichert speichern werden!");
                 }
             }
             else
             {
-                MessageBox.Show("Datenbank nicht vorhanden bitte einen Administrator aufsuchen!");
-                Application.Exit();
+                MessageBox.Show("Bitte füllen sie alle rot markierten Felder aus!");
             }
         }
-        #region CPU Sockel auswerten
+
         private void wtxtHersteller_SelectedIndexChanged(object sender, EventArgs e)//Giebt die Sokel für den Hersteller frei
         {
-            if (wtxtHersteller.Text == "")
-            {
-                wtxtSockelAMD.Visible = false;
-                wtxtSockelINTEL.Visible = false;
-                wtxtSockel.Visible = true;
-                Sockel = wtxtSockel.Text;
-            }
-            if (wtxtHersteller.Text == "AMD")
-            {
-                wtxtSockelINTEL.Visible = false;
-                wtxtSockel.Visible = false;
-                wtxtSockelAMD.Visible = true;
-                Sockel = wtxtSockelAMD.Text;
-            }
+            string[] INTEL = new string[] { "3", "4", "5", "6", "7", "463/NextGen", "8", "Slot 1", "479", "M", "P", "370", "µPGA2", "Slot 2", "495", "603", "604", "771/J", "1356/B2", "441", "423", "478", "1150", "1151", "1155", "1156", "1567", "2011", "2011-3", "3647/P3", "775/T", "989/G1", "1366" };
+            string[] ADM = new string[] { "7", "Slot A", "A/462", "563", "754", "939", "940", "F/1207", "S1", "AM2", "AM2+", "AM3", "AM3+", "AM4", "FM1", "FM2", "FM2+", "TR4" };
+            string[] SOCKEL = INTEL.Concat(ADM).ToArray();
+
             if (wtxtHersteller.Text == "Intel")
             {
-                wtxtSockelAMD.Visible = false;
-                wtxtSockel.Visible = false;
-                wtxtSockelINTEL.Visible = true;
-                Sockel = wtxtSockelINTEL.Text;
+                wtxtSockel.DataSource = INTEL;
             }
 
+            if (wtxtHersteller.Text == "AMD")
+            {
+                wtxtSockel.DataSource = ADM;
+            }
         }
-        #endregion
 
         #region Drucken von einem QR-Code
         private void cmdQR_Click(object sender, EventArgs e)
@@ -154,11 +140,6 @@ namespace PC_Hardware_Datenbank
             qrCodeImage.Dispose();
         }
         #endregion
-
-        private void CPU_Imput_Load(object sender, EventArgs e)//lesen des gespeicherten DateiPfad
-        {
-            DateiPfad = File.ReadAllText(@"./settings");
-        }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
