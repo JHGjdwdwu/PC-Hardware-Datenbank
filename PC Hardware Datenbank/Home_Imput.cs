@@ -159,15 +159,18 @@ namespace PC_Hardware_Datenbank
         {
             string rechte = Speicher.rechte;
 
-            if (rechte=="lesen")
+            if (rechte== "schreiben")
             {
-                cmdAdministration.Hide();
-                cmdSuchen.Hide();
+                cmdRoot.Hide();//keine root Rechte
+                cmdSuchen.Hide();//keine lesen Rechte
             }
-            if (rechte == "schreiben")
+            if (rechte == "lesen+schreiben")
             {
-                cmdAdministration.Hide();
-                cmdSuchen.Hide();
+                cmdRoot.Hide();//keine root Rechte
+            }
+            if (rechte == "lesen+löschen+schreiben")
+            {
+                cmdRoot.Hide();//keine root Rechte
             }
         }
 

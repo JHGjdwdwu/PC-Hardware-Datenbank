@@ -35,10 +35,13 @@
             this.cmdSuchen = new System.Windows.Forms.Button();
             this.cmdBeenden = new System.Windows.Forms.Button();
             this.dgvDaten = new System.Windows.Forms.DataGridView();
-            this.cmdErweiterteSuche = new System.Windows.Forms.Button();
             this.cmdLoschen = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.cmdRoot = new System.Windows.Forms.Button();
+            this.cmdInput = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.img)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDaten)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label4
@@ -57,7 +60,6 @@
             this.wtxtSuche.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.wtxtSuche.FormattingEnabled = true;
             this.wtxtSuche.Items.AddRange(new object[] {
-            "alles",
             "Mainboard",
             "CPU",
             "RAM",
@@ -99,12 +101,12 @@
             // 
             this.cmdSuchen.BackColor = System.Drawing.Color.Lime;
             this.cmdSuchen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdSuchen.Location = new System.Drawing.Point(12, 571);
+            this.cmdSuchen.Location = new System.Drawing.Point(13, 571);
             this.cmdSuchen.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdSuchen.Name = "cmdSuchen";
-            this.cmdSuchen.Size = new System.Drawing.Size(150, 35);
+            this.cmdSuchen.Size = new System.Drawing.Size(171, 35);
             this.cmdSuchen.TabIndex = 2;
-            this.cmdSuchen.Text = "Suchen";
+            this.cmdSuchen.Text = "Erweiterte Suche";
             this.cmdSuchen.UseVisualStyleBackColor = false;
             this.cmdSuchen.Click += new System.EventHandler(this.cmdSuchen_Click);
             // 
@@ -116,7 +118,7 @@
             this.cmdBeenden.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdBeenden.Name = "cmdBeenden";
             this.cmdBeenden.Size = new System.Drawing.Size(150, 35);
-            this.cmdBeenden.TabIndex = 3;
+            this.cmdBeenden.TabIndex = 6;
             this.cmdBeenden.Text = "Beenden";
             this.cmdBeenden.UseVisualStyleBackColor = false;
             this.cmdBeenden.Click += new System.EventHandler(this.cmdBeenden_Click);
@@ -130,41 +132,68 @@
             this.dgvDaten.ReadOnly = true;
             this.dgvDaten.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDaten.Size = new System.Drawing.Size(782, 551);
-            this.dgvDaten.TabIndex = 18;
+            this.dgvDaten.TabIndex = 1;
             this.dgvDaten.TabStop = false;
-            // 
-            // cmdErweiterteSuche
-            // 
-            this.cmdErweiterteSuche.BackColor = System.Drawing.Color.Yellow;
-            this.cmdErweiterteSuche.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdErweiterteSuche.Location = new System.Drawing.Point(76, 372);
-            this.cmdErweiterteSuche.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.cmdErweiterteSuche.Name = "cmdErweiterteSuche";
-            this.cmdErweiterteSuche.Size = new System.Drawing.Size(171, 35);
-            this.cmdErweiterteSuche.TabIndex = 1;
-            this.cmdErweiterteSuche.Text = "Erweiterte Suche";
-            this.cmdErweiterteSuche.UseVisualStyleBackColor = false;
             // 
             // cmdLoschen
             // 
             this.cmdLoschen.BackColor = System.Drawing.Color.Red;
             this.cmdLoschen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdLoschen.Location = new System.Drawing.Point(76, 417);
+            this.cmdLoschen.Location = new System.Drawing.Point(192, 571);
             this.cmdLoschen.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdLoschen.Name = "cmdLoschen";
             this.cmdLoschen.Size = new System.Drawing.Size(171, 35);
-            this.cmdLoschen.TabIndex = 19;
+            this.cmdLoschen.TabIndex = 3;
             this.cmdLoschen.Text = "Löschen";
             this.cmdLoschen.UseVisualStyleBackColor = false;
             this.cmdLoschen.Click += new System.EventHandler(this.cmdLoschen_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 494);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(60, 60);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 40;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // cmdRoot
+            // 
+            this.cmdRoot.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmdRoot.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdRoot.Location = new System.Drawing.Point(591, 571);
+            this.cmdRoot.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cmdRoot.Name = "cmdRoot";
+            this.cmdRoot.Size = new System.Drawing.Size(171, 35);
+            this.cmdRoot.TabIndex = 4;
+            this.cmdRoot.Text = "Administration";
+            this.cmdRoot.UseVisualStyleBackColor = false;
+            this.cmdRoot.Click += new System.EventHandler(this.cmdRoot_Click);
+            // 
+            // cmdInput
+            // 
+            this.cmdInput.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmdInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdInput.Location = new System.Drawing.Point(770, 571);
+            this.cmdInput.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cmdInput.Name = "cmdInput";
+            this.cmdInput.Size = new System.Drawing.Size(171, 35);
+            this.cmdInput.TabIndex = 5;
+            this.cmdInput.Text = "Hardware einfügen";
+            this.cmdInput.UseVisualStyleBackColor = false;
+            this.cmdInput.Click += new System.EventHandler(this.cmdInput_Click);
             // 
             // Home_Suche
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1112, 620);
+            this.Controls.Add(this.cmdRoot);
+            this.Controls.Add(this.cmdInput);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.cmdLoschen);
-            this.Controls.Add(this.cmdErweiterteSuche);
             this.Controls.Add(this.dgvDaten);
             this.Controls.Add(this.cmdBeenden);
             this.Controls.Add(this.cmdSuchen);
@@ -178,6 +207,7 @@
             this.Text = "Hardware finden";
             ((System.ComponentModel.ISupportInitialize)(this.img)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDaten)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,7 +221,9 @@
         private System.Windows.Forms.Button cmdSuchen;
         private System.Windows.Forms.Button cmdBeenden;
         private System.Windows.Forms.DataGridView dgvDaten;
-        private System.Windows.Forms.Button cmdErweiterteSuche;
         private System.Windows.Forms.Button cmdLoschen;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button cmdRoot;
+        private System.Windows.Forms.Button cmdInput;
     }
 }

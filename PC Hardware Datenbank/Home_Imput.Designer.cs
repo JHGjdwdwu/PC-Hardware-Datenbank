@@ -54,7 +54,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.cmdAdministration = new System.Windows.Forms.Button();
+            this.cmdRoot = new System.Windows.Forms.Button();
             this.cmdSuchen = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
@@ -71,7 +71,7 @@
             this.cmdSonstiges.Location = new System.Drawing.Point(939, 315);
             this.cmdSonstiges.Name = "cmdSonstiges";
             this.cmdSonstiges.Size = new System.Drawing.Size(150, 150);
-            this.cmdSonstiges.TabIndex = 66;
+            this.cmdSonstiges.TabIndex = 20;
             this.cmdSonstiges.UseVisualStyleBackColor = true;
             this.cmdSonstiges.Click += new System.EventHandler(this.cmdSonstiges_Click);
             // 
@@ -82,7 +82,7 @@
             this.cmdI_O.Location = new System.Drawing.Point(783, 315);
             this.cmdI_O.Name = "cmdI_O";
             this.cmdI_O.Size = new System.Drawing.Size(150, 150);
-            this.cmdI_O.TabIndex = 65;
+            this.cmdI_O.TabIndex = 19;
             this.cmdI_O.UseVisualStyleBackColor = true;
             this.cmdI_O.Click += new System.EventHandler(this.cmdI_O_Click);
             // 
@@ -93,7 +93,7 @@
             this.cmdAdapter.Location = new System.Drawing.Point(627, 315);
             this.cmdAdapter.Name = "cmdAdapter";
             this.cmdAdapter.Size = new System.Drawing.Size(150, 150);
-            this.cmdAdapter.TabIndex = 64;
+            this.cmdAdapter.TabIndex = 18;
             this.cmdAdapter.UseVisualStyleBackColor = true;
             this.cmdAdapter.Click += new System.EventHandler(this.cmdAdapter_Click);
             // 
@@ -104,7 +104,7 @@
             this.cmdKabel.Location = new System.Drawing.Point(471, 315);
             this.cmdKabel.Name = "cmdKabel";
             this.cmdKabel.Size = new System.Drawing.Size(150, 150);
-            this.cmdKabel.TabIndex = 63;
+            this.cmdKabel.TabIndex = 17;
             this.cmdKabel.UseVisualStyleBackColor = true;
             this.cmdKabel.Click += new System.EventHandler(this.cmdKabel_Click);
             // 
@@ -115,7 +115,7 @@
             this.cmdUSV.Location = new System.Drawing.Point(315, 315);
             this.cmdUSV.Name = "cmdUSV";
             this.cmdUSV.Size = new System.Drawing.Size(150, 150);
-            this.cmdUSV.TabIndex = 62;
+            this.cmdUSV.TabIndex = 16;
             this.cmdUSV.UseVisualStyleBackColor = true;
             this.cmdUSV.Click += new System.EventHandler(this.cmdUSV_Click);
             // 
@@ -126,7 +126,7 @@
             this.cmdMonitor.Location = new System.Drawing.Point(159, 315);
             this.cmdMonitor.Name = "cmdMonitor";
             this.cmdMonitor.Size = new System.Drawing.Size(150, 150);
-            this.cmdMonitor.TabIndex = 61;
+            this.cmdMonitor.TabIndex = 15;
             this.cmdMonitor.UseVisualStyleBackColor = true;
             this.cmdMonitor.Click += new System.EventHandler(this.cmdMonitor_Click);
             // 
@@ -137,7 +137,7 @@
             this.cmdLufter.Location = new System.Drawing.Point(3, 315);
             this.cmdLufter.Name = "cmdLufter";
             this.cmdLufter.Size = new System.Drawing.Size(150, 150);
-            this.cmdLufter.TabIndex = 60;
+            this.cmdLufter.TabIndex = 14;
             this.cmdLufter.UseVisualStyleBackColor = true;
             this.cmdLufter.Click += new System.EventHandler(this.cmdLufter_Click);
             // 
@@ -148,7 +148,7 @@
             this.cmdFrontErweiterung.Location = new System.Drawing.Point(939, 159);
             this.cmdFrontErweiterung.Name = "cmdFrontErweiterung";
             this.cmdFrontErweiterung.Size = new System.Drawing.Size(150, 150);
-            this.cmdFrontErweiterung.TabIndex = 59;
+            this.cmdFrontErweiterung.TabIndex = 13;
             this.cmdFrontErweiterung.UseVisualStyleBackColor = true;
             this.cmdFrontErweiterung.Click += new System.EventHandler(this.cmdFrontErweiterung_Click);
             // 
@@ -159,7 +159,7 @@
             this.cmdLaufwerk.Location = new System.Drawing.Point(783, 159);
             this.cmdLaufwerk.Name = "cmdLaufwerk";
             this.cmdLaufwerk.Size = new System.Drawing.Size(150, 150);
-            this.cmdLaufwerk.TabIndex = 58;
+            this.cmdLaufwerk.TabIndex = 12;
             this.cmdLaufwerk.UseVisualStyleBackColor = true;
             this.cmdLaufwerk.Click += new System.EventHandler(this.cmdLaufwerk_Click);
             // 
@@ -170,7 +170,7 @@
             this.cmdRaiserkarte.Location = new System.Drawing.Point(627, 159);
             this.cmdRaiserkarte.Name = "cmdRaiserkarte";
             this.cmdRaiserkarte.Size = new System.Drawing.Size(150, 150);
-            this.cmdRaiserkarte.TabIndex = 57;
+            this.cmdRaiserkarte.TabIndex = 11;
             this.cmdRaiserkarte.UseVisualStyleBackColor = true;
             this.cmdRaiserkarte.Click += new System.EventHandler(this.cmdRaiserkarte_Click);
             // 
@@ -181,7 +181,7 @@
             this.cmdTVKarte.Location = new System.Drawing.Point(471, 159);
             this.cmdTVKarte.Name = "cmdTVKarte";
             this.cmdTVKarte.Size = new System.Drawing.Size(150, 150);
-            this.cmdTVKarte.TabIndex = 56;
+            this.cmdTVKarte.TabIndex = 10;
             this.cmdTVKarte.UseVisualStyleBackColor = true;
             this.cmdTVKarte.Click += new System.EventHandler(this.cmdTVKarte_Click);
             // 
@@ -192,7 +192,7 @@
             this.cmdSchnittstellenkarte.Location = new System.Drawing.Point(315, 159);
             this.cmdSchnittstellenkarte.Name = "cmdSchnittstellenkarte";
             this.cmdSchnittstellenkarte.Size = new System.Drawing.Size(150, 150);
-            this.cmdSchnittstellenkarte.TabIndex = 55;
+            this.cmdSchnittstellenkarte.TabIndex = 9;
             this.cmdSchnittstellenkarte.UseVisualStyleBackColor = true;
             this.cmdSchnittstellenkarte.Click += new System.EventHandler(this.cmdSchnittstellenkarte_Click);
             // 
@@ -203,7 +203,7 @@
             this.cmdNetzwerkkarte.Location = new System.Drawing.Point(159, 159);
             this.cmdNetzwerkkarte.Name = "cmdNetzwerkkarte";
             this.cmdNetzwerkkarte.Size = new System.Drawing.Size(150, 150);
-            this.cmdNetzwerkkarte.TabIndex = 54;
+            this.cmdNetzwerkkarte.TabIndex = 8;
             this.cmdNetzwerkkarte.UseVisualStyleBackColor = true;
             this.cmdNetzwerkkarte.Click += new System.EventHandler(this.cmdNetzwerkkarte_Click);
             // 
@@ -214,7 +214,7 @@
             this.cmdSoundkarte.Location = new System.Drawing.Point(3, 159);
             this.cmdSoundkarte.Name = "cmdSoundkarte";
             this.cmdSoundkarte.Size = new System.Drawing.Size(150, 150);
-            this.cmdSoundkarte.TabIndex = 53;
+            this.cmdSoundkarte.TabIndex = 7;
             this.cmdSoundkarte.UseVisualStyleBackColor = true;
             this.cmdSoundkarte.Click += new System.EventHandler(this.cmdSoundkarte_Click);
             // 
@@ -225,7 +225,7 @@
             this.cmdGehause.Location = new System.Drawing.Point(939, 3);
             this.cmdGehause.Name = "cmdGehause";
             this.cmdGehause.Size = new System.Drawing.Size(150, 150);
-            this.cmdGehause.TabIndex = 52;
+            this.cmdGehause.TabIndex = 6;
             this.cmdGehause.UseVisualStyleBackColor = true;
             this.cmdGehause.Click += new System.EventHandler(this.cmdGehause_Click);
             // 
@@ -236,7 +236,7 @@
             this.cmdNetzteil.Location = new System.Drawing.Point(783, 3);
             this.cmdNetzteil.Name = "cmdNetzteil";
             this.cmdNetzteil.Size = new System.Drawing.Size(150, 150);
-            this.cmdNetzteil.TabIndex = 51;
+            this.cmdNetzteil.TabIndex = 5;
             this.cmdNetzteil.UseVisualStyleBackColor = true;
             this.cmdNetzteil.Click += new System.EventHandler(this.cmdNetzteil_Click);
             // 
@@ -247,7 +247,7 @@
             this.cmdHDD.Location = new System.Drawing.Point(627, 3);
             this.cmdHDD.Name = "cmdHDD";
             this.cmdHDD.Size = new System.Drawing.Size(150, 150);
-            this.cmdHDD.TabIndex = 50;
+            this.cmdHDD.TabIndex = 4;
             this.cmdHDD.UseVisualStyleBackColor = true;
             this.cmdHDD.Click += new System.EventHandler(this.cmdHDD_Click);
             // 
@@ -258,7 +258,7 @@
             this.cmdGPU.Location = new System.Drawing.Point(471, 3);
             this.cmdGPU.Name = "cmdGPU";
             this.cmdGPU.Size = new System.Drawing.Size(150, 150);
-            this.cmdGPU.TabIndex = 49;
+            this.cmdGPU.TabIndex = 3;
             this.cmdGPU.UseVisualStyleBackColor = true;
             this.cmdGPU.Click += new System.EventHandler(this.cmdGPU_Click);
             // 
@@ -269,7 +269,7 @@
             this.cmdRAM.Location = new System.Drawing.Point(315, 3);
             this.cmdRAM.Name = "cmdRAM";
             this.cmdRAM.Size = new System.Drawing.Size(150, 150);
-            this.cmdRAM.TabIndex = 48;
+            this.cmdRAM.TabIndex = 2;
             this.cmdRAM.UseVisualStyleBackColor = true;
             this.cmdRAM.Click += new System.EventHandler(this.cmdRAM_Click);
             // 
@@ -280,7 +280,7 @@
             this.cmdCPU.Location = new System.Drawing.Point(159, 3);
             this.cmdCPU.Name = "cmdCPU";
             this.cmdCPU.Size = new System.Drawing.Size(150, 150);
-            this.cmdCPU.TabIndex = 47;
+            this.cmdCPU.TabIndex = 1;
             this.cmdCPU.UseVisualStyleBackColor = true;
             this.cmdCPU.Click += new System.EventHandler(this.cmdCPU_Click);
             // 
@@ -291,7 +291,7 @@
             this.cmdMainbord.Location = new System.Drawing.Point(3, 3);
             this.cmdMainbord.Name = "cmdMainbord";
             this.cmdMainbord.Size = new System.Drawing.Size(150, 150);
-            this.cmdMainbord.TabIndex = 46;
+            this.cmdMainbord.TabIndex = 0;
             this.cmdMainbord.UseVisualStyleBackColor = true;
             this.cmdMainbord.Click += new System.EventHandler(this.cmdMainbord_Click);
             // 
@@ -304,7 +304,7 @@
             this.cmdBeenden.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdBeenden.Name = "cmdBeenden";
             this.cmdBeenden.Size = new System.Drawing.Size(150, 35);
-            this.cmdBeenden.TabIndex = 45;
+            this.cmdBeenden.TabIndex = 2;
             this.cmdBeenden.Text = "Beenden";
             this.cmdBeenden.UseVisualStyleBackColor = false;
             this.cmdBeenden.Click += new System.EventHandler(this.cmdBeenden_Click);
@@ -348,7 +348,7 @@
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1112, 481);
-            this.flowLayoutPanel1.TabIndex = 68;
+            this.flowLayoutPanel1.TabIndex = 0;
             // 
             // splitContainer1
             // 
@@ -363,7 +363,7 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.cmdAdministration);
+            this.splitContainer1.Panel2.Controls.Add(this.cmdRoot);
             this.splitContainer1.Panel2.Controls.Add(this.cmdSuchen);
             this.splitContainer1.Panel2.Controls.Add(this.pictureBox1);
             this.splitContainer1.Panel2.Controls.Add(this.cmdBeenden);
@@ -371,28 +371,28 @@
             this.splitContainer1.SplitterDistance = 481;
             this.splitContainer1.TabIndex = 69;
             // 
-            // cmdAdministration
+            // cmdRoot
             // 
-            this.cmdAdministration.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmdAdministration.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdAdministration.Location = new System.Drawing.Point(771, 86);
-            this.cmdAdministration.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.cmdAdministration.Name = "cmdAdministration";
-            this.cmdAdministration.Size = new System.Drawing.Size(171, 35);
-            this.cmdAdministration.TabIndex = 203;
-            this.cmdAdministration.Text = "Administration";
-            this.cmdAdministration.UseVisualStyleBackColor = false;
-            this.cmdAdministration.Click += new System.EventHandler(this.cmdAdministration_Click);
+            this.cmdRoot.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmdRoot.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdRoot.Location = new System.Drawing.Point(592, 86);
+            this.cmdRoot.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cmdRoot.Name = "cmdRoot";
+            this.cmdRoot.Size = new System.Drawing.Size(171, 35);
+            this.cmdRoot.TabIndex = 0;
+            this.cmdRoot.Text = "Administration";
+            this.cmdRoot.UseVisualStyleBackColor = false;
+            this.cmdRoot.Click += new System.EventHandler(this.cmdAdministration_Click);
             // 
             // cmdSuchen
             // 
             this.cmdSuchen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cmdSuchen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdSuchen.Location = new System.Drawing.Point(592, 86);
+            this.cmdSuchen.Location = new System.Drawing.Point(771, 86);
             this.cmdSuchen.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cmdSuchen.Name = "cmdSuchen";
             this.cmdSuchen.Size = new System.Drawing.Size(171, 35);
-            this.cmdSuchen.TabIndex = 202;
+            this.cmdSuchen.TabIndex = 1;
             this.cmdSuchen.Text = "Hardware suchen";
             this.cmdSuchen.UseVisualStyleBackColor = false;
             this.cmdSuchen.Click += new System.EventHandler(this.cmdSuchen_Eingeben_Click);
@@ -445,7 +445,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.Button cmdAdministration;
+        private System.Windows.Forms.Button cmdRoot;
         private System.Windows.Forms.Button cmdSuchen;
     }
 }

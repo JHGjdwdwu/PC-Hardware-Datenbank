@@ -49,7 +49,8 @@ namespace PC_Hardware_Datenbank
 
         private void cmdPfad_Click(object sender, EventArgs e)//Datenbank einstellungen
         {
-
+            DB_Setings dB_Setings = new DB_Setings();
+            dB_Setings.Show();
         }
     }
 }

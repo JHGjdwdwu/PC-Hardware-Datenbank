@@ -7,6 +7,7 @@ using System.Security.Cryptography;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.IO;
 
 namespace PC_Hardware_Datenbank
 {
@@ -14,13 +15,28 @@ namespace PC_Hardware_Datenbank
     {
         public string MySqlConnectionString()//Methode: MySQL Verbindungs Daten
         {
-            //string myConnectionString = "SERVER=127.0.0.1;" + einstelungen.Server + ";" +
-            //                "DATABASE=" + einstelungen.Datenbank + ";" +
-            //                "UID=" + einstelungen.Password + ";" +
-            //                "PASSWORD=" + einstelungen.Password + ";";
+            string[] ConnectionData = null;
+            string user = null, key = null;
 
-            string myConnectionString = "SERVER=127.0.0.1;DATABASE=pc-hardware-datenbank;UID=root;PASSWORD=;Charset=utf8";
-            return myConnectionString;
+            if (File.Exists(@"./settings.ini"))
+            {
+                ConnectionData = File.ReadAllText(@"./settings.ini").Split(';');
+                Crypto_AES crypto = new Crypto_AES();//Methode zu Verschlusselung von Daten
+                user = crypto.decrypt(ConnectionData[3]);//der entschlüsselte User
+                key = crypto.decrypt(ConnectionData[4]);//das entschlüsselte Password
+            }
+            else
+            {
+                MessageBox.Show("Es wurde noch keine Datenbank angeben. Bitte geben Sie eine Datenbank an!", "Datenkank angeben", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Environment.Exit(0);
+            }
+
+            if (ConnectionData[0]=="MySQL" || ConnectionData[0] == "MariaDB")
+            {
+                string myConnectionString = "SERVER=" + ConnectionData[1] + ";DATABASE=" + ConnectionData[2] + ";UID=" + user + ";PASSWORD=" + key + ";Charset=utf8";
+                return myConnectionString;
+            }
+            return null;
         }
 
 
@@ -88,14 +104,17 @@ namespace PC_Hardware_Datenbank
             catch (MySql.Data.MySqlClient.MySqlException)
             {
                 MessageBox.Show("Es konnte keine verbindung zum SQL-Server aufgebaut werden");
-                return null;
             }
+            catch (System.InvalidOperationException)
+            {
+                MessageBox.Show("Es wurde nichts ausgewählt!");
+            }
+            return null;
         }
 
 
         public string[] MySqlToString(string MySqlConnectionString, string MySqlCommandText)//Metod: MySQL-Daten als Array ausgeben
         {
-            //string[] Daten = new string[3];
             MySqlConnection connection = new MySqlConnection(MySqlConnectionString);
             MySqlCommand command = connection.CreateCommand();
             command.CommandText = MySqlCommandText;
@@ -516,6 +535,43 @@ namespace PC_Hardware_Datenbank
             byte[] bytehash = sha512.ComputeHash(bytekey);
             string hash = BitConverter.ToString(bytehash);
             return hash;
+        }
+
+
+        public string DataGridViweSelectData(int Spalte, DataGridView DataGridViwe)//Metod: DataGridView Celle auslessen
+        {
+            if (DataGridViwe.DataSource!=null)//Prüft ob überhaupt Daten in der DataGridViwe sind
+            {
+                if (DataGridViwe.SelectedRows.Count > 0)//Prüft ob eine Zeile ausgewählt worden ist
+                {
+                    if (DataGridViwe.SelectedRows[0].Cells[Spalte].Value!=null)
+                    {
+                        try
+                        {
+                            string[] Cellen = Convert.ToString(DataGridViwe.SelectedRows[0].Cells[Spalte].Value).Split(',');
+                            string Celle = Cellen[0];
+                            return Celle;
+                        }
+                        catch (System.ArgumentOutOfRangeException)
+                        {
+                            MessageBox.Show("Es konnte nichts gelöscht werden!", "Fehler!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Es konnten keine Daten gefunden werden!", "Hinweis!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Es wurden keine zeilen ausgewählt!", "Hinweis!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Es existiren keine Daten!", "Hinweis!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            return null;
         }
     }
 }

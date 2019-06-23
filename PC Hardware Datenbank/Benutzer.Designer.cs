@@ -87,12 +87,15 @@
             this.wtxtRechte.Items.AddRange(new object[] {
             "lesen",
             "schreiben",
+            "lesen+löschen",
+            "lesen+schreiben",
+            "lesen+löschen+schreiben",
             "root"});
-            this.wtxtRechte.Location = new System.Drawing.Point(321, 73);
+            this.wtxtRechte.Location = new System.Drawing.Point(281, 73);
             this.wtxtRechte.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.wtxtRechte.Name = "wtxtRechte";
             this.wtxtRechte.ScrollAlwaysVisible = true;
-            this.wtxtRechte.Size = new System.Drawing.Size(148, 24);
+            this.wtxtRechte.Size = new System.Drawing.Size(188, 24);
             this.wtxtRechte.TabIndex = 2;
             // 
             // dgvUser
@@ -125,7 +128,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(162, 50);
+            this.label2.Location = new System.Drawing.Point(142, 50);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(91, 20);
             this.label2.TabIndex = 8;
@@ -135,7 +138,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(317, 48);
+            this.label3.Location = new System.Drawing.Point(277, 50);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(72, 20);
             this.label3.TabIndex = 9;
@@ -146,16 +149,16 @@
             this.txtName.Location = new System.Drawing.Point(12, 73);
             this.txtName.MaxLength = 10;
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(148, 26);
+            this.txtName.Size = new System.Drawing.Size(128, 26);
             this.txtName.TabIndex = 0;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(166, 73);
+            this.txtPassword.Location = new System.Drawing.Point(146, 73);
             this.txtPassword.MaxLength = 50;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(148, 26);
+            this.txtPassword.Size = new System.Drawing.Size(128, 26);
             this.txtPassword.TabIndex = 1;
             // 
             // label4

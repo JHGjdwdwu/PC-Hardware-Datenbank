@@ -53,7 +53,7 @@ namespace PC_Hardware_Datenbank
                     methoden.MySQL_ping_check(mysqlconnectionstring);//Testabfrage bei der Datenkan
                     string Datensatz = methoden.ObjekteTextToString(",", this);//Erzeugt ein String aus den Daten auf der Form
                     string sqldatensatz = Datensatz.Substring(0, Datensatz.Length - 1);//Entfert ein überflüssiges Zeichen (Grund Schleife)
-                    string mysqlcommandtext = "INSERT INTO `laufwerke` VALUES (" + sqldatensatz + ");";//SQL Befehl Abfrage aller User
+                    string mysqlcommandtext = "INSERT INTO `laufwerke` VALUES (''," + sqldatensatz + ");";//SQL Befehl Abfrage aller User
                     methoden.MySqlCommand(mysqlconnectionstring, mysqlcommandtext);//Daten in die Datenbank schreiben
                     LoschFunktion();
                     wtxtZustand.Focus();

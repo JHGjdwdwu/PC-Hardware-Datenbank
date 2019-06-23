@@ -74,6 +74,27 @@ namespace PC_Hardware_Datenbank
                     txtName.Text = txtPassword.Text = null;
                 }
 
+                if (daten[2] == "lesen+löschen")//lesen und löschen
+                {
+                    new Home_Suche().Show(this);
+                    this.Hide();
+                    txtName.Text = txtPassword.Text = null;
+                }
+
+                if (daten[2] == "lesen+schreiben")//lesen und schreiben
+                {
+                    new Home_Suche().Show(this);
+                    this.Hide();
+                    txtName.Text = txtPassword.Text = null;
+                }
+
+                if (daten[2] == "lesen+löschen+schreiben")//lesen und schreiben
+                {
+                    new Home_Suche().Show(this);
+                    this.Hide();
+                    txtName.Text = txtPassword.Text = null;
+                }
+
                 if (daten[2] == "root")//Rechte root
                 {
                     new Admin().Show(this);
@@ -99,6 +120,16 @@ namespace PC_Hardware_Datenbank
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("https://github.com/JHGjdwdwu");
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            if (!File.Exists(@"./settings.ini"))
+            {
+                MessageBox.Show("Es wurde noch keine Datenbank angeben. Bitte geben Sie eine Datenbank an!", "Datenkank angeben", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                new DB_Setings().Show(this);
+            }
+            
         }
     }
 

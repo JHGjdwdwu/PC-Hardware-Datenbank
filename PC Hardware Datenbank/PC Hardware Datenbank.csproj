@@ -71,6 +71,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Crypto_AES.cs" />
+    <Compile Include="DB_Setings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DB_Setings.Designer.cs">
+      <DependentUpon>DB_Setings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Methoden.cs" />
     <Compile Include="Imput_Hardware\Adapter_Imput.cs">
       <SubType>Form</SubType>
@@ -230,6 +237,9 @@
     <Compile Include="Imput_Hardware\USV_Imput.Designer.cs">
       <DependentUpon>USV_Imput.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DB_Setings.resx">
+      <DependentUpon>DB_Setings.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Home_Suche.resx">
       <DependentUpon>Home_Suche.cs</DependentUpon>
     </EmbeddedResource>
