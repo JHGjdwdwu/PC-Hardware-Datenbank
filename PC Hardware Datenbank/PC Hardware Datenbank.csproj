@@ -389,7 +389,6 @@
     <Content Include="Wiki\img\7.PNG" />
     <Content Include="Wiki\img\DB.png" />
     <Content Include="Wiki\img\Hardware.png" />
-    <Content Include="Wiki\index.html" />
     <None Include="Resources\USER.png" />
     <None Include="Resources\DB.png" />
     <None Include="Resources\Download.png" />
