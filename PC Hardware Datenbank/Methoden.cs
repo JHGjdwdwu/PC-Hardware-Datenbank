@@ -40,19 +40,21 @@ namespace PC_Hardware_Datenbank
         }
 
 
-        public void MySQL_ping_check(string MySqlConnectionString)//Methode: Prüfen ob DB erreicht werden kann.
+        public string MySQL_ping_check(string MySqlConnectionString)//Methode: Prüfen ob DB erreicht werden kann.
         {
             MySqlConnection connection = new MySqlConnection(MySqlConnectionString);
             MySqlCommand command = connection.CreateCommand();
-            command.CommandText = "SELECT * FROM `sonstiges` WHERE `Hersteller`='abc';";
+            string sqlping = command.CommandText = "SELECT * FROM `sonstiges` WHERE `Hersteller`='abc';";
             try
             {
                 connection.Open();
                 connection.Close();
+                return sqlping;
             }
             catch
             {
                 MessageBox.Show("Es konnte keine Verbindung zur Datenbank aufgebaut werden!", "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
             }
         }
 

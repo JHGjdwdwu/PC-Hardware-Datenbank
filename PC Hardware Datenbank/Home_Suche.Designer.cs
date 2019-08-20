@@ -108,6 +108,7 @@
             this.cmdSuchen.TabIndex = 2;
             this.cmdSuchen.Text = "Erweiterte Suche";
             this.cmdSuchen.UseVisualStyleBackColor = false;
+            this.cmdSuchen.Visible = false;
             this.cmdSuchen.Click += new System.EventHandler(this.cmdSuchen_Click);
             // 
             // cmdBeenden
@@ -150,6 +151,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(12, 494);
             this.pictureBox1.Name = "pictureBox1";

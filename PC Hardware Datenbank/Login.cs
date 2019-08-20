@@ -42,64 +42,67 @@ namespace PC_Hardware_Datenbank
             {
                 Methoden methoden = new Methoden();
                 string mysqlconnectionstring = methoden.MySqlConnectionString();//Angaben um sich an der Datenbank anzumelden
-                methoden.MySQL_ping_check(mysqlconnectionstring);//Testabfrage bei der Datenkan
+                string sqlping = methoden.MySQL_ping_check(mysqlconnectionstring);//Testabfrage bei der Datenkan
 
-                string hash = methoden.StringToSha512(txtPassword.Text);//erzeugt ein Hash vom Password
-
-                string mysqlcommandtext = "SELECT * FROM `user` WHERE `Name`='" + txtName.Text + "'AND`Password`='" + hash + "';";//SQL Abfrage Befehl: suche User und key
-                string[] daten = methoden.MySqlToString(mysqlconnectionstring, mysqlcommandtext);//Daten abfragen und in ein Array schreiben {User,Passwored,Rechte}
-                Speicher.rechte = daten[2];//Globalle Variable zum bestimmen was auf der Form zu sehen ist
-
-                if (daten[0]!=txtName.Text || daten[1] != hash)
+                if (sqlping!=null)
                 {
-                    MessageBox.Show("" +
-                        "Der Benutzer konnte nicht gefunden werden oder \r\n" +
-                        "das Passwort ist falsch! \r\n" +
-                        "Bitte achten Sie auf groß und kleinschreibung!");
-                    txtName.Text = txtPassword.Text = null;
-                    txtName.Focus();
-                }
+                    string hash = methoden.StringToSha512(txtPassword.Text);//erzeugt ein Hash vom Password
 
-                if (daten[2] == "lesen")//Rechte lesen
-                {
-                    new Home_Suche().Show(this);
-                    this.Hide();
-                    txtName.Text = txtPassword.Text = null;
-                }
+                    string mysqlcommandtext = "SELECT * FROM `user` WHERE `Name`='" + txtName.Text + "'AND`Password`='" + hash + "';";//SQL Abfrage Befehl: suche User und key
+                    string[] daten = methoden.MySqlToString(mysqlconnectionstring, mysqlcommandtext);//Daten abfragen und in ein Array schreiben {User,Passwored,Rechte}
+                    Speicher.rechte = daten[2];//Globalle Variable zum bestimmen was auf der Form zu sehen ist
 
-                if (daten[2] == "schreiben")//Rechte schreiben
-                {
-                    new Home_Imput().Show(this);
-                    this.Hide();
-                    txtName.Text = txtPassword.Text = null;
-                }
+                    if (daten[0] != txtName.Text || daten[1] != hash)
+                    {
+                        MessageBox.Show("" +
+                            "Der Benutzer konnte nicht gefunden werden oder \r\n" +
+                            "das Passwort ist falsch! \r\n" +
+                            "Bitte achten Sie auf groß und kleinschreibung!");
+                        txtName.Text = txtPassword.Text = null;
+                        txtName.Focus();
+                    }
 
-                if (daten[2] == "lesen+löschen")//lesen und löschen
-                {
-                    new Home_Suche().Show(this);
-                    this.Hide();
-                    txtName.Text = txtPassword.Text = null;
-                }
+                    if (daten[2] == "lesen")//Rechte lesen
+                    {
+                        new Home_Suche().Show(this);
+                        this.Hide();
+                        txtName.Text = txtPassword.Text = null;
+                    }
 
-                if (daten[2] == "lesen+schreiben")//lesen und schreiben
-                {
-                    new Home_Suche().Show(this);
-                    this.Hide();
-                    txtName.Text = txtPassword.Text = null;
-                }
+                    if (daten[2] == "schreiben")//Rechte schreiben
+                    {
+                        new Home_Imput().Show(this);
+                        this.Hide();
+                        txtName.Text = txtPassword.Text = null;
+                    }
 
-                if (daten[2] == "lesen+löschen+schreiben")//lesen und schreiben
-                {
-                    new Home_Suche().Show(this);
-                    this.Hide();
-                    txtName.Text = txtPassword.Text = null;
-                }
+                    if (daten[2] == "lesen+löschen")//lesen und löschen
+                    {
+                        new Home_Suche().Show(this);
+                        this.Hide();
+                        txtName.Text = txtPassword.Text = null;
+                    }
 
-                if (daten[2] == "root")//Rechte root
-                {
-                    new Admin().Show(this);
-                    this.Hide();
-                    txtName.Text = txtPassword.Text = null;
+                    if (daten[2] == "lesen+schreiben")//lesen und schreiben
+                    {
+                        new Home_Suche().Show(this);
+                        this.Hide();
+                        txtName.Text = txtPassword.Text = null;
+                    }
+
+                    if (daten[2] == "lesen+löschen+schreiben")//lesen und schreiben
+                    {
+                        new Home_Suche().Show(this);
+                        this.Hide();
+                        txtName.Text = txtPassword.Text = null;
+                    }
+
+                    if (daten[2] == "root")//Rechte root
+                    {
+                        new Admin().Show(this);
+                        this.Hide();
+                        txtName.Text = txtPassword.Text = null;
+                    }
                 }
             }
         }

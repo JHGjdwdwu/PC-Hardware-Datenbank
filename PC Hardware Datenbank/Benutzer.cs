@@ -46,13 +46,24 @@ namespace PC_Hardware_Datenbank
                     string mysqlconnectionstring = methoden.MySqlConnectionString();//Angaben um sich an der Datenbank anzumelden
                     methoden.MySQL_ping_check(mysqlconnectionstring);//Testabfrage bei der Datenkan
 
-                    string hash = methoden.StringToSha512(txtPassword.Text);//erzeugt ein Hash vom Password
+                    string mysqlcommandtext = "SELECT * FROM `user` WHERE `Name`='" + txtName.Text + "';";//SQL Befehl Abfrage ob es den User schon giebt
+                    string bit = methoden.MySqlToString(mysqlconnectionstring, mysqlcommandtext)[0];//Daten in die Datenbank schreiben
 
-                    string mysqlcommandtext = "INSERT INTO `user` (`Name`, `Password`, `Rechte`) VALUES ('" + txtName.Text + "', '" + hash + "', '" + wtxtRechte.Text + "');";//SQL Befehl Abfrage aller User
-                    methoden.MySqlCommand(mysqlconnectionstring, mysqlcommandtext);//Daten in die Datenbank schreiben
-                    txtName.Text = txtPassword.Text = null;//Eigegebenen Text löschen
-                    txtName.Focus();//Tabstop auf das Textfeld Name setzen
-                    Benutzer_Load(cmdErstellen, e);//Daten mit den User aus der Datenbank neu auslesen
+                    if (bit==null)
+                    {
+                        string hash = methoden.StringToSha512(txtPassword.Text);//erzeugt ein Hash vom Password
+
+                        mysqlcommandtext = "INSERT INTO `user` (`Name`, `Password`, `Rechte`) VALUES ('" + txtName.Text + "', '" + hash + "', '" + wtxtRechte.Text + "');";//SQL Befehl Abfrage aller User
+                        methoden.MySqlCommand(mysqlconnectionstring, mysqlcommandtext);//Daten in die Datenbank schreiben
+                        txtName.Text = txtPassword.Text = null;//Eigegebenen Text löschen
+                        txtName.Focus();//Tabstop auf das Textfeld Name setzen
+                        Benutzer_Load(cmdErstellen, e);//Daten mit den User aus der Datenbank neu auslesen
+                    }
+                    else
+                    {
+                        MessageBox.Show("Es giebt bereits einen Benuzer mit dem Namen!\r\nBitte geben Sie einen anderen Namen an.","Fehler!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    
                 }
                 else
                 {
