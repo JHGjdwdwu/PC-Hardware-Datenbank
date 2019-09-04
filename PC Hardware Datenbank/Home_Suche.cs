@@ -7,7 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
+using System.IO;//Zusäzlich für Daten
+using System.Drawing.Printing;//Zusäzlich für Drucken
+using QRCoder;//Zusäzlich für den QR-Code Generator
 
 namespace PC_Hardware_Datenbank
 {
@@ -21,6 +23,8 @@ namespace PC_Hardware_Datenbank
 
         Methoden methoden = new Methoden();
         string tabel = null;
+        string QR = null;
+        private char LF = (char)10;
 
         private void cmdBeenden_Click(object sender, EventArgs e)//Button Beenden
         {
@@ -225,5 +229,53 @@ namespace PC_Hardware_Datenbank
             new Admin().Show(this);
             this.Hide();
         }
+
+        #region Drucken von einem QR-Code
+        private void cmdQR_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            string ID = dgvDaten.SelectedCells[0].Value.ToString();//Ermitelt die ID der Hardware die ausgewählt wurde
+
+            string mysqlconnectionstring = methoden.MySqlConnectionString();//Angaben um sich an der Datenbank anzumelden
+            methoden.MySQL_ping_check(mysqlconnectionstring);//Testabfrage bei der Datenkan
+            string mysqlcommandtext = "SELECT * FROM `" + tabel + "` WHERE `ID` = '" + ID + "';";//SQL Abfrage der Daten
+            string[] Data = methoden.MySqlToArray(mysqlconnectionstring, mysqlcommandtext);//Erstellt ein Array mit allen Daten zur Hardware
+            mysqlcommandtext = "SELECT column_name FROM information_schema.columns WHERE table_name = '" + tabel + "';";//SQL Abfrage der Überschriften
+            string[] Header = methoden.MySqlToArray(mysqlconnectionstring, mysqlcommandtext);//Erstellt ein Array mit allen Überschriften zur Hardware
+
+            foreach (string iHeader in Header)
+            {
+                QR += iHeader + ": " + Data[i] + LF;
+                i++;
+            }
+
+            if (QR != "")
+            {
+                PrintDialog pd = new PrintDialog();
+                PrintDocument doc = new PrintDocument();
+                doc.PrintPage += printDocument1_PrintPage;
+                pd.Document = doc;
+                if (pd.ShowDialog() == DialogResult.OK)
+                {
+                    doc.Print();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Zuerst muss ein Datensatz gespeichert werden!");
+            }
+        }
+
+        private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            QRCodeGenerator qrGenerator = new QRCodeGenerator();
+            QRCodeData Daten = qrGenerator.CreateQrCode(QR, QRCodeGenerator.ECCLevel.L);
+
+            QRCode qrCode = new QRCode(Daten);
+            Bitmap qrCodeImage = qrCode.GetGraphic(2);
+            e.Graphics.DrawImage(qrCodeImage, 10, 10);
+            qrCodeImage.Dispose();
+        }
+        #endregion
     }
 }

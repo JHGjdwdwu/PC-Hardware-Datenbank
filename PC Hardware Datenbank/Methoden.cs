@@ -115,31 +115,36 @@ namespace PC_Hardware_Datenbank
         }
 
 
-        public string[] MySqlToString(string MySqlConnectionString, string MySqlCommandText)//Metod: MySQL-Daten als Array ausgeben
+        public string[] MySqlToArray(string MySqlConnectionString, string MySqlCommand)
         {
-            MySqlConnection connection = new MySqlConnection(MySqlConnectionString);
-            MySqlCommand command = connection.CreateCommand();
-            command.CommandText = MySqlCommandText;
-            MySqlDataReader Reader;
+            MySqlConnection connection = new MySqlConnection(MySqlConnectionString);//Variabe zum verbinden mit MySQL
+            MySqlCommand command = new MySqlCommand(MySqlCommand, connection);//Variable zum ausfüren von MySQL Behfelen
 
             try
             {
-                connection.Open();
-                Reader = command.ExecuteReader();
-                string[] Daten = new string[Reader.FieldCount];
-                while (Reader.Read())
+                connection.Open();//verbindung aufbauen zu MySQL
+                MySqlDataReader reader = command.ExecuteReader();//die Ergebnise des Abrage
+                string data = null;
+                while (reader.Read())//Zeile für Zeile die Ergebnise aus der SQL Abfrage abarbeiten
                 {
-                    for (int i = 0; i < Reader.FieldCount; i++)
+                    for (int i = 0; i < reader.FieldCount; i++)//so offt wiederholen wie es daten giebt
                     {
-                        Daten[i] = Reader.GetValue(i).ToString();
+                        data += reader.GetValue(i).ToString() + ";";//erzeugt ein String mit allen Daten
                     }
                 }
-                connection.Close();
-                return Daten;
+                connection.Clone();//MySQL verbindung schließen
+                if (data!=null)
+                {
+                    string[] dataarray = data.Split(';');//macht aus dem String ein Array
+                    Array.Resize(ref dataarray, dataarray.Length - 1);//entfernt den letzte überflüssige Eintrag im Array
+                    return dataarray;
+                }
+                string[] noll = new string[] { null };
+                return noll;
             }
-            catch (MySql.Data.MySqlClient.MySqlException)
+            catch (Exception ex)
             {
-                MessageBox.Show("Fahlscher SQL Befehl!");
+                MessageBox.Show(ex.Message);
                 return null;
             }
         }

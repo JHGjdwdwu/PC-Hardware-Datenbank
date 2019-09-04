@@ -39,6 +39,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cmdRoot = new System.Windows.Forms.Button();
             this.cmdInput = new System.Windows.Forms.Button();
+            this.cmdQR = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.img)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDaten)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -187,11 +188,24 @@
             this.cmdInput.UseVisualStyleBackColor = false;
             this.cmdInput.Click += new System.EventHandler(this.cmdInput_Click);
             // 
+            // cmdQR
+            // 
+            this.cmdQR.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdQR.Location = new System.Drawing.Point(371, 571);
+            this.cmdQR.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cmdQR.Name = "cmdQR";
+            this.cmdQR.Size = new System.Drawing.Size(171, 35);
+            this.cmdQR.TabIndex = 41;
+            this.cmdQR.Text = "QR-Code Drucken";
+            this.cmdQR.UseVisualStyleBackColor = false;
+            this.cmdQR.Click += new System.EventHandler(this.cmdQR_Click);
+            // 
             // Home_Suche
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1112, 620);
+            this.Controls.Add(this.cmdQR);
             this.Controls.Add(this.cmdRoot);
             this.Controls.Add(this.cmdInput);
             this.Controls.Add(this.pictureBox1);
@@ -227,5 +241,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button cmdRoot;
         private System.Windows.Forms.Button cmdInput;
+        private System.Windows.Forms.Button cmdQR;
     }
 }

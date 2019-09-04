@@ -49,7 +49,7 @@ namespace PC_Hardware_Datenbank
                     string hash = methoden.StringToSha512(txtPassword.Text);//erzeugt ein Hash vom Password
 
                     string mysqlcommandtext = "SELECT * FROM `user` WHERE `Name`='" + txtName.Text + "'AND`Password`='" + hash + "';";//SQL Abfrage Befehl: suche User und key
-                    string[] daten = methoden.MySqlToString(mysqlconnectionstring, mysqlcommandtext);//Daten abfragen und in ein Array schreiben {User,Passwored,Rechte}
+                    string[] daten = methoden.MySqlToArray(mysqlconnectionstring, mysqlcommandtext);//Daten abfragen und in ein Array schreiben {User,Passwored,Rechte}
                     Speicher.rechte = daten[2];//Globalle Variable zum bestimmen was auf der Form zu sehen ist
 
                     if (daten[0] != txtName.Text || daten[1] != hash)

@@ -47,7 +47,7 @@ namespace PC_Hardware_Datenbank
                     methoden.MySQL_ping_check(mysqlconnectionstring);//Testabfrage bei der Datenkan
 
                     string mysqlcommandtext = "SELECT * FROM `user` WHERE `Name`='" + txtName.Text + "';";//SQL Befehl Abfrage ob es den User schon giebt
-                    string bit = methoden.MySqlToString(mysqlconnectionstring, mysqlcommandtext)[0];//Daten in die Datenbank schreiben
+                    string bit = methoden.MySqlToArray(mysqlconnectionstring, mysqlcommandtext)[0];//Daten in die Datenbank schreiben
 
                     if (bit==null)
                     {
