@@ -3,4 +3,4 @@ Ein Programm zum verwalten der Hardware wie CPUs,HDDs und Netzteile. Die Idee ka
 
 Wiki: https://github.com/JHGjdwdwu/PC-Hardware-Datenbank/wiki
 
-Download: https://github.com/JHGjdwdwu/PC-Hardware-Datenbank/blob/master/PC%20Hardware%20Datenbank/installer/PC%20Hardware%20Datenbank%20(v1.0.0.0).exe
+Download: https://github.com/JHGjdwdwu/PC-Hardware-Datenbank/tree/master/PC%20Hardware%20Datenbank/installer
